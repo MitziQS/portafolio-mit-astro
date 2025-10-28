@@ -26,7 +26,7 @@ export default defineConfig({
     astroImageTools,
     i18n({
       defaultLocale: 'es',
-      locales: ['es', 'en']
+      locales: ['es']
     }),
     sitemap({
       canonicalURL: URL,

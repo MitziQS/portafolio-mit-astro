@@ -1,35 +1,40 @@
 ---
-import felixicaza from '@images/felixicaza.jpg'
+import mit from '@images/mit.jpeg'
 import { Picture } from 'astro:assets'
 import { t } from 'i18n:astro'
 
-const { title, subtitle, description } = t('about', {
-  returnObjects: true
-})
+const about = t('about', { returnObjects: true })
+const { title, subtitle } = about
+// Siempre como array:
+const paragraphs = Array.isArray(about.description)
+  ? about.description
+  : [about.description]
 
 const normalizeTitle = title
   .toLowerCase()
   .replaceAll(' ', '-')
   .normalize('NFD')
-  .replace(/[\u0300-\u036f]/g, '')
+  .replace(/\p{Diacritic}/gu, '') // elimina acentos
 ---
 
 <section id={normalizeTitle} class="about">
   <h2>{title}</h2>
+
   <section class="info">
     <div class="picture">
       <Picture
-        src={felixicaza}
-        alt="Felix Icaza"
+        src={mit}
+        alt="Mitzi Soria"
         width={366}
         height={361}
         formats={['avif', 'webp']}
         fallbackFormat="webp"
       />
     </div>
+
     <div class="description">
       <h3 class="headline-2">{subtitle}</h3>
-      <p>{description}</p>
+      {paragraphs.map((p) => <p>{p}</p>)}
     </div>
   </section>
 </section>

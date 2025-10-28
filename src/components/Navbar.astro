@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
-import { switchLocalePath, t } from 'i18n:astro'
+import { t } from 'i18n:astro'
 import ToggleSwitch from '@components/ToggleSwitch.astro'
 
 // Obtenemos los enlaces de la navegación de locales
@@ -19,21 +19,6 @@ const links = t('navbar', { returnObjects: true })
       ))
     }
     <li>
-      <a
-        class="language"
-        href={Astro.url.pathname.includes('/en')
-          ? switchLocalePath('es')
-          : switchLocalePath('en')}
-      >
-        <span>
-          <Icon name="language" size={18} />
-        </span>
-        <span>
-          {Astro.url.pathname.includes('/en') ? 'Español' : 'English'}
-        </span>
-      </a>
-    </li>
-    <li>
       <ToggleSwitch />
     </li>
   </ul>
@@ -45,19 +30,6 @@ const links = t('navbar', { returnObjects: true })
 <dialog>
   <nav>
     {links.map(({ label, href }) => <a href={href}>{label}</a>)}
-    <a
-      class="language"
-      href={Astro.url.pathname.includes('/en')
-        ? switchLocalePath('es')
-        : switchLocalePath('en')}
-    >
-      <span>
-        <Icon name="language" size={18} />
-      </span>
-      <span>
-        {Astro.url.pathname.includes('/en') ? 'Español' : 'English'}
-      </span>
-    </a>
     <div>
       <ToggleSwitch />
     </div>

@@ -1,29 +1,29 @@
 {
-  "title": "Desarrollador Web Frontend - Felix Rangel",
-  "description": "Desarrollador Web Frontend de Estelí, Nicaragua. Especialista en HTML5, CSS5, JavaScript ES6+, Node.js y WordPress.",
+  "title": "Mitzi Soria – Diseñadora de Producto UX/UI",
+  "description": "Diseñadora de producto en CDMX con experiencia en servicios públicos y privados, especializada en crear experiencias claras, inclusivas y escalables.",
   "navbar": [
     {
       "label": "Inicio",
       "href": "#top"
     },
     {
-      "label": "Experiencia",
-      "href": "#experiencia-laboral"
+      "label": "Sobre mí",
+      "href": "#sobre-mi"
     },
     {
       "label": "Proyectos",
       "href": "#proyectos"
     },
     {
-      "label": "Sobre mí",
-      "href": "#sobre-mi"
+      "label": "Experiencia",
+      "href": "#experiencia-laboral"
     }
   ],
   "hero": {
     "job_availability": "¡Disponible para trabajar!",
-    "title": "¡Hola soy Felix Rangel!",
-    "job_title": "<strong>Desarrollador Web Frontend</strong> de Estelí, Nicaragua.",
-    "description": "Especialista en HTML5, CSS5, JavaScript ES6+, Node.js y WordPress.",
+    "title": "¡Hola soy Mit!",
+    "job_title": "<strong>Diseñadora de producto</strong> en CMDX, México.",
+    "description": "on experiencia en transformar servicios públicos y privados en experiencias claras, inclusivas y escalables",
     "cta": "Contactame"
   },
   "experience": {
@@ -50,33 +50,26 @@
     "title": "Proyectos",
     "projects": [
       {
-        "title": "Estelí Buses",
-        "description": "La primer plataforma para conocer los horarios de las terminales de autobuses interlocales del municipio de Estelí, Nicaragua.",
-        "image": "/src/images/projects/esteli-buses-project.jpg",
-        "techs": ["Astro", "TailwindCSS", "Firebase", "PWA"],
+        "title": "¿Lo de siempre?",
+        "description": "Lo de siempre”, la herramienta de recompra en Jüsto, para hacer más rápido y sencillo el súper recurrente. Aunque la recurrencia era un comportamiento natural, la funcionalidad no cumplía su promesa: era poco visible, poco usable y distinta entre app y web. El reto fue optimizarla como un motor de recompra y confianza, reduciendo fricciones y unificando la experiencia cross-platform.",
+        "image": "/src/images/projects/proyecto-1.jpg",
+        "techs": ["Figma", "illustrator"],
         "code": "Código",
         "preview": "Vista previa"
       },
       {
-        "title": "Portafolio UX Ana Rangel",
+        "title": "Contar menos, conectar más",
         "description": "Lorem ipsum dolor sit amet consectetur. Faucibus quis sociis at sagittis egestas sed volutpat. Arcu pellentesque elit volutpat quam. Id dictum sagittis hendrerit diam viverra velit. Blandit id viverra quis lectus faucibus egestas ipsum turpis.",
         "image": "/src/images/projects/ana-rangel-portafolio.jpg",
-        "techs": ["Astro", "CSS", "SASS", "Open Props", "TypeScript"],
+        "techs": ["Maze", "Figma", "illustrator"],
         "code": "Código",
         "preview": "Vista previa"
       },
       {
-        "title": "Calculadora Payoneer Nicaragua",
+        "title": "Palace Resort",
         "description": "Descubre una herramienta esencial para freelancers y negocios en Nicaragua. Nuestra Calculadora Payoneer Nicaragua te permite calcular de manera precisa y rápida las tarifas y comisiones al recibir pagos internacionales a través de Payoneer. ¡Empieza a usarla hoy y toma el control de tus finanzas!",
         "image": "/src/images/projects/calculadora-payoneer-project.jpg",
-        "techs": [
-          "Astro",
-          "TailwindCSS",
-          "React",
-          "TypeScript",
-          "PWA",
-          "Firebase"
-        ],
+        "techs": ["Figma", "Maze"],
         "code": "Código",
         "preview": "Vista previa"
       }
@@ -119,8 +112,12 @@
   },
   "about": {
     "title": "Sobre mí",
-    "subtitle": "Soy mod de Midudev y ManzDev pero más feliz me siento siendo mod de AnaRangel",
-    "description": "Soy un Desarrollador Web Frontend y WordPress con más de 3 años de experiencia, especializado en crear diseños modernos y optimizar el rendimiento web, con un enfoque en tecnologías como HTML 5, CSS 3, JavaScript ES6+ y WordPress. Manejo frameworks como React y Astro, y soy experto en constructores visuales de WordPress, además de tener un fuerte conocimiento técnico en Core Web Vitals, lo que me convierte en un profesional apasionado y altamente cualificado para cualquier proyecto de desarrollo web."
+    "subtitle": "Creo que el diseño es un puente entre la tecnología y la vida cotidiana.",
+    "description": [
+      "Actualmente estoy trabajando en proyectos de gran escala como App México y la Credencial de Identidad CURP, los cuales buscan transformar la manera en que las personas se identifican y acceden a servicios esenciales.",
+      "Mi meta actual es que estos productos digitales se sientan cercanos, confiables y humanos. Anteriormente, he diseñado soluciones en e-commerce, fitness y hospitalidad, donde aprendí a trabajar con métricas de impacto y seguimiento continuo de proyectos, mejorando procesos críticos y entendiendo cómo el diseño impulsa conversión y eficiencia operativa.",
+      "Estas experiencias me enseñaron a pensar en escalabilidad, negocio y retención de usuarios. Mi enfoque combina visión estratégica con ejecución técnica, siempre buscando simplificar procesos complejos en experiencias claras y accesibles."
+    ]
   },
   "contact": {
     "title": "¿Listo para dar vida a tus ideas?",

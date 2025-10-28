@@ -1,7 +1,6 @@
 ---
 import I18NHead from '@astrolicious/i18n/components/I18nHead.astro'
 import inter from '@fontsource-variable/inter/files/inter-latin-standard-normal.woff2'
-import { Schema } from 'astro-seo-schema'
 import { getHtmlAttrs } from 'i18n:astro'
 import Favicons from '@components/Favicons.astro'
 import Footer from '@components/Footer.astro'
@@ -130,31 +129,11 @@ const { title, description, metaRobots } = options
     {description && <meta name="description" content={description} />}
     {description && <link href={Astro.url.href} rel="canonical" />}
     <I18NHead />
-    <meta name="author" content="Felix Icaza - https://felixicaza.com" />
+    <meta
+      name="author"
+      content="Mitzi Soria - https://www.linkedin.com/in/soria-mitzi/"
+    />
     <meta name="generator" content={Astro.generator} />
-
-    {
-      description && (
-        <Schema
-          item={{
-            '@context': 'https://schema.org',
-            '@type': 'Person',
-            name: 'Felix Icaza',
-            url: 'https://felixicaza.com',
-            image: 'https://felixicaza.com/img/felixicaza.jpg',
-            sameAs: [
-              'https://felixicaza.com',
-              'https://www.upwork.com/freelancers/felixicaza',
-              'https://www.linkedin.com/in/felixicaza',
-              'https://github.com/felixicaza'
-            ],
-            jobTitle: 'Desarrollador Web Frontend'
-          }}
-        />
-      )
-    }
-
-    <slot name="schema" />
 
     <Favicons />
 

@@ -85,8 +85,6 @@ Descubre las principales integraciones de Astro utilizadas en este proyecto:
 
 - [astro-icon](https://www.npmjs.com/package/astro-icon): Es una integración que facilita la gestión e inserción de íconos SVG en tu proyecto de Astro.
 
-- [astro-seo-schema](https://www.npmjs.com/package/astro-seo-schema): es una integración que genera automáticamente datos estructurados de esquema ([schema.org](https://schema.org/)) para tu sitio web de Astro.
-
 - [astro-sitemap](https://www.npmjs.com/package/astro-sitemap): Genera automáticamente un sitemap XML para tu sitio web de Astro.
 
 - [astro-tunnel](https://www.npmjs.com/package/astro-tunnel): Permite exponer localmente tu proyecto de Astro a través de una URL pública.

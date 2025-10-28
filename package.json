@@ -27,9 +27,11 @@
     "start": "astro dev"
   },
   "lint-staged": {
-    "./**/*.{js,mjs,cjs}": [
-      "eslint --cache --fix --ext .js,.mjs,.cjs ./",
-      "prettier --cache --write \"./**/*.{js,mjs,cjs}\""
+    "*.{astro,js,ts,tsx,jsx}": [
+      "eslint --cache --fix"
+    ],
+    "*.{astro,js,ts,tsx,jsx,css,md,json}": [
+      "prettier --write"
     ],
     "./**/*.ts": [
       "eslint --cache --fix --ext .ts ./",
@@ -52,7 +54,6 @@
     "astro-compressor": "1.0.0",
     "astro-icon": "1.1.5",
     "astro-imagetools": "0.9.0",
-    "astro-seo-schema": "5.0.0",
     "astro-sitemap": "1.0.0",
     "astro-tunnel": "0.1.6",
     "i18next": "24.2.2",
