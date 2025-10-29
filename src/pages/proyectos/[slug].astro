@@ -1,0 +1,29 @@
+---
+// src/pages/proyectos/[slug].astro
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects')
+  return projects.map((p) => ({
+    params: { slug: p.slug }, // p.slug = "lo-de-siempre"
+    props: { project: p }
+  }))
+}
+
+const { project } = Astro.props
+const { Content } = await project.render()
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>{project.data.title}</title>
+  </head>
+  <body>
+    <h1>{project.data.title}</h1>
+    <img src={project.data.cover} alt={project.data.coverAlt} />
+    <article>
+      <Content />
+    </article>
+  </body>
+</html>

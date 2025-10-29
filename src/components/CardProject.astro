@@ -10,24 +10,35 @@ interface Props {
   title: string
   description: string
   techs: string[]
-  code: string
-  preview: string
+  code?: string // 👈 opcional y puede ser URL
+  preview?: string // 👈 opcional (texto del botón)
+  href?: string // 👈 opcional (link al detalle)
 }
 
-const { src, alt, title, description, techs, code, preview } = Astro.props
+const {
+  src,
+  alt,
+  title,
+  description,
+  techs,
+  code,
+  preview = 'Vista previa',
+  href
+} = Astro.props
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   '/src/images/projects/*.{jpeg,jpg,png}'
 )
-if (!images[src])
+if (!images[src]) {
   throw new Error(
     `"${src}" no existe en: "/src/images/projects/*.{jpeg,jpg,png}"`
   )
+}
 ---
 
 <section class="card-project">
   <div>
-    <a href="#">
+    <a href={href || '#'} aria-label={`Abrir ${title}`}>
       <Picture
         src={images[src]()}
         alt={alt}
@@ -38,13 +49,14 @@ if (!images[src])
       />
     </a>
   </div>
+
   <div class="description">
-    <h3><a href="#">{title}</a></h3>
+    <h3><a href={href || '#'}>{title}</a></h3>
+
     <div class="badges">
       {
         techs.map((tech) => {
           const techLower = tech.toLowerCase().replaceAll(' ', '-')
-
           return (
             <span class={`badge-tech ${techLower}`}>
               <Icon name={`techs/${techLower}`} size={24} />
@@ -54,16 +66,27 @@ if (!images[src])
         })
       }
     </div>
+
     <p>{description}</p>
+
     <div class="links">
-      <a href="#">
-        <Icon name="github" size={24} />
-        {code}
-      </a>
-      <a href="#">
-        <Icon name="link" size={24} />
-        {preview}
-      </a>
+      {
+        code && code.startsWith('http') && (
+          <a href={code} target="_blank" rel="noopener">
+            <Icon name="github" size={24} />
+            Código
+          </a>
+        )
+      }
+
+      {
+        href && (
+          <a href={href}>
+            <Icon name="link" size={24} />
+            {preview}
+          </a>
+        )
+      }
     </div>
   </div>
 </section>
@@ -76,83 +99,81 @@ if (!images[src])
     margin-bottom: 86px;
     max-width: 434px;
     margin-inline: auto;
+  }
 
-    @media (width >= 1200px) {
+  @media (width >= 1200px) {
+    .card-project {
       grid-template-columns: 434px 1fr;
       max-width: fit-content;
-
-      &:nth-child(odd) {
-        grid-template-columns: 1fr 434px;
-
-        & .description {
-          order: -1;
-        }
-      }
     }
-
-    & img {
-      border-radius: 4px;
+    .card-project:nth-child(odd) {
+      grid-template-columns: 1fr 434px;
     }
-
-    & .description {
-      & h3 {
-        & a {
-          color: inherit;
-          text-decoration: none;
-          transition: var(--transition-text);
-
-          &:hover {
-            color: var(--text-description-color);
-          }
-        }
-      }
-      .badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px 8px;
-
-        & .badge-tech {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          padding: 4px 12px;
-          border-radius: 1000px;
-          font-size: 0.875rem;
-        }
-      }
-
-      & .links {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-
-        & a {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          color: var(--text-color);
-          text-decoration: none;
-          font-weight: 500;
-          transition: var(--transition-text);
-          padding: 8px 24px;
-          border-radius: 1000px;
-          border: 1px solid var(--text-color);
-          transition: var(--transition-bg);
-
-          &:hover {
-            background-color: var(--bg-secondary-color);
-          }
-        }
-      }
-
-      & p {
-        color: var(--text-description-color);
-        font-size: 1.125rem;
-      }
-
-      & > * + * {
-        margin-top: 24px;
-      }
+    .card-project:nth-child(odd) .description {
+      order: -1;
     }
+  }
+
+  .card-project img {
+    border-radius: 4px;
+  }
+
+  .card-project .description h3 a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-text);
+  }
+
+  .card-project .description h3 a:hover {
+    color: var(--text-description-color);
+  }
+
+  .card-project .description .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 8px;
+  }
+
+  .card-project .description .badge-tech {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    border-radius: 1000px;
+    font-size: 0.875rem;
+  }
+
+  .card-project .description p {
+    color: var(--text-description-color);
+    font-size: 1.125rem;
+  }
+
+  /* Espaciados verticales entre bloques dentro de .description */
+  .card-project .description > * + * {
+    margin-top: 24px;
+  }
+
+  /* Botones/links */
+  .card-project .description .links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .card-project .description .links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 24px;
+    border-radius: 1000px;
+    border: 1px solid var(--text-color);
+    transition: var(--transition-bg), var(--transition-text);
+  }
+
+  .card-project .description .links a:hover {
+    background-color: var(--bg-secondary-color);
   }
 </style>

@@ -55,15 +55,17 @@
         "image": "/src/images/projects/proyecto-1.jpg",
         "techs": ["Figma", "illustrator"],
         "code": "Código",
-        "preview": "Vista previa"
+        "preview": "Vista previa",
+        "href": "/proyectos/lo-de-siempre"
       },
       {
         "title": "Contar menos, conectar más",
         "description": "El reto era claro: comunicar menos, pero conectar más. Mi meta fue rediseñar la experiencia para que cualquier persona que llegara a la landing entendiera, en segundos, quiénes somos, qué ofrecemos y por qué elegirnos.",
-        "image": "/src/images/projects/ana-rangel-portafolio.jpg",
+        "image": "/src/images/projects/proyecto-2.jpg",
         "techs": ["Maze", "Figma", "illustrator"],
         "code": "Código",
-        "preview": "Vista previa"
+        "preview": "Vista previa",
+        "href": "/proyectos/landingpage"
       },
       {
         "title": "Palace Resort",
@@ -71,7 +73,8 @@
         "image": "/src/images/projects/calculadora-payoneer-project.jpg",
         "techs": ["Figma", "Maze"],
         "code": "Código",
-        "preview": "Vista previa"
+        "preview": "Vista previa",
+        "href": "/proyectos/lo-de-siempre"
       }
     ]
   },
