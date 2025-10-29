@@ -6,7 +6,6 @@ import i18n from '@astrolicious/i18n'
 import sitemap from 'astro-sitemap'
 import playformCompress from '@playform/compress'
 import compressor from 'astro-compressor'
-import tunnel from 'tunnel';
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,7 +19,6 @@ export default defineConfig({
   },
   compressHTML: false,
   integrations: [
-    tunnel(),
     icon(),
     astroImageTools,
     i18n({
