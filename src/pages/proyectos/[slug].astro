@@ -58,39 +58,22 @@ const options = {
     </div>
   </section>
 
-  <style>
-    /* ✅ Wrapper centrado */
+  <style is:global>
+    /* Escopeta amable: solo dentro de .project-content */
     .project-wrapper {
-      max-width: 900px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 2rem 1rem;
+      padding: 3.5rem 1rem 2.5rem;
     }
 
-    /* ✅ Botón regresar */
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      text-decoration: none;
-      border: 1px solid currentColor;
-      border-radius: 999px;
-      padding: 0.4rem 0.85rem;
-      font-size: 0.9rem;
-      opacity: 0.9;
-      margin-bottom: 1rem;
+    .project-hero {
+      margin: 0.25rem 0 1rem;
     }
-    .back-link:hover {
-      opacity: 1;
-    }
-
-    /* ✅ Título */
     .project-title {
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
+      margin: 0.5rem 0 1.5rem;
+      line-height: 1.08;
+      font-size: clamp(2rem, 6vw, 3.6rem);
     }
-
-    /* ✅ Imagen */
     .project-media img {
       width: 100%;
       border-radius: 12px;
@@ -98,14 +81,88 @@ const options = {
       margin-bottom: 2rem;
     }
 
-    /* ✅ Márgenes del contenido */
-    .project-content :is(h2, h3) {
-      margin-top: 2.5rem;
-      margin-bottom: 0.75rem;
+    .project-content :is(h2, h3, h4) {
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
     }
-
     .project-content > * + * {
       margin-top: 1rem;
+    }
+    .project-content .bulleted {
+      padding-left: 18px;
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    /* ===== ¡AQUÍ EL JUGO! estas reglas ahora sí aplican al HTML del .md ===== */
+    .project-content .card {
+      background: var(--bg-secondary-color);
+      border: 1px solid color-mix(in oklab, var(--text-color) 15%, transparent);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .project-content .stack {
+      display: grid;
+      gap: 20px;
+    }
+
+    .project-content .grid-2 {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1.6fr 1fr;
+    }
+    .project-content .grid-3 {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 900px) {
+      .project-content .grid-2,
+      .project-content .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .project-content .kpi-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 0.5rem;
+    }
+    .project-content .kpi {
+      background: transparent;
+      border-radius: 14px;
+      padding: 16px;
+      border: 1px dashed color-mix(in oklab, var(--text-color) 18%, transparent);
+    }
+    .project-content .kpi__value {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1;
+    }
+    .project-content .kpi__label {
+      opacity: 0.8;
+    }
+
+    .project-content .step {
+      margin: 28px 0;
+    }
+    .project-content .step__eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 6px;
+    }
+    .project-content .media {
+      margin: 16px 0;
+    }
+    .project-content .media img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
     }
   </style>
 </Layout>

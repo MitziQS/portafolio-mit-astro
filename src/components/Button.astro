@@ -2,6 +2,7 @@
 interface Props {
   href: string
   class?: string
+  [attr: string]: any
 }
 
 const { href, class: className } = Astro.props
