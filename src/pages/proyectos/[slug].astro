@@ -24,6 +24,8 @@ const options = {
 <Layout {options}>
   <section class="projects section">
     <div class="project-wrapper">
+      <div id="top"></div>
+
       <!-- ✅ BOTÓN REGRESAR -->
       <Button
         href={`${import.meta.env.BASE_URL}#proyectos`}
@@ -59,28 +61,35 @@ const options = {
   </section>
 
   <style is:global>
-    /* Escopeta amable: solo dentro de .project-content */
+    /* ===== WRAPPER ===== */
     .project-wrapper {
       max-width: 1120px;
       margin: 0 auto;
       padding: 3.5rem 1rem 2.5rem;
     }
 
+    /* ===== HERO ===== */
     .project-hero {
       margin: 0.25rem 0 1rem;
     }
     .project-title {
-      margin: 0.5rem 0 1.5rem;
-      line-height: 1.08;
-      font-size: clamp(2rem, 6vw, 3.6rem);
+      margin: 0.5rem 0 1.5rem; /* solo spacing */
     }
-    .project-media img {
+
+    /* ===== IMAGEN ===== */
+    .project-media {
+      margin: 0 0 2rem;
+    }
+    .project-media img,
+    .hero-media {
       width: 100%;
+      height: auto;
       border-radius: 12px;
       display: block;
       margin-bottom: 2rem;
     }
 
+    /* ===== ESPACIADOS GENERALES ===== */
     .project-content :is(h2, h3, h4) {
       margin-top: 2rem;
       margin-bottom: 0.6rem;
@@ -88,13 +97,21 @@ const options = {
     .project-content > * + * {
       margin-top: 1rem;
     }
+
+    /* ===== LISTAS ===== */
     .project-content .bulleted {
       padding-left: 18px;
       display: grid;
       gap: 0.4rem;
     }
 
-    /* ===== ¡AQUÍ EL JUGO! estas reglas ahora sí aplican al HTML del .md ===== */
+    /* ===== APLICAR COLOR GLOBAL (gris) A TEXTO DE LECTURA ===== */
+    .project-content p,
+    .project-content li {
+      color: var(--text-description-color);
+    }
+
+    /* ===== CARDS ===== */
     .project-content .card {
       background: var(--bg-secondary-color);
       border: 1px solid color-mix(in oklab, var(--text-color) 15%, transparent);
@@ -103,11 +120,11 @@ const options = {
       box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
     }
 
+    /* ===== GRIDS ===== */
     .project-content .stack {
       display: grid;
       gap: 20px;
     }
-
     .project-content .grid-2 {
       display: grid;
       gap: 20px;
@@ -125,6 +142,7 @@ const options = {
       }
     }
 
+    /* ===== KPI ===== */
     .project-content .kpi-grid {
       display: grid;
       gap: 16px;
@@ -138,7 +156,6 @@ const options = {
       border: 1px dashed color-mix(in oklab, var(--text-color) 18%, transparent);
     }
     .project-content .kpi__value {
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
       font-weight: 800;
       line-height: 1;
     }
@@ -146,6 +163,7 @@ const options = {
       opacity: 0.8;
     }
 
+    /* ===== STEP ===== */
     .project-content .step {
       margin: 28px 0;
     }
@@ -156,6 +174,8 @@ const options = {
       opacity: 0.7;
       margin-bottom: 6px;
     }
+
+    /* ===== IMÁGENES EN BODY ===== */
     .project-content .media {
       margin: 16px 0;
     }
@@ -164,30 +184,44 @@ const options = {
       height: auto;
       border-radius: 12px;
     }
-    .project-hero img,
-    .hero-media {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      display: block;
-    }
+
+    /* ===== BACK LINK ===== */
     .project-wrapper .back-link {
       margin-bottom: 2rem;
-    } /* respiro bajo el botón */
-    .project-hero {
-      margin-bottom: 1.5rem;
-    } /* respiro bajo el título */
-
-    /* ajustar imagen full */
-    .project-media {
-      margin: 0 0 2rem;
     }
-    .project-media img,
-    .hero-media {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 12px;
+
+    /* ===== ANCLAS ===== */
+    html {
+      scroll-behavior: smooth;
+    }
+    [id] {
+      scroll-margin-top: 96px;
+    }
+    @media (width >= 768px) {
+      [id] {
+        scroll-margin-top: 120px;
+      }
+    }
+
+    /* ===== H2 CON LÍNEA ===== */
+    .project-content h2.section-title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 2.5rem 0 1rem;
+    }
+    .project-content h2.section-title::after {
+      content: '';
+      flex: 1 1 auto;
+      height: 2px;
+      background: color-mix(in oklab, var(--text-color) 35%, transparent);
+      border-radius: 2px;
+      translate: 0 0.2em;
+    }
+    @media (max-width: 768px) {
+      .project-content h2.section-title::after {
+        height: 1.5px;
+      }
     }
   </style>
 </Layout>

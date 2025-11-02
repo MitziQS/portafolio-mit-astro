@@ -72,9 +72,8 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 
 <!-- PROCESO PASO 1 -->
 <section class="step">
-  <div class="step__eyebrow">El proceso — Paso 1</div>
-  <h3>Investigación y descubrimiento</h3>
-  <p>
+<h2 id="investigación" class="headline-2 section-title">Investigación y descubrimiento</h2>
+<p>
     Detectamos baja visibilidad, listas largas sin agrupación y productos agotados sin sustitutos.
     Realicé encuestas y sesiones de research; además, workshops con PMs (Matriz CSD) y diseño (Journey Map)
     para alinear certezas, suposiciones y dudas.
@@ -85,14 +84,12 @@ tags: ['e-commerce', 'UX', 'recurrencia']
   </ul>
   <figure class="media">
     <img src="/imagenes/project1/Analisis-competitivo.png" alt="Análisis competitivo"/>
-    <figcaption>Análisis competitivo de recompra</figcaption>
   </figure>
 </section>
 
 <!-- PROCESO PASO 2 -->
 <section class="step">
-  <div class="step__eyebrow">El proceso — Paso 2</div>
-  <h3>Definición — Primer MVP</h3>
+  <h2 id="definición" class="headline-2 section-title">Definición</h2>
   <p>Priorizamos por <em>Impacto en negocio</em>, <em>Valor al usuario</em> y <em>Viabilidad técnica</em>:</p>
   <div class="grid-3">
     <article class="card"><h4>Visibilidad</h4><p>Ubicar la sección en Home con mejor jerarquía.</p></article>
@@ -103,8 +100,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 
 <!-- PROCESO PASO 3 -->
 <section class="step">
-  <div class="step__eyebrow">El proceso — Paso 3</div>
-  <h3>Diseño</h3>
+  <h2 id="diseño" class="headline-2 section-title">Diseño</h2>
   <p>Mapeé momentos del journey para recordar productos recurrentes donde más ayudan (no solo dentro del módulo).</p>
   <figure class="media">
     <img src="/imagenes/project1/Proyecto1-Paso3.png" alt="Mapa de momentos clave"/>
@@ -113,8 +109,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 
 <!-- PROCESO PASO 4 -->
 <section class="step">
-  <div class="step__eyebrow">El proceso — Paso 4</div>
-  <h3>Prototipo y pruebas</h3>
+  <h2 id="pruebas" class="headline-2 section-title">Prototipo y pruebas</h2>
   <ul class="bulleted">
     <li>Antes: 10 productos sin agrupación ni control</li>
     <li>Después: sección destacada, categorizada y personalizable</li>
@@ -127,8 +122,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 
 <!-- PROCESO PASO 5 -->
 <section class="step">
-  <div class="step__eyebrow">El proceso — Paso 5</div>
-  <h3>Entrega</h3>
+  <h2 id="entrega" class="headline-2 section-title">Entrega</h2>
   <p>
     El uso de “Lo de siempre” subió del 27% al 44% entre usuarios recurrentes. La organización por departamentos
     alineó la interfaz a la forma real de comprar.

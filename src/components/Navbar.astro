@@ -4,7 +4,19 @@ import { t } from 'i18n:astro'
 import ToggleSwitch from '@components/ToggleSwitch.astro'
 
 // Obtenemos los enlaces de la navegación de locales
-const links = t('navbar', { returnObjects: true })
+const defaultLinks = t('navbar', { returnObjects: true })
+const inProject = Astro.url.pathname.startsWith('/proyectos/')
+
+const projectLinks = [
+  { label: 'Inicio', href: '#top' },
+  { label: 'Investigación', href: '#investigación' },
+  { label: 'Definición', href: '#definición' },
+  { label: 'Diseño', href: '#diseño' },
+  { label: 'Pruebas', href: '#pruebas' },
+  { label: 'Entrega', href: '#entrega' }
+]
+
+const links = inProject ? projectLinks : defaultLinks
 ---
 
 <nav id="menu">
@@ -12,7 +24,7 @@ const links = t('navbar', { returnObjects: true })
     {
       links.map(({ label, href }, index) => (
         <li>
-          <a class:list={{ active: index === 0 }} href={href}>
+          <a class:list={{ active: false }} href={href}>
             {label}
           </a>
         </li>
@@ -283,15 +295,14 @@ const links = t('navbar', { returnObjects: true })
 
 <script>
   const mainSections = document.querySelectorAll('section[id]')
-  const navbarLinks = document.querySelectorAll(
-    '#menu a'
-  ) as NodeListOf<HTMLAnchorElement>
+  const navbarLinks = document.querySelectorAll('#menu a')
 
   const handleActiveLink = (sectionId: string | null) => {
     navbarLinks.forEach((link) => {
-      if (sectionId && link.href.includes(`#${sectionId}`)) {
+      const anchor = link as HTMLAnchorElement
+      if (sectionId && anchor.href.includes(`#${sectionId}`)) {
         link.classList.add('active')
-      } else if (!sectionId && link.href.includes('#top')) {
+      } else if (!sectionId && anchor.href.includes('#top')) {
         // Activar el enlace del #top cuando estamos en la parte superior
         link.classList.add('active')
       } else {
