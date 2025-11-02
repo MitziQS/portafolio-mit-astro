@@ -105,12 +105,6 @@ p {
   font-size: 1.25rem;
 }
 
-/* === Cards: padding uniforme + reset de márgenes internos === */
-.project-content .card {
-  padding: 24px; /* mismo margen en todos los lados */
-  border-radius: 16px; /* lo que ya tenías */
-}
-
 /* Quita márgenes propios de headings y bloques dentro de la card */
 .project-content .card h1,
 .project-content .card h2,
@@ -119,24 +113,11 @@ p {
 .project-content .card p,
 .project-content .card ul,
 .project-content .card ol {
-  margin: 0; /* 👈 aquí está el fix del h3 */
+  margin: 8px; /* 👈 aquí está el fix del h3 */
 }
 
-/* Ritmo vertical: separa solo elementos hermanos dentro de la card */
-.project-content .card > * + * {
-  margin-top: 12px; /* ajusta a 16px si quieres más aire */
-}
-
-/* Asegura que el primer y último hijo no “rompan” el padding */
-.project-content .card > :first-child {
-  margin-top: 0 !important;
-}
-.project-content .card > :last-child {
-  margin-bottom: 0 !important;
-}
-
-/* (Opcional) mismo gap entre cards del grid */
-.project-content .grid-3,
-.project-content .grid-2 {
-  gap: 24px; /* o el valor que estés usando en el index */
+.project-content .kpi__value {
+  font-weight: 800;
+  font-size: 2rem; /* ✅ hazlos más grandes */
+  line-height: 1;
 }
