@@ -1,22 +1,13 @@
 ---
-title: 'Lo de siempre – Rediseño de recurrencia'
+title: '¿Lo de siempre?'
 date: 2023-08-01
-cover: '/src/images/projects/proyecto-2.jpg'
+cover: '/src/images/projects/proy-1-banner.jpg'
 coverAlt: 'Listado de productos recurrentes'
 company: 'Jüsto'
 role: 'Product Designer'
 summary: 'Hice que la recurrencia fuera realmente útil: menos clicks, más claridad y velocidad en la recompra.'
 tags: ['e-commerce', 'UX', 'recurrencia']
 ---
-
-<!-- HERO / INTRO -->
-<div class="project-hero">
-  <p class="overline">Caso de estudio</p>
-  <h1 class="project-title">Lo de siempre — Rediseño de recurrencia</h1>
-  <p class="project-summary">
-    Repensé “Lo de siempre” para volverlo un motor real de recompra: más visible, más usable y coherente entre app y web.
-  </p>
-</div>
 
 <!-- GRID PRIMARIA: Misión / Cliente / Servicios -->
 <section class="grid-2">
@@ -46,17 +37,6 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 </div>
 </section>
 
-<!-- IMPACTO (KPI CARDS) -->
-<section class="card">
-  <h3>Impacto</h3>
-  <p>Convertimos una función subutilizada en un recurso valioso para clientes frecuentes:</p>
-  <div class="kpi-grid">
-    <div class="kpi"><div class="kpi__value">+20%</div><div class="kpi__label">Uso de la funcionalidad</div></div>
-    <div class="kpi"><div class="kpi__value">-40%</div><div class="kpi__label">Pasos en recompra</div></div>
-    <div class="kpi"><div class="kpi__value">+15%</div><div class="kpi__label">Home Add-to-Cart</div></div>
-  </div>
-</section>
-
 <!-- PROBLEMA / HIPÓTESIS / SOLUCIÓN (de tu lista) -->
 <section class="grid-3">
   <article class="card">
@@ -79,12 +59,15 @@ tags: ['e-commerce', 'UX', 'recurrencia']
   </article>
 </section>
 
+<!-- IMPACTO (KPI CARDS) -->
 <section class="card">
-  <h3>Impacto resumido</h3>
-  <ul class="bulleted">
-    <li>+X% en adiciones al carrito desde “Lo de siempre”</li>
-    <li>–Y% en tiempo promedio para terminar la compra</li>
-  </ul>
+  <h3>Impacto</h3>
+  <p>Convertimos una función subutilizada en un recurso valioso para clientes frecuentes:</p>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi__value">+20%</div><div class="kpi__label">Uso de la funcionalidad</div></div>
+    <div class="kpi"><div class="kpi__value">-40%</div><div class="kpi__label">Pasos en recompra</div></div>
+    <div class="kpi"><div class="kpi__value">+15%</div><div class="kpi__label">Home Add-to-Cart</div></div>
+  </div>
 </section>
 
 <!-- PROCESO PASO 1 -->

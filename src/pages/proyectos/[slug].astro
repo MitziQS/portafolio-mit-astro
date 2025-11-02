@@ -27,7 +27,7 @@ const options = {
       <!-- ✅ BOTÓN REGRESAR -->
       <Button
         href={`${import.meta.env.BASE_URL}#proyectos`}
-        class="small"
+        class="small back-link"
         onclick="if (history.length > 1) { history.back(); return false; }"
       >
         ← Regresar
@@ -162,6 +162,31 @@ const options = {
     .project-content .media img {
       width: 100%;
       height: auto;
+      border-radius: 12px;
+    }
+    .project-hero img,
+    .hero-media {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+    }
+    .project-wrapper .back-link {
+      margin-bottom: 2rem;
+    } /* respiro bajo el botón */
+    .project-hero {
+      margin-bottom: 1.5rem;
+    } /* respiro bajo el título */
+
+    /* ajustar imagen full */
+    .project-media {
+      margin: 0 0 2rem;
+    }
+    .project-media img,
+    .hero-media {
+      width: 100%;
+      height: auto;
+      display: block;
       border-radius: 12px;
     }
   </style>
