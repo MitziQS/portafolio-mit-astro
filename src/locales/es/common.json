@@ -46,6 +46,7 @@
       ]
     }
   },
+
   "projects": {
     "title": "Proyectos",
     "projects": [
@@ -55,8 +56,8 @@
         "image": "/src/images/projects/proyecto-1.jpg",
         "techs": ["Figma", "illustrator"],
         "code": "Código",
-        "preview": "Vista previa",
-        "href": "/proyectos/lo-de-siempre"
+        "preview": "Ver más",
+        "href": "/projects/proyecto-1"
       },
       {
         "title": "Contar menos, conectar más",
@@ -64,8 +65,8 @@
         "image": "/src/images/projects/proyecto-2.jpg",
         "techs": ["Maze", "Figma", "illustrator"],
         "code": "Código",
-        "preview": "Vista previa",
-        "href": "/proyectos/landingpage"
+        "preview": "Ver más",
+        "href": "/projects/proyecto-2"
       },
       {
         "title": "Palace Resort",
@@ -73,8 +74,8 @@
         "image": "/src/images/projects/calculadora-payoneer-project.jpg",
         "techs": ["Figma", "Maze"],
         "code": "Código",
-        "preview": "Vista previa",
-        "href": "/proyectos/lo-de-siempre"
+        "preview": "Ver más",
+        "href": "/projects/proyecto-3"
       }
     ]
   },

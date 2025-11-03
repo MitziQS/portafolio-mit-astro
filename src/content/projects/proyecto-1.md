@@ -165,7 +165,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
   </figure>
 </section>
 
-<section class="step"
+<section class="step">
   <p>
     Estos hallazgos me recordaron que un producto nunca está terminado: cada versión nos acerca, pero también revela nuevas aristas. La evolución de Lo de siempre no fue solo un cambio visual, fue el inicio de un sistema de personalización que podía crecer con los usuarios y adaptarse a sus hábitos reales.
   </p>

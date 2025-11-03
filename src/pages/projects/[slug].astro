@@ -1,7 +1,8 @@
 ---
 // src/pages/proyectos/[slug].astro
-import { getCollection } from 'astro:content'
-import Button from '@components/Button.astro'
+import { getCollection, type CollectionEntry } from 'astro:content'
+// usa ruta relativa para evitar el warning del alias (ver punto 2)
+import Button from '../../components/Button.astro'
 import Layout from '../../layouts/Layout.astro'
 
 export async function getStaticPaths() {
@@ -12,7 +13,10 @@ export async function getStaticPaths() {
   }))
 }
 
-const { project } = Astro.props
+// ✅ Tipar las props:
+type Props = { project: CollectionEntry<'projects'> }
+const { project } = Astro.props as Props
+
 const { Content } = await project.render()
 
 const options = {
@@ -21,7 +25,7 @@ const options = {
 }
 ---
 
-<Layout {options}>
+<Layout options={options}>
   <section class="projects section">
     <div class="project-wrapper">
       <div id="top"></div>
@@ -226,6 +230,31 @@ const options = {
     @media (max-width: 768px) {
       .project-content h2.section-title::after {
         height: 1.5px;
+      }
+    }
+
+    /* ATENCIÓN MIT, ESTO SE PUEDE BORRAR -Limita la medida de lectura SOLO en secciones del proceso */
+    .project-content .step :where(p, ul, ol, blockquote, .card) {
+      max-width: 92ch; /* ~45–75 caracteres por línea → legibilidad ideal */
+      margin-right: auto; /* columna alineada a la izquierda */
+    }
+
+    /* Listas con buena separación y misma medida */
+    .project-content .step .bulleted {
+      max-width: 92ch;
+    }
+
+    /* Mantén imágenes/tablas a ancho completo (si quieres) */
+    .project-content .step .media,
+    .project-content .step .grid-3,
+    .project-content .step .grid-2 {
+      max-width: none;
+    }
+
+    /* En móviles deja que fluya al 100% */
+    @media (max-width: 768px) {
+      .project-content .step :where(p, ul, ol, blockquote, .card, .bulleted) {
+        max-width: 100%;
       }
     }
   </style>
