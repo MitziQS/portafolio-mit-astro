@@ -3,20 +3,24 @@ import { Icon } from 'astro-icon/components'
 import { t } from 'i18n:astro'
 import ToggleSwitch from '@components/ToggleSwitch.astro'
 
-// Obtenemos los enlaces de la navegación de locales
-const defaultLinks = t('navbar', { returnObjects: true })
-const inProject = Astro.url.pathname.startsWith('/proyectos/')
+interface Props {
+  items?: { label: string; href: string }[]
+}
+const { items } = Astro.props
 
+const defaultLinks = t('navbar', { returnObjects: true })
+const inProject = /^\/(projects|proyectos)\//.test(Astro.url.pathname) // soporta ambas
 const projectLinks = [
   { label: 'Inicio', href: '#top' },
-  { label: 'Investigación', href: '#investigación' },
-  { label: 'Definición', href: '#definición' },
-  { label: 'Diseño', href: '#diseño' },
+  { label: 'Investigación', href: '#investigacion' },
+  { label: 'Definición', href: '#definicion' },
+  { label: 'Diseño', href: '#diseno' },
   { label: 'Pruebas', href: '#pruebas' },
   { label: 'Entrega', href: '#entrega' }
 ]
 
-const links = inProject ? projectLinks : defaultLinks
+// 1º usa items del Layout; si no hay, usa heurística local; si tampoco aplica, usa default
+const links = items ?? (inProject ? projectLinks : defaultLinks)
 ---
 
 <nav id="menu">

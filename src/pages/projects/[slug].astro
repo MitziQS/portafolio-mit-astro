@@ -16,12 +16,21 @@ export async function getStaticPaths() {
 // ✅ Tipar las props:
 type Props = { project: CollectionEntry<'projects'> }
 const { project } = Astro.props as Props
-
 const { Content } = await project.render()
+
+const sections = [
+  { id: 'top', label: 'Inicio' },
+  { id: 'investigacion', label: 'Investigación' },
+  { id: 'definicion', label: 'Definición' },
+  { id: 'diseno', label: 'Diseño' },
+  { id: 'pruebas', label: 'Pruebas' },
+  { id: 'entrega', label: 'Entrega' }
+]
 
 const options = {
   title: project.data.title,
-  description: project.data.summary || ''
+  description: project.data.summary || '',
+  navItems: sections.map((s) => ({ label: s.label, href: `#${s.id}` }))
 }
 ---
 

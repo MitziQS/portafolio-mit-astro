@@ -15,14 +15,14 @@ interface Options {
   title: string
   description: string
   metaRobots?: string
+  navItems?: { label: string; href: string }[]
 }
-
 interface Props {
   options: Options
 }
 
-const { options } = Astro.props
-const { title, description, metaRobots } = options
+const { options } = Astro.props as Props
+const { title, description, metaRobots, navItems } = options
 ---
 
 <!doctype html>
@@ -163,8 +163,7 @@ const { title, description, metaRobots } = options
   >
 
   <body>
-    <Navbar />
-
+    <Navbar items={navItems} />
     <slot />
 
     <Footer />
