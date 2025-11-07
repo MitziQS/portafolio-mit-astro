@@ -40,6 +40,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
       <li>Diseño UX/UI (wireframes & prototipos)</li>
       <li>Documentación & handoff</li>
       <li>Workshops y priorización por impacto</li>
+    </ul>
   </div>
   </article>
 </section>
@@ -74,7 +75,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 
 <!-- PROCESO PASO 1 -->
 <section class="step">
-  <h2 id="investigación" class="headline-2 section-title">Investigación y descubrimiento</h2>
+  <h2 id="investigacion" class="headline-2 section-title">Investigación y descubrimiento</h2>
   <p>
     Antes de diseñar, analicé el comportamiento de compra y descubrí que, pese a que el 70% de los usuarios recurrentes repite los mismos productos, solo el 20% aprovechaba la función “Lo de siempre”, señalando una clara oportunidad para optimizar su descubribilidad, usabilidad y comunicación.
   </p>
@@ -96,7 +97,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 
 <!-- PROCESO PASO 2 -->
 <section class="step">
-  <h2 id="definición" class="headline-2 section-title">Definición - Primer MVP</h2>
+  <h2 id="definicion" class="headline-2 section-title">Definición - Primer MVP</h2>
   <p>
     Tras la investigación y el descubrimiento, identificamos múltiples áreas de oportunidad para mejorar la experiencia de recompra en “Lo de siempre”: desde la visibilidad en el home, la forma de organizar los productos, hasta la manera de sugerir artículos relacionados o en promoción.
   </p>
@@ -124,7 +125,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 
 <!-- PROCESO PASO 3 -->
 <section class="step">
-  <h2 id="diseño" class="headline-2 section-title">Diseño</h2>
+  <h2 id="diseno" class="headline-2 section-title">Diseño</h2>
   <p>
     Me di cuenta de que contaba con varias areas de oprtunidad a lo largo de journey en las cuales podria impactar en el usuario para facilitar la recompra. No era únicamente cómo mostrar lo de siempre, sino en qué momento del journey tenía más sentido recordarle al usuario sus productos recurrentes.
   </p>

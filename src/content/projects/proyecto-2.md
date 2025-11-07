@@ -1,7 +1,7 @@
 ---
-title: '¿Lo de siempre?'
+title: 'Contar menos, conectar más'
 date: 2023-08-01
-cover: '/src/images/projects/proy-1-banner.jpg'
+cover: '/src/images/projects/proy-2-banner.jpg'
 coverAlt: 'Listado de productos recurrentes'
 company: 'Jüsto'
 role: 'Product Designer'
@@ -14,15 +14,11 @@ tags: ['e-commerce', 'UX', 'recurrencia']
   <article class="card">
     <h3>Misión</h3>
     <p>
-      En Jüsto, la recurrencia es parte natural de la experiencia: la mayoría de los clientes repite los mismos productos semana tras semana. Sin embargo, la funcionalidad pensada para resolver este hábito —“Lo de siempre”— no estaba cumpliendo su promesa.
+      Cuando llegué a este proyecto, lo primero que encontré fue una landing sobrecargada de texto y con una propuesta de valor poco clara. El mensaje estaba centrado en hablar de nosotros mismos —procesos internos, frescura, logística— en lugar de hablarle al usuario. La consecuencia: confusión, percepción limitada de lo que ofrecíamos y baja motivación para registrarse o comprar.
     </p>
     <br>
     <p>
-      Mi misión fue repensar esta herramienta para que realmente hiciera más rápido y sencillo el súper recurrente, reduciendo fricciones y convirtiéndola en un motor de recompra y confianza para los usuarios.
-    </p>
-    <br>
-    <p>
-      El reto consistía en hacer más visible y usable la funcionalidad y homologar la experiencia entre app y web, permitiendo que los usuarios hicieran su súper de forma más rápida, intuitiva y consistente.
+     El reto era claro: comunicar menos, pero conectar más. Mi meta fue rediseñar la experiencia para que cualquier persona que llegara a la landing entendiera, en segundos, quiénes somos, qué ofrecemos y por qué elegirnos.
     </p>
   </article>
 
@@ -35,11 +31,9 @@ tags: ['e-commerce', 'UX', 'recurrencia']
   <article class="card">
     <h3>Servicios</h3>
     <ul class="bulleted">
-      <li>Research con usuarios recurrentes</li>
-      <li>Definición de MVP con PMs y devs</li>
-      <li>Diseño UX/UI (wireframes & prototipos)</li>
-      <li>Documentación & handoff</li>
-      <li>Workshops y priorización por impacto</li>
+      <li>UX: workshops con equipos de Producto y Growth, benchmark competitivo, pruebas de subrayado y entrevistas con usuarios en MX y BR.</li>
+      <li>Content design: definición de hipótesis y mensajes clave, exploración de tono y microcopy.</li>
+      <li>UX/UI design: wireframes, rediseño visual y pruebas de comprensión.</li>
   </div>
   </article>
 </section>
@@ -47,28 +41,23 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 <!-- MI CONTRIBUCIÓN -->
 <section class="card">
   <h3>Mi contribución</h3>
-  <p>
-    Me involucré como Product Designer liderando investigación y diseño, con un enfoque <br> en conectar necesidades de usuario,
-    métricas de negocio y viabilidad técnica.
-  </p>
-  <br>
   <ul class="bulleted">
-    <li>Detecté fricciones mediante encuestas y sesiones de research.</li>
-    <li>Realicé benchmark con referentes como Walmart, Gopuff, Instacart y Pedidos Ya.</li>
-    <li>Prototipe y valide de soluciones.</li>
-    <li>Documente y prepare el handoff con equipo para el equipo de desarrollo.</li>
+    <li>Lideré la investigación con usuarios en México y Brasil, transformando aprendizajes en hipótesis accionables.</li>
+    <li>Redefiní la narrativa y estructura de la landing con foco en claridad, confianza y beneficios inmediatos </li>
+    <li>Diseñé y testeé prototipos que validaron la propuesta de valor con usuarios reales.</li>
+    <li>DCoordiné la implementación con Producto y Growth para asegurar consistencia entre negocio, comunicación y diseño.</li>
   </ul>
 </section>
 
 <!-- IMPACTO (KPI CARDS) -->
 <section class="card">
   <h3>Impacto</h3>
-  <p>El rediseño convirtió una funcionalidad poco utilizada en un recurso valioso para clientes frecuentes. <br> El impacto se reflejó tanto en la experiencia de usuario como en métricas clave de negocio:</p>
+  <p>Con este proyecto confirmé que una comunicación clara y humana puede tener un impacto directo en negocio y en percepción de marca, alineando la landing como un punto de entrada estratégico al ecosistema digital de Jüsto.</p>
   <br>
   <div class="kpi-grid">
-    <div class="kpi"><div class="kpi__value">+20%</div><div class="kpi__label">Aumento del uso de la funcionalidad</div></div>
-    <div class="kpi"><div class="kpi__value">-40%</div><div class="kpi__label">Reducción de pasos en recompra</div></div>
-    <div class="kpi"><div class="kpi__value">+15%</div><div class="kpi__label">Incremento “Home Add to Cart</div></div>
+    <div class="kpi"><div class="kpi__value">+15%</div><div class="kpi__label">en conversión de visitas a registro/compra.</div></div>
+    <div class="kpi"><div class="kpi__value">+30%</div><div class="kpi__label">en descargas del app</div></div>
+    <div class="kpi"><div class="kpi__value">12 seg. a ~5 seg</div><div class="kpi__label">Reducción del tiempo de comprensión de la propuesta de valor</div></div>
   </div>
 </section>
 
@@ -76,50 +65,118 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 <section class="step">
   <h2 id="investigación" class="headline-2 section-title">Investigación y descubrimiento</h2>
   <p>
-    Antes de diseñar, analicé el comportamiento de compra y descubrí que, pese a que el 70% de los usuarios recurrentes repite los mismos productos, solo el 20% aprovechaba la función “Lo de siempre”, señalando una clara oportunidad para optimizar su descubribilidad, usabilidad y comunicación.
+    Al analizar la primera interacción del usuario en la landing, partimos de una pregunta clave:
+    <br>
+    <strong>“¿Qué tan clara es nuestra propuesta de valor para alguien que llega por primera vez?”</strong>
+  </p>
+  <br>
+  <p>
+    Para explorarlo, realizamos un taller utilizando la matriz CSD (Certezas, Suposiciones y Dudas).
+    Identificamos tres certezas fundamentales: el contenido era extenso, la narrativa se enfocaba más en explicar la logística que en los beneficios reales para el usuario, y la oferta de bienvenida —un cupón de primera compra— pasaba desapercibida.
+    También descubrimos supuestos relevantes: muchos usuarios creían que Jüsto solo vendía frutas y verduras, y pocos entendían que operaba como un supermercado 100% digital.
+  </p>
+  <br>
+  <p>
+    Este análisis nos permitió definir una serie de hipótesis priorizadas que guiarían los siguientes pasos del proyecto:
+  </p>
+
+  <ul class="bulleted">
+    <li> Simplificar la narrativa </li>
+    <li> Mostrar variedad de productos </li>
+    <li> Destacar beneficios tangibles (cupón + envío gratis) </li>
+    <li> Reforzar que somos un supermercado completo </li>
+  </ul>
+    <br>
+    <p>
+      A través de encuestas a usuarios recurrentes, identifiqué que preferían buscar sus productos manualmente porque la sección no era visible ni fácil de navegar, buscaban comparar precios, encontraban productos agotados sin alternativas sugeridas y se perdían en largas listas al no estar organizada por categorías.
+  </p>
+</section>
+
+<section class="step">
+  <h3 class="headline-3 section-title">Benchmarking de comunicación en e-commerce</h3>
+  <p>
+    Para contextualizar nuestra propuesta, analizamos cómo otras marcas presentaban su valor desde la primera pantalla.
+    Las más efectivas coincidían en tres puntos: promesas simples, beneficios inmediatos y CTAs visibles desde el primer scroll.
+    Además, reforzaban confianza mediante testimonios, alianzas o mensajes de cobertura.
+    El principal insight fue contundente:
+  </p>
+    <br>
+  <p>
+    <strong>Nuestro reto no era solo estético, sino estratégico: necesitábamos dejar de explicar cómo operamos para empezar a comunicar qué gana el usuario.</strong>
+  </p>
+</section>
+
+<section class="step">
+  <h3 class="headline-3 section-title">Investigación con usuarios (MX & BR)</h3>
+  <p>
+    Complementamos el análisis con pruebas de subrayado e entrevistas en México y Brasil.
+    Estos ejercicios revelaron patrones claros:
   </p>
   <ul class="bulleted">
-    <li><strong>Workshop con PMs:</strong> Utilicé la matriz CSD (Certezas, Suposiciones y Dudas) para aterrizar la problemática, distinguir lo que sabíamos de lo que asumíamos y definir lo que necesitábamos validar; esto permitió alinear al negocio y diseño con una visión compartida sobre el alcance inicial del reto.</li>
-    <li><strong>Workshop con diseñadores:</strong> Elaboré un User Journey Map para analizar el recorrido del usuario, identificar fricciones y momentos clave donde introducir recomendaciones de productos recurrentes; este análisis reveló puntos de decisión relevantes y oportunidades para mejorar la conversión y retención.</li>
+    <li><strong>Claridad del surtido:</strong> 4 de 5 usuarios asumían que Jüsto solo vendía comida.</li>
+    <li><strong>Marca propia:</strong> la frase “Conoce Marca Jüsto” generaba confusión; no quedaba claro que se trataba de una línea propia.</li>
+    <li><strong>Beneficio inmediato:</strong> aunque el cupón era visible, pocos entendían cómo se aplicaba.</li>
+    <li><strong>Sobrecarga de texto:</strong> la lectura resultaba repetitiva y poco escaneable.</li>
+    <li><strong>Imágenes poco reales (BR):</strong>5/5 comentarion que no transmitían cercanía ni frescura</li>
+    <li><strong>Confianza: </strong>comunicar cobertura y mostrar vans generaba seguridad.</li>
   </ul>
-  <p>
-    Análisis competitivo
-    En cuanto a su funcionalidad de recompra, descubrí que la mayoría privilegiaba claridad visual y agrupación por departamentos o compras, además de contar con una sección de recompra en la cual el usuario puede navegar con entre dichas categorías y con ayuda de filtros.
   </p>
-  <figure class="media">
-    <img src="/imagenes/project1/Analisis-competitivo.png" alt="Análisis competitivo"/>
-  </figure>
   <p>
-    A través de encuestas a usuarios recurrentes, identifiqué que preferían buscar sus productos manualmente porque la sección no era visible ni fácil de navegar, buscaban comparar precios, encontraban productos agotados sin alternativas sugeridas y se perdían en largas listas al no estar organizada por categorías.
+    Estos hallazgos nos dieron una visión clara de cómo construir una narrativa más auténtica, enfocada en beneficios reales y apoyada en mensajes simples, visuales y orientados a la acción.
   </p>
 </section>
 
 <!-- PROCESO PASO 2 -->
 <section class="step">
-  <h2 id="definición" class="headline-2 section-title">Definición - Primer MVP</h2>
+  <h2 id="definición" class="headline-2 section-title">Definición del problema</h2>
   <p>
-    Tras la investigación y el descubrimiento, identificamos múltiples áreas de oportunidad para mejorar la experiencia de recompra en “Lo de siempre”: desde la visibilidad en el home, la forma de organizar los productos, hasta la manera de sugerir artículos relacionados o en promoción.
+    La landing actual no estaba comunicando efectivamente nuestra propuesta de valor.
+    Aunque existía un alto potencial para atraer nuevos usuarios mediante beneficios claros (cupón + envío) y variedad de surtido, estos elementos no eran percibidos de inmediato.
   </p>
     <br>
   <p>
-    Sin embargo, no todas las ideas eran viables de implementar en el corto plazo. Para avanzar de forma realista, priorizamos aquellas soluciones que combinaban tres criterios:
+    Evidencia clave
   </p>
-
   <ul class="bulleted">
-    <li> Impacto en negocio: potenciar la métrica de Home Add to Cart.</li>
-    <li> Valor para el usuario: reducir el esfuerzo cognitivo al hacer su compra recurrente.</li>
-    <li> Viabilidad técnica: aprovechar data y componentes existentes.</li>
+    <li>Los usuarios asumían que solo vendíamos alimentos básicos (4/5).</li>
+    <li>Se desconocía que Jüsto es 100% digital.</li>
+    <li>El cupón de bienvenida se veía, pero no se entendía cómo se aplicaba.</li>
+    <li>La arquitectura de información no priorizaba beneficios.</li>
+    <li>La narrativa se enfocaba en operación/logística en vez de valor al usuario.</li>
+    <li>Imágenes poco reales (BR) afectaban percepción de frescura.</li>
+    <li>Exceso de texto → poca escaneabilidad.</li>
   </ul>
 
   <p>
-    De esta priorización surgió el alcance del primer MVP, enfocado en:
+    <strong>Conclusión del análisis</strong>
+    <br>
+    La comunicación no estaba siendo suficientemente clara ni relevante desde el primer contacto.
+    Había un gap entre lo que queríamos decir y lo que las personas realmente necesitaban escuchar.
   </p>
 </section>
 
   <div class="grid-3">
-    <article class="card"><h4>Mejorar la visibilidad:</h4><p>Priorizar la funcionalidad dentro de la arquitectura de la home para que los usuarios la identifiquen de inmediato.</p></article>
-    <article class="card"><h4>Mejor usabilidad:</h4><p>Organizar los productos por departamento y frecuencia de compra, reduciendo fricción y facilitando la recompra.</p></article>
-    <article class="card"><h4>Data como soporte:</h4><p>Implementar un modelo basado en tiempo y frecuencia de compra que sugiera productos relevantes, anticipando las necesidades del usuario.</p></article>
+    <article class="card"><h4>Conclución del análisis</h4>
+    <p>La comunicación no estaba siendo suficientemente clara ni relevante desde el primer contacto.
+    Había un gap entre lo que queríamos decir y lo que las personas realmente necesitaban escuchar.
+    </p></article>
+    <article class="card"><h4>Oportunidad</h4>
+      <ul class="bulleted">
+        <li>Reorganizar la narrativa para priorizar beneficios tangibles.</li>
+        <li>Mostrar variedad real para contrarrestar percepciones erróneas.</li>
+        <li>Reforzar nuestro posicionamiento como supermercado completo digital.</li>
+        <li>Integrar señales visuales de confianza (cobertura, logística, frescura).</li>
+      </ul>
+    </article>
+    <article class="card"><h4>Enfoque para la solución:</h4>
+      <ul class="bulleted">
+        <li>Simplificar mensajes principales.</li>
+        <li>Priorizar el “qué gano yo” sobre “cómo funciona”.</li>
+        <li>Exponer variedad de categorías desde el primer scroll.</li>
+        <li>Hacer explícito el beneficio inmediato (cupón + envío gratis).</li>
+        <li>Integrar elementos de confianza desde arriba del fold.</li>
+      </ul>
+    </article>
   </div>
 
 <!-- PROCESO PASO 3 -->
