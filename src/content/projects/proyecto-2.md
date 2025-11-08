@@ -63,7 +63,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 
 <!-- PROCESO PASO 1 -->
 <section class="step">
-  <h2 id="investigación" class="headline-2 section-title">Investigación y descubrimiento</h2>
+  <h2 id="investigacion" class="headline-2 section-title">Investigación y descubrimiento</h2>
   <p>
     Al analizar la primera interacción del usuario en la landing, partimos de una pregunta clave:
     <br>
@@ -128,7 +128,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 
 <!-- PROCESO PASO 2 -->
 <section class="step">
-  <h2 id="definición" class="headline-2 section-title">Definición del problema</h2>
+  <h2 id="definicion" class="headline-2 section-title">Definición del problema</h2>
   <p>
     La landing actual no estaba comunicando efectivamente nuestra propuesta de valor.
     Aunque existía un alto potencial para atraer nuevos usuarios mediante beneficios claros (cupón + envío) y variedad de surtido, estos elementos no eran percibidos de inmediato.
@@ -164,7 +164,6 @@ tags: ['e-commerce', 'UX', 'recurrencia']
       <ul class="bulleted">
         <li>Reorganizar la narrativa para priorizar beneficios tangibles.</li>
         <li>Mostrar variedad real para contrarrestar percepciones erróneas.</li>
-        <li>Reforzar nuestro posicionamiento como supermercado completo digital.</li>
         <li>Integrar señales visuales de confianza (cobertura, logística, frescura).</li>
       </ul>
     </article>
@@ -174,40 +173,102 @@ tags: ['e-commerce', 'UX', 'recurrencia']
         <li>Priorizar el “qué gano yo” sobre “cómo funciona”.</li>
         <li>Exponer variedad de categorías desde el primer scroll.</li>
         <li>Hacer explícito el beneficio inmediato (cupón + envío gratis).</li>
-        <li>Integrar elementos de confianza desde arriba del fold.</li>
       </ul>
     </article>
   </div>
 
 <!-- PROCESO PASO 3 -->
 <section class="step">
-  <h2 id="diseño" class="headline-2 section-title">Diseño</h2>
+  <h2 id="ideacion" class="headline-2 section-title"> Ideación</h2>
   <p>
-    Me di cuenta de que contaba con varias areas de oprtunidad a lo largo de journey en las cuales podria impactar en el usuario para facilitar la recompra. No era únicamente cómo mostrar lo de siempre, sino en qué momento del journey tenía más sentido recordarle al usuario sus productos recurrentes.
+    Con el norte claro —contar menos, conectar más— llegó el momento de imaginar nuevas formas de darle la bienvenida a quienes visitaban Jüsto por primera vez.
   </p>
+  <br>
+  <p>
+    Queríamos que, desde el primer scroll, las personas sintieran claridad y confianza…
+    que supieran qué podían encontrar, por qué elegirnos y cómo aprovechar los beneficios desde el primer día.
+  </p>
+  <br>
+  <p>
+    Así que empezamos por lo más importante:
+    escuchar lo que las personas realmente necesitaban leer para tomar una decisión.
+  </p>
+  <ul class="bulleted">
+    <li><strong>Un mensaje principal más humano: menos explicación, más conexión.</strong> “Todo lo que necesitas, fresco y a tu puerta.”</li>
+    <li><strong>Beneficio inmediato, en primer plano:</strong> No solo mostrar el cupón, sino explicar cómo usarlo.</li>
+    <li><strong>Productos reales, para necesidades reales:</strong> Una grilla inicial que mostrara variedad auténtica, rompiendo la idea de que solo vendíamos frutas y verduras.</li>
+    <li><strong>Categorías claras y clicables:</strong> Para que las personas supieran que había carne, snacks, despensa… y todo lo que se espera de un súper completo.</li>
+    <li><strong>Confianza desde el inicio:</strong> Mostrar cobertura, tiempos, frescura y transporte seguro.</li>
+  </ul>
   <figure class="media">
-    <img src="/imagenes/project1/Proyecto1-Paso3.png" alt="Mapa de momentos clave"/>
+    <img src="---" alt="Mapa de momentos clave"/>
   </figure>
 </section>
 
 <!-- PROCESO PASO 4 -->
 <section class="step">
-  <h2 id="pruebas" class="headline-2 section-title">Prototipo y pruebas</h2>
+  <h2 id="diseno" class="headline-2 section-title">Diseño</h2>
   <p>
-    Con esos aprendizajes, diseñé un primer prototipo que convertía "Lo de siempre" en un bottom sheet organizado por departamentos y frecuencia. La clave fue que dejara de ser un listado cronológico y se sintiera como una sección personalizada, coherente con el resto de la tienda.
+    Una vez definidas las oportunidades y las ideas clave, pasamos del pensamiento al trazo.
+    El objetivo era mantener la esencia de Jüsto —cercana, fresca, confiable— mientras removíamos el ruido que impedía a las personas entender por qué estábamos ahí para ellas.
   </p>
-
-  <ul class="bulleted">
-    <li>Antes: 10 productos sin agrupación ni control</li>
-    <li>Después: sección destacada, categorizada y personalizable</li>
-  </ul>
-
+  <br>
   <p>
-   En paralelo validamos con data qué tan viable era priorizar productos por frecuencia y tiempo de compra. El prototipo no solo resolvía un tema visual, también abría la puerta a construir inteligencia alrededor del hábito de consumo: recomendaciones, sustitutos cuando un producto está agotado o incluso destacar lo que más compras con cashback.
+    La transformación comenzó en la parte más crítica: el primer pantallazo.
+  </p>
+  <p>
+    En lugar de un discurso pesado sobre nuestro modelo operativo, el diseño se abrió con un mensaje simple y directo: <strong>“Todo lo que necesitas, hasta tu puerta.”</strong>
+  </p>
+  <br>
+  <p>
+    Acompañamos esa promesa con el beneficio más atractivo: cupón de bienvenida + envío gratis, explicados de forma clara. Ya no queríamos que el usuario “leyera”, sino que entendiera en un segundo qué podía ganar.
+  </p>
+  <br>
+  <p>
+    Mensajes cortos, una fotografía real y un CTA protagonista hacían que los usuarios sintieran que estaban en el lugar correcto desde el principio.
+  </p>
+  <br>
+  <p>
+    Al descender, mostramos algo crucial: variedad real.
+    Una sección de categorías —carne, despensa, snacks, congelados— le dio esa primera imagen mental del supermercado completo que somos.
+    Por fin, las personas podían verse comprando aquí, sin suposiciones.
+  </p>
+  <br>
+  <p>
+    Las fotos también cambiaron:
+    menos stock, más vida.
+    Imágenes que mostraban textura, color, frescura, como si el usuario pudiera extender la mano y sentirlas.
+    En Brasil, en particular, esto fue clave: las imágenes reales transmitieron cercanía y confiabilidad.
+  </p>
+  <br>
+  <p>
+    Luego, reforzamos esos valores que la gente buscaba sentir:
+    ¿Llegan a donde vivo?
+    ¿Es seguro?
+    ¿Es fresco?
+  </p>
+  <br>
+  <p>
+    Sí. Y lo mostramos.
+    Las vans, la cobertura visualizada, mensajes breves sobre frescura y calidad.
+    Nada rebuscado; todo directo.
+    El diseño final fluye así, como una historia mínima:
+  </p>
+  <ul class="bulleted">
+    <li>Qué ganas </li>
+    <li>Qué puedes encontrar</li>
+    <li>Por qué puedes confiar</li>
+    <li>Dónde puedes comprar</li>
+  </ul>
+  <p>
+    Sin rodeos, sin dudas, sin ruido.
+    “Contar menos, conectar más.”
+    Logramos que la comunicación fuera menos explicativa y más significativa.
+    Menos “esto somos” y más “esto es para ti.”
   </p>
 
   <figure class="media">
-    <img src="/imagenes/project1/Proyecto1-Paso4.png" alt="Prototipo y pruebas"/>
+    <img src="---" alt="Prototipo y pruebas"/>
   </figure>
 </section>
 
@@ -215,15 +276,70 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 <section class="step">
   <h2 id="entrega" class="headline-2 section-title">Entrega</h2>
   <p>
-    Al lanzar el MVP, los resultados fueron claros: el uso de Lo de siempre pasó del 27% al 44% entre usuarios recurrentes. Más allá de la métrica, las entrevistas me confirmaron que la organización por departamentos conectaba con la forma en que la gente realmente hace sus compras.
+    Apenas la nueva landing salió en producción, algo empezó a sentirse diferente.
   </p>
+  <br>
+  <p>
+    Los usuarios ya no llegaban a un mar de texto intentando entender cómo funcionábamos;
+    ahora, se encontraban con una bienvenida clara, cálida y útil.
+    Un mensaje simple, un beneficio inmediato y un camino directo:
+    “Aquí está lo que necesitas —y aquí está cómo obtenerlo.”
+  </p>
+  <br>
+  <p>
+    Las primeras métricas nos confirmaron lo que habíamos percibido desde los prototipos:
+    las personas se sentían más orientadas.
+    La gran historia ya no era sobre nosotros —era sobre ellas.
+  </p>
+  <br>
+  <p>
+    La comprensión de la variedad aumentó significativamente.
+    Esa percepción equivocada de que “solo vendíamos frutas y verduras” comenzó a desaparecer en las entrevistas.
+    Cuando preguntábamos qué encontraban en Jüsto, ahora nos mencionaban carne, despensa, snacks…
+    Habían entendido el mensaje desde la primera pantalla.
+  </p>
+  <br>
+  <p>
+    La claridad del beneficio también tuvo impacto:
+    Más personas utilizaron el cupón de bienvenida,
+    y entendieron mejor cómo aprovecharlo.
+  </p>
+  <br>
+  <p>
+    Sobre todo, los usuarios nos dijeron algo que nos alegró profundamente:
+  </p>
+  <br>
+  <p>
+    “Ahora sé qué esperar antes de registrarme.”
+  </p>
+  <br>
+  <p>
+    Construir confianza antes del primer clic es difícil.
+    Para muchas personas, comprar un súper online no es trivial;
+    pero cuando mostramos cobertura, vans reales y una narrativa clara y humana, desaparecieron muchas dudas.
+  </p>
+  <br>
+  <p>
+    Y ahí estaba la señal más importante:
+    las personas avanzaban con menos fricción.
+    Menos preguntas.
+    Menos rebotes.
+    Más intención real de probar el servicio.
+  </p>
+  <br>
+  <p>
+    Aprendimos que no basta con explicar —hay que significar.
+    Hablar menos, sí, pero decir mejor.
+    Mostrar lo que importa.
+    Y permitir que la experiencia empiece desde el primer vistazo, no desde el checkout.
+  </p>
+  <br>
+  <p>
+    Ese fue el mayor regalo de este proceso:
+    entender que cuando cuentas menos, puedes conectar más de verdad.
+  </p>
+
   <figure class="media">
-    <img src="/imagenes/project1/prototipo.jpg" alt="Vistas del prototipo"/>
+    <img src="----" alt="Vistas del prototipo"/>
   </figure>
 </section>
-
-<section class="step">
-  <p>
-    Estos hallazgos me recordaron que un producto nunca está terminado: cada versión nos acerca, pero también revela nuevas aristas. La evolución de Lo de siempre no fue solo un cambio visual, fue el inicio de un sistema de personalización que podía crecer con los usuarios y adaptarse a sus hábitos reales.
-  </p>
-</sectvion>

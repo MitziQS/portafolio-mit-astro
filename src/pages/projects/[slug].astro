@@ -1,7 +1,6 @@
 ---
 // src/pages/proyectos/[slug].astro
 import { getCollection, type CollectionEntry } from 'astro:content'
-// usa ruta relativa para evitar el warning del alias (ver punto 2)
 import Button from '../../components/Button.astro'
 import Layout from '../../layouts/Layout.astro'
 
@@ -13,24 +12,35 @@ export async function getStaticPaths() {
   }))
 }
 
-// ✅ Tipar las props:
 type Props = { project: CollectionEntry<'projects'> }
 const { project } = Astro.props as Props
 const { Content } = await project.render()
 
-const sections = [
-  { id: 'top', label: 'Inicio' },
-  { id: 'investigacion', label: 'Investigación' },
-  { id: 'definicion', label: 'Definición' },
-  { id: 'diseno', label: 'Diseño' },
-  { id: 'pruebas', label: 'Pruebas' },
-  { id: 'entrega', label: 'Entrega' }
-]
+const perProjectNav: Record<string, { label: string; href: string }[]> = {
+  'proyecto-1': [
+    { label: 'Inicio', href: '#top' },
+    { label: 'Investigación', href: '#investigacion' },
+    { label: 'Definición', href: '#definicion' },
+    { label: 'Diseño', href: '#diseno' },
+    { label: 'Pruebas', href: '#pruebas' },
+    { label: 'Entrega', href: '#entrega' }
+  ],
+  'proyecto-2': [
+    { label: 'Inicio', href: '#top' },
+    { label: 'Investigación', href: '#investigacion' },
+    { label: 'Definición', href: '#definicion' },
+    { label: 'Ideación', href: '#ideacion' },
+    { label: 'Diseño', href: '#diseno' },
+    { label: 'Entrega', href: '#entrega' }
+  ]
+}
+
+const navItems = perProjectNav[project.slug]
 
 const options = {
   title: project.data.title,
   description: project.data.summary || '',
-  navItems: sections.map((s) => ({ label: s.label, href: `#${s.id}` }))
+  navItems
 }
 ---
 
