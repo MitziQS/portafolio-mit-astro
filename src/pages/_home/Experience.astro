@@ -35,28 +35,56 @@ const normalizeTitle = title
     </div>
     <div class="jobs-descriptions">
       {
-        jobsDescription.map(({ title, time, description, list }, index) => (
-          <div class:list={['description tabcontent', { active: index === 0 }]}>
-            <h3>{title}</h3>
-            <div class="job-time">
-              {time.map((time, index) => (
-                <>
-                  <time class="headline-4" datetime={time}>
-                    {time}
-                  </time>
-                  {index % 2 === 0 && <span>—</span>}
-                </>
-              ))}
-              {time.length <= 1 && <span class="badge">Actual</span>}
-            </div>
-            <p>{description}</p>
-            <ul>
-              {list.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-          </div>
-        ))
+        jobsDescription.map(
+          (
+            job: {
+              title: string
+              organization?: string
+              location?: string
+              time: string[]
+              description?: string
+              list: string[]
+            },
+            index: number
+          ) => {
+            const { title, organization, location, time, description, list } =
+              job
+            return (
+              <div
+                class:list={['description tabcontent', { active: index === 0 }]}
+              >
+                <h3>{title}</h3>
+
+                {(organization || location) && (
+                  <p class="job-organization headline-4">
+                    {organization}
+                    {organization && location ? ' · ' : ''}
+                    {location}
+                  </p>
+                )}
+
+                <div class="job-time">
+                  {time.map((time, index) => (
+                    <>
+                      <time class="headline-4" datetime={time}>
+                        {time}
+                      </time>
+                      {index % 2 === 0 && <span>—</span>}
+                    </>
+                  ))}
+                  {time.length <= 1 && <span class="badge">Actual</span>}
+                </div>
+
+                <p>{description}</p>
+                <ul>
+                  {list.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )
+          }
+        )
       }
     </div>
   </section>

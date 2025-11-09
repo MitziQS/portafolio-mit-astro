@@ -29,19 +29,38 @@
   "experience": {
     "title": "Experiencia laboral",
     "jobs": {
-      "jobs_title": ["Freelance", "HD Media Nicaragua"],
+      "jobs_title": ["Product Designer", "Product Designer", "UX/UI Designer"],
       "jobs_description": [
         {
-          "title": "Desarrollador Web Frontend",
-          "time": ["Dic 2021"],
-          "description": "Creo sitios web con diseños modernos y aplicando buenas prácticas de UI/UX. También me encargo de rediseñar, optimizar el posicionamiento SEO, aumentar las medidas de seguridad y optimizar el rendimiento de velocidad de sitios web, para aumentar la taza de conversión y las visitas.",
-          "list": ["Diseño de sitios web", "Optimización de sitios web"]
+          "title": "Subdirección Diseño de Producto",
+          "organization": "Agencia de Transformación Digital y Telecomunicaciones",
+          "time": ["Dic 2024"],
+          "description": "Llave MX",
+          "list": [
+            "Diseño experiencias digitales accesibles, intuitivas y centradas en la persona usuaria para proyectos gubernamentales, impactando servicios públicos clave.",
+            "Lidero la creación y evolución del Design System institucional, asegurando consistencia, eficiencia y escalabilidad en productos compartidos con otras dependencias.",
+            "Coordino la documentación y estandarización de componentes, promoviendo buenas prácticas de accesibilidad y optimizando tiempos de desarrollo.",
+            "Trabajo de forma transversal con equipos de desarrollo, QA y áreas de negocio para garantizar entregas alineadas a objetivos estratégicos de la transformación digital."
+          ]
         },
         {
-          "title": "Desarrollador Web en WordPress",
+          "title": "Product Designer",
+          "organization": "Justo.mx",
           "time": ["Nov 2020", "Oct 2021"],
           "description": "Me encargué de desarrollar sitios web en WordPress para clientes de Nicaragua, durante mi tiempo en la agencia aporté mi conocimiento en seguridad web aumentando las medidas y disminuyendo las brechas de seguridad en WordPress, configurando plugins y estableciendo cabeceras HTTP como Content-Security-Policy (CSP), Cross-Origin-Resource-Policy (CORP), Cross-Origin-Opener-Policy (COOP), etc.",
           "list": ["Diseño de sitios web", "Optimización de sitios web"]
+        },
+        {
+          "title": "Diseñadora UX/UI",
+          "organization": "Shark Think",
+          "time": ["Dic 2024"],
+          "description": "Llave MX",
+          "list": [
+            "Diseño experiencias digitales accesibles, intuitivas y centradas en la persona usuaria para proyectos gubernamentales, impactando servicios públicos clave.",
+            "Lidero la creación y evolución del Design System institucional, asegurando consistencia, eficiencia y escalabilidad en productos compartidos con otras dependencias.",
+            "Coordino la documentación y estandarización de componentes, promoviendo buenas prácticas de accesibilidad y optimizando tiempos de desarrollo.",
+            "Trabajo de forma transversal con equipos de desarrollo, QA y áreas de negocio para garantizar entregas alineadas a objetivos estratégicos de la transformación digital."
+          ]
         }
       ]
     }
