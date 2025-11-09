@@ -49,8 +49,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 <section class="card">
   <h3>Mi contribución</h3>
   <p>
-    Me involucré como Product Designer liderando investigación y diseño, con un enfoque <br> en conectar necesidades de usuario,
-    métricas de negocio y viabilidad técnica.
+    Me involucré como Product Designer liderando investigación y diseño, con un enfoque <br> en conectar necesidades de usuario, métricas de negocio y viabilidad técnica.
   </p>
   <br>
   <ul class="bulleted">

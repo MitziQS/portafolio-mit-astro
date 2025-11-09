@@ -69,9 +69,9 @@
         "href": "/projects/proyecto-2"
       },
       {
-        "title": "Palace Resort",
-        "description": "Descubre una herramienta esencial para freelancers y negocios en Nicaragua. Nuestra Calculadora Payoneer Nicaragua te permite calcular de manera precisa y rápida las tarifas y comisiones al recibir pagos internacionales a través de Payoneer. ¡Empieza a usarla hoy y toma el control de tus finanzas!",
-        "image": "/src/images/projects/calculadora-payoneer-project.jpg",
+        "title": "Pagos y Comisiones",
+        "description": "En 2021 colaboré con un resort en Cancún para rediseñar sus sistemas internos de afiliación a programas de beneficios y cálculo de comisiones. Estos procesos, esenciales para cerrar contratos durante la estancia del huésped, presentaban fricciones que afectaban la productividad del personal y la trazabilidad del proceso. Mi objetivo fue optimizar la captura de información crítica, reducir errores operativos y mejorar la visibilidad del estado de cada contrato, ayudando al equipo a trabajar con mayor organización, certeza y velocidad.",
+        "image": "/src/images/projects/proyecto-3.jpg",
         "techs": ["Figma", "Maze"],
         "code": "Código",
         "preview": "Ver más",
