@@ -35,7 +35,7 @@
           "title": "Subdirección Diseño de Producto",
           "organization": "Agencia de Transformación Digital y Telecomunicaciones",
           "time": ["Dic 2024"],
-          "description": "Llave MX",
+          "description": "Place holder",
           "list": [
             "Diseño experiencias digitales accesibles, intuitivas y centradas en la persona usuaria para proyectos gubernamentales, impactando servicios públicos clave.",
             "Lidero la creación y evolución del Design System institucional, asegurando consistencia, eficiencia y escalabilidad en productos compartidos con otras dependencias.",
@@ -46,20 +46,24 @@
         {
           "title": "Product Designer",
           "organization": "Justo.mx",
-          "time": ["Nov 2020", "Oct 2021"],
-          "description": "Me encargué de desarrollar sitios web en WordPress para clientes de Nicaragua, durante mi tiempo en la agencia aporté mi conocimiento en seguridad web aumentando las medidas y disminuyendo las brechas de seguridad en WordPress, configurando plugins y estableciendo cabeceras HTTP como Content-Security-Policy (CSP), Cross-Origin-Resource-Policy (CORP), Cross-Origin-Opener-Policy (COOP), etc.",
-          "list": ["Diseño de sitios web", "Optimización de sitios web"]
+          "time": ["Enero 2021", "Dic 2024"],
+          "description": "Place holder for Justo.mx",
+          "list": [
+            "Diseñé y optimicé experiencias digitales para un supermercado 100% online con presencia internacional, colaborando estrechamente con equipos multifuncionales (PMs, desarrollo, marketing y CX).",
+            "Gestioné y evolucioné el UI Kit con +40 componentes, asegurando consistencia y escalabilidad en todo el producto.",
+            "Conduje investigaciones continuas (entrevistas, encuestas, pruebas de usabilidad) con al menos 5 usuarios por iteración, generando insights que impulsaron un crecimiento del 15% en adquisición de nuevos clientes.",
+            "Colaboré en la implementación de soluciones de diseño end to end, desde definición de visión hasta validación en producción, alineando objetivos de negocio con necesidades reales de los usuarios."
+          ]
         },
         {
           "title": "Diseñadora UX/UI",
           "organization": "Shark Think",
-          "time": ["Dic 2024"],
-          "description": "Llave MX",
+          "time": ["Diciembre 2020", "Marzo 2022"],
+          "description": "Place holder",
           "list": [
-            "Diseño experiencias digitales accesibles, intuitivas y centradas en la persona usuaria para proyectos gubernamentales, impactando servicios públicos clave.",
-            "Lidero la creación y evolución del Design System institucional, asegurando consistencia, eficiencia y escalabilidad en productos compartidos con otras dependencias.",
-            "Coordino la documentación y estandarización de componentes, promoviendo buenas prácticas de accesibilidad y optimizando tiempos de desarrollo.",
-            "Trabajo de forma transversal con equipos de desarrollo, QA y áreas de negocio para garantizar entregas alineadas a objetivos estratégicos de la transformación digital."
+            "Proyecto Alsea: mejoré la navegación de la app Wow Plus, optimizando la experiencia del usuario en su programa de lealtad para incrementar la retención de clientes.",
+            "Proyecto Sport City: diseñé una solución de suscripción digital que permitió a usuarios acceder a entrenamientos, dietas y coaching personalizado durante la pandemia, ampliando el alcance del servicio.",
+            "Proyecto Palace Resorts: detecté y solucioné problemas de trazabilidad en procesos de adquisición y cierre de contratos para beneficios corporativos, implementando un nuevo flujo que involucró a 3 departamentos, reduciendo tiempos de cierre un 40% y mejorando la eficiencia operativa."
           ]
         }
       ]

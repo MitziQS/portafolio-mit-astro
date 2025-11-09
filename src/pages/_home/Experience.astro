@@ -1,9 +1,39 @@
 ---
 import { t } from 'i18n:astro'
 
-const { title, jobs } = t('experience', {
+const experienceData = t('experience', {
   returnObjects: true
-})
+}) as unknown as {
+  title: string
+  jobs: {
+    jobs_title: string[]
+    jobs_description: {
+      title: string
+      organization?: string
+      location?: string
+      time: string[]
+      description?: string
+      list: string[]
+    }[]
+  }
+}
+const title = experienceData.title
+type JobsType = {
+  jobs_title: string[]
+  jobs_description: {
+    title: string
+    organization?: string
+    location?: string
+    time: string[]
+    description?: string
+    list: string[]
+  }[]
+}
+
+const jobs: JobsType =
+  typeof experienceData === 'object' && 'jobs' in experienceData
+    ? (experienceData.jobs as JobsType)
+    : { jobs_title: [], jobs_description: [] }
 
 const { jobs_title: jobsTitle, jobs_description: jobsDescription } = jobs
 
@@ -19,7 +49,7 @@ const normalizeTitle = title
   <section class="jobs">
     <div class="job-title">
       {
-        jobsTitle.map((title, index) => (
+        jobsTitle.map((title: string, index: number) => (
           <button
             class:list={[
               'headline-3 tabbutton',

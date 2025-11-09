@@ -7,9 +7,12 @@ interface Props {
   items?: { label: string; href: string }[]
 }
 
-const { items } = Astro.props
+const { items } = Astro.props as Props
 
-const defaultLinks = t('navbar', { returnObjects: true })
+const defaultLinks = t('navbar', { returnObjects: true }) as {
+  label: string
+  href: string
+}[]
 const inProject = /^\/(projects|proyectos)\//.test(Astro.url.pathname) // soporta ambas
 const projectLinks = [
   { label: 'Inicio', href: '#top' },
@@ -21,7 +24,8 @@ const projectLinks = [
 ]
 
 // 1º usa items del Layout; si no hay, usa heurística local; si tampoco aplica, usa default
-const links = items ?? (inProject ? projectLinks : defaultLinks)
+const links: { label: string; href: string }[] =
+  items ?? (inProject ? projectLinks : defaultLinks)
 ---
 
 <nav id="menu">
