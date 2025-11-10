@@ -14,9 +14,7 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
   <article class="card">
     <h3>Misión</h3>
     <p>
-      Agilizar el proceso de afiliación y firma de contratos de beneficios dentro del hotel,
-      reduciendo fricciones operativas y fortaleciendo la trazabilidad de los procesos
-      para garantizar un cierre exitoso durante la estancia del huésped.
+      Rediseñar el sistema interno de Intelligence Commissions del Club del resort Elite para mejorar la gestión y cálculo de comisiones del área de ventas y marketing, optimizando la arquitectura de información y la experiencia de usuario en un entorno de alta complejidad operativa.
       </p>
     <br>
   </article>
@@ -24,7 +22,7 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
   <div class="stack" role="complementary">
     <article class="card">
       <h3>Cliente</h3>
-      <p><strong>Cadena hotelera resort en Cancún:</strong><br/> sistema interno utilizado por personal del hotel para gestionar afiliaciones a programas de beneficios y pagos de comisiones.</p>
+      <p><strong>Cadena hotelera resort en Cancún:</strong><br/> Cadena hotelera con presencia internacional y un modelo de membresías exclusivo que requería una plataforma confiable para el control financiero de sus vendedores.</p>
     </article>
 
   <article class="card">
@@ -43,7 +41,8 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
 <section class="card">
   <h3>Mi contribución</h3>
   <p>
-    Actué como UX/UI Designer desarrollando trabajo de punta a punta:
+    Participé como UX/UI Designer dentro del equipo de Shark Think, colaborando en investigación con usuarios, definición de flujos, wireframes y validación de propuestas junto al equipo de hotel resort.
+    El trabajo se desarrolló en coordinación con líderes de proyecto, diseñadores UX y desarrolladores del área de TI de resort. Actué como UX/UI Designer desarrollando trabajo de punta a punta:
   </p>
   <ul class="bulleted">
     <li>Entrevistas con personal del hotel para mapear procesos operativos</li>
@@ -59,6 +58,9 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
 <!-- IMPACTO (KPI CARDS) -->
 <section class="card">
   <h3>Impacto</h3>
+  <p>
+    El nuevo sistema brindó mayor claridad y control operativo, elevando la eficiencia del equipo administrativo y la confianza de los usuarios internos.
+  </p>
   <ul class="bulleted">
     <li>Se optimizó el proceso de captura para afiliaciones, reduciendo posibilidades de omitir información crítica</li>
     <li>Se incrementó la trazabilidad documentando mejor las responsabilidades del staff</li>
@@ -67,42 +69,46 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
   </ul>
 </section>
 
-<!-- PROCESO PASO 1 -->
+<!-- PROCESO PASO 1 INVESTIGACIÓN -->
 <section class="step">
   <h2 id="investigacion" class="headline-2 section-title">Investigación y descubrimiento</h2>
   <p>
-    Se exploraron dos sistemas internos utilizados por el hotel:
+    El proyecto comenzó con una etapa de entendimiento profundo de los sistemas internos del club (Intelligence Contracts y Intelligence Commissions).
+    Se realizaron entrevistas con especialistas de cada área, incluyendo administradores de comisiones, auxiliares y product owners.
   </p>
-  <ol>
-    <li><strong>Afiliaciones / Captura de beneficios y obligaciones</strong></li>
-    <li><strong>Cálculo de comisiones</strong></li>
-  </ol>
   <p>
-    Se realizaron sesiones de observación (shadowing) con trabajadores para entender:
+    Entre los principales hallazgos se identificaron:
   </p>
   <ul class="bulleted">
-    <li>Flujo previo de afiliación</li>
-    <li>Errores frecuentes</li>
-    <li>Qué campos eran obligatorios</li>
-    <li>Entidades involucradas</li>
+    <li>Procesos lentos y manuales para registrar comisiones.</li>
+    <li>Información duplicada entre módulos.</li>
+    <li>Falta de jerarquía visual y navegación poco intuitiva.</li>
+    <li>Cálculos dependientes de acciones manuales (botón “Recalcular”).</li>
     <li>Ciclo de vida del contrato</li>
-    <li>Fallos de trazabilidad</li>
+    <li>Limitación para registrar más de tres vendedores por venta.</li>
   </ul>
+  <p>
+    Esta etapa permitió mapear la estructura actual y definir oportunidades de mejora centradas en claridad, automatización y trazabilidad de datos.
+  </p>
 
 </section>
 
-<!-- PROCESO PASO 2 -->
+<!-- PROCESO PASO 2 DEFINICIÓN-->
 <section class="step">
   <h2 id="definicion" class="headline-2 section-title">Definición</h2>
   <p>
-    <strong>Problemas identificados</strong>
+    Con base en los hallazgos, se reestructuraron los flujos principales:
   </p>
   <ul class="bulleted">
-    <li>Proceso de afiliación complejo y manual</li>
-    <li>Dificultad para cerrar contratos antes del checkout</li>
-    <li>Falta de firma o documentos = pérdida de comisiones</li>
-    <li>Falta de trazabilidad sobre quién contribuyó en el cierre (porcentaje de comisiones)</li>
+    <li>Creación de nuevo período de comisiones</li>
+    <li>Gestión de tipo de cambio</li>
+    <li>Cálculo de comisiones de ventas y marketing</li>
+    <li>Retención y liberación de pagos</li>
+    <li>Cierre de nómina y reportes definitivos</li>
   </ul>
+  <p>
+    Se documentaron épicas e historias de usuario simplificadas, definiendo roles (administrador, capturista, supervisor) y criterios de aceptación técnicos y de negocio para guiar la implementación.
+  </p>
 
   <p>
     <strong>Oportunidades</strong>
@@ -124,64 +130,57 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
     <li>Falta de trazabilidad sobre quién contribuyó en el cierre (porcentaje de comisiones)</li>
   </ul>
 
-<!-- PROCESO PASO 3 -->
+<!-- PROCESO PASO 3 DISEÑO -->
 <section class="step">
   <h2 id="diseno" class="headline-2 section-title">Diseño</h2>
   <p>
-    <strong>Se diseñaron nuevas formas de priorizar:</strong>
+    El diseño se centró en ordenar la información y simplificar la interacción sin perder la estructura financiera requerida.
+  </p>
+  <br>
+  <p>
+    Principales decisiones:
   </p>
   <ul class="bulleted">
-    <li>Campos críticos para imprimir el contrato</li>
-    <li>Separar datos obligatorios / opcionales</li>
-    <li>Crear un flujo más lineal y fácil de completar</li>
-    <li>Agrupar campos relacionados mediante Ley de Proximidad</li>
+    <li>Agrupar módulos por etapas del proceso (captura, cálculo, cierre).</li>
+    <li>Introducir tablas con jerarquía visual clara y alertas de estado.</li>
+    <li>Implementar historiales de actualización visibles por usuario.</li>
+    <li>Añadir confirmaciones modales para evitar errores críticos.</li>
+    <li>Aplicar una guía visual unificada con tonos institucionales (#274C69 y #43B4B4), tipografía limpia y uso estratégico del color para estados.</li>
   </ul>
 
   <p>
-    <strong>Entregables clave:</strong>
+    Los wireframes de media fidelidad permitieron validar la propuesta con los usuarios clave, obteniendo comentarios positivos sobre claridad y consistencia.
   </p>
-  <ul class="bulleted">
-    <li>Flujos de navegación optimizados</li>
-    <li>Interfaces mejoradas para afiliación y comisiones</li>
-    <li>Jerarquía clara de campos e información</li>
-    <li>UI Kit completo (colores, tipografías, botones, inputs, iconografía)</li>
-  </ul>
-
-  <p>
-    <strong>Principios aplicados:</strong>
-  </p>
-  <ul class="bulleted">
-    <li>Diseño centrado en usuario</li>
-    <li>Design Thinking</li>
-    <li>Jerarquía visual</li>
-    <li>Consistencia visual</li>
-  </ul>
 </section>
 
-  <!-- PROCESO PASO 4 -->
-  <section class="step">
-    <h2 id="pruebas" class="headline-2 section-title">Prototipo y pruebas</h2>
-    <p>
-      <strong>Se realizaron pruebas con usuarios del hotel:</strong>
-    </p>
-    <ul class="bulleted">
-      <li>Validación de tareas comunes</li>
-      <li>Feedback sobre flujo y agrupación</li>
-      <li>Iteración posterior con prototipo refinado</li>
-    </ul>
-  </section>
-
-  <!-- PROCESO PASO 5 -->
+  <!-- PROCESO PASO 5 ENTREGA -->
   <section class="step">
     <h2 id="entrega" class="headline-2 section-title">Entrega</h2>
     <p>
-      <strong>Se rediseñaron dos sistemas internos para una cadena hotelera en Cancún con el objetivo de:</strong>
+      Durante ocho semanas se mantuvo comunicación constante entre los equipos Palace y Shark Think.
+    </p>
+    <p>
+      La fase final incluyó validaciones funcionales y la entrega de:
     </p>
     <ul class="bulleted">
-      <li>Mejorar eficiencia en la afiliación a programas de beneficioss</li>
-      <li>Prevenir omisión de obligaciones o beneficios prometidos</li>
-      <li>Asegurar el cierre del contrato durante la estancia</li>
-      <li>Dar trazabilidad al cálculo de comisiones según participantes</li>
-      <li>Aumentar seguridad operativa y productividad </li>
+      <li>Diagramas de navegación completos.</li>
+      <li>Wireframes de mediana fidelidad.</li>
+      <li>Historias de usuario simplificadas.</li>
+      <li>Sistema de diseño base documentado.</li>
+    </ul>
+    <p>
+      El proyecto concluyó oficialmente el 8 de septiembre de 2021, con validación del equipo Palace y la carta de cierre formal.
+    </p>
   </section>
+
+  <!-- PROCESO PASO 6 CONCLUSIÓN -->
+  <section class="step">
+    <h2 id="conclusion" class="headline-2 section-title">Conclusión</h2>
+    <p>
+    El rediseño de Intelligence Commissions representó un paso clave hacia la digitalización eficiente de los procesos de venta de membresías en Palace Resorts.
+    <p>
+    La nueva arquitectura de información logró reducir tiempos operativos, estandarizar cálculos y mejorar la visibilidad de métricas en cada fase del flujo, consolidando una herramienta adaptable para futuras mejoras o integraciones.
+    </p>
+  </section>
+
 </sectvion>

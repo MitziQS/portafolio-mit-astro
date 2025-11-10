@@ -35,7 +35,7 @@
           "title": "Subdirección Diseño de Producto",
           "organization": "Agencia de Transformación Digital y Telecomunicaciones",
           "time": ["Dic 2024"],
-          "description": "Place holder",
+          "description": "",
           "list": [
             "Diseño experiencias digitales accesibles, intuitivas y centradas en la persona usuaria para proyectos gubernamentales, impactando servicios públicos clave.",
             "Lidero la creación y evolución del Design System institucional, asegurando consistencia, eficiencia y escalabilidad en productos compartidos con otras dependencias.",
@@ -47,7 +47,7 @@
           "title": "Product Designer",
           "organization": "Justo.mx",
           "time": ["Enero 2021", "Dic 2024"],
-          "description": "Place holder for Justo.mx",
+          "description": "",
           "list": [
             "Diseñé y optimicé experiencias digitales para un supermercado 100% online con presencia internacional, colaborando estrechamente con equipos multifuncionales (PMs, desarrollo, marketing y CX).",
             "Gestioné y evolucioné el UI Kit con +40 componentes, asegurando consistencia y escalabilidad en todo el producto.",
@@ -59,7 +59,7 @@
           "title": "Diseñadora UX/UI",
           "organization": "Shark Think",
           "time": ["Diciembre 2020", "Marzo 2022"],
-          "description": "Place holder",
+          "description": "",
           "list": [
             "Proyecto Alsea: mejoré la navegación de la app Wow Plus, optimizando la experiencia del usuario en su programa de lealtad para incrementar la retención de clientes.",
             "Proyecto Sport City: diseñé una solución de suscripción digital que permitió a usuarios acceder a entrenamientos, dietas y coaching personalizado durante la pandemia, ampliando el alcance del servicio.",
@@ -93,7 +93,7 @@
       },
       {
         "title": "Pagos y Comisiones",
-        "description": "En 2021 colaboré con un resort en Cancún para rediseñar sus sistemas internos de afiliación a programas de beneficios y cálculo de comisiones. Estos procesos, esenciales para cerrar contratos durante la estancia del huésped, presentaban fricciones que afectaban la productividad del personal y la trazabilidad del proceso. Mi objetivo fue optimizar la captura de información crítica, reducir errores operativos y mejorar la visibilidad del estado de cada contrato, ayudando al equipo a trabajar con mayor organización, certeza y velocidad.",
+        "description": "Rediseñé el sistema interno de Intelligence Commissions de un resort en Cancún para mejorar la gestión de afiliaciones a programas y el cálculo de comisiones. Optimicé la arquitectura de información, la captura de datos y la visibilidad del estado de los contratos, reduciendo fricciones operativas y aumentando la eficiencia del equipo de ventas y marketing.",
         "image": "/src/images/projects/proyecto-3.jpg",
         "techs": ["Figma", "Maze"],
         "code": "Código",
