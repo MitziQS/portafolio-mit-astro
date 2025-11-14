@@ -26,6 +26,50 @@
     "description": "Con experiencia en transformar servicios públicos y privados en experiencias claras, inclusivas y escalables",
     "cta": "Contactame"
   },
+
+  "about": {
+    "title": "Sobre mí",
+    "subtitle": "El diseño debe sentirse claro, útil y humano.",
+    "description": [
+      "Me gusta trabajar entre estrategia, operación y diseño. Me gusta entender el problema completo, destrabar temas, alinear a las personas indicadas y convertir ideas abstractas en soluciones que sí avanzan. Trabajo con métricas, negocio y escalabilidad, pero sin perder lo más importante: que la experiencia se sienta humana y genere confianza.",
+      "Sigo aprendiendo y ampliando mi mirada. Estoy estudiando Behavioral Design y quiero profundizar en Service Design, porque me interesa entender no solo la interfaz, sino todo lo que vive alrededor del producto.",
+      "Al final, lo que más disfruto es colaborar con equipos multidisciplinarios y diseñar experiencias que hagan sentido, que ayuden y que funcionen en la práctica."
+    ]
+  },
+
+  "projects": {
+    "title": "Proyectos",
+    "projects": [
+      {
+        "title": "¿Lo de siempre?",
+        "description": "Es una funcionalidad estratégica que impulsa la recurrencia mostrando a los usuarios sus productos habituales para agilizar el proceso de compra. A través de mejoras en información, disponibilidad y consistencia cross-platform, se buscó convertirla en un motor de retención y monetización, contribuyendo al incremento en pedidos repetidos y ticket promedio.",
+        "image": "/src/images/projects/proyecto-1.jpg",
+        "techs": ["Figma", "illustrator"],
+        "code": "Código",
+        "preview": "Ver más",
+        "href": "/projects/proyecto-1"
+      },
+      {
+        "title": "Contar menos, conectar más",
+        "description": "El reto era claro: comunicar menos, pero conectar más. Mi meta fue rediseñar la experiencia para que cualquier persona que llegara a la landing entendiera, en segundos, quiénes somos, qué ofrecemos y por qué elegirnos.",
+        "image": "/src/images/projects/proyecto-2.jpg",
+        "techs": ["Maze", "Figma", "illustrator"],
+        "code": "Código",
+        "preview": "Ver más",
+        "href": "/projects/proyecto-2"
+      },
+      {
+        "title": "Pagos y Comisiones",
+        "description": "Rediseñé el sistema interno de Intelligence Commissions de un resort en Cancún para mejorar la gestión de afiliaciones a programas y el cálculo de comisiones. Optimicé la arquitectura de información, la captura de datos y la visibilidad del estado de los contratos, reduciendo fricciones operativas y aumentando la eficiencia del equipo de ventas y marketing.",
+        "image": "/src/images/projects/proyecto-3.jpg",
+        "techs": ["Figma", "Maze"],
+        "code": "Código",
+        "preview": "Ver más",
+        "href": "/projects/proyecto-3"
+      }
+    ]
+  },
+
   "experience": {
     "title": "Experiencia laboral",
     "jobs": {
@@ -70,86 +114,11 @@
     }
   },
 
-  "projects": {
-    "title": "Proyectos",
-    "projects": [
-      {
-        "title": "¿Lo de siempre?",
-        "description": "Lo de siempre”, la herramienta de recompra en Jüsto, para hacer más rápido y sencillo el súper recurrente. Aunque la recurrencia era un comportamiento natural, la funcionalidad no cumplía su promesa: era poco visible, poco usable y distinta entre app y web. El reto fue optimizarla como un motor de recompra y confianza, reduciendo fricciones y unificando la experiencia cross-platform.",
-        "image": "/src/images/projects/proyecto-1.jpg",
-        "techs": ["Figma", "illustrator"],
-        "code": "Código",
-        "preview": "Ver más",
-        "href": "/projects/proyecto-1"
-      },
-      {
-        "title": "Contar menos, conectar más",
-        "description": "El reto era claro: comunicar menos, pero conectar más. Mi meta fue rediseñar la experiencia para que cualquier persona que llegara a la landing entendiera, en segundos, quiénes somos, qué ofrecemos y por qué elegirnos.",
-        "image": "/src/images/projects/proyecto-2.jpg",
-        "techs": ["Maze", "Figma", "illustrator"],
-        "code": "Código",
-        "preview": "Ver más",
-        "href": "/projects/proyecto-2"
-      },
-      {
-        "title": "Pagos y Comisiones",
-        "description": "Rediseñé el sistema interno de Intelligence Commissions de un resort en Cancún para mejorar la gestión de afiliaciones a programas y el cálculo de comisiones. Optimicé la arquitectura de información, la captura de datos y la visibilidad del estado de los contratos, reduciendo fricciones operativas y aumentando la eficiencia del equipo de ventas y marketing.",
-        "image": "/src/images/projects/proyecto-3.jpg",
-        "techs": ["Figma", "Maze"],
-        "code": "Código",
-        "preview": "Ver más",
-        "href": "/projects/proyecto-3"
-      }
-    ]
-  },
-  "contributions": {
-    "title": "Contribuciones",
-    "contributions": [
-      {
-        "src": "/src/images/contributions/advanced-periodontics.jpg",
-        "alt": "Advanced Periodontics",
-        "title": "Advanced Periodontics",
-        "description": "En conjunto con una agencia especializada en marketing en el estado de Texas, Estados Unidos. Colaboré en la creación del sitio web para la clínica Advanced Periodontics & Dental Implants.",
-        "techs": ["HTML", "CSS", "JavaScript", "PHP", "WordPress"],
-        "repo": "#",
-        "repo_label": "Repositorio",
-        "commits": "#"
-      },
-      {
-        "src": "/src/images/contributions/advanced-periodontics.jpg",
-        "alt": "Advanced Periodontics",
-        "title": "Advanced Periodontics",
-        "description": "En conjunto con una agencia especializada en marketing en el estado de Texas, Estados Unidos. Colaboré en la creación del sitio web para la clínica Advanced Periodontics & Dental Implants.",
-        "techs": ["HTML", "CSS", "JavaScript", "PHP", "WordPress"],
-        "repo": "#",
-        "repo_label": "Repositorio",
-        "commits": "#"
-      },
-      {
-        "src": "/src/images/contributions/advanced-periodontics.jpg",
-        "alt": "Advanced Periodontics",
-        "title": "Advanced Periodontics",
-        "description": "En conjunto con una agencia especializada en marketing en el estado de Texas, Estados Unidos. Colaboré en la creación del sitio web para la clínica Advanced Periodontics & Dental Implants.",
-        "techs": ["HTML", "CSS", "JavaScript", "PHP", "WordPress"],
-        "repo": "#",
-        "repo_label": "Repositorio",
-        "commits": "#"
-      }
-    ]
-  },
-  "about": {
-    "title": "Sobre mí",
-    "subtitle": "Creo que el diseño es un puente entre la tecnología y la vida cotidiana.",
-    "description": [
-      "Actualmente estoy trabajando en proyectos de gran escala como App México y la Credencial de Identidad CURP, los cuales buscan transformar la manera en que las personas se identifican y acceden a servicios esenciales.",
-      "Mi meta actual es que estos productos digitales se sientan cercanos, confiables y humanos. Anteriormente, he diseñado soluciones en e-commerce, fitness y hospitalidad, donde aprendí a trabajar con métricas de impacto y seguimiento continuo de proyectos, mejorando procesos críticos y entendiendo cómo el diseño impulsa conversión y eficiencia operativa.",
-      "Estas experiencias me enseñaron a pensar en escalabilidad, negocio y retención de usuarios. Mi enfoque combina visión estratégica con ejecución técnica, siempre buscando simplificar procesos complejos en experiencias claras y accesibles."
-    ]
-  },
   "contact": {
     "title": "¿Listo para dar vida a tus ideas?",
     "subtitle": "Puedo impulsar tu proyecto o formar parte de tu equipo"
   },
+
   "footer": {
     "designed": {
       "designed_with": "Diseñado con",

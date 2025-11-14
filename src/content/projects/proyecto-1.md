@@ -29,7 +29,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
   <div class="stack" role="complementary">
     <article class="card">
       <h3>Cliente</h3>
-      <p><strong>Jüsto.mx</strong><br/>Supermercado 100% digital en México y Brasil.</p>
+      <p><strong>Jüsto.mx</strong><br/>Supermercado 100% digital en México, Perú y Brasil.</p>
     </article>
 
   <article class="card">
@@ -48,27 +48,27 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 <!-- MI CONTRIBUCIÓN -->
 <section class="card">
   <h3>Mi contribución</h3>
-  <p>
-    Me involucré como Product Designer liderando investigación y diseño, con un enfoque <br> en conectar necesidades de usuario, métricas de negocio y viabilidad técnica.
-  </p>
-  <br>
   <ul class="bulleted">
-    <li>Detecté fricciones mediante encuestas y sesiones de research.</li>
-    <li>Realicé benchmark con referentes como Walmart, Gopuff, Instacart y Pedidos Ya.</li>
-    <li>Prototipe y valide de soluciones.</li>
-    <li>Documente y prepare el handoff con equipo para el equipo de desarrollo.</li>
+    <li>Diseñé la experiencia end-to-end del módulo, definiendo la lógica de interacción y los estados clave (disponible, agotado, sustitutos).</li>
+    <li>Realicé auditoría UX a la versión previa identificando fricciones, oportunidades y puntos críticos de comunicación.</li>
+    <li>Propuse una nueva jerarquía visual y estructura de información enfocada en claridad y toma rápida de decisiones.</li>
+    <li>Unifiqué el comportamiento entre web y app, manteniendo consistencia visual y funcional.</li>
+    <li>Colaboré con producto y desarrollo para asegurar factibilidad técnica, refinamiento de reglas y validación.</li>
+    <li>Documenté lineamientos UI para integrarse al design system y facilitar escalabilidad.</li>
   </ul>
 </section>
 
 <!-- IMPACTO (KPI CARDS) -->
 <section class="card">
   <h3>Impacto</h3>
-  <p>El rediseño convirtió una funcionalidad poco utilizada en un recurso valioso para clientes frecuentes. <br> El impacto se reflejó tanto en la experiencia de usuario como en métricas clave de negocio:</p>
-  <br>
+  <p>
+    Antes del rediseño, “Lo de Siempre” existía pero no lograba aportar valor real: era poco visible, inconsistente y no resolvía las necesidades principales del usuario recurrente.
+    Tras replantear la interfaz, la jerarquía y su comportamiento cross-platform, la funcionalidad se volvió un punto natural de acceso para la recompra, reduciendo fricciones y generando mayor impacto en negocio.
+  </p>
   <div class="kpi-grid">
     <div class="kpi"><div class="kpi__value">+20%</div><div class="kpi__label">Aumento del uso de la funcionalidad</div></div>
-    <div class="kpi"><div class="kpi__value">-40%</div><div class="kpi__label">Reducción de pasos en recompra</div></div>
-    <div class="kpi"><div class="kpi__value">+15%</div><div class="kpi__label">Incremento “Home Add to Cart</div></div>
+    <div class="kpi"><div class="kpi__value">-40%</div><div class="kpi__label">Reducción de pasos en recompra, haciéndola más ágil</div></div>
+    <div class="kpi"><div class="kpi__value">+15%</div><div class="kpi__label">Home Add-to-Cart, mejorando la intención de compra</div></div>
   </div>
 </section>
 
@@ -126,7 +126,11 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 <section class="step">
   <h2 id="diseno" class="headline-2 section-title">Diseño</h2>
   <p>
-    Me di cuenta de que contaba con varias areas de oprtunidad a lo largo de journey en las cuales podria impactar en el usuario para facilitar la recompra. No era únicamente cómo mostrar lo de siempre, sino en qué momento del journey tenía más sentido recordarle al usuario sus productos recurrentes.
+    Durante los workshops y el análisis del journey, identifiqué múltiples áreas de oportunidad donde “Lo de Siempre” podía integrarse de forma más estratégica. No se trataba solo de cómo mostrar la funcionalidad, sino de en qué momento del recorrido del usuario tenía más sentido recordarle sus productos recurrentes.
+  </p>
+  <br>
+  <p>
+    Detectamos puntos clave —como el buscador, los resultados, la vista de categorías y el carrito— donde podíamos reducir fricciones y acompañar al usuario en su proceso natural de recompra, transformando la experiencia de “volver a comprar” en una acción más intuitiva, contextual y oportuna.
   </p>
   <figure class="media">
     <img src="/imagenes/project1/Proyecto1-Paso3.png" alt="Mapa de momentos clave"/>
@@ -137,7 +141,19 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 <section class="step">
   <h2 id="pruebas" class="headline-2 section-title">Prototipo y pruebas</h2>
   <p>
-    Con esos aprendizajes, diseñé un primer prototipo que convertía "Lo de siempre" en un bottom sheet organizado por departamentos y frecuencia. La clave fue que dejara de ser un listado cronológico y se sintiera como una sección personalizada, coherente con el resto de la tienda.
+    Una vez definido el alcance del primer MVP, elaboré wireframes para analizar los pros y contras del flujo de navegación, ya que la ubicación y jerarquía de “Lo de Siempre” representaban uno de los principales puntos de fricción.
+  </p>
+  <br>
+  <p>
+    Este ejercicio permitió visualizar diferentes alternativas de interacción y validar qué tan intuitiva resultaba la experiencia al acceder desde secciones como Favoritos o Mi súper.
+  </p>
+  <br>
+  <p>
+    Con esos aprendizajes, diseñé un primer prototipo que transformaba “Lo de Siempre” en un bottom sheet organizado por departamentos y frecuencia de compra.
+  </p>
+  <br>
+  <p>
+    La clave fue que dejara de percibirse como un listado cronológico y se convirtiera en una sección personalizada, coherente con la lógica visual y la estructura del resto de la tienda.
   </p>
 
   <ul class="bulleted">
@@ -146,7 +162,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
   </ul>
 
   <p>
-   En paralelo validamos con data qué tan viable era priorizar productos por frecuencia y tiempo de compra. El prototipo no solo resolvía un tema visual, también abría la puerta a construir inteligencia alrededor del hábito de consumo: recomendaciones, sustitutos cuando un producto está agotado o incluso destacar lo que más compras con cashback.
+   El prototipo no solo resolvía un reto visual, sino que también abría la puerta a construir inteligencia alrededor del hábito de consumo: desde recomendar sustitutos cuando un producto está agotado, hasta destacar los artículos más comprados con cashback o promociones activas.
   </p>
 
   <figure class="media">
