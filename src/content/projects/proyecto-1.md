@@ -84,21 +84,37 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 <section class="step">
   <h2 id="investigacion" class="headline-2 section-title">Investigación y descubrimiento</h2>
   <p>
-    Antes de diseñar, analicé el comportamiento de compra y descubrí que, pese a que el 70% de los usuarios recurrentes repite los mismos productos, solo el 20% aprovechaba la función “Lo de siempre”, señalando una clara oportunidad para optimizar su descubribilidad, usabilidad y comunicación.
+    Antes de diseñar cualquier solución, necesitaba entender qué estaba fallando realmente en la función. Aunque los datos mostraban que el 70% de los usuarios repetía los mismos productos semana a semana, solo el 20% usaba “Lo de Siempre”. Esto señalaba que el problema no era la recurrencia en sí, sino cómo la funcionalidad vivía dentro de la experiencia.
   </p>
-  <ul class="bulleted">
-    <li><strong>Workshop con PMs:</strong> Utilicé la matriz CSD (Certezas, Suposiciones y Dudas) para aterrizar la problemática, distinguir lo que sabíamos de lo que asumíamos y definir lo que necesitábamos validar; esto permitió alinear al negocio y diseño con una visión compartida sobre el alcance inicial del reto.</li>
-    <li><strong>Workshop con diseñadores:</strong> Elaboré un User Journey Map para analizar el recorrido del usuario, identificar fricciones y momentos clave donde introducir recomendaciones de productos recurrentes; este análisis reveló puntos de decisión relevantes y oportunidades para mejorar la conversión y retención.</li>
-  </ul>
+  <br>
   <p>
-    Análisis competitivo
-    En cuanto a su funcionalidad de recompra, descubrí que la mayoría privilegiaba claridad visual y agrupación por departamentos o compras, además de contar con una sección de recompra en la cual el usuario puede navegar con entre dichas categorías y con ayuda de filtros.
+    Para ordenar el reto, facilité un workshop con PMs utilizando la matriz CSD (Certezas, Suposiciones y Dudas). Esto nos permitió diferenciar lo que sabíamos de lo que solo asumíamos y alinear un punto de partida común entre diseño, producto y negocio. Fue un paso clave para reducir ambigüedad y definir qué necesitábamos validar antes de movernos a soluciones.
+  </p>
+  <br>
+  <p>
+    Después, realicé un User Journey Map junto con el equipo de diseño para visualizar el recorrido completo de un usuario recurrente. Este ejercicio reveló tres cosas:
+  </p>
+   <ol class="bulleted">
+    <li> Dónde se perdía el valor </li>
+    <li> Qué decisiones eran más difíciles de tomar</li>
+    <li><strong>Qué oportunidades existían </strong> para introducir recomendaciones relevantes basadas en tiempo y frecuencia de compra.</li>
+  </ol>
+  <p>
+    En paralelo, analicé cómo otras plataformas resolvían la recompra. Encontré patrones comunes: secciones destacadas, agrupación por departamentos y visibilidad clara de promociones y sustitutos. Esto confirmó la hipótesis de que el problema no era “si la gente quiere repetir productos”, sino cómo facilitarlo sin añadir esfuerzo cognitivo.
   </p>
   <figure class="media">
     <img src="/imagenes/project1/Analisis-competitivo.png" alt="Análisis competitivo"/>
   </figure>
   <p>
-    A través de encuestas a usuarios recurrentes, identifiqué que preferían buscar sus productos manualmente porque la sección no era visible ni fácil de navegar, buscaban comparar precios, encontraban productos agotados sin alternativas sugeridas y se perdían en largas listas al no estar organizada por categorías.
+    Finalmente, realicé encuestas con usuarios recurrentes. Sus respuestas reforzaron lo encontrado en el journey:
+  </p>
+  <ul class="bulleted">
+    <li>Preferían buscar manualmente para comparar precios y verificar opciones antes de agregar al carrito.</li>
+    <li>Se perdían en listas sin orden claro: la visualización por fecha de compra no correspondía con su navegación habitual por categoría, lo que confirmó que nuestra hipótesis iba en la dirección correcta.</li>
+    <li>Cuando un producto estaba agotado, la plataforma no ofrecía recomendaciones de sustitutos, generando fricción y abandonos.</li>
+  </ul>
+  <p>
+    Toda esta investigación definió la dirección del proyecto: hacer que “Lo de Siempre” funcionara como una extensión natural del comportamiento real del usuario, no como un módulo aislado dentro de la interfaz.
   </p>
 </section>
 
@@ -106,43 +122,66 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 <section class="step">
   <h2 id="definicion" class="headline-2 section-title">Definición - Primer MVP</h2>
   <p>
-    Tras la investigación y el descubrimiento, identificamos múltiples áreas de oportunidad para mejorar la experiencia de recompra en “Lo de siempre”: desde la visibilidad en el home, la forma de organizar los productos, hasta la manera de sugerir artículos relacionados o en promoción.
+    Con los hallazgos de investigación, quedó claro que la solución no podía centrarse únicamente en “hacer más visible” la funcionalidad. Había retos más profundos: la forma en que los usuarios interpretaban la información, cómo navegaban su compra recurrente y qué tan oportuno era el momento en que aparecía “Lo de Siempre” dentro del flujo.
   </p>
     <br>
   <p>
-    Sin embargo, no todas las ideas eran viables de implementar en el corto plazo. Para avanzar de forma realista, priorizamos aquellas soluciones que combinaban tres criterios:
+    Para avanzar sin perder foco, facilité sesiones con PMs y desarrollo donde priorizamos las oportunidades identificadas. En esta etapa fue clave separar lo “deseable” de lo “viable”, definiendo el alcance del primer MVP con base en tres criterios:
   </p>
 
   <ul class="bulleted">
-    <li> Impacto en negocio: potenciar la métrica de Home Add to Cart.</li>
-    <li> Valor para el usuario: reducir el esfuerzo cognitivo al hacer su compra recurrente.</li>
-    <li> Viabilidad técnica: aprovechar data y componentes existentes.</li>
+    <li>Impacto en negocio: impulsar la métrica de Home Add-to-Cart y fortalecer la recurrencia.</li>
+    <li>Valor para el usuario: reducir esfuerzo cognitivo y agilizar la compra de artículos habituales.</li>
+    <li>Viabilidad técnica: aprovechar data disponible y componentes existentes sin frenar el roadmap.</li>
   </ul>
 
   <p>
-    De esta priorización surgió el alcance del primer MVP, enfocado en:
+    De esta priorización surgió un MVP enfocado en tres acciones concretas:
   </p>
-</section>
+  </section>
 
   <div class="grid-3">
-    <article class="card"><h4>Mejorar la visibilidad:</h4><p>Priorizar la funcionalidad dentro de la arquitectura de la home para que los usuarios la identifiquen de inmediato.</p></article>
-    <article class="card"><h4>Mejor usabilidad:</h4><p>Organizar los productos por departamento y frecuencia de compra, reduciendo fricción y facilitando la recompra.</p></article>
-    <article class="card"><h4>Data como soporte:</h4><p>Implementar un modelo basado en tiempo y frecuencia de compra que sugiera productos relevantes, anticipando las necesidades del usuario.</p></article>
+    <article class="card"><h4>Mejorar la visibilidad y el acceso,</h4><p> ubicando la funcionalidad en puntos del recorrido donde realmente aporta valor.</p></article>
+    <article class="card"><h4>Reorganizar la información por departamento y frecuencia,</h4><p> alineando la estructura con la manera natural en la que las personas clasifican mentalmente su súper.</p></article>
+    <article class="card"><h4>Usar data como soporte,</h4><p> con reglas claras para sugerir productos relevantes basados en tiempo y adaptación a comportamiento.</p></article>
   </div>
+
+  <p>
+    Con el alcance definido, pasé a estructurar cómo debía integrarse “Lo de Siempre” dentro del flujo real de compra. No se trataba solo de mostrar la funcionalidad, sino de identificar en qué momentos del recorrido tenía más sentido recordarle al usuario sus productos habituales y cómo presentar esa información sin añadir fricción.
+  </p>
+  <br>
+  <p>
+    A partir del User Journey Map, identifiqué puntos clave donde la recurrencia podía aportar valor: búsqueda, resultados, categorías, Mi súper y carrito. Cada uno tenía comportamientos y expectativas distintas, por lo que evalué cómo “Lo de Siempre” debía adaptarse sin interrumpir al usuario.
+  </p>
+
+  <figure class="media">
+    <img src="/imagenes/project1/Proyecto1-Paso3.png" alt="Mapa de momentos clave"/>
+  </figure>
 
 <!-- PROCESO PASO 3 -->
 <section class="step">
   <h2 id="diseno" class="headline-2 section-title">Diseño</h2>
   <p>
-    Durante los workshops y el análisis del journey, identifiqué múltiples áreas de oportunidad donde “Lo de Siempre” podía integrarse de forma más estratégica. No se trataba solo de cómo mostrar la funcionalidad, sino de en qué momento del recorrido del usuario tenía más sentido recordarle sus productos recurrentes.
+    Durante esta fase exploré diferentes alternativas de arquitectura y wireframes para analizar: ué tan intuitiva era la navegación,cómo debía organizarse la información para reducir esfuerzo cognitivo,y qué visualización permitía tomar decisiones más rápidas.
   </p>
   <br>
   <p>
-    Detectamos puntos clave —como el buscador, los resultados, la vista de categorías y el carrito— donde podíamos reducir fricciones y acompañar al usuario en su proceso natural de recompra, transformando la experiencia de “volver a comprar” en una acción más intuitiva, contextual y oportuna.
+    En estos ejercicios surgió un patrón claro: la lista cronológica existente no representaba la forma en que la gente piensa su súper. La solución no era ordenar por fecha, sino por departamento y frecuencia, facilitando que el usuario encontrara lo que realmente compra semana a semana.
   </p>
   <figure class="media">
-    <img src="/imagenes/project1/Proyecto1-Paso3.png" alt="Mapa de momentos clave"/>
+    <img src="/imagenes/project1/Proyecto1-Paso4.png" alt="Prototipo y pruebas"/>
   </figure>
+  <p>
+    Con esa premisa, diseñé un prototipo que transformó “Lo de Siempre” en un bottom sheet estructurado, categorizado y coherente con la lógica visual del resto de la tienda. La funcionalidad dejó de sentirse como un módulo aislado y pasó a integrarse como parte natural del flujo.
+  </p>
+  <br>
+  <p>
+    Además, consideré estados reales del inventario: disponibilidad, agotados y sustitutos. Esto permitió que la experiencia dejara de ser estática y se adaptara a escenarios comunes en e-commerce, sin obligar al usuario a buscar alternativas manualmente.
+  </p>
+  <br>
+  <p>
+    El diseño final equilibró tres ejes: claridad, velocidad de decisión y consistencia cross-platform, permitiendo que el usuario retomara su compra habitual con fluidez desde cualquier punto de entrada.
+  </p>
 </section>
 
 <!-- PROCESO PASO 4 -->
@@ -173,9 +212,6 @@ tags: ['e-commerce', 'UX', 'recurrencia']
    El prototipo no solo resolvía un reto visual, sino que también abría la puerta a construir inteligencia alrededor del hábito de consumo: desde recomendar sustitutos cuando un producto está agotado, hasta destacar los artículos más comprados con cashback o promociones activas.
   </p>
 
-  <figure class="media">
-    <img src="/imagenes/project1/Proyecto1-Paso4.png" alt="Prototipo y pruebas"/>
-  </figure>
 </section>
 
 <!-- PROCESO PASO 5 -->
