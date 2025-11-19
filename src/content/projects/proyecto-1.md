@@ -14,15 +14,15 @@ tags: ['e-commerce', 'UX', 'recurrencia']
   <article class="card">
     <h3>Misión</h3>
     <p>
-      En Jüsto, la recurrencia es parte natural de la experiencia: la mayoría de los clientes repite los mismos productos semana tras semana. Sin embargo, la funcionalidad pensada para resolver este hábito —“Lo de siempre”— no estaba cumpliendo su promesa.
+      “Lo de Siempre” era una funcionalidad importante para Jüsto: mostraba a cada usuario sus productos habituales para agilizar la recompra. Sin embargo, aunque existía desde hacía tiempo, no estaba cumpliendo su propósito. Era poco visible, ofrecía información limitada y no reflejaba la forma real en que las personas hacen su súper cada semana.
     </p>
     <br>
     <p>
-      Mi misión fue repensar esta herramienta para que realmente hiciera más rápido y sencillo el súper recurrente, reduciendo fricciones y convirtiéndola en un motor de recompra y confianza para los usuarios.
+      Mi misión fue replantearla desde su valor estratégico: convertirla en un módulo que realmente acompañara el hábito natural de recompra, reduciendo esfuerzo cognitivo y acelerando la decisión. Para lograrlo, trabajé en reorganizar la información, mejorar la claridad del contenido y unificar el comportamiento cross-platform, haciendo que la herramienta fuera más visible, útil y coherente tanto en app como en web.
     </p>
     <br>
     <p>
-      El reto consistía en hacer más visible y usable la funcionalidad y homologar la experiencia entre app y web, permitiendo que los usuarios hicieran su súper de forma más rápida, intuitiva y consistente.
+      Con esto, preparamos las bases para futuras evoluciones en personalización, retención y crecimiento del ticket promedio.
     </p>
   </article>
 
@@ -35,11 +35,10 @@ tags: ['e-commerce', 'UX', 'recurrencia']
   <article class="card">
     <h3>Servicios</h3>
     <ul class="bulleted">
-      <li>Research con usuarios recurrentes</li>
-      <li>Definición de MVP con PMs y devs</li>
-      <li>Diseño UX/UI (wireframes & prototipos)</li>
-      <li>Documentación & handoff</li>
-      <li>Workshops y priorización por impacto</li>
+      <li>Investigación con usuarios recurrentes y análisis de comportamiento de compra.</li>
+      <li>Definición de MVP y alcance funcional junto con producto y desarrollo.</li>
+      <li>Facilitación de workshops con PMs y diseño para alinear visión, hipótesis y prioridades </li>
+      <li>Priorización de iniciativas por impacto en negocio, esfuerzo y valor para el usuario.</li>
     </ul>
   </div>
   </article>
@@ -48,27 +47,36 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 <!-- MI CONTRIBUCIÓN -->
 <section class="card">
   <h3>Mi contribución</h3>
-  <ul class="bulleted">
-    <li>Diseñé la experiencia end-to-end del módulo, definiendo la lógica de interacción y los estados clave (disponible, agotado, sustitutos).</li>
-    <li>Realicé auditoría UX a la versión previa identificando fricciones, oportunidades y puntos críticos de comunicación.</li>
-    <li>Propuse una nueva jerarquía visual y estructura de información enfocada en claridad y toma rápida de decisiones.</li>
-    <li>Unifiqué el comportamiento entre web y app, manteniendo consistencia visual y funcional.</li>
-    <li>Colaboré con producto y desarrollo para asegurar factibilidad técnica, refinamiento de reglas y validación.</li>
-    <li>Documenté lineamientos UI para integrarse al design system y facilitar escalabilidad.</li>
-  </ul>
+ <p>
+   Comencé auditando la funcionalidad para entender por qué no ayudaba realmente al usuario recurrente. Aunque el 70% repetía los mismos productos, solo el 20% usaba “Lo de Siempre”, una señal clara de problemas de claridad, navegación y organización que no conectaban con su hábito semanal.
+  </p>
+  <p>
+   Con esa visión desde diseño, me reuní con mi PM para comunicarle los hallazgos y definir un MVP realista, alineando expectativas, limitantes y los trade-offs necesarios para avanzar. Esta fase permitió destrabar puntos ambiguos, alinear prioridades y tomar decisiones de producto.
+  </p>
+  <p>
+    En diseño, reorganicé la información y propuse una estructura más cercana al hábito de recompra: categorización por frecuencia y departamento, flujos más intuitivos y una lógica visual que redujera el esfuerzo cognitivo. También unifiqué el comportamiento entre web y app para ofrecer una experiencia coherente.
+  </p>
+  <p>
+    Finalmente, documenté lineamientos UI y consideraciones funcionales para integrarlos al design system, dejando la base preparada para futuras evoluciones en personalización e inteligencia de consumo.
+ </p>
 </section>
 
 <!-- IMPACTO (KPI CARDS) -->
 <section class="card">
   <h3>Impacto</h3>
   <p>
-    Antes del rediseño, “Lo de Siempre” existía pero no lograba aportar valor real: era poco visible, inconsistente y no resolvía las necesidades principales del usuario recurrente.
-    Tras replantear la interfaz, la jerarquía y su comportamiento cross-platform, la funcionalidad se volvió un punto natural de acceso para la recompra, reduciendo fricciones y generando mayor impacto en negocio.
+    Antes del rediseño, “Lo de Siempre” existía, pero no generaba el valor esperado: era poco visible, difícil de navegar y no conectaba con el hábito natural de recompra. Esto limitaba su adopción y, en consecuencia, su impacto en la recurrencia y el ticket promedio.
+  </p>
+  <p>
+    Gracias al trabajo en equipo detrás de este proyecto, los usuarios recurrentes lograron completar su compra habitual con mayor fluidez y menor esfuerzo.
+  </p>
+  <p>
+    Los resultados fueron claros:
   </p>
   <div class="kpi-grid">
-    <div class="kpi"><div class="kpi__value">+20%</div><div class="kpi__label">Aumento del uso de la funcionalidad</div></div>
-    <div class="kpi"><div class="kpi__value">-40%</div><div class="kpi__label">Reducción de pasos en recompra, haciéndola más ágil</div></div>
-    <div class="kpi"><div class="kpi__value">+15%</div><div class="kpi__label">Home Add-to-Cart, mejorando la intención de compra</div></div>
+    <div class="kpi"><div class="kpi__value">+20%</div><div class="kpi__label">Aumento en el uso, señal de que los usuarios comenzaron a integrarla naturalmente en su rutina de compra.</div></div>
+    <div class="kpi"><div class="kpi__value">-40%</div><div class="kpi__label">Reducción de pasos en la recompra, haciendo el proceso más ágil y alineado con el hábito del usuario.</div></div>
+    <div class="kpi"><div class="kpi__value">+15%</div><div class="kpi__label">Incremento en Home Add-to-Cart gracias a una arquitectura más clara desde el inicio del recorrido.</div></div>
   </div>
 </section>
 

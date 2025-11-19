@@ -31,9 +31,9 @@
     "title": "Sobre mí",
     "subtitle": "Me gusta trabajar donde diseño, estrategia y operación se cruzan.",
     "description": [
-      "Mi camino no fue lineal: empecé en agencias de publicidad, pero pronto entendí que ese ritmo no me encendía el corazón. Así que me certifiqué en UX/UI, y en ese cambio descubrí algo importante sobre mí: entendí que mi corazón baila de felicidad con cada proyecto, porque cada producto es único. Disfruto navegar la complejidad, conectar con distintos equipos y buscar soluciones que impacten positivamente al usuario y al negocio.",
-      "Desde entonces he diseñado para el sector público y privado, en contextos con distintos niveles de complejidad… y de frustración. He aprendido a moverme entre equipos multidisciplinarios, métricas, decisiones difíciles y conversaciones técnicas con desarrollo; a negociar con equipos y tomar decisiones de diseño que impactan más allá de la interfaz. Pero también a escuchar, observar patrones y entender cómo un diseño puede mejorar (o complicar) la vida de alguien.",
-      "Creo profundamente en el diseño con intención: claro, útil y humano. Por eso sigo formándome en Behavioral Design y Service Design, para diseñar no solo interfaces, sino servicios completos que acompañen a las personas de principio a fin."
+      "Mi camino no ha sido lineal: empecé en agencias de publicidad, pero pronto entendí que ese ritmo no me encendía el corazón. Así que me certifiqué en UX/UI, y en ese cambio descubrí algo importante sobre mí: entendí que mi corazón baila de felicidad con cada proyecto, porque cada producto es único. Disfruto navegar en la complejidad, conectar con distintos equipos y buscar soluciones que impacten positivamente al usuario y al negocio.",
+      "Desde entonces he diseñado para el sector público y privado, en contextos con distintos niveles de complejidad… y de frustración. He aprendido a moverme entre equipos multidisciplinarios, métricas, decisiones difíciles y conversaciones técnicas; a negociar con equipos y tomar decisiones de diseño que impactan más allá de la interfaz. Pero también a escuchar, observar patrones de comportamiento y entender cómo un diseño puede mejorar (o complicar) la vida de alguien.",
+      "Creo profundamente en el diseño con intención: claro, útil y humano. Por eso sigo formándome en Behavioral Design, para diseñar no solo interfaces, sino servicios completos que acompañen a las personas de principio a fin."
     ]
   },
 
@@ -42,7 +42,7 @@
     "projects": [
       {
         "title": "¿Lo de siempre?",
-        "description": "Es una funcionalidad estratégica que impulsa la recurrencia mostrando a los usuarios sus productos habituales para agilizar el proceso de compra. A través de mejoras en información, disponibilidad y consistencia cross-platform, se buscó convertirla en un motor de retención y monetización, contribuyendo al incremento en pedidos repetidos y ticket promedio.",
+        "description": "Pocas cosas son tan valiosas en un supermercado digital como la recompra. “Lo de Siempre” tenía el potencial de ser un atajo natural para los usuarios recurrentes, pero se estaba quedando corto. Mi reto fue convertirlo en una herramienta que realmente acompañara el hábito real de compra: una funcionalidad cross-platform que aporta valor al negocio mediante retención y mayor ticket promedio.",
         "image": "/src/images/projects/proyecto-1.jpg",
         "techs": ["Figma", "illustrator"],
         "code": "Código",
