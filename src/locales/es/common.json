@@ -42,7 +42,7 @@
     "projects": [
       {
         "title": "¿Lo de siempre?",
-        "description": "La gente suele comprar lo mismo cada semana, pero “Lo de Siempre” aún no lograba apoyar ese hábito natural de recompra. Mi reto fue convertirlo en una herramienta que realmente acompañara ese comportamiento: una funcionalidad estratégica que, con mejoras en claridad, disponibilidad y consistencia cross-platform, ayudara a los usuarios… y también al negocio, impulsando recurrencia y crecimiento.",
+        "description": "La gente suele comprar casi lo mismo cada semana, pero “Lo de Siempre” aún no lograba apoyar en ese hábito natural de recompra. Mi reto fue convertirlo en una herramienta que realmente acompañara ese comportamiento: una funcionalidad estratégica que, con mejoras en claridad, disponibilidad y consistencia cross-platform, ayudara a los usuarios… y también al negocio, impulsando recurrencia y crecimiento.",
         "image": "/src/images/projects/proyecto-1.jpg",
         "techs": ["Figma", "illustrator"],
         "code": "Código",
