@@ -95,10 +95,19 @@ tags: ['e-commerce', 'UX', 'recurrencia']
     Después, realicé un User Journey Map junto con el equipo de diseño para visualizar el recorrido completo de un usuario recurrente. Este ejercicio reveló tres cosas:
   </p>
    <ol class="bulleted">
-    <li> Dónde se perdía el valor </li>
-    <li> Qué decisiones eran más difíciles de tomar</li>
+    <li>Dónde se perdía el valor dentro del flujo.</li>
+    <li>Qué decisiones eran más difíciles de tomar para una recompra rápida.</li>
     <li><strong>Qué oportunidades existían </strong> para introducir recomendaciones relevantes basadas en tiempo y frecuencia de compra.</li>
   </ol>
+
+  <p>
+    A partir del User Journey Map, identifiqué puntos clave donde la recurrencia podía aportar valor: búsqueda, resultados, categorías, Mi súper y carrito. Cada uno tenía comportamientos y expectativas distintas, por lo que evalué cómo “Lo de Siempre” debía adaptarse sin interrumpir al usuario.
+  </p>
+
+  <figure class="media">
+    <img src="/imagenes/project1/Proyecto1-Paso3.png" alt="Mapa de momentos clave"/>
+  </figure>
+
   <p>
     En paralelo, analicé cómo otras plataformas resolvían la recompra. Encontré patrones comunes: secciones destacadas, agrupación por departamentos y visibilidad clara de promociones y sustitutos. Esto confirmó la hipótesis de que el problema no era “si la gente quiere repetir productos”, sino cómo facilitarlo sin añadir esfuerzo cognitivo.
   </p>
@@ -150,13 +159,9 @@ tags: ['e-commerce', 'UX', 'recurrencia']
     Con el alcance definido, pasé a estructurar cómo debía integrarse “Lo de Siempre” dentro del flujo real de compra. No se trataba solo de mostrar la funcionalidad, sino de identificar en qué momentos del recorrido tenía más sentido recordarle al usuario sus productos habituales y cómo presentar esa información sin añadir fricción.
   </p>
   <br>
-  <p>
-    A partir del User Journey Map, identifiqué puntos clave donde la recurrencia podía aportar valor: búsqueda, resultados, categorías, Mi súper y carrito. Cada uno tenía comportamientos y expectativas distintas, por lo que evalué cómo “Lo de Siempre” debía adaptarse sin interrumpir al usuario.
+   <p>
+    Esta decisión conectaba directamente con lo encontrado en investigación: los usuarios pensaban su súper por categorías, no por fechas, y las plataformas de referencia también privilegiaban esa lógica.
   </p>
-
-  <figure class="media">
-    <img src="/imagenes/project1/Proyecto1-Paso3.png" alt="Mapa de momentos clave"/>
-  </figure>
 
 <!-- PROCESO PASO 3 -->
 <section class="step">
@@ -187,39 +192,64 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 <!-- PROCESO PASO 4 -->
 <section class="step">
   <h2 id="pruebas" class="headline-2 section-title">Prototipo y pruebas</h2>
-  <p>
-    Una vez definido el alcance del primer MVP, elaboré wireframes para analizar los pros y contras del flujo de navegación, ya que la ubicación y jerarquía de “Lo de Siempre” representaban uno de los principales puntos de fricción.
+<p>
+    Con la arquitectura definida, llevé el diseño a un prototipo de alta fidelidad para evaluar si la experiencia realmente hacía más sencilla la recompra y si “Lo de Siempre” funcionaba como un atajo natural dentro del flujo.
   </p>
-  <br>
+  <br />
+
   <p>
-    Este ejercicio permitió visualizar diferentes alternativas de interacción y validar qué tan intuitiva resultaba la experiencia al acceder desde secciones como Favoritos o Mi súper.
-  </p>
-  <br>
-  <p>
-    Con esos aprendizajes, diseñé un primer prototipo que transformaba “Lo de Siempre” en un bottom sheet organizado por departamentos y frecuencia de compra.
-  </p>
-  <br>
-  <p>
-    La clave fue que dejara de percibirse como un listado cronológico y se convirtiera en una sección personalizada, coherente con la lógica visual y la estructura del resto de la tienda.
+    Para validar la propuesta, diseñé escenarios centrados en tareas reales de usuarios recurrentes. Estas pruebas buscaban entender no solo si el diseño era usable, sino si la lógica de organización por departamentos y frecuencia conectaba con el modelo mental del usuario.
   </p>
 
   <ul class="bulleted">
-    <li>Antes: 10 productos sin agrupación ni control</li>
-    <li>Después: sección destacada, categorizada y personalizable</li>
+    <li>Repetir parte de su compra habitual desde el home, sin pasar por búsqueda.</li>
+    <li>Acceder a “Lo de Siempre” desde distintas rutas (favoritos, categorías, Mi súper).</li>
+    <li>Resolver qué hacer cuando un producto recurrente aparecía agotado.</li>
   </ul>
 
   <p>
-   El prototipo no solo resolvía un reto visual, sino que también abría la puerta a construir inteligencia alrededor del hábito de consumo: desde recomendar sustitutos cuando un producto está agotado, hasta destacar los artículos más comprados con cashback o promociones activas.
+    Realicé pruebas cualitativas con usuarios recurrentes y validé el flujo con stakeholders internos (producto, operaciones y atención al cliente). Esto permitió observar tanto el uso real como las implicaciones operativas de cada decisión.
+  </p>
+  <br />
+
+  <p>
+    Los aprendizajes fueron consistentes:
   </p>
 
+  <ul class="bulleted">
+    <li><strong>Los usuarios encontraban “Lo de Siempre” con mayor facilidad,</strong> aunque algunos mantenían el hábito de buscar primero, lo que confirmó la importancia de reforzar el acceso desde el home.</li>
+    <li><strong>La organización por departamentos y frecuencia reducía el tiempo de decisión</strong>, pero fue necesario ajustar etiquetas y mensajes para que el beneficio se entendiera al primer vistazo.</li>
+    <li><strong>Los sustitutos sugeridos en productos agotados evitaron rupturas del flujo,</strong> reduciendo la necesidad de buscar alternativas manualmente.</li>
+  </ul>
+
+  <p>
+    Con estos hallazgos, refiné el prototipo ajustando copys, jerarquía visual y accesos dentro del recorrido. El resultado fue una experiencia más directa, entendible y alineada con el hábito real de recompra, lista para implementarse como MVP.
+  </p>
 </section>
 
 <!-- PROCESO PASO 5 -->
 <section class="step">
   <h2 id="entrega" class="headline-2 section-title">Entrega</h2>
+
   <p>
-    Al lanzar el MVP, los resultados fueron claros: el uso de Lo de siempre pasó del 27% al 44% entre usuarios recurrentes. Más allá de la métrica, las entrevistas me confirmaron que la organización por departamentos conectaba con la forma en que la gente realmente hace sus compras.
+    Tras las iteraciones del prototipo, consolidé los lineamientos funcionales y visuales del MVP y colaboré estrechamente con desarrollo para asegurar una implementación consistente entre app y web. Documenté reglas, estados, jerarquías y comportamientos, facilitando un handoff claro y alineado con las decisiones de diseño.
   </p>
+  <br />
+
+  <p>
+    Durante la implementación realicé pruebas QA en Android, iOS y web para validar que la experiencia se comportara de forma coherente en todas las plataformas. Esta etapa me permitió detectar y ajustar diferencias de interacción, microcopys y estados que impactaban la fluidez del recorrido. Trabajar de la mano con el equipo de desarrollo fue clave para resolver estos detalles y garantizar una experiencia uniforme.
+  </p>
+  <br />
+
+  <p>
+    Una vez liberada la primera versión, monitoreamos el desempeño inicial. Los resultados fueron claros: el uso de “Lo de Siempre” pasó del 27% al 44% entre usuarios recurrentes. Más allá de la métrica, las entrevistas posteriores confirmaron que la nueva organización por departamentos facilitaba la navegación y reducía el tiempo dedicado a reconstruir la compra habitual.
+  </p>
+  <br />
+
+  <p>
+    La entrega del MVP no marcó el final del proyecto, sino el inicio de una evolución. La nueva estructura abrió la puerta a futuras mejoras basadas en personalización, inteligencia de consumo y recomendaciones dinámicas. El proyecto dejó establecida una base sólida para construir una experiencia de recompra más predictiva, flexible y alineada con los hábitos reales de los usuarios.
+  </p>
+
   <figure class="media">
     <img src="/imagenes/project1/prototipo.jpg" alt="Vistas del prototipo"/>
   </figure>
@@ -227,6 +257,11 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 
 <section class="step">
   <p>
-    Estos hallazgos me recordaron que un producto nunca está terminado: cada versión nos acerca, pero también revela nuevas aristas. La evolución de Lo de siempre no fue solo un cambio visual, fue el inicio de un sistema de personalización que podía crecer con los usuarios y adaptarse a sus hábitos reales.
+    Estos hallazgos me recordaron que un producto nunca está realmente terminado: cada versión resuelve algo, pero al mismo tiempo revela nuevas aristas. La evolución de “Lo de Siempre” no fue solo un ajuste visual, sino el inicio de un sistema de recompra más flexible, capaz de crecer con los hábitos reales de los usuarios.
   </p>
-</sectvion>
+  <br />
+
+  <p>
+    Acompañar el proyecto de principio a fin —investigación, definición, diseño, iteración y QA— reforzó mi forma de trabajar: entender profundamente el comportamiento del usuario, colaborar de forma cercana con desarrollo y tomar decisiones que equilibren impacto, viabilidad y claridad. Es ahí donde el diseño aporta valor real.
+  </p>
+</section>
