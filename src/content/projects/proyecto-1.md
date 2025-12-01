@@ -14,17 +14,13 @@ tags: ['e-commerce', 'UX', 'recurrencia']
   <article class="card">
     <h3>Misión</h3>
     <p>
-      “Lo de Siempre” era una funcionalidad importante para Jüsto: mostraba a cada usuario sus productos habituales para agilizar la recompra. Sin embargo, aunque existía desde hacía tiempo, no estaba cumpliendo su propósito. Era poco visible, ofrecía información limitada y no reflejaba la forma real en que las personas hacen su súper cada semana.
+    “Lo de siempre” es la funcionalidad que permite a usuarios recurrentes completar su compra semanal de manera más rápida. A pesar de ser una pieza clave para mejorar ATC Recurrentes y Home A2C, su uso era menor al esperado: visualmente confusa, poco confiable y con fricción para encontrar productos habituales.
     </p>
     <br>
     <p>
-      Mi misión fue replantearla desde su valor estratégico: convertirla en un módulo que realmente acompañara el hábito natural de recompra, reduciendo esfuerzo cognitivo y acelerando la decisión. Para lograrlo, trabajé en reorganizar la información, mejorar la claridad del contenido y unificar el comportamiento cross-platform, haciendo que la herramienta fuera más visible, útil y coherente tanto en app como en web.
+      Mi misión fue replantearla desde su valor estratégico: convertirla en una herramienta que realmente acompañara el hábito natural de recompra, reduciendo esfuerzo cognitivo y acelerando la decisión. Para lograrlo, trabajé en reorganizar la información, mejorar la claridad del contenido y unificar el comportamiento cross-platform, haciendo que la herramienta fuera más visible, útil y coherente tanto en app como en web.
     </p>
-    <br>
-    <p>
-      Con esto, preparamos las bases para futuras evoluciones en personalización, retención y crecimiento del ticket promedio.
-    </p>
-  </article>
+    </article>
 
   <div class="stack" role="complementary">
     <article class="card">
@@ -74,9 +70,9 @@ tags: ['e-commerce', 'UX', 'recurrencia']
     Los resultados fueron claros:
   </p>
   <div class="kpi-grid">
-    <div class="kpi"><div class="kpi__value">+20%</div><div class="kpi__label">Aumento en el uso, señal de que los usuarios comenzaron a integrarla naturalmente en su rutina de compra.</div></div>
-    <div class="kpi"><div class="kpi__value">-40%</div><div class="kpi__label">Reducción de pasos en la recompra, haciendo el proceso más ágil y alineado con el hábito del usuario.</div></div>
-    <div class="kpi"><div class="kpi__value">+15%</div><div class="kpi__label">Incremento en Home Add-to-Cart gracias a una arquitectura más clara desde el inicio del recorrido.</div></div>
+    <div class="kpi"><div class="kpi__value">+20%</div><div class="kpi__label">en uso de la funcionalidad por parte de usuarios recurrentes.</div></div>
+    <div class="kpi"><div class="kpi__value">+12pp en MX</div><div class="kpi__label"> y +8pp en BR en la conversión en flujos que incluían “Lo de siempre”.</div></div>
+    <div class="kpi"><div class="kpi__value">+15%</div><div class="kpi__label">Incremento en Home Add-to-Cart de usuarios recurrentes.</div></div>
   </div>
 </section>
 
@@ -84,46 +80,58 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 <section class="step">
   <h2 id="investigacion" class="headline-2 section-title">Investigación y descubrimiento</h2>
   <p>
-    Antes de diseñar cualquier solución, necesitaba entender qué estaba fallando realmente en la función. Aunque los datos mostraban que el 70% de los usuarios repetía los mismos productos semana a semana, solo el 20% usaba “Lo de Siempre”. Esto señalaba que el problema no era la recurrencia en sí, sino cómo la funcionalidad vivía dentro de la experiencia.
+    Antes de diseñar cualquier solución, necesitaba entender qué estaba fallando realmente en la funcionalidad. Los datos mostraban algo claro: aunque más del 70% de los usuarios repetía productos semana a semana, solo 20% interactuaba con “Lo de Siempre”. No era un problema de hábito —era un problema de cómo la experiencia vivía dentro del flujo.
   </p>
   <br>
   <p>
-    Para ordenar el reto, facilité un workshop con PMs utilizando la matriz CSD (Certezas, Suposiciones y Dudas). Esto nos permitió diferenciar lo que sabíamos de lo que solo asumíamos y alinear un punto de partida común entre diseño, producto y negocio. Fue un paso clave para reducir ambigüedad y definir qué necesitábamos validar antes de movernos a soluciones.
+    Antes de diseñar cualquier solución, necesitaba entender qué estaba fallando realmente en la funcionalidad. Los datos mostraban algo claro: aunque más del 70% de los usuarios repetía productos semana a semana, solo 20% interactuaba con “Lo de Siempre”. No era un problema de hábito —era un problema de cómo la experiencia vivía dentro del flujo.
   </p>
-  <br>
+  <h4>1. Alinear el reto: separar hechos de suposiciones</h4>
   <p>
-    Después, realicé un User Journey Map junto con el equipo de diseño para visualizar el recorrido completo de un usuario recurrente. Este ejercicio reveló tres cosas:
+    Para ordenar el reto, facilité un workshop con PMs utilizando la matriz CSD (Certezas, Suposiciones y Dudas). Esto nos permitió diferenciar lo que sabíamos de lo que solo asumíamos y alinear un punto de partida común entre diseño, producto y negocio.
+  </p>
+  <h4>2. Entender la experiencia completa: Journey del usuario recurrente</h4>
+  <p>
+    Luego mapeé el recorrido del usuario recurrente en conjunto con el equipo de diseño.
+    El User Journey Map evidenció dos cosas importantes:
   </p>
    <ol class="bulleted">
-    <li>Dónde se perdía el valor dentro del flujo.</li>
-    <li>Qué decisiones eran más difíciles de tomar para una recompra rápida.</li>
-    <li><strong>Qué oportunidades existían </strong> para introducir recomendaciones relevantes basadas en tiempo y frecuencia de compra.</li>
+    <li>Identificamos oportunidades donde “Lo de Siempre” podía actuar como un motor de recurrencia, no solo como un módulo en la home. Esto abrió una pregunta clave de diseño: ¿Cómo insertar esta funcionalidad en los momentos correctos del flujo —cuando realmente suma valor— sin generar distracciones ni fricción?</li>
+    <li>Uno de los aprendizajes más fuertes fue que los usuarios no compran desde una lista, sino a través de un patrón: por departamento → por hábitos → por confirmación rápida. “Lo de Siempre” no respetaba ese orden mental.</li>
   </ol>
-
-  <p>
-    A partir del User Journey Map, identifiqué puntos clave donde la recurrencia podía aportar valor: búsqueda, resultados, categorías, Mi súper y carrito. Cada uno tenía comportamientos y expectativas distintas, por lo que evalué cómo “Lo de Siempre” debía adaptarse sin interrumpir al usuario.
-  </p>
-
-  <figure class="media">
+    <figure class="media">
     <img src="/imagenes/project1/Proyecto1-Paso3.png" alt="Mapa de momentos clave"/>
   </figure>
 
+  <h4>3. Benchmarking: cómo otras plataformas diseñan la recompra</h4>
+
   <p>
-    En paralelo, analicé cómo otras plataformas resolvían la recompra. Encontré patrones comunes: secciones destacadas, agrupación por departamentos y visibilidad clara de promociones y sustitutos. Esto confirmó la hipótesis de que el problema no era “si la gente quiere repetir productos”, sino cómo facilitarlo sin añadir esfuerzo cognitivo.
+    En paralelo analicé cómo otras plataformas resolvían este mismo problema. Encontré tres patrones consistentes:
+  </p>
+  <ul class="bulleted">
+  <li>agrupación por departamento como primer nivel cognitivo,</li>
+  <li>visibilidad clara de promociones o sustitutos,</li>
+  <li>	secciones destacadas en la home para recordar al usuario sus hábitos.</li>
+  </ul>
+  <p>
+    Este análisis reforzó una idea clave: <strong>las plataformas no sólo muestran productos repetidos; diseñan señales de confianza para validar la decisión rápida. </strong> Esto conectó directamente con los indicadores internos: si queríamos mejorar ATC Recurrentes, necesitábamos reducir el esfuerzo cognitivo antes del tap.
   </p>
   <figure class="media">
     <img src="/imagenes/project1/Analisis-competitivo.png" alt="Análisis competitivo"/>
   </figure>
+
+  <h4>4. Validar en campo: encuestas y entrevistas</h4>
+
   <p>
-    Finalmente, realicé encuestas con usuarios recurrentes. Sus respuestas reforzaron lo encontrado en el journey:
+    Para contrastar hipótesis, realicé encuestas con usuarios recurrentes. Las respuestas tocaron puntos sensibles:
   </p>
   <ul class="bulleted">
     <li>Preferían buscar manualmente para comparar precios y verificar opciones antes de agregar al carrito.</li>
-    <li>Se perdían en listas sin orden claro: la visualización por fecha de compra no correspondía con su navegación habitual por categoría, lo que confirmó que nuestra hipótesis iba en la dirección correcta.</li>
-    <li>Cuando un producto estaba agotado, la plataforma no ofrecía recomendaciones de sustitutos, generando fricción y abandonos.</li>
+    <li>Las listas ordenadas por fechas de compras no correspondía con su patrón navegación habitual, lo que confirmó que nuestra hipótesis iba en la dirección correcta.</li>
+    <li>Cuando un producto estaba agotado, no se ofrecian recomendaciones de sustitutos, generando fricción y abandonos.</li>
   </ul>
   <p>
-    Toda esta investigación definió la dirección del proyecto: hacer que “Lo de Siempre” funcionara como una extensión natural del comportamiento real del usuario, no como un módulo aislado dentro de la interfaz.
+    Una usuaria lo resumió en una frase que terminó guiando parte del diseño: <strong>“Si tengo que revisar todo otra vez, entonces no es ‘lo de siempre". </strong>
   </p>
 </section>
 
