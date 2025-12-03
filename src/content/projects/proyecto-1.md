@@ -32,9 +32,8 @@ tags: ['e-commerce', 'UX', 'recurrencia']
     <h3>Servicios</h3>
     <ul class="bulleted">
       <li>Investigación con usuarios recurrentes y análisis de comportamiento de compra.</li>
-      <li>Definición de MVP y alcance funcional junto con producto y desarrollo.</li>
+      <li>Definición y priorización de MVP y alcance funcional junto con producto y desarrollo.</li>
       <li>Facilitación de workshops con PMs y diseño para alinear visión, hipótesis y prioridades </li>
-      <li>Priorización de iniciativas por impacto en negocio, esfuerzo y valor para el usuario.</li>
     </ul>
   </div>
   </article>
@@ -139,36 +138,60 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 <section class="step">
   <h2 id="definicion" class="headline-2 section-title">Definición - Primer MVP</h2>
   <p>
-    Con los hallazgos de investigación, quedó claro que la solución no podía centrarse únicamente en “hacer más visible” la funcionalidad. Había retos más profundos: la forma en que los usuarios interpretaban la información, cómo navegaban su compra recurrente y qué tan oportuno era el momento en que aparecía “Lo de Siempre” dentro del flujo.
-  </p>
-    <br>
-  <p>
-    Para avanzar sin perder foco, facilité sesiones con PMs y desarrollo donde priorizamos las oportunidades identificadas. En esta etapa fue clave separar lo “deseable” de lo “viable”, definiendo el alcance del primer MVP con base en tres criterios:
+    Después de entender dónde se perdía el valor de la funcionalidad, necesitaba aterrizar esos hallazgos en una definición clara del problema. “Lo de Siempre” no era únicamente una sección poco utilizada; era una parte importante del flujo para usuarios frecuentes, y su estado actual no estaba ayudando a mejorar indicadores como ATC Recurrentes, Home A2C y ABS, que en ese periodo.
   </p>
 
-  <ul class="bulleted">
-    <li>Impacto en negocio: impulsar la métrica de Home Add-to-Cart y fortalecer la recurrencia.</li>
-    <li>Valor para el usuario: reducir esfuerzo cognitivo y agilizar la compra de artículos habituales.</li>
-    <li>Viabilidad técnica: aprovechar data disponible y componentes existentes sin frenar el roadmap.</li>
-  </ul>
-
+  <h4>1. Problema estratégico</h4>
+  <div class="grid-1">
+    <article class="card"><p>La experiencia actual no representaba el hábito real de compra y no facilitaba una decisión rápida. Esto afectaba tanto la experiencia del usuario como el desempeño del producto.</p></article>
+  </div>
+  <br>
   <p>
-    De esta priorización surgió un MVP enfocado en tres acciones concretas:
+    La funcionalidad existía, pero no vivía en su máximo potencial.
+  </p>
+
+  <h4>2. Oportunidad detectada</h4>
+  <p>
+    La investigación reveló que la oportunidad no estaba en crear una funcionalidad nueva, sino en ordenar y potenciar lo que ya sucedía de forma natural: la recompra. Los usuarios regresaban, buscaban sus productos frecuentes y seguían rutinas claras, pero la experiencia actual no acompañaba ese comportamiento.
+ </p>
+  <br>
+  <p>
+    El análisis competitivo confirmó esta dirección: las plataformas con mejor recurrencia son aquellas que ofrecen claridad, orden y señales de confianza desde el primer tap.
+  </p>
+
+  <h4>3. Hipótesis de producto</h4>
+  <div class="grid-1">
+    <article class="card"><p>Si reorganizamos “Lo de Siempre” para que refleje cómo realmente compra el usuario —por departamentos, frecuencia y disponibilidad— entonces aumentará el uso de la funcionalidad y mejorará la rapidez y calidad de la decisión, con impacto directo en indicadores de recompra.</p></article>
+  </div>
+
+  <br>
+  <p>
+    Era una hipótesis simple, pero con un alcance claro:
+    reducir el esfuerzo cognitivo y potenciar la decisión rápida en un momento clave del flujo.
   </p>
   </section>
 
+  <h4>4. Estrategia de UX</h4>
+
   <div class="grid-3">
-    <article class="card"><h4>Mejorar la visibilidad y el acceso,</h4><p> ubicando la funcionalidad en puntos del recorrido donde realmente aporta valor.</p></article>
-    <article class="card"><h4>Reorganizar la información por departamento y frecuencia,</h4><p> alineando la estructura con la manera natural en la que las personas clasifican mentalmente su súper.</p></article>
-    <article class="card"><h4>Usar data como soporte,</h4><p> con reglas claras para sugerir productos relevantes basados en tiempo y adaptación a comportamiento.</p></article>
+    <article class="card"><h4>Clarificar la propuesta de valor</h4><p>Que la funcionalidad no se sienta como un historial, sino como una herramienta útil y relevante para la rutina semanal.</p></article>
+    <article class="card"><h4>Reducir fricción para decidir</h4><p> Agrupar por departamento y ordenar por frecuencia no era un cambio visual: era una forma de ayudar al usuario a decidir.</p></article>
+    <article class="card"><h4>Usar data como soporte</h4><p>con reglas claras para sugerir productos relevantes basados en tiempo y adaptación a comportamiento.</p></article>
   </div>
 
+  <h4>5. Criterios de éxito</h4>
+
   <p>
-    Con el alcance definido, pasé a estructurar cómo debía integrarse “Lo de Siempre” dentro del flujo real de compra. No se trataba solo de mostrar la funcionalidad, sino de identificar en qué momentos del recorrido tenía más sentido recordarle al usuario sus productos habituales y cómo presentar esa información sin añadir fricción.
+    Desde el inicio definimos cómo sabríamos que íbamos en la dirección correcta:
   </p>
-  <br>
+
+  <ul class="bulleted">
+  <li> incremento en el uso de “Lo de Siempre”,</li>
+  <li> mejora en la tasa de productos agregados desde la sección,</li>
+	<li> y señales positivas en ATC Recurrentes y Home A2C</li>
+  </ul>
    <p>
-    Esta decisión conectaba directamente con lo encontrado en investigación: los usuarios pensaban su súper por categorías, no por fechas, y las plataformas de referencia también privilegiaban esa lógica.
+    Tener estos criterios claros permitió tomar decisiones con intención y priorizar.
   </p>
 
 <!-- PROCESO PASO 3 -->
