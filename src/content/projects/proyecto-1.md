@@ -197,65 +197,144 @@ tags: ['e-commerce', 'UX', 'recurrencia']
 <!-- PROCESO PASO 3 -->
 <section class="step">
   <h2 id="diseno" class="headline-2 section-title">Diseño</h2>
+
   <p>
-    Durante esta fase exploré diferentes alternativas de arquitectura y wireframes para analizar: ué tan intuitiva era la navegación,cómo debía organizarse la información para reducir esfuerzo cognitivo,y qué visualización permitía tomar decisiones más rápidas.
+    El diseño de “Lo de Siempre” no empezó con pantallas. Empezó con una pregunta incómoda que apareció al revisar datos: <strong> si los usuarios recurrentes repiten gran parte de su carrito cada semana… ¿por qué seguían reconstruyéndolo manualmente, producto por producto? </strong>
   </p>
   <br>
   <p>
-    En estos ejercicios surgió un patrón claro: la lista cronológica existente no representaba la forma en que la gente piensa su súper. La solución no era ordenar por fecha, sino por departamento y frecuencia, facilitando que el usuario encontrara lo que realmente compra semana a semana.
+    Ese hallazgo parecía obvio, pero en la práctica estaba generando fricción real: tiempo perdido, carga mental y carritos incompletos. Era el tipo de problema que no se resuelve “embelleciendo” una sección; se resuelve cambiando el nivel de ayuda que le damos al usuario.
   </p>
+
+  <h4>Antes</h4>
+  <p>
+    La funcionalidad mostraba un listado lineal de productos sin agrupación, sin jerarquía y sin contexto. Esto generaba tres problemas claros:
+  </p>
+
+  <ul class="bulleted">
+    <li>Era difícil reconocer patrones de compra porque todo se presentaba igual.</li>
+    <li>Los productos agotados aparecían sin alternativas, lo que interrumpía la decisión.</li>
+    <li>La experiencia variaba entre web, iOS y Android, lo que afectaba tanto la coherencia como el mantenimiento.</li>
+  </ul>
+
+  <h4>Después</h4>
+  <p>
+    Transformé “Lo de Siempre” en un bottom sheet organizado por categorías y frecuencia, con un diseño más limpio, claro y alineado al comportamiento de quienes hacen su súper semanalmente.
+  </p>
+  <p>
+    El nuevo diseño permite:
+  </p>
+  <ul class="bulleted">
+    <li>identificar rápidamente los productos habituales,</li>
+    <li>navegar por departamentos (como lo hacen en la tienda física),</li>
+    <li>entender disponibilidad antes de decidir,</li>
+    <li>y agregar productos sin interrumpir el flujo actual.</li>
+  </ul>
+
   <figure class="media">
-    <img src="/imagenes/project1/Proyecto1-Paso4.png" alt="Prototipo y pruebas"/>
+    <img src="/imagenes/project1/antesydespues.png" alt="Prototipo y pruebas" />
   </figure>
+
+  <h4>Decisiones de diseño (y por qué tomé cada una)</h4>
+
+  <h4>1. Agrupación por departamento en lugar de un listado cronológico</h4>
   <p>
-    Con esa premisa, diseñé un prototipo que transformó “Lo de Siempre” en un bottom sheet estructurado, categorizado y coherente con la lógica visual del resto de la tienda. La funcionalidad dejó de sentirse como un módulo aislado y pasó a integrarse como parte natural del flujo.
+    En investigación vimos que la gente piensa su compra por secciones (“frutas”, “lácteos”, “limpieza”), no por fechas de compra.
+    El diseño anterior obligaba a escanear una lista sin estructura.
+  </p>
+  <p>
+    <strong>Decisión:</strong> agrupar por categoría y priorizar los ítems con mayor repetición.<br>
+    <strong>Motivo:</strong> reducir esfuerzo cognitivo y reflejar cómo realmente navegan los usuarios.
+  </p>
+
+  <h4>2. Ordenar por frecuencia y relevancia, no por fecha</h4>
+  <p>
+    La fecha de última compra no ayuda a decidir rápido. La frecuencia sí.
+  </p>
+  <p>
+    <strong>Decisión:</strong> ordenar automáticamente los productos que el usuario compra más seguido.<br>
+    <strong>Motivo:</strong> acercar primero lo que casi siempre termina en el carrito; esto impacta el tiempo de acción y el valor de la funcionalidad.
+  </p>
+
+  <h4>3. Nuevo tratamiento para productos agotados (y sustitutos potenciales)</h4>
+  <p>
+    Uno de los principales puntos de fricción era descubrir que un producto frecuente no estaba disponible.
+  </p>
+  <p>
+    <strong>Decisión:</strong> marcar agotados de forma clara, sin ocultarlos, y preparar la estructura para sugerir alternativas equilibradas.<br>
+    <strong>Motivo:</strong> preservar la confianza del usuario y evitar abandonos por fricción inesperada.
+  </p>
+
+  <h4>4. Unificar comportamiento cross-platform</h4>
+  <p>
+    La versión anterior tenía diferencias significativas entre plataformas que afectaban tanto la experiencia como la velocidad de desarrollo.
+  </p>
+  <p>
+    <strong>Decisión:</strong> definir un patrón claro adaptable a web, iOS y Android.<br>
+    <strong>Motivo:</strong> mejorar coherencia, reducir deuda futura y facilitar experimentación desde Growth.
+  </p>
+
+  <h4>Trade-offs y decisiones debatidas</h4>
+  <p>
+    En el diseño original, “Lo de Siempre” no iba solo. Estábamos diseñando en paralelo una funcionalidad llamada “Listas”, pensada para convivir con “Lo de Siempre” y alimentarse mutuamente: una lógica más inteligente, donde el usuario pudiera guardar, ajustar y repetir compras con aún más intención.
   </p>
   <br>
   <p>
-    Además, consideré estados reales del inventario: disponibilidad, agotados y sustitutos. Esto permitió que la experiencia dejara de ser estática y se adaptara a escenarios comunes en e-commerce, sin obligar al usuario a buscar alternativas manualmente.
+    Pero esa visión completa no salió por un motivo real: tiempo y alcance.
   </p>
   <br>
   <p>
-    El diseño final equilibró tres ejes: claridad, velocidad de decisión y consistencia cross-platform, permitiendo que el usuario retomara su compra habitual con fluidez desde cualquier punto de entrada.
+    Trade-off real: preferimos lanzar una versión sólida de “Lo de Siempre” que resolviera la fricción principal de recompra, y dejar “Listas” como una evolución posterior.
+  </p>
+  <br>
+  <p>
+    Mencionar esto en tu caso te posiciona muy bien, porque demuestra que:
+  </p>
+    <ul class="bulleted">
+    <li>pensabas en un sistema, no en pantallas,</li>
+	  <li>sabías priorizar,</li>
+	  <li>y no te casaste con el “feature ideal” si eso bloqueaba el impacto.</li>
+    </ul>
+
+  <h4>Cómo este diseño prepara el camino para lo que sigue</h4>
+  <p>
+    El nuevo modelo visual y estructural deja abierta la puerta a futuras mejoras:
+  </p>
+  <ul class="bulleted">
+    <li>recomendaciones personalizadas,</li>
+    <li>sustitutos inteligentes,</li>
+    <li>badges de ahorro,</li>
+    <li>lógica predictiva basada en frecuencia real,</li>
+    <li>oportunidades de A/B testing entre plataformas.</li>
+  </ul>
+  <p>
+    El objetivo no era solo “mejorar la UI”, sino dejar una base sólida para seguir iterando sobre el hábito de recompra, uno de los pilares más importantes del negocio.
   </p>
 </section>
 
 <!-- PROCESO PASO 4 -->
 <section class="step">
   <h2 id="pruebas" class="headline-2 section-title">Prototipo y pruebas</h2>
-<p>
-    Con la arquitectura definida, llevé el diseño a un prototipo de alta fidelidad para evaluar si la experiencia realmente hacía más sencilla la recompra y si “Lo de Siempre” funcionaba como un atajo natural dentro del flujo.
-  </p>
-  <br />
-
   <p>
-    Para validar la propuesta, diseñé escenarios centrados en tareas reales de usuarios recurrentes. Estas pruebas buscaban entender no solo si el diseño era usable, sino si la lógica de organización por departamentos y frecuencia conectaba con el modelo mental del usuario.
+    Una vez definida la dirección, construí prototipos interactivos para validar si “Lo de Siempre” realmente ayudaba a los usuarios a reconstruir su súper de forma más rápida y natural, sin agregar fricción.
   </p>
+  <br>
+  <p>
+  El foco no estuvo en la estética, sino en el comportamiento:
+  ¿se entendía la propuesta?, ¿los usuarios reconocían sus productos habituales?, ¿la experiencia aceleraba la decisión?
+  </p>
+  <br>
+  <p>
+  Realicé pruebas moderadas con usuarios recurrentes, planteando escenarios simples de recompra semanal. Sin guiar explícitamente hacia la funcionalidad, observé cómo la encontraban, cómo la interpretaban y qué tan fácil les resultaba avanzar hacia el carrito.
+  </p>
+  <p>Hallazgos</p>
 
   <ul class="bulleted">
-    <li>Repetir parte de su compra habitual desde el home, sin pasar por búsqueda.</li>
-    <li>Acceder a “Lo de Siempre” desde distintas rutas (favoritos, categorías, Mi súper).</li>
-    <li>Resolver qué hacer cuando un producto recurrente aparecía agotado.</li>
+    <li>La lógica por categorías y frecuencia se entendía de inmediato..</li>
+    <li>El flujo se percibía más corto y claro, incluso con el mismo número de productos.</li>
+    <li>Tener gran parte del carrito “resuelto” generaba confianza y reducía la carga mental.</li>
+    <li>Los estados de disponibilidad claros disminuían la frustración.</li>
   </ul>
-
-  <p>
-    Realicé pruebas cualitativas con usuarios recurrentes y validé el flujo con stakeholders internos (producto, operaciones y atención al cliente). Esto permitió observar tanto el uso real como las implicaciones operativas de cada decisión.
-  </p>
-  <br />
-
-  <p>
-    Los aprendizajes fueron consistentes:
-  </p>
-
-  <ul class="bulleted">
-    <li><strong>Los usuarios encontraban “Lo de Siempre” con mayor facilidad,</strong> aunque algunos mantenían el hábito de buscar primero, lo que confirmó la importancia de reforzar el acceso desde el home.</li>
-    <li><strong>La organización por departamentos y frecuencia reducía el tiempo de decisión</strong>, pero fue necesario ajustar etiquetas y mensajes para que el beneficio se entendiera al primer vistazo.</li>
-    <li><strong>Los sustitutos sugeridos en productos agotados evitaron rupturas del flujo,</strong> reduciendo la necesidad de buscar alternativas manualmente.</li>
-  </ul>
-
-  <p>
-    Con estos hallazgos, refiné el prototipo ajustando copys, jerarquía visual y accesos dentro del recorrido. El resultado fue una experiencia más directa, entendible y alineada con el hábito real de recompra, lista para implementarse como MVP.
-  </p>
 </section>
 
 <!-- PROCESO PASO 5 -->
@@ -263,36 +342,34 @@ tags: ['e-commerce', 'UX', 'recurrencia']
   <h2 id="entrega" class="headline-2 section-title">Entrega</h2>
 
   <p>
-    Tras las iteraciones del prototipo, consolidé los lineamientos funcionales y visuales del MVP y colaboré estrechamente con desarrollo para asegurar una implementación consistente entre app y web. Documenté reglas, estados, jerarquías y comportamientos, facilitando un handoff claro y alineado con las decisiones de diseño.
+    El rediseño de “Lo de Siempre” se entregó como una funcionalidad preparada para escalar: con una estructura clara, coherente entre plataformas y alineada al comportamiento real de los usuarios recurrentes.
+  </p>
+  <br>
+  <p>
+  Más allá del output visual, el mayor impacto estuvo en resolver un problema que llevaba tiempo sin atenderse: usuarios que repetían gran parte de su súper cada semana, pero tenían que reconstruir su carrito manualmente una y otra vez.
   </p>
   <br />
-
   <p>
-    Durante la implementación realicé pruebas QA en Android, iOS y web para validar que la experiencia se comportara de forma coherente en todas las plataformas. Esta etapa me permitió detectar y ajustar diferencias de interacción, microcopys y estados que impactaban la fluidez del recorrido. Trabajar de la mano con el equipo de desarrollo fue clave para resolver estos detalles y garantizar una experiencia uniforme.
+  Desde las primeras semanas, observamos señales claras de mejora:
   </p>
-  <br />
-
+  <ul class="bulleted">
+    <li> mayor adopción de la funcionalidad por parte de usuarios recurrentes, </li>
+    <li> carritos más completos desde el inicio del flujo, </li>
+    <li> y una experiencia percibida como más rápida y confiable. </li>
+  </ul>
   <p>
-    Una vez liberada la primera versión, monitoreamos el desempeño inicial. Los resultados fueron claros: el uso de “Lo de Siempre” pasó del 27% al 44% entre usuarios recurrentes. Más allá de la métrica, las entrevistas posteriores confirmaron que la nueva organización por departamentos facilitaba la navegación y reducía el tiempo dedicado a reconstruir la compra habitual.
+    Esto permitió que los usuarios avanzaran al checkout con menos fricción y más seguridad, y dejó una base sólida para futuras evoluciones en personalización, retención y crecimiento del ticket promedio.
   </p>
-  <br />
-
-  <p>
-    La entrega del MVP no marcó el final del proyecto, sino el inicio de una evolución. La nueva estructura abrió la puerta a futuras mejoras basadas en personalización, inteligencia de consumo y recomendaciones dinámicas. El proyecto dejó establecida una base sólida para construir una experiencia de recompra más predictiva, flexible y alineada con los hábitos reales de los usuarios.
-  </p>
-
-  <figure class="media">
-    <img src="/imagenes/project1/prototipo.jpg" alt="Vistas del prototipo"/>
-  </figure>
 </section>
 
 <section class="step">
+  <h2 id="entrega" class="headline-2 section-title">Reflexión final</h2>
   <p>
-    Estos hallazgos me recordaron que un producto nunca está realmente terminado: cada versión resuelve algo, pero al mismo tiempo revela nuevas aristas. La evolución de “Lo de Siempre” no fue solo un ajuste visual, sino el inicio de un sistema de recompra más flexible, capaz de crecer con los hábitos reales de los usuarios.
+    Diseñar “Lo de Siempre” fue un ejercicio de simplificación consciente.
+    El reto no estaba en crear algo nuevo, sino en ordenar mejor lo que ya pasaba cada semana.
   </p>
-  <br />
-
+  <br>
   <p>
-    Acompañar el proyecto de principio a fin —investigación, definición, diseño, iteración y QA— reforzó mi forma de trabajar: entender profundamente el comportamiento del usuario, colaborar de forma cercana con desarrollo y tomar decisiones que equilibren impacto, viabilidad y claridad. Es ahí donde el diseño aporta valor real.
+    Este proyecto me recordó que cuando el diseño respeta los hábitos del usuario y reduce fricción real, la experiencia se vuelve casi invisible… y eso suele ser una buena señal.
   </p>
 </section>
