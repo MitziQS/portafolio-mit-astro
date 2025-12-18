@@ -82,9 +82,6 @@ tags: ['e-commerce', 'UX', 'recurrencia']
     Antes de diseñar cualquier solución, necesitaba entender qué estaba fallando realmente en la funcionalidad. Los datos mostraban algo claro: aunque más del 70% de los usuarios repetía productos semana a semana, solo 20% interactuaba con “Lo de Siempre”. No era un problema de hábito —era un problema de cómo la experiencia vivía dentro del flujo.
   </p>
   <br>
-  <p>
-    Antes de diseñar cualquier solución, necesitaba entender qué estaba fallando realmente en la funcionalidad. Los datos mostraban algo claro: aunque más del 70% de los usuarios repetía productos semana a semana, solo 20% interactuaba con “Lo de Siempre”. No era un problema de hábito —era un problema de cómo la experiencia vivía dentro del flujo.
-  </p>
   <h4>1. Alinear el reto: separar hechos de suposiciones</h4>
   <p>
     Para ordenar el reto, facilité un workshop con PMs utilizando la matriz CSD (Certezas, Suposiciones y Dudas). Esto nos permitió diferenciar lo que sabíamos de lo que solo asumíamos y alinear un punto de partida común entre diseño, producto y negocio.
