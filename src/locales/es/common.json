@@ -60,7 +60,7 @@
       },
       {
         "title": "Pagos y Comisiones",
-        "description": "Rediseñé el sistema interno de Intelligence Commissions de un resort en Cancún para mejorar la gestión de afiliaciones a programas y el cálculo de comisiones. Optimicé la arquitectura de información, la captura de datos y la visibilidad del estado de los contratos, reduciendo fricciones operativas y aumentando la eficiencia del equipo de ventas y marketing.",
+        "description": "Rediseño de un sistema interno crítico para mejorar la trazabilidad y reducir errores en el cálculo de comisiones.",
         "image": "/src/images/projects/proyecto-3.jpg",
         "techs": ["Figma", "Maze"],
         "code": "Código",
