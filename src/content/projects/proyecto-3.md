@@ -91,86 +91,83 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
 <section class="step">
   <h2 id="investigacion" class="headline-2 section-title">Investigación y descubrimiento</h2>
   <p>
-    La investigación partió de una necesidad clara:
-    entender cómo se cerraban realmente las membresías en la operación diaria y dónde se rompía el proceso, más allá de lo que estaba documentado.
+    La investigación inició con entrevistas y revisión del sistema existente para obtener una comprensión integral de los objetivos, funciones y áreas involucradas en el proceso de enrolamiento.
   </p>
   <br>
   <p>
-    Para ello, analice el material existente y sostuve conversaciones con personas que interactuaban directamente con el sistema en distintos momentos del enrolamiento.
-   </p>
-   <br>
-  <p>
-    Más que validar pantallas, el foco estuvo en reconstruir el recorrido completo de una afiliación, desde el primer contacto con el cliente hasta la formalización del contrato.
+    Más que validar una interfaz, el objetivo fue entender el contrato como un proceso vivo, con dependencias reales entre personas, información y tiempo. Durante esta etapa me enfoqué en responder preguntas operativas críticas, entre ellas:
   </p>
 
-  <h4>Lo que buscaba entender</h4>
-
-  <p>
-    Durante esta fase, mis preguntas se centraron en:
-  </p>
-   <ul class="bulleted">
-    <li>¿En qué momento se perdía la visibilidad del estado del contrato?</li>
-    <li>¿Qué información se asumía como “ya capturada” pero no siempre lo estaba?</li>
-    <li>¿Qué tareas dependían de memoria o coordinación informal?</li>
-    <li>¿Cuándo se detectaban los errores: durante el proceso o al final?</li>
+  <ul class="bulleted">
+    <li>¿Quién es responsable de firmar el contrato y en qué momento?</li>
+    <li>¿Cuál es el ciclo de vida real del contrato dentro del resort?</li>
+    <li>¿Qué campos son obligatorios para cerrar la venta y cuáles pueden completarse después?</li>
+    <li>¿Cuáles son los errores más frecuentes durante el enrolamiento?</li>
+    <li>¿Qué tipos de paquetes se ofrecen y cuántas personas pueden beneficiarse de cada uno?</li>
+    <li>¿Qué métodos de pago intervienen en el cierre?</li>
   </ul>
-
-  <p>
-    Estas preguntas ayudaron a identificar que muchos de los problemas no eran excepciones, sino patrones recurrentes.
-  </p>
 
   <h4>Hallazgo clave</h4>
 
   <p>
-    El proceso estaba fragmentado entre distintos roles, pero el sistema no reflejaba esa fragmentación.
-    Cada persona veía solo una parte del recorrido y asumía que el resto estaba bajo control.
+    La captura de datos se daba de forma fragmentada y sin una referencia clara de avance, lo que provocaba que: se asumiera que información crítica ya estaba completa, se detectaran faltantes demasiado tarde, y se perdiera la oportunidad de cierre del contrato.
   </p>
   <br>
   <p>
-    A partir de estos hallazgos, era necesario repensar el proceso como un sistema compartido, donde el estado de la afiliación fuera visible para todos los involucrados.
+    Esto dio pie a una decisión clave de diseño:
+    hacer explícito el progreso del contrato por etapas, mostrando de forma clara qué porcentaje del proceso estaba completo y qué información seguía pendiente.
   </p>
+  <br>
+  <img src="/imagenes/project3/investigacion.jpg" alt="Investigación"/>
+
+  <h4>Validación con usuarios</h4>
+
+  <p>
+    Esta necesidad fue confirmada directamente por usuarios del sistema.
+    Como mencionó Kristal durante las sesiones:
+  </p>
+  <br>
+  <p>
+    <strong> “La estructura y el enfoque del proceso me ayudarían a tener un mayor control y claridad sobre la información que se está completando.” </strong>
+  </p>
+  <br>
+  <p>
+    Esta frase se volvió un criterio de diseño, no solo un comentario: si el sistema no daba control y claridad, no estaba resolviendo el problema real.
+  </p>
+
 </section>
 
 <!-- PROCESO PASO 2 DEFINICIÓN-->
 <section class="step">
   <h2 id="definicion" class="headline-2 section-title">Definición</h2>
   <p>
-    El principal problema no era la falta de pasos en el proceso, sino la ausencia de una estructura que hiciera visible el estado real de cada afiliación a lo largo del tiempo.
+   El problema no era la falta de información ni de pasos dentro del sistema, sino la ausencia de una estructura que hiciera visible el estado real del contrato durante el proceso de enrolamiento.
   </p>
   <br>
   <p>
-    El sistema trataba el enrolamiento como una secuencia lineal de tareas, cuando en la práctica funcionaba como un proceso no lineal, atravesado por múltiples personas, momentos y dependencias.
-  </p>
-  <br>
-  <p>
-    Esto provocaba que se asumiera que pasos críticos ya estaban completos, no se detectaran requisitos pendientes a tiempo, y se perdiera la oportunidad de cerrar la venta antes de que el cliente se retirara.
-  </p>
-
-  <h4>Insight central</h4>
-  <p>
-    Para resolver el problema, era necesario dejar de pensar el enrolamiento como un formulario largo y empezar a entenderlo como un sistema de estados.
-  </p>
-  <p>
-    Cada afiliación debía poder responder, en cualquier momento, preguntas simples pero críticas:
+    En la práctica, una membresía se construía a lo largo de múltiples interacciones, con distintos roles y en momentos diferentes de la estancia del huésped. Sin embargo, el sistema trataba el cierre del contrato como si fuera un flujo lineal y continuo, cuando en realidad era fragmentado y dependiente del tiempo. Esto provocaba que:
   </p>
   <ul class="bulleted">
-      <li>¿En qué estado está este contrato?</li>
-      <li>¿Qué ya se completó y qué sigue pendiente?</li>
-      <li>¿Quién ha intervenido y en qué punto del proceso?</li>
+    <li>se asumiera que ciertos datos o firmas ya estaban completos,
+    <li>no existiera claridad sobre qué información era crítica para cerrar,
+    <li>y los errores se detectaran cuando el cliente ya estaba por abandonar el resort.
   </ul>
 
+  <h4>Decisión estructural y criterio de diseño</h4>
   <p>
-    Sin esta visibilidad, el cierre dependía más de coordinación informal que del sistema mismo.
-  </p>
-
-  <h4>Decisión de diseño</h4>
-
-  <p>
-    Definir el enrolamiento como un sistema de estados permitió establecer requisitos mínimos por etapa, evitando que el proceso avanzara de forma ambigua.
+    A partir de la investigación, fue necesario cambiar la forma de entender el contrato. Más que un formulario largo, el enrolamiento debía concebirse como un proceso con avance progresivo, donde cada etapa representara un estado claro del contrato y dejara explícito si estaba listo o no para cerrarse.
   </p>
   <br>
   <p>
-    El objetivo no fue agregar burocracia, sino reducir fricción y anticipar errores, haciendo explícito lo que antes solo existía en la cabeza de las personas.
+    Definir el enrolamiento como un sistema de estados permitió alinear el sistema con el ciclo de vida real del contrato y responder preguntas operativas críticas:
+  </p>
+  <ul class="bulleted">
+	<li>¿Este contrato puede cerrarse hoy?
+	<li>¿Qué información falta y qué tan crítica es?
+	<li>¿Quién ya intervino y quién aún no?
+  </ul>
+  <p>
+    Ese cambio de enfoque —de capturar datos a hacer visible el estado del proceso— se convirtió en el criterio que guió todas las decisiones posteriores de diseño.
   </p>
 </section>
 
