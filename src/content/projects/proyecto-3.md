@@ -14,28 +14,27 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
   <article class="card">
     <h3>Misión</h3>
     <p>
-      Este proyecto se centró en el diseño de un sistema interno para dar trazabilidad al proceso de enrolamiento de membresías dentro de un resort, desde el primer contacto con el cliente hasta el cierre de la venta y la correcta distribución de comisiones entre los equipos involucrados.
+      Diseñé un sistema interno para hacer trazable y compartido el proceso de enrolamiento de membresías dentro de un resort, desde el primer contacto con el cliente hasta el cierre del contrato y, como consecuencia, la correcta distribución de comisiones.
     </p>
     <p>
-      El principal reto estaba en la falta de visibilidad sobre el recorrido real del cliente y sobre las intervenciones a lo largo del proceso. Una sola membresía podía pasar por múltiples manos —promotores, asesores, cierres y supervisores— sin un registro claro que permitiera entender quién participó, en qué momento y bajo qué criterio se reconocía su contribución.
-   </p>
-   <p>
-      Esta ausencia de trazabilidad no solo generaba fricción interna, sino que rompía la continuidad operativa del enrolamiento. Al no existir un estado claro del trámite, se perdía visibilidad sobre los documentos pendientes y, en algunos casos, la falta de una firma o requisito clave se detectaba cuando el huésped ya había abandonado el resort, provocando la pérdida del cierre.
-   </p>
+      El reto no era agregar más controles, sino reducir la ambigüedad de un proceso donde una misma membresía pasaba por múltiples manos sin visibilidad clara sobre su estado, los requisitos pendientes ni las contribuciones de cada rol.
+    </p>
   </article>
 
   <div class="stack" role="complementary">
     <article class="card">
       <h3>Cliente</h3>
-      <p>Cadena hotelera internacional con operaciones de alta escala</p>
+      <p>Resort internacional con modelo de ventas por membresías.</p>
     </article>
 
   <article class="card">
     <h3>Servicios</h3>
     <ul class="bulleted">
-      <li>Definición de flujos y arquitectura de información</li>
-	    <li>UX Research</li>
-	    <li>Diseño de flujos B2B</li>
+      <li>Diagnóstico del proceso de enrolamiento de membresías y cierre de contrato.</li>
+	    <li>Análisis de flujos operativos y puntos de quiebre en sistemas internos.</li>
+	    <li>Definición y organización de la información para un proceso compartido entre distintos roles.</li>
+      <li>Redefinición del flujo de enrolamiento con foco en trazabilidad y estados.</li>
+      <li>Diseño UX/UI de un sistema interno orientado a operación y cierre de ventas.</li>
     </ul>
   </div>
   </article>
@@ -45,43 +44,90 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
 <section class="card">
   <h3>Mi contribución</h3>
   <p>
-    Participé como Product Designer UX/UI, trabajando de forma cercana con stakeholders de negocio para entender y mapear un proceso que no estaba claramente definido.
+   Formé parte del equipo de diseño responsable del rediseño del sistema de enrolamiento de membresías.
   </p>
   <p>
-    Mi responsabilidad principal fue identificar los puntos de fricción entre áreas, hacer visible el proceso, incluso con sus zonas grises, para que el sistema pudiera sostener conversaciones más objetivas.
+    Mi participación se centró en entender el proceso operativo completo, identificar puntos críticos de pérdida de información y traducir esa complejidad en una estructura clara y compartida. Concretamente, mi contribución incluyó:
   </p>
-</section>
+
+  <ul class="bulleted">
+	  <li>Análisis del proceso real de cierre de contrato, más allá del flujo ideal documentado.
+    <li>Identificación de estados clave del enrolamiento y requisitos mínimos para avanzar en cada etapa.
+    <li>Definición de una estructura que permitiera visualizar qué estaba completo, qué faltaba y quién había intervenido.
+    <li>Colaboración estrecha con el equipo para alinear diseño, operación y reglas de negocio.
+    <li>Iteración sobre flujos y pantallas con base en retroalimentación operativa.
+  </ul>
+  </section>
 
 <!-- IMPACTO (KPI CARDS) -->
 <section class="card">
   <h3>Impacto</h3>
 
   <p>
-    El rediseño permitió que el equipo de comisiones tuviera una visión más clara del estado de contratos y pagos, reduciendo la fricción operativa y el retrabajo en los cierres de período.
-  </p>
+    El proceso de enrolamiento se convirtió en un flujo visible y compartido entre los distintos roles involucrados. Más allá de la interfaz, el mayor cambio fue operativo: el sistema empezó a anticipar errores, en lugar de revelarlos cuando ya no había margen de acción.
+</p>
+
   <p>
-    Más allá de las pantallas, el mayor valor del proyecto fue establecer una base más entendible y trazable para la gestión de comisiones, facilitando futuras mejoras y reduciendo la dependencia de procesos manuales.
+    Como resultado:
   </p>
 
+  <ul class="bulleted">
+    <li>Se redujeron los casos de afiliaciones incompletas detectadas al final del proceso.</li>
+    <li>El equipo pudo identificar de forma más clara en qué estado se encontraba cada contrato.</li>
+    <li>Se facilitó la colaboración entre áreas al hacer explícitas las contribuciones de cada rol.</li>
+    <li>Se disminuyeron conflictos posteriores derivados de información faltante o ambigua.</li>
+  </ul>
+
+  <p>
+    Nota: Aunque no se contaba con métricas cuantitativas formales, el impacto fue evidente en la operación diaria: menos retrabajo, mayor claridad y una sensación compartida de control sobre un proceso crítico de negocio.
+  </p>
 </section>
+
+  <p>
+    Por acuerdos de confidencialidad, el nombre del cliente y algunos detalles visuales han sido omitidos.
+  </p>
 
 <!-- PROCESO PASO 1 INVESTIGACIÓN -->
 <section class="step">
   <h2 id="investigacion" class="headline-2 section-title">Investigación y descubrimiento</h2>
   <p>
-    Aunque el objetivo inicial del sistema parecía estar relacionado con comisiones, durante las primeras exploraciones se hizo evidente que el problema de fondo era otro: la operación no contaba con una visión clara y compartida del estado del enrolamiento.
+    La investigación partió de una necesidad clara:
+    entender cómo se cerraban realmente las membresías en la operación diaria y dónde se rompía el proceso, más allá de lo que estaba documentado.
   </p>
   <br>
   <p>
-    Al analizar cómo funcionaba el proceso en la práctica, quedó claro que una membresía rara vez seguía un flujo lineal. Podía avanzar, detenerse o cambiar de responsable dependiendo del momento, la disponibilidad del huésped. Cada equipo —promotores, asesores, cierres y supervisores— operaba con visibilidad parcial, lo que fragmentaba la información y dificultaba entender en qué punto real se encontraba cada trámite.
+    Para ello, analice el material existente y sostuve conversaciones con personas que interactuaban directamente con el sistema en distintos momentos del enrolamiento.
+   </p>
+   <br>
+  <p>
+    Más que validar pantallas, el foco estuvo en reconstruir el recorrido completo de una afiliación, desde el primer contacto con el cliente hasta la formalización del contrato.
+  </p>
+
+  <h4>Lo que buscaba entender</h4>
+
+  <p>
+    Durante esta fase, mis preguntas se centraron en:
+  </p>
+   <ul class="bulleted">
+    <li>¿En qué momento se perdía la visibilidad del estado del contrato?</li>
+    <li>¿Qué información se asumía como “ya capturada” pero no siempre lo estaba?</li>
+    <li>¿Qué tareas dependían de memoria o coordinación informal?</li>
+    <li>¿Cuándo se detectaban los errores: durante el proceso o al final?</li>
+  </ul>
+
+  <p>
+    Estas preguntas ayudaron a identificar que muchos de los problemas no eran excepciones, sino patrones recurrentes.
+  </p>
+
+  <h4>Hallazgo clave</h4>
+
+  <p>
+    El proceso estaba fragmentado entre distintos roles, pero el sistema no reflejaba esa fragmentación.
+    Cada persona veía solo una parte del recorrido y asumía que el resto estaba bajo control.
   </p>
   <br>
   <p>
-    Esta falta de una fuente única de verdad explicaba muchas de las fricciones existentes. Sin un estado claro del enrolamiento, documentos pendientes o firmas clave pasaban desapercibidos hasta que el huésped ya no se encontraba en el resort, provocando pérdidas comerciales que no eran evidentes en los reportes.
-  </p>
-  <br>
-  <p>
-    Como diseñadora, este fue un punto de inflexión. Antes de pensar en pantallas o funcionalidades, era necesario entender y modelar el proceso real, no el ideal. El reto ya no era solo diseñar un sistema, sino construir una representación compartida del enrolamiento, que hiciera visibles los estados, las responsabilidades y las decisiones críticas a lo largo del recorrido.
+    A partir de estos hallazgos, era necesario repensar el proceso como un sistema compartido, donde el estado de la afiliación fuera visible para todos los involucrados.
   </p>
 </section>
 
@@ -89,164 +135,118 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
 <section class="step">
   <h2 id="definicion" class="headline-2 section-title">Definición</h2>
   <p>
-    A partir del descubrimiento, el problema se redefinió más allá de una necesidad operativa puntual. No se trataba de crear una herramienta para repartir comisiones, sino de diseñar un modelo de trazabilidad que hiciera visible el estado del enrolamiento y las intervenciones a lo largo del proceso.
-  </p>
-  <p>
-    El desafío central era que la operación carecía de un lenguaje común para responder preguntas básicas pero críticas:
-  </p>
-  <ul class="bulleted">
-    <li>¿en qué punto del proceso se encuentra una membresía?</li>
-    <li>¿qué acciones ya se realizaron y cuáles siguen pendientes?</li>
-    <li>¿quién intervino, en qué momento y bajo qué responsabilidad?</li>
-  </ul>
-  <p>
-    Sin esta claridad, el proceso dependía de validaciones manuales, memoria individual y conversaciones informales, lo que aumentaba la probabilidad de errores, fricciones internas y pérdidas comerciales.
-  </p>
-  <p>
-    Desde una perspectiva de producto, el problema se definió como la ausencia de una fuente única de verdad que conectara personas, etapas y estados del enrolamiento en un flujo verificable y compartido.
+    El principal problema no era la falta de pasos en el proceso, sino la ausencia de una estructura que hiciera visible el estado real de cada afiliación a lo largo del tiempo.
   </p>
   <br>
   <p>
-    <strong>Criterios de diseño</strong>
+    El sistema trataba el enrolamiento como una secuencia lineal de tareas, cuando en la práctica funcionaba como un proceso no lineal, atravesado por múltiples personas, momentos y dependencias.
   </p>
+  <br>
   <p>
-    Con el problema claramente definido, se establecieron los siguientes criterios para guiar las decisiones de diseño
+    Esto provocaba que se asumiera que pasos críticos ya estaban completos, no se detectaran requisitos pendientes a tiempo, y se perdiera la oportunidad de cerrar la venta antes de que el cliente se retirara.
   </p>
 
+  <h4>Insight central</h4>
+  <p>
+    Para resolver el problema, era necesario dejar de pensar el enrolamiento como un formulario largo y empezar a entenderlo como un sistema de estados.
+  </p>
+  <p>
+    Cada afiliación debía poder responder, en cualquier momento, preguntas simples pero críticas:
+  </p>
   <ul class="bulleted">
-    <li>Visibilidad end-to-end: el estado del enrolamiento debía ser claro en todo momento, independientemente del rol.</li>
-    <li>Trazabilidad por intervención: cada acción relevante debía quedar registrada con responsable y momento.</li>
-    <li>Continuidad operativa: el sistema debía ayudar a detectar pendientes críticos antes de que el huésped abandonara el resort.</li>
-    <li>Adopción sin fricción: la solución debía integrarse al trabajo diario sin volver el proceso más lento o burocrático.</li>
-    <li>Soporte a decisiones sensibles: el diseño debía facilitar conversaciones basadas en datos, no en interpretaciones.</li>
+      <li>¿En qué estado está este contrato?</li>
+      <li>¿Qué ya se completó y qué sigue pendiente?</li>
+      <li>¿Quién ha intervenido y en qué punto del proceso?</li>
   </ul>
 
   <p>
-    <strong>Cómo esto orientó la solución</strong>
+    Sin esta visibilidad, el cierre dependía más de coordinación informal que del sistema mismo.
   </p>
+
+  <h4>Decisión de diseño</h4>
+
   <p>
-    Definir el problema de esta manera permitió enfocar el diseño en estados, responsabilidades y momentos críticos, más que en funcionalidades aisladas. Esta perspectiva fue clave para pasar de una lógica de “registro de información” a un sistema que realmente apoyara la operación y la toma de decisiones.
+    Definir el enrolamiento como un sistema de estados permitió establecer requisitos mínimos por etapa, evitando que el proceso avanzara de forma ambigua.
   </p>
+  <br>
+  <p>
+    El objetivo no fue agregar burocracia, sino reducir fricción y anticipar errores, haciendo explícito lo que antes solo existía en la cabeza de las personas.
+  </p>
+</section>
 
 <!-- PROCESO PASO 3 DISEÑO -->
 <section class="step">
   <h2 id="diseno" class="headline-2 section-title">Diseño</h2>
   <section id="diseno-solucion">
 
-  <h3>Modelado del enrolamiento por estados y pasos</h3>
+  <p>
+    Si el problema era la falta de visibilidad compartida, el diseño tenía que lograr tres cosas al mismo tiempo:
+  <p>
+  <ol class="bulleted">
+    <li>Hacer visible el estado del contrato en cualquier momento.</li>
+    <li>Evitar avances ambiguos sin requisitos mínimos completos.</li>
+    <li>Permitir que múltiples roles colaboraran, sin romper el flujo ni duplicar esfuerzos.</li>
+  </ol>
+
+  <h4>Modelado del enrolamiento como sistema de estados</h4>
 
   <p>
-    En lugar de representar el proceso como una secuencia rígida de tareas, el enrolamiento se
-    conceptualizó como un modelo basado en estados claros y pasos definidos, que permitía entender
-    en qué punto se encontraba cada membresía y qué acciones seguían pendientes.
+    El enrolamiento se redefinió como un sistema de estados claros, en lugar de una secuencia lineal de pantallas. Cada afiliación podía encontrarse en un estado específico del proceso, haciendo explícito: qué información ya estaba completa, qué requisitos seguían pendientes, y si el contrato estaba listo para avanzar o no.
   </p>
   <br>
   <p>
-    El flujo se estructuró por etapas, donde cada paso contaba con campos críticos
-    <strong>(obligatorios)</strong> para poder avanzar y concretar la membresía. Esto transformó un
-    proceso disperso en una secuencia verificable y compartida entre los equipos.
-  </p>
-  <br>
-  <p>
-    En la operación diaria, era común detectar que faltaba una firma o un documento cuando el huésped
-    ya había abandonado el resort. Al definir requisitos mínimos por etapa, el equipo podía identificar
-    rápidamente si un paso ya había sido cubierto por otra persona, qué información seguía pendiente y
-    quién podía ayudar a completarla antes de perder el cierre.
-  </p>
-  <br>
-  <p>
-    El objetivo no fue agregar burocracia, sino reducir ambigüedad: evitar que el proceso quedara
-    inconcluso y facilitar que los equipos se “dieran la mano” para cerrar la membresía a tiempo.
+   A cada estado se le asociaron requisitos mínimos obligatorios, de modo que el proceso no pudiera avanzar de forma ambigua. Esta decisión permitió anticipar errores que antes solo se detectaban al final, cuando el cliente ya no estaba disponible para cerrar la venta.
   </p>
 
-  <h4>Separación entre estado del proceso e intervenciones</h4>
+  <h4>Trade-offs conscientes</h4>
 
   <p>
-    Para evitar confundir el avance del trámite con la participación de las personas, el diseño
-    separó dos dimensiones clave: el estado del enrolamiento y el registro de intervenciones.
+  El criterio siempre fue operativo: cerrar la venta a tiempo, no solo optimizar la interfaz. Este enfoque implicó decisiones claras:
   </p>
 
-  <p>
-    Las intervenciones se registraban como eventos asociados al proceso —quién participó, cuándo y en
-    qué etapa— sin bloquear el avance. Este enfoque permitió trazabilidad sin fricción y evitó que el
-    sistema se percibiera como una herramienta de vigilancia.
-  </p>
-
-  <h4>Visibilidad contextual según rol</h4>
-
-  <p>
-    No todos los roles necesitaban ver la misma información. El diseño priorizó una visibilidad
-    contextual, donde cada equipo accedía únicamente a lo necesario para actuar: estados claros,
-    pendientes relevantes y próximos pasos.
-  </p>
-
-  <p>
-    Esta decisión redujo la sobrecarga cognitiva, mejoró la adopción y disminuyó errores derivados de
-    información irrelevante o desactualizada.
-  </p>
-
-  <h4>Detección temprana de riesgos de cierre</h4>
-
-  <p>
-    Uno de los aprendizajes clave fue que los problemas no ocurrían al final del proceso, sino mucho
-    antes, pero no eran visibles. Por ello, el diseño incorporó señales claras de riesgo: pendientes
-    críticos destacados, dependencias explícitas del huésped y alertas sobre acciones que no podían
-    postergarse.
-  </p>
-
-  <p>
-    De esta forma, el sistema dejó de ser reactivo y se convirtió en una herramienta preventiva,
-    ayudando a los equipos a priorizar antes de que el huésped abandonara el resort.
-  </p>
-
-  <h4>Diseño orientado a adopción</h4>
-
-  <p>
-    Dado el contexto operativo del resort —alta rotación, presión comercial y múltiples actores—,
-    la adopción fue tratada como un requisito de diseño. Se priorizó simplicidad sobre exhaustividad,
-    consistencia sobre personalización extrema y velocidad de uso sobre profundidad funcional.
-  </p>
-
-  <p>
-    Cada decisión buscó reducir fricción y asegurar que el sistema apoyara el trabajo diario sin
-    convertirse en una carga adicional para los equipos.
-  </p>
-
-  <p>
-    El resultado fue un sistema que dejó de enfocarse en comisiones como output y pasó a organizar el
-    proceso que las hacía posibles, ofreciendo una vista compartida del enrolamiento y protegiendo
-    cierres antes de que fuera demasiado tarde.
-  </p>
+  <ul class="bulleted">
+    <li>Flexibilidad vs. control: se priorizó claridad de estado sobre libertad total de avance.</li>
+    <li>Velocidad aparente vs. cierre efectivo: avanzar rápido sin requisitos completos generaba más pérdidas que beneficios.</li>
+    <li>Simplicidad visual vs. información crítica: se decidió mostrar estado y pendientes aunque implicara mayor densidad de información.</li>
+  </ul>
 </section>
 
   <!-- PROCESO PASO 5 ENTREGA -->
   <section class="step">
     <h2 id="entrega" class="headline-2 section-title">Entrega</h2>
     <p>
-      Durante ocho semanas se mantuvo comunicación constante entre los equipos Palace y Shark Think.
+      El proyecto concluyó con la entrega de una propuesta de rediseño validada a nivel conceptual y operativo, enfocada en hacer visible el estado del proceso de enrolamiento y facilitar el cierre efectivo de las membresías.
     </p>
+    <br>
     <p>
-      La fase final incluyó validaciones funcionales y la entrega de:
+      La entrega incluyó:
     </p>
     <ul class="bulleted">
-      <li>Diagramas de navegación completos.</li>
-      <li>Wireframes de mediana fidelidad.</li>
-      <li>Historias de usuario simplificadas.</li>
-      <li>Sistema de diseño base documentado.</li>
+      <li>Flujos de enrolamiento estructurados por estados.</li>
+      <li>Propuesta de arquitectura de información alineada a la operación real.</li>
+      <li>Diseños UX/UI del sistema interno orientados a uso diario.</li>
+      <li>Documentación de criterios y reglas clave para asegurar consistencia en la captura y el cierre del contrato.</li>
     </ul>
-    <p>
-      El proyecto concluyó oficialmente el 8 de septiembre de 2021, con validación del equipo Palace y la carta de cierre formal.
-    </p>
-  </section>
+    </section>
 
   <!-- PROCESO PASO 6 CONCLUSIÓN -->
   <section class="step">
-    <h2 id="conclusion" class="headline-2 section-title">Conclusión</h2>
+    <h2 class="headline-2 section-title">Reflexión</h2>
     <p>
-    El rediseño de Intelligence Commissions representó un paso clave hacia la digitalización eficiente de los procesos de venta de membresías en Palace Resorts.
+      Aprendí que muchos problemas atribuidos a “errores de captura” o “fallas humanas” en realidad son problemas de diseño de procesos invisibles.
+    </p>
+    <br>
     <p>
-    La nueva arquitectura de información logró reducir tiempos operativos, estandarizar cálculos y mejorar la visibilidad de métricas en cada fase del flujo, consolidando una herramienta adaptable para futuras mejoras o integraciones.
+      Diseñar para un entorno operativo complejo me obligó a dejar de pensar en flujos ideales y empezar a diseñar para realidades fragmentadas, donde múltiples personas intervienen en distintos momentos y bajo presión.
+    </p>
+    <br>
+    <p>
+      También reforzó una convicción que hoy guía mi trabajo:
+      cuando un sistema hace visible el estado de un proceso, no solo reduce errores, sino que habilita colaboración, confianza y mejores decisiones.
+    </p>
+    <br>
+    <p>
+      Desde entonces, abordo los proyectos no solo preguntándome qué pantalla falta, sino qué información necesita estar visible para que el proceso pueda sostenerse.
     </p>
   </section>
-
 </sectvion>

@@ -60,7 +60,7 @@
       },
       {
         "title": "Pagos y Comisiones",
-        "description": "Rediseño de un sistema interno crítico para mejorar la trazabilidad y reducir errores en el cálculo de comisiones.",
+        "description": "Rediseño de un sistema interno para hacer visible el proceso de enrolamiento a una membresía y la asignación de participantes para el reparto de comisiones en un resort.",
         "image": "/src/images/projects/proyecto-3.jpg",
         "techs": ["Figma", "Maze"],
         "code": "Código",
