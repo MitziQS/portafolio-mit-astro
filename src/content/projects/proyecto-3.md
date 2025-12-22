@@ -245,8 +245,5 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
       cuando un sistema hace visible el estado de un proceso, no solo reduce errores, sino que habilita colaboración, confianza y mejores decisiones.
     </p>
     <br>
-    <p>
-      Desde entonces, abordo los proyectos no solo preguntándome qué pantalla falta, sino qué información necesita estar visible para que el proceso pueda sostenerse.
-    </p>
   </section>
 </sectvion>
