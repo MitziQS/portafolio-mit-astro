@@ -131,38 +131,29 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
 <!-- PROCESO PASO 3 DISEÑO -->
 <section class="step">
   <h2 id="diseno" class="headline-2 section-title">Diseño</h2>
-<section id="diseno-solucion">
+  <section id="diseno-solucion">
 
-  <h4>Modelado del enrolamiento como un sistema de estados</h4>
+  <h3>Modelado del enrolamiento por estados y pasos</h3>
 
   <p>
     En lugar de representar el proceso como una secuencia rígida de tareas, el enrolamiento se
-    conceptualizó como un sistema de estados claros y mutuamente excluyentes, donde cada membresía
-    solo podía encontrarse en un estado activo a la vez.
+    conceptualizó como un modelo basado en estados claros y pasos definidos, que permitía entender
+    en qué punto se encontraba cada membresía y qué acciones seguían pendientes.
   </p>
-
+  <br>
   <p>
-    Esta decisión permitió que cualquier rol pudiera responder sin interpretación en qué punto se
-    encontraba el trámite, qué acciones ya estaban completas y qué seguía pendiente. El trade-off
-    fue reducir flexibilidad a cambio de claridad operativa, priorizando una lectura consistente del
-    proceso sobre cubrir todos los escenarios excepcionales desde el inicio.
+    El flujo se estructuró por etapas, donde cada paso contaba con campos críticos
+    <strong>(obligatorios)</strong> para poder avanzar y concretar la membresía. Esto transformó un
+    proceso disperso en una secuencia verificable y compartida entre los equipos.
   </p>
-
-  <h4>Proceso por pasos y requisitos obligatorios</h4>
-
-  <p>
-    Un paso clave en el diseño fue estructurar el enrolamiento como un flujo por etapas, donde cada
-    paso contaba con campos críticos <strong>(obligatorios)</strong> para poder avanzar y concretar
-    la membresía. Esto transformó un proceso disperso en una secuencia verificable y compartida.
-  </p>
-
+  <br>
   <p>
     En la operación diaria, era común detectar que faltaba una firma o un documento cuando el huésped
     ya había abandonado el resort. Al definir requisitos mínimos por etapa, el equipo podía identificar
     rápidamente si un paso ya había sido cubierto por otra persona, qué información seguía pendiente y
     quién podía ayudar a completarla antes de perder el cierre.
   </p>
-
+  <br>
   <p>
     El objetivo no fue agregar burocracia, sino reducir ambigüedad: evitar que el proceso quedara
     inconcluso y facilitar que los equipos se “dieran la mano” para cerrar la membresía a tiempo.
