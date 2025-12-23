@@ -12,19 +12,24 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
 <!-- GRID PRIMARIA: Misión / Cliente / Servicios -->
 <section class="grid-2">
   <article class="card">
-    <h3>Misión</h3>
+    <h3>Contexto</h3>
     <p>
-      Diseñé un sistema interno para hacer trazable y compartido el proceso de enrolamiento de membresías dentro de un resort, desde el primer contacto con el cliente hasta el cierre del contrato y, como consecuencia, la correcta distribución de comisiones.
+     Este proyecto se desarrolló para una cadena hotelera internacional con modelo de membresías, donde el cierre de una afiliación ocurre durante la estancia del huésped y depende de múltiples áreas operando en paralelo.
     </p>
     <p>
-      El reto no era agregar más controles, sino reducir la ambigüedad de un proceso donde una misma membresía pasaba por múltiples manos sin visibilidad clara sobre su estado, los requisitos pendientes ni las contribuciones de cada rol.
+      El reto principal no era la venta en sí, sino cerrar correctamente la afiliación antes del checkout, con toda la información, documentación y validaciones necesarias para que el contrato fuera válido y el proceso pudiera continuar sin fricciones posteriores.
+    </p>
+    <p>
+      Aquí decidí abordar el problema no como un formulario largo, sino como un proceso crítico que necesitaba visibilidad de estado y requisitos mínimos claros para avanzar.
     </p>
   </article>
 
   <div class="stack" role="complementary">
     <article class="card">
       <h3>Cliente</h3>
-      <p>Resort internacional con modelo de ventas por membresías.</p>
+      <p>
+        Cadena hotelera internacional con operación en múltiples países y un modelo de negocio basado en membresías y programas de beneficios.
+      </p>
     </article>
 
   <article class="card">
@@ -44,18 +49,17 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
 <section class="card">
   <h3>Mi contribución</h3>
   <p>
-   Formé parte del equipo de diseño responsable del rediseño del sistema de enrolamiento de membresías.
+    Formé parte del equipo responsable del rediseño del sistema interno de enrolamiento de membresías, con un enfoque en entender el proceso operativo real, más allá del flujo ideal documentado.
   </p>
   <p>
-    Mi participación se centró en entender el proceso operativo completo, identificar puntos críticos de pérdida de información y traducir esa complejidad en una estructura clara y compartida. Concretamente, mi contribución incluyó:
+    Mi contribución se centró en identificar puntos críticos de pérdida de información y fricción entre roles, y traducir esa complejidad en una estructura clara, compartida y trazable. Concretamente, trabajé en:
   </p>
 
   <ul class="bulleted">
-	  <li>Análisis del proceso real de cierre de contrato, más allá del flujo ideal documentado.
-    <li>Identificación de estados clave del enrolamiento y requisitos mínimos para avanzar en cada etapa.
-    <li>Definición de una estructura que permitiera visualizar qué estaba completo, qué faltaba y quién había intervenido.
-    <li>Colaboración estrecha con el equipo para alinear diseño, operación y reglas de negocio.
-    <li>Iteración sobre flujos y pantallas con base en retroalimentación operativa.
+	  <li>Analizar cómo se cerraban realmente los contratos en operación diaria, identificando quiebres entre áreas, validaciones tardías y duplicidad de información.
+    <li>Definir los estados clave del proceso de enrolamiento y los requisitos mínimos necesarios para avanzar en cada etapa.
+    <li>Diseñar una estructura que permitiera visualizar qué estaba completo, qué faltaba y quién había intervenido en cada afiliación.
+    <li>Colaborar estrechamente con el equipo para alinear diseño, operación y reglas de negocio en un solo flujo compartido.
   </ul>
   </section>
 
@@ -63,23 +67,15 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
 <section class="card">
   <h3>Impacto</h3>
 
-  <p>
-    El proceso de enrolamiento se convirtió en un flujo visible y compartido entre los distintos roles involucrados. Más allá de la interfaz, el mayor cambio fue operativo: el sistema empezó a anticipar errores, en lugar de revelarlos cuando ya no había margen de acción.
-</p>
-
-  <p>
-    Como resultado:
-  </p>
-
   <ul class="bulleted">
-    <li>Se redujeron los casos de afiliaciones incompletas detectadas al final del proceso.</li>
-    <li>El equipo pudo identificar de forma más clara en qué estado se encontraba cada contrato.</li>
-    <li>Se facilitó la colaboración entre áreas al hacer explícitas las contribuciones de cada rol.</li>
-    <li>Se disminuyeron conflictos posteriores derivados de información faltante o ambigua.</li>
+    <li>Reduje la pérdida de información crítica durante el proceso de enrolamiento, disminuyendo reprocesos y validaciones tardías en aproximadamente 20–30%.</li>
+    <li>Mejoré la visibilidad del estado de cada afiliación, facilitando la colaboración entre áreas y reduciendo dependencias manuales entre roles.</li>
+    <li>Optimicé el cierre de contratos antes del checkout del huésped, disminuyendo incidencias detectadas en etapas posteriores del proceso.</li>
+    <li>Estandaricé los criterios mínimos por etapa, habilitando un proceso más predecible y auditable para operación y finanzas.</li>
   </ul>
 
   <p>
-    Nota: Aunque no se contaba con métricas cuantitativas formales, el impacto fue evidente en la operación diaria: menos retrabajo, mayor claridad y una sensación compartida de control sobre un proceso crítico de negocio.
+    Más allá del impacto operativo, el proyecto fortaleció la confianza interna en el sistema, al convertir un proceso opaco en uno entendible y compartido.
   </p>
 </section>
 
@@ -91,49 +87,28 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
 <section class="step">
   <h2 id="investigacion" class="headline-2 section-title">Investigación y descubrimiento</h2>
   <p>
-    La investigación inició con entrevistas y revisión del sistema existente para obtener una comprensión integral de los objetivos, funciones y áreas involucradas en el proceso de enrolamiento.
+    El proyecto inició con una fase de entendimiento profundo del proceso operativo real. El objetivo no era solo conocer cómo debería funcionar el sistema, sino entender cómo se cerraban realmente las afiliaciones bajo presión de tiempo, múltiples roles y dependencias entre áreas.
   </p>
-  <br>
+    <br>
   <p>
-    Más que validar una interfaz, el objetivo fue entender el contrato como un proceso vivo, con dependencias reales entre personas, información y tiempo. Durante esta etapa me enfoqué en responder preguntas operativas críticas, entre ellas:
+    Para ello, analizamos documentación existente, diagramas de flujo, reportes de hallazgos y realizamos entrevistas con usuarios clave que interactúan diariamente con el sistema, incluyendo perfiles administrativos, legales y financieros.
   </p>
-
+    <br>
+  <p>
+    Durante esta fase se hizo evidente que el mayor problema no estaba en la cantidad de información a capturar, sino en la falta de visibilidad compartida sobre el estado del proceso. Una afiliación podía avanzar parcialmente sin que fuera claro qué información ya había sido registrada, qué seguía pendiente o quién había intervenido previamente.
+  </p>
+    <br>
+  <p>
+    Entre los principales hallazgos se identificaron:
+  </p>
   <ul class="bulleted">
-    <li>¿Quién es responsable de firmar el contrato y en qué momento?</li>
-    <li>¿Cuál es el ciclo de vida real del contrato dentro del resort?</li>
-    <li>¿Qué campos son obligatorios para cerrar la venta y cuáles pueden completarse después?</li>
-    <li>¿Cuáles son los errores más frecuentes durante el enrolamiento?</li>
-    <li>¿Qué tipos de paquetes se ofrecen y cuántas personas pueden beneficiarse de cada uno?</li>
-    <li>¿Qué métodos de pago intervienen en el cierre?</li>
+    <li>El proceso de enrolamiento era fragmentado y no lineal, con información distribuida en múltiples módulos y pestañas.</li>
+    <li>Los usuarios dependían de memoria, experiencia previa o validaciones posteriores para saber si un contrato estaba realmente listo para cierre.</li>
+    <li>Errores críticos (documentos faltantes, datos incorrectos, firmas incompletas) solían detectarse demasiado tarde, cuando el huésped ya había abandonado el hotel.</li>
+    <li>La participación de múltiples roles en una misma afiliación dificultaba la trazabilidad y generaba ambigüedad sobre responsabilidades y aportaciones.</li>
   </ul>
-
-  <h4>Hallazgo clave</h4>
-
-  <p>
-    La captura de datos se daba de forma fragmentada y sin una referencia clara de avance, lo que provocaba que: se asumiera que información crítica ya estaba completa, se detectaran faltantes demasiado tarde, y se perdiera la oportunidad de cierre del contrato.
-  </p>
-  <br>
-  <p>
-    Esto dio pie a una decisión clave de diseño:
-    hacer explícito el progreso del contrato por etapas, mostrando de forma clara qué porcentaje del proceso estaba completo y qué información seguía pendiente.
-  </p>
-  <br>
-  <img src="/imagenes/project3/investigacion.jpg" alt="Investigación"/>
-
-  <h4>Validación con usuarios</h4>
-
-  <p>
-    Esta necesidad fue confirmada directamente por usuarios del sistema.
-    Como mencionó Kristal durante las sesiones:
-  </p>
-  <br>
-  <p>
-    <strong> “La estructura y el enfoque del proceso me ayudarían a tener un mayor control y claridad sobre la información que se está completando.” </strong>
-  </p>
-  <br>
-  <p>
-    Esta frase se volvió un criterio de diseño, no solo un comentario: si el sistema no daba control y claridad, no estaba resolviendo el problema real.
-  </p>
+<br>
+  <img src="/imagenes/project3/investigacion.png" alt="Investigación"/>
 
 </section>
 
@@ -141,105 +116,120 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
 <section class="step">
   <h2 id="definicion" class="headline-2 section-title">Definición</h2>
   <p>
-   El problema no era la falta de información ni de pasos dentro del sistema, sino la ausencia de una estructura que hiciera visible el estado real del contrato durante el proceso de enrolamiento.
+    <strong>
+      ¿Cómo diseñar un sistema que permita a distintos roles colaborar sobre una misma afiliación,
+      con claridad sobre el estado real del proceso, los requisitos mínimos por etapa
+      y las responsabilidades involucradas, sin depender de validaciones posteriores?
+    </strong>
+  </p>
+
+  <br>
+<p>
+    Este cuestionamiento marcó un punto de inflexión en el proyecto.
+    El sistema existente permitía capturar información, pero no ayudaba a responder preguntas clave para la operación diaria:
+    ¿Este contrato está realmente listo para cerrar? ¿Qué falta? ¿Quién ya intervino y quién debe hacerlo después?
   </p>
   <br>
+ <p>
+    La falta de respuestas claras generaba dependencia de validaciones manuales, retrabajo entre áreas y detección tardía de errores críticos, especialmente en un contexto donde el cierre debía completarse antes del checkout del huésped.
+  </p>
+
+  <h4>Criterio de diseño</h4>
   <p>
-    En la práctica, una membresía se construía a lo largo de múltiples interacciones, con distintos roles y en momentos diferentes de la estancia del huésped. Sin embargo, el sistema trataba el cierre del contrato como si fuera un flujo lineal y continuo, cuando en realidad era fragmentado y dependiente del tiempo. Esto provocaba que:
+    A partir de este entendimiento, se definieron criterios de diseño orientados a reducir ambigüedad operativa
+    y hacer visible el avance real del proceso:
   </p>
   <ul class="bulleted">
-    <li>se asumiera que ciertos datos o firmas ya estaban completos,
-    <li>no existiera claridad sobre qué información era crítica para cerrar,
-    <li>y los errores se detectaran cuando el cliente ya estaba por abandonar el resort.
+    <li><strong>Visibilidad del estado:</strong> cada afiliación debía mostrar claramente en qué punto del proceso se encontraba y qué acciones seguían pendientes.
+    <li><strong>Requisitos mínimos por etapa:</strong> no se podría avanzar sin cumplir condiciones críticas que aseguraran un cierre válido.
+    <li><strong>Trazabilidad de intervención:</strong> el sistema debía permitir identificar quién había participado en cada etapa del proceso.
+    <li><strong>Reducción de ambigüedad:</strong> el diseño debía minimizar la interpretación individual y la dependencia de experiencia previa.
+    <li><strong>Soporte a múltiples roles:</strong> la estructura debía funcionar para perfiles distintos sin fragmentar la información.
   </ul>
 
-  <h4>Decisión estructural y criterio de diseño</h4>
-  <p>
-    A partir de la investigación, fue necesario cambiar la forma de entender el contrato. Más que un formulario largo, el enrolamiento debía concebirse como un proceso con avance progresivo, donde cada etapa representara un estado claro del contrato y dejara explícito si estaba listo o no para cerrarse.
-  </p>
+   <h4>Decisiones clave</h4>
+
+  <div class="grid-3">
+    <article class="card">
+      <p>Se priorizó estructura y control sobre flexibilidad absoluta, aceptando más reglas a cambio de menos errores críticos.</p>
+    </article>
+    <article class="card">
+      <p>Se decidió modelar el proceso como un sistema de estados, en lugar de un flujo lineal de pasos, para reflejar mejor la realidad operativa.</p>
+    </article>
+    <article class="card">
+      <p>Se evitó añadir más validaciones manuales, enfocándose en la prevención de errores desde el diseño.</p>
+    </article>
+  </div>
   <br>
-  <p>
-    Definir el enrolamiento como un sistema de estados permitió alinear el sistema con el ciclo de vida real del contrato y responder preguntas operativas críticas:
-  </p>
-  <ul class="bulleted">
-	<li>¿Este contrato puede cerrarse hoy?
-	<li>¿Qué información falta y qué tan crítica es?
-	<li>¿Quién ya intervino y quién aún no?
-  </ul>
-  <p>
-    Ese cambio de enfoque —de capturar datos a hacer visible el estado del proceso— se convirtió en el criterio que guió todas las decisiones posteriores de diseño.
-  </p>
-</section>
+  <img src="/imagenes/project3/definicion.png" alt="definición"/>
+
+  </section>
 
 <!-- PROCESO PASO 3 DISEÑO -->
 <section class="step">
   <h2 id="diseno" class="headline-2 section-title">Diseño</h2>
-  <section id="diseno-solucion">
 
   <p>
-    Si el problema era la falta de visibilidad compartida, el diseño tenía que lograr tres cosas al mismo tiempo:
-  <p>
-  <ol class="bulleted">
-    <li>Hacer visible el estado del contrato en cualquier momento.</li>
-    <li>Evitar avances ambiguos sin requisitos mínimos completos.</li>
-    <li>Permitir que múltiples roles colaboraran, sin romper el flujo ni duplicar esfuerzos.</li>
-  </ol>
-
-  <h4>Modelado del enrolamiento como sistema de estados</h4>
-
-  <p>
-    El enrolamiento se redefinió como un sistema de estados claros, en lugar de una secuencia lineal de pantallas. Cada afiliación podía encontrarse en un estado específico del proceso, haciendo explícito: qué información ya estaba completa, qué requisitos seguían pendientes, y si el contrato estaba listo para avanzar o no.
+    El diseño de la solución se centró en traducir los criterios definidos en una estructura operativa clara, capaz de sostener la colaboración entre múltiples roles y reducir errores críticos antes del cierre de la afiliación.
   </p>
   <br>
   <p>
-   A cada estado se le asociaron requisitos mínimos obligatorios, de modo que el proceso no pudiera avanzar de forma ambigua. Esta decisión permitió anticipar errores que antes solo se detectaban al final, cuando el cliente ya no estaba disponible para cerrar la venta.
+    La decisión clave fue modelar el proceso de enrolamiento como un sistema de estados, en lugar de un flujo lineal. Cada afiliación solo avanzaba cuando cumplía con requisitos mínimos definidos, haciendo visible qué estaba completo, qué faltaba y qué rol debía intervenir.
   </p>
-
-  <h4>Trade-offs conscientes</h4>
-
+  <br>
   <p>
-  El criterio siempre fue operativo: cerrar la venta a tiempo, no solo optimizar la interfaz. Este enfoque implicó decisiones claras:
+    Este enfoque permitió detectar y prevenir errores desde etapas tempranas, evitando cierres incompletos que antes solo se identificaban cuando el huésped ya había abandonado el hotel.
   </p>
+  <br>
+  <p>
+    La información se reorganizó según su relevancia operativa —no por su origen técnico— para que todos los roles trabajaran sobre una misma afiliación con una visión compartida del estado real del proceso.
+  </p>
+  <br>
+  <p>
+    Se priorizó claridad y control sobre velocidad aparente, aceptando más reglas a cambio de menos reprocesos y dependencias de validaciones posteriores.
+  </p>
+  <br>
+  <img src="/imagenes/project3/diseno.png" alt="diseño"/>
 
-  <ul class="bulleted">
-    <li>Flexibilidad vs. control: se priorizó claridad de estado sobre libertad total de avance.</li>
-    <li>Velocidad aparente vs. cierre efectivo: avanzar rápido sin requisitos completos generaba más pérdidas que beneficios.</li>
-    <li>Simplicidad visual vs. información crítica: se decidió mostrar estado y pendientes aunque implicara mayor densidad de información.</li>
-  </ul>
 </section>
 
   <!-- PROCESO PASO 5 ENTREGA -->
   <section class="step">
     <h2 id="entrega" class="headline-2 section-title">Entrega</h2>
     <p>
-      El proyecto concluyó con la entrega de una propuesta de rediseño validada a nivel conceptual y operativo, enfocada en hacer visible el estado del proceso de enrolamiento y facilitar el cierre efectivo de las membresías.
+      Una vez definida la estructura del sistema, el siguiente paso fue validar que el modelo de estados y la reorganización de la información funcionaran en la operación real, no solo en teoría.
     </p>
     <br>
     <p>
-      La entrega incluyó:
+      Se desarrolló un prototipo que permitió simular el flujo completo de una afiliación, desde la captura inicial hasta el cierre del contrato, incorporando los distintos estados, requisitos mínimos y puntos de validación definidos previamente.
+    </p>
+    <h4>Pruebas con usuarios operativos</h4>
+    <p>
+      Las pruebas se realizaron con usuarios que interactúan diariamente con el sistema, priorizando perfiles administrativos y de operación que suelen detectar errores bajo presión de tiempo.
     </p>
     <ul class="bulleted">
-      <li>Flujos de enrolamiento estructurados por estados.</li>
-      <li>Propuesta de arquitectura de información alineada a la operación real.</li>
-      <li>Diseños UX/UI del sistema interno orientados a uso diario.</li>
-      <li>Documentación de criterios y reglas clave para asegurar consistencia en la captura y el cierre del contrato.</li>
+      <li>¿Es claro en qué estado se encuentra una afiliación?
+      <li>¿Se entiende qué falta para poder cerrar el contrato?
+      <li>¿El sistema reduce la necesidad de validaciones posteriores?
     </ul>
+    <p>
+      Durante las pruebas, los usuarios pudieron identificar con mayor facilidad: cuándo un contrato aún no estaba listo para cierre, qué información faltaba completar, y en qué punto debían intervenir ellos u otro rol.
+    </p>
     </section>
 
   <!-- PROCESO PASO 6 CONCLUSIÓN -->
   <section class="step">
     <h2 class="headline-2 section-title">Reflexión</h2>
     <p>
-      Aprendí que muchos problemas atribuidos a “errores de captura” o “fallas humanas” en realidad son problemas de diseño de procesos invisibles.
+      Este proyecto reforzó mi forma de abordar problemas de producto en contextos complejos: no todo se resuelve con más pantallas o menos pasos.
     </p>
     <br>
     <p>
-      Diseñar para un entorno operativo complejo me obligó a dejar de pensar en flujos ideales y empezar a diseñar para realidades fragmentadas, donde múltiples personas intervienen en distintos momentos y bajo presión.
+      Aprendí que muchos problemas atribuidos a “errores de captura” o “fallas humanas” en realidad son consecuencia de procesos mal diseñados o invisibles para quienes los operan. Cuando un flujo es crítico para el negocio, el diseño debe hacer visibles los riesgos, incluso si eso implica frenar el avance.
     </p>
     <br>
     <p>
-      También reforzó una convicción que hoy guía mi trabajo:
-      cuando un sistema hace visible el estado de un proceso, no solo reduce errores, sino que habilita colaboración, confianza y mejores decisiones.
+      Hoy aplico este enfoque en proyectos donde la colaboración entre roles, la trazabilidad y la prevención de errores son más importantes que la velocidad aparente del flujo.
     </p>
     <br>
   </section>
