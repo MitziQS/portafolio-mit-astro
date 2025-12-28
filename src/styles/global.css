@@ -1,3 +1,7 @@
+/* =========================
+   GLOBAL — THEME + TYPO
+   ========================= */
+
 html {
   /* ===== COLORS / THEME (tuyo) ===== */
   --bg-color: #000;
@@ -30,9 +34,9 @@ html {
   --font: 'Manrope Variable', system-ui, -apple-system, Segoe UI, Roboto, Arial,
     sans-serif;
 
-  /* Base */
-  --text-base: 1.0625rem; /* 17px aprox */
-  --leading-base: 1.75; /* parecido a lo que te gustó (aireado, legible) */
+  /* Base (lo que buscas: como home = grande + aireado) */
+  --text-base: 1.0625rem; /* 17px */
+  --leading-base: 1.75;
   --tracking: -0.01em;
 
   /* Scale */
@@ -40,7 +44,7 @@ html {
   --text-lg: 1.125rem; /* 18px */
   --text-xl: 1.25rem; /* 20px */
 
-  /* Headings (clamp para responsive limpio) */
+  /* Headings */
   --h1: clamp(2.25rem, 4vw, 4rem);
   --h2: clamp(1.75rem, 2.5vw, 2.5rem);
   --h3: 1.5rem;
@@ -53,7 +57,7 @@ html {
   --w-bold: 700;
   --w-extrabold: 800;
 
-  /* Vertical rhythm (espaciados consistentes) */
+  /* Vertical rhythm */
   --space-1: 0.5rem; /* 8 */
   --space-2: 0.75rem; /* 12 */
   --space-3: 1rem; /* 16 */
@@ -63,7 +67,7 @@ html {
 }
 
 html.dark {
-  /* (tu tema “invertido” lo respeto tal cual) */
+  /* (tu tema invertido lo respeto tal cual) */
   --bg-color: #efeeed;
   --bg-secondary-color: color-mix(in srgb, #1e1e1e, #fff 95%);
   --bg-toggle-thumb: #d5d5d5;
@@ -76,7 +80,10 @@ html.dark {
   --border-card-contributions-color: #e6e6e6;
 }
 
-/* ===== PAGE BASE ===== */
+/* =========================
+   PAGE BASE
+   ========================= */
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -90,7 +97,16 @@ body {
   font-synthesis-weight: none;
 }
 
-/* ===== HEADINGS ===== */
+/* Evita “saltos” entre home vs internas por defaults de sanitize */
+:where(p, ul, ol, li, blockquote) {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* =========================
+   HEADINGS
+   ========================= */
+
 h1,
 h2,
 h3,
@@ -125,7 +141,10 @@ h4 {
   line-height: 1.25;
 }
 
-/* ===== BODY TEXT ===== */
+/* =========================
+   BODY TEXT
+   ========================= */
+
 p {
   margin: 0;
 }
@@ -134,70 +153,136 @@ a {
   color: inherit;
 }
 
-/* Utilidad: flujo vertical homogéneo (aplícalo a contenedores grandes) */
+/* 🔧 FIX: que <strong> NO cambie a blanco “más fuerte” que el resto
+   (esto arregla tu caso: Definición gris vs bullets con label blanco) */
+:where(strong, b) {
+  font-weight: var(--w-semibold);
+  color: inherit;
+}
+
+/* Utilidad: flujo vertical homogéneo */
 .flow > * + * {
   margin-top: var(--space-4);
 }
 
-/* Lectura: párrafos y listas en gris (tu decisión actual) */
+/* Lectura: párrafos y listas en gris */
 .prose :where(p, li) {
   color: var(--text-description-color);
 }
 
-/* Listas consistentes */
+/* =========================
+   LISTAS CONSISTENTES
+   ========================= */
+
+/* ✅ Regla base: listas siempre heredan size/leading del contenedor */
+:where(ul, ol) {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+:where(ul, ol) > li {
+  margin: 0;
+}
+
+/* Clase que tú ya usas */
 :where(ul, ol).bulleted {
   padding-left: 18px;
   display: grid;
   gap: 0.4rem;
 }
 
-/* Headline helpers (si ya los usas en el sitio) */
+/* 🔧 FIX: estabas usando --text-primary (no existe) */
+.bulleted,
+.bulleted li {
+  color: var(--text-description-color);
+  font-weight: var(--w-regular);
+}
+
+/* Marker consistente con texto (si quieres blanco, cámbialo a var(--text-color)) */
+.bulleted li::marker {
+  color: var(--text-description-color);
+}
+
+/* =========================
+   HEADLINE HELPERS
+   ========================= */
+
 .headline-1 {
   font-size: var(--h2);
   font-weight: var(--w-medium);
 }
+
 .headline-2 {
   font-size: clamp(1.25rem, 2vw, 2rem);
   font-weight: var(--w-semibold);
 }
+
 .headline-3 {
   font-size: 1.25rem;
   font-weight: var(--w-medium);
 }
+
 .headline-4 {
   font-size: 1.0625rem;
   font-weight: var(--w-medium);
 }
 
-/* IMPORTANT:
-   Quita esto porque te rompe el ritmo (y hace que h3/p se vean raros en cards)
-   En vez de margin: 8px en todo, usa flujo o espaciado por contenedor.
-*/
-/* ❌ ELIMINADO:
-.project-content .card h1,
-.project-content .card h2,
-.project-content .card h3,
-.project-content .card h4,
-.project-content .card p,
-.project-content .card ul,
-.project-content .card ol {
-  margin: 8px;
-}
-*/
+/* =========================
+   PROJECT / CASE STUDY NORMALIZATION
+   (esto es lo que te va a “igualar” home vs internas)
+   ========================= */
 
-/* KPI: deja grande pero con tipografía consistente */
-.project-content .kpi__value {
+/* 1) El texto principal dentro de páginas de proyecto
+      (sube size/aire como en la home) */
+:where(.project-content, .summary, .step) {
+  font-size: var(--text-base);
+  line-height: var(--leading-base);
+}
+
+/* 2) Cards (tu problema: “cards no”)
+      Fuerza que dentro de summary-card todo tenga el mismo “cuerpo” */
+:where(.summary-card, .card) {
+  font-size: var(--text-base);
+  line-height: var(--leading-base);
+}
+
+:where(.summary-card p, .card p, .summary-card li, .card li) {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Eyebrow más pequeño (para que no “jale” el ritmo) */
+.summary-card__eyebrow {
+  font-size: var(--text-sm);
+  font-weight: var(--w-medium);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-description-color);
+}
+
+/* 3) KPI: value grande, label consistente */
+.project-content .kpi__value,
+.kpi__value {
   font-weight: var(--w-extrabold);
   font-size: clamp(1.75rem, 2.5vw, 2.25rem);
   line-height: 1.05;
 }
 
-.bulleted,
-.bulleted li {
-  color: var(--text-primary);
-  font-weight: 400;
+/* 🔧 FIX: el label NO debe quedar más chico ni distinto que bullets */
+.kpi__label {
+  font-size: var(--text-base);
+  line-height: var(--leading-base);
+  color: var(--text-description-color);
 }
 
-.bulleted li::marker {
-  color: var(--text-primary);
+/* 4) Evita que “h3/p raros en cards” vuelva a pasar */
+.project-content .card :where(h1, h2, h3, h4, p, ul, ol) {
+  margin: 0;
+}
+
+/* 5) Imágenes / media */
+.media img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
