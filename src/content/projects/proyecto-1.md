@@ -9,69 +9,87 @@ summary: 'Hice que la recurrencia fuera realmente útil: menos clicks, más clar
 tags: ['e-commerce', 'UX', 'recurrencia']
 ---
 
-<!-- GRID PRIMARIA: Misión / Cliente / Servicios -->
-<section class="grid-2">
-  <article class="card">
-    <h3>Misión</h3>
-    <p>
-    “Lo de siempre” es la funcionalidad que permite a usuarios recurrentes completar su compra semanal de manera más rápida. A pesar de ser una pieza clave para mejorar ATC Recurrentes y Home A2C, su uso era menor al esperado: visualmente confusa, poco confiable y con fricción para encontrar productos habituales.
-    </p>
-    <br>
-    <p>
-      Mi misión fue replantearla desde su valor estratégico: convertirla en una herramienta que realmente acompañara el hábito natural de recompra, reduciendo esfuerzo cognitivo y acelerando la decisión. Para lograrlo, trabajé en reorganizar la información, mejorar la claridad del contenido y unificar el comportamiento cross-platform, haciendo que la herramienta fuera más visible, útil y coherente tanto en app como en web.
-    </p>
+<section class="summary" aria-labelledby="resumen">
+  <h2 id="resumen" class="summary__title">Resumen</h2>
+
+  <div class="summary__grid">
+    <!-- Columna izquierda (fija) -->
+    <div class="summary__main">
+      <article class="summary-card">
+        <p class="summary-card__eyebrow">Contexto</p>
+        <p>
+          “Lo de siempre” es la funcionalidad que permite a usuarios recurrentes completar su compra semanal
+          de manera más rápida. A pesar de ser una pieza clave para mejorar ATC Recurrentes y Home A2C,
+          su uso era menor al esperado: visualmente confusa, poco confiable y con fricción para encontrar
+          productos habituales.
+        </p>
+        <p>
+          Mi misión fue replantearla desde su valor estratégico: convertirla en una herramienta que realmente
+          acompañara el hábito natural de recompra, reduciendo esfuerzo cognitivo y acelerando la decisión.
+          Para lograrlo, trabajé en reorganizar la información, mejorar la claridad del contenido y unificar
+          el comportamiento cross-platform, haciendo que la herramienta fuera más visible, útil y coherente
+          tanto en app como en web.
+        </p>
+      </article>
+
+  <article class="summary-card">
+        <p class="summary-card__eyebrow">Mi contribución</p>
+        <p>
+          Comencé auditando la funcionalidad para entender por qué no ayudaba realmente al usuario recurrente.
+          Aunque el 70% repetía los mismos productos, solo el 20% usaba “Lo de Siempre”, una señal clara de
+          problemas de claridad, navegación y organización que no conectaban con su hábito semanal.
+        </p>
+        <p>
+          Con esa visión, me reuní con mi PM para comunicar hallazgos y definir un MVP realista, alineando
+          expectativas, limitantes y trade-offs. En diseño, reorganicé la información (categorías por frecuencia
+          y departamento), propuse flujos más intuitivos y unifiqué el comportamiento entre web y app.
+        </p>
+        <p>
+          Finalmente, documenté lineamientos UI y consideraciones funcionales para integrarlos al design system,
+          dejando base para futuras evoluciones en personalización e inteligencia de consumo.
+        </p>
+      </article>
+    </div>
+
+  <!-- Columna derecha (variable: cards opcionales) -->
+  <aside class="summary__side" aria-label="Detalles del proyecto">
+    <article class="summary-card">
+      <p class="summary-card__eyebrow">Cliente</p>
+        <p>
+          <strong>Jüsto.mx</strong><br />
+          Supermercado 100% digital en México, Perú y Brasil.
+       </p>
     </article>
 
-  <div class="stack" role="complementary">
-    <article class="card">
-      <h3>Cliente</h3>
-      <p><strong>Jüsto.mx</strong><br/>Supermercado 100% digital en México, Perú y Brasil.</p>
-    </article>
-
-  <article class="card">
-    <h3>Servicios</h3>
-    <ul class="bulleted">
-      <li>Investigación con usuarios recurrentes y análisis de comportamiento de compra.</li>
-      <li>Definición y priorización de MVP y alcance funcional junto con producto y desarrollo.</li>
-      <li>Facilitación de workshops con PMs y diseño para alinear visión, hipótesis y prioridades </li>
-    </ul>
-  </div>
+  <article class="summary-card">
+    <p class="summary-card__eyebrow">Mi puesto</p>
+    <p>Product Designer</p>
   </article>
-</section>
 
-<!-- MI CONTRIBUCIÓN -->
-<section class="card">
-  <h3>Mi contribución</h3>
- <p>
-   Comencé auditando la funcionalidad para entender por qué no ayudaba realmente al usuario recurrente. Aunque el 70% repetía los mismos productos, solo el 20% usaba “Lo de Siempre”, una señal clara de problemas de claridad, navegación y organización que no conectaban con su hábito semanal.
-  </p>
-  <p>
-   Con esa visión desde diseño, me reuní con mi PM para comunicarle los hallazgos y definir un MVP realista, alineando expectativas, limitantes y los trade-offs necesarios para avanzar. Esta fase permitió destrabar puntos ambiguos, alinear prioridades y tomar decisiones de producto.
-  </p>
-  <p>
-    En diseño, reorganicé la información y propuse una estructura más cercana al hábito de recompra: categorización por frecuencia y departamento, flujos más intuitivos y una lógica visual que redujera el esfuerzo cognitivo. También unifiqué el comportamiento entre web y app para ofrecer una experiencia coherente.
-  </p>
-  <p>
-    Finalmente, documenté lineamientos UI y consideraciones funcionales para integrarlos al design system, dejando la base preparada para futuras evoluciones en personalización e inteligencia de consumo.
- </p>
-</section>
+  <article class="summary-card">
+    <p class="summary-card__eyebrow">Duración</p>
+    <p>2023</p>
+  </article>
+    </aside>
 
-<!-- IMPACTO (KPI CARDS) -->
-<section class="card">
-  <h3>Impacto</h3>
-  <p>
-    Antes del rediseño, “Lo de Siempre” existía, pero no generaba el valor esperado: era poco visible, difícil de navegar y no conectaba con el hábito natural de recompra. Esto limitaba su adopción y, en consecuencia, su impacto en la recurrencia y el ticket promedio.
-  </p>
-  <p>
-    Gracias al trabajo en equipo detrás de este proyecto, los usuarios recurrentes lograron completar su compra habitual con mayor fluidez y menor esfuerzo.
-  </p>
-  <p>
-    Los resultados fueron claros:
-  </p>
-  <div class="kpi-grid">
-    <div class="kpi"><div class="kpi__value">+20%</div><div class="kpi__label">en uso de la funcionalidad por parte de usuarios recurrentes.</div></div>
-    <div class="kpi"><div class="kpi__value">+12pp en MX</div><div class="kpi__label"> y +8pp en BR en la conversión en flujos que incluían “Lo de siempre”.</div></div>
-    <div class="kpi"><div class="kpi__value">+15%</div><div class="kpi__label">Incremento en Home Add-to-Cart de usuarios recurrentes.</div></div>
+  <!-- ✅ Impacto ahora es “full width” debajo de las 2 columnas -->
+  <article class="summary-card summary-card--full">
+      <p class="summary-card__eyebrow">Impacto</p>
+      <p>
+        Antes del rediseño, “Lo de Siempre” existía, pero no generaba el valor esperado: era poco visible,
+        difícil de navegar y no conectaba con el hábito natural de recompra. Esto limitaba su adopción y,
+        en consecuencia, su impacto en la recurrencia y el ticket promedio.
+      </p>
+      <p>
+        Gracias al trabajo en equipo detrás de este proyecto, los usuarios recurrentes lograron completar su compra
+        habitual con mayor fluidez y menor esfuerzo.
+      </p>
+      <p>
+        Resultados:
+        +20% en uso de la funcionalidad por usuarios recurrentes; +12pp en MX y +8pp en BR en conversión
+        en flujos que incluían “Lo de siempre”; +15% en Home Add-to-Cart de usuarios recurrentes.
+      </p>
+    </article>
   </div>
 </section>
 

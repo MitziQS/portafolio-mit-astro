@@ -1,16 +1,20 @@
 html {
+  /* ===== COLORS / THEME (tuyo) ===== */
   --bg-color: #000;
   --bg-secondary-color: #1e1e1e;
   --bg-toggle-thumb: #343434;
   --bg-card-contributions: #4847474d;
   --bg-separator: #5a5a5a;
+
   --text-color: #fff;
   --text-description-color: #cfcfcf;
-  --font: 'Inter Variable', sans-serif;
+
   --border-color: #5a5a5a;
   --border-card-contributions-color: #272727;
+
   --radius: 24px;
   --mobile-inline-padding: 22px;
+
   --transition-bg: background-color 150ms ease;
   --transition-text: color 150ms ease;
   --transition-border: border-color 150ms ease;
@@ -21,91 +25,155 @@ html {
   @media (width >= 768px) {
     scroll-padding-top: 126px;
   }
+
+  /* ===== TYPOGRAPHY SYSTEM ===== */
+  --font: 'Manrope Variable', system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+
+  /* Base */
+  --text-base: 1.0625rem; /* 17px aprox */
+  --leading-base: 1.75; /* parecido a lo que te gustó (aireado, legible) */
+  --tracking: -0.01em;
+
+  /* Scale */
+  --text-sm: 0.9375rem; /* 15px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+
+  /* Headings (clamp para responsive limpio) */
+  --h1: clamp(2.25rem, 4vw, 4rem);
+  --h2: clamp(1.75rem, 2.5vw, 2.5rem);
+  --h3: 1.5rem;
+  --h4: 1.25rem;
+
+  /* Weights */
+  --w-regular: 400;
+  --w-medium: 500;
+  --w-semibold: 600;
+  --w-bold: 700;
+  --w-extrabold: 800;
+
+  /* Vertical rhythm (espaciados consistentes) */
+  --space-1: 0.5rem; /* 8 */
+  --space-2: 0.75rem; /* 12 */
+  --space-3: 1rem; /* 16 */
+  --space-4: 1.5rem; /* 24 */
+  --space-5: 2rem; /* 32 */
+  --space-6: 3rem; /* 48 */
 }
 
 html.dark {
+  /* (tu tema “invertido” lo respeto tal cual) */
   --bg-color: #efeeed;
   --bg-secondary-color: color-mix(in srgb, #1e1e1e, #fff 95%);
   --bg-toggle-thumb: #d5d5d5;
   --bg-card-contributions: #cbcbcb4d;
   --bg-separator: #000;
+
   --text-color: #000;
   --text-description-color: color-mix(in srgb, #a6a6a6, #000 40%);
   --border-color: #cbcbcb;
   --border-card-contributions-color: #e6e6e6;
 }
 
+/* ===== PAGE BASE ===== */
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: var(--font);
+  font-size: var(--text-base);
+  line-height: var(--leading-base);
+  letter-spacing: var(--tracking);
   transition: var(--transition-bg), var(--transition-text);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-synthesis-weight: none;
+}
+
+/* ===== HEADINGS ===== */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
+  font-size: var(--h1);
+  font-weight: var(--w-bold);
+  line-height: 1.1;
   text-wrap: balance;
-  margin: 0;
-
-  @media (width >= 768px) {
-    font-size: 4rem;
-  }
 }
 
 h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin: 0;
-
-  @media (width >= 768px) {
-    font-size: 2.5rem;
-  }
+  font-size: var(--h2);
+  font-weight: var(--w-semibold);
+  line-height: 1.15;
+  text-wrap: balance;
 }
 
 h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 0;
+  font-size: var(--h3);
+  font-weight: var(--w-semibold);
+  line-height: 1.25;
 }
 
 h4 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 0;
+  font-size: var(--h4);
+  font-weight: var(--w-semibold);
+  line-height: 1.25;
 }
 
+/* ===== BODY TEXT ===== */
 p {
   margin: 0;
 }
 
+a {
+  color: inherit;
+}
+
+/* Utilidad: flujo vertical homogéneo (aplícalo a contenedores grandes) */
+.flow > * + * {
+  margin-top: var(--space-4);
+}
+
+/* Lectura: párrafos y listas en gris (tu decisión actual) */
+.prose :where(p, li) {
+  color: var(--text-description-color);
+}
+
+/* Listas consistentes */
+:where(ul, ol).bulleted {
+  padding-left: 18px;
+  display: grid;
+  gap: 0.4rem;
+}
+
+/* Headline helpers (si ya los usas en el sitio) */
 .headline-1 {
-  font-size: 2rem;
-  font-weight: 500;
-
-  @media (width >= 768px) {
-    font-size: 2.5rem;
-  }
+  font-size: var(--h2);
+  font-weight: var(--w-medium);
 }
-
 .headline-2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-
-  @media (width >= 768px) {
-    font-size: 2rem;
-  }
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  font-weight: var(--w-semibold);
 }
-
 .headline-3 {
-  font-size: 1.5rem;
-}
-
-.headline-4 {
   font-size: 1.25rem;
+  font-weight: var(--w-medium);
+}
+.headline-4 {
+  font-size: 1.0625rem;
+  font-weight: var(--w-medium);
 }
 
-/* Quita márgenes propios de headings y bloques dentro de la card */
+/* IMPORTANT:
+   Quita esto porque te rompe el ritmo (y hace que h3/p se vean raros en cards)
+   En vez de margin: 8px en todo, usa flujo o espaciado por contenedor.
+*/
+/* ❌ ELIMINADO:
 .project-content .card h1,
 .project-content .card h2,
 .project-content .card h3,
@@ -113,11 +181,23 @@ p {
 .project-content .card p,
 .project-content .card ul,
 .project-content .card ol {
-  margin: 8px; /* 👈 aquí está el fix del h3 */
+  margin: 8px;
+}
+*/
+
+/* KPI: deja grande pero con tipografía consistente */
+.project-content .kpi__value {
+  font-weight: var(--w-extrabold);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  line-height: 1.05;
 }
 
-.project-content .kpi__value {
-  font-weight: 800;
-  font-size: 2rem; /* ✅ hazlos más grandes */
-  line-height: 1;
+.bulleted,
+.bulleted li {
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.bulleted li::marker {
+  color: var(--text-primary);
 }

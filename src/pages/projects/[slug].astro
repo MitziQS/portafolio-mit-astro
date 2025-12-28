@@ -56,7 +56,6 @@ const options = {
     <div class="project-wrapper">
       <div id="top"></div>
 
-      <!-- ✅ BOTÓN REGRESAR -->
       <Button
         href={`${import.meta.env.BASE_URL}#proyectos`}
         class="small back-link"
@@ -65,12 +64,10 @@ const options = {
         ← Regresar
       </Button>
 
-      <!-- ✅ TÍTULO -->
       <header class="project-hero">
         <h1 class="project-title">{project.data.title}</h1>
       </header>
 
-      <!-- ✅ HERO IMG -->
       {
         project.data.cover && (
           <figure class="project-media">
@@ -83,8 +80,10 @@ const options = {
         )
       }
 
-      <!-- ✅ CONTENIDO -->
-      <article class="project-content">
+      {
+        /* ✅ Importante: quitamos cualquier “max-width” de prose para que cards (Impacto) ocupen todo */
+      }
+      <article class="project-content prose flow">
         <Content />
       </article>
     </div>
@@ -96,66 +95,66 @@ const options = {
       max-width: 1054px;
       margin-inline: auto;
       padding-inline: var(--mobile-inline-padding);
-      padding-block: var(--section-y);
+      padding-block: var(--space-6);
     }
 
-    /* ===== HERO ===== */
     .project-hero {
-      margin: 0.25rem 0 1rem;
-    }
-    .project-title {
-      margin: 0.5rem 0 1.5rem; /* solo spacing */
+      margin: 0.25rem 0 var(--space-4);
     }
 
-    /* ===== IMAGEN ===== */
-    .project-media {
-      margin: 0 0 2rem;
+    .project-title {
+      margin: 0 0 var(--space-4);
     }
-    .project-media img,
-    .hero-media {
+
+    .project-media {
+      margin: 0 0 var(--space-6);
+    }
+
+    .project-media img {
       width: 100%;
       height: auto;
       border-radius: 12px;
       display: block;
-      margin-bottom: 2rem;
     }
 
-    /* ===== ESPACIADOS GENERALES ===== */
+    /* =========================================================
+       FIX 1: Prose no debe limitar el ancho de cards como Impacto
+       (La card debe llenar el wrapper, respetando márgenes)
+       ========================================================= */
+    .project-content {
+      width: 100%;
+    }
+    .project-content.prose {
+      max-width: none;
+    }
+
+    /* ===== Headings consistentes ===== */
     .project-content :is(h2, h3, h4) {
-      margin-top: 2rem;
-      margin-bottom: 0.6rem;
-    }
-    .project-content > * + * {
-      margin-top: 1rem;
+      margin-top: var(--space-6);
+      margin-bottom: var(--space-2);
     }
 
-    /* ===== LISTAS ===== */
-    .project-content .bulleted {
-      padding-left: 18px;
-      display: grid;
-      gap: 0.4rem;
-    }
-
-    /* ===== APLICAR COLOR GLOBAL (gris) A TEXTO DE LECTURA ===== */
-    .project-content p,
-    .project-content li {
+    /* ===== Texto ===== */
+    .project-content :where(p, li) {
       color: var(--text-description-color);
+      text-wrap: pretty;
     }
 
-    /* ===== CARDS ===== */
+    /* ===== Cards (incluye Impacto) ===== */
     .project-content .card {
+      width: 100%;
+      max-width: none; /* ✅ Impacto full width */
       background: var(--bg-secondary-color);
       border: 1px solid color-mix(in oklab, var(--text-color) 15%, transparent);
       border-radius: 16px;
       padding: 20px;
       box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
     }
-
-    .project-content > .card {
-      margin-top: 32px;
+    .project-content .card > * + * {
+      margin-top: var(--space-3);
     }
 
-    /* ===== GRIDS ===== */
+    /* ===== Grids ===== */
     .project-content .stack {
       display: grid;
       gap: 24px;
@@ -177,42 +176,59 @@ const options = {
       }
     }
 
-    /* ===== KPI ===== */
+    /* ===== KPI (resaltar porcentajes) ===== */
     .project-content .kpi-grid {
       display: grid;
       gap: 24px;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      margin-top: 0.5rem;
+      margin-top: var(--space-3);
     }
+    @media (max-width: 900px) {
+      .project-content .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .project-content .kpi {
       background: transparent;
       border-radius: 14px;
       padding: 16px;
       border: 1px dashed color-mix(in oklab, var(--text-color) 18%, transparent);
     }
+
     .project-content .kpi__value {
       font-weight: 800;
-      line-height: 1;
+      font-size: 2rem; /* ✅ grande */
+      line-height: 1.05;
+      color: var(--text-color);
+      letter-spacing: -0.02em;
     }
+
     .project-content .kpi__label {
-      opacity: 0.8;
+      margin-top: 10px;
+      opacity: 0.9;
+      color: var(--text-description-color);
     }
 
-    /* ===== STEP ===== */
+    /* ===== Step ===== */
     .project-content .step {
-      margin: 28px 0;
-    }
-    .project-content .step__eyebrow {
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      opacity: 0.7;
-      margin-bottom: 6px;
+      margin: var(--space-5) 0;
     }
 
-    /* ===== IMÁGENES EN BODY ===== */
+    /* ✅ Medida de lectura SOLO en pasos del proceso (no afecta Impacto) */
+    .project-content .step :where(p, ul, ol, blockquote, .card) {
+      max-width: 92ch;
+      margin-right: auto;
+    }
+    @media (max-width: 768px) {
+      .project-content .step :where(p, ul, ol, blockquote, .card, .bulleted) {
+        max-width: 100%;
+      }
+    }
+
+    /* ===== Imágenes ===== */
     .project-content .media {
-      margin: 16px 0;
+      margin: var(--space-4) 0;
     }
     .project-content .media img {
       width: 100%;
@@ -220,12 +236,12 @@ const options = {
       border-radius: 12px;
     }
 
-    /* ===== BACK LINK ===== */
+    /* ===== Back link ===== */
     .project-wrapper .back-link {
-      margin-bottom: 2rem;
+      margin-bottom: var(--space-5);
     }
 
-    /* ===== ANCLAS ===== */
+    /* ===== Anclas ===== */
     html {
       scroll-behavior: smooth;
     }
@@ -238,12 +254,15 @@ const options = {
       }
     }
 
-    /* ===== H2 CON LÍNEA ===== */
+    /* =========================================================
+       FIX 2: Línea después del título de sección (h2.section-title)
+       ========================================================= */
     .project-content h2.section-title {
       display: flex;
       align-items: center;
       gap: 24px;
-      margin: 2.5rem 0 1rem;
+      margin: var(--space-6) 0 var(--space-4);
+      white-space: nowrap;
     }
     .project-content h2.section-title::after {
       content: '';
@@ -259,29 +278,71 @@ const options = {
       }
     }
 
-    /* ATENCIÓN MIT, ESTO SE PUEDE BORRAR -Limita la medida de lectura SOLO en secciones del proceso */
-    .project-content .step :where(p, ul, ol, blockquote, .card) {
-      max-width: 92ch; /* ~45–75 caracteres por línea → legibilidad ideal */
-      margin-right: auto; /* columna alineada a la izquierda */
+    /* =========================
+       RESUMEN
+       ========================= */
+    .project-content .summary-card--full {
+      grid-column: 1 / -1;
     }
 
-    /* Listas con buena separación y misma medida */
-    .project-content .step .bulleted {
-      max-width: 92ch;
+    .project-content .summary {
+      margin-top: 24px;
     }
 
-    /* Mantén imágenes/tablas a ancho completo (si quieres) */
-    .project-content .step .media,
-    .project-content .step .grid-3,
-    .project-content .step .grid-2 {
-      max-width: none;
+    .project-content .summary__title {
+      margin: 0 0 20px;
+      font-size: 2rem;
+      font-weight: 700;
     }
 
-    /* En móviles deja que fluya al 100% */
-    @media (max-width: 768px) {
-      .project-content .step :where(p, ul, ol, blockquote, .card, .bulleted) {
-        max-width: 100%;
+    .project-content .summary__grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1.6fr 1fr;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .project-content .summary__grid {
+        grid-template-columns: 1fr;
       }
+    }
+
+    .project-content .summary__main,
+    .project-content .summary__side {
+      display: grid;
+      gap: 24px;
+    }
+
+    .project-content .summary-card {
+      background: var(--bg-secondary-color);
+      border: 1px solid color-mix(in oklab, var(--text-color) 12%, transparent);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .project-content .summary-card__eyebrow {
+      margin: 0 0 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-description-color);
+    }
+
+    .project-content .summary-card p {
+      margin: 0;
+      color: var(--text-color);
+      line-height: 1.65;
+      font-size: 1rem;
+    }
+
+    .project-content .summary-card p + p {
+      margin-top: 12px;
+    }
+
+    /* Impacto full width dentro del grid */
+    .project-content .summary-card--full {
+      grid-column: 1 / -1;
     }
   </style>
 </Layout>

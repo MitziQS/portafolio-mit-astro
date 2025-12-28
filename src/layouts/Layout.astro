@@ -1,6 +1,6 @@
 ---
 import I18NHead from '@astrolicious/i18n/components/I18nHead.astro'
-import inter from '@fontsource-variable/inter/files/inter-latin-standard-normal.woff2'
+import manrope from '@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2'
 import { getHtmlAttrs } from 'i18n:astro'
 import Favicons from '@components/Favicons.astro'
 import Footer from '@components/Footer.astro'
@@ -30,13 +30,10 @@ const { title, description, metaRobots, navItems } = options
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <title>{title}</title>
 
     <slot name="preconnect" />
-
     <slot name="async-script" />
-
     <slot name="critical-css" />
 
     <style is:inline>
@@ -74,8 +71,6 @@ const { title, description, metaRobots, navItems } = options
 
       html.dark body::-webkit-scrollbar {
         background: var(--scrollbar-dark);
-        transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
-        will-change: background;
       }
 
       html.dark body::-webkit-scrollbar-thumb {
@@ -109,7 +104,7 @@ const { title, description, metaRobots, navItems } = options
       rel="preload"
       as="font"
       crossorigin="anonymous"
-      href={inter}
+      href={manrope}
       type="font/woff2"
     />
 
@@ -137,6 +132,7 @@ const { title, description, metaRobots, navItems } = options
     <Favicons />
 
     <slot name="social-media" />
+
     <script is:inline>
       ;(function () {
         const root = document.documentElement
@@ -150,7 +146,6 @@ const { title, description, metaRobots, navItems } = options
           btn.setAttribute('aria-pressed', String(isDark))
         }
 
-        // estado inicial del botón
         const initialIsDark = root.classList.contains('dark')
         btn.setAttribute('aria-pressed', String(initialIsDark))
 
@@ -158,15 +153,13 @@ const { title, description, metaRobots, navItems } = options
           apply(!root.classList.contains('dark'))
         })
       })()
-    </script></head
-  >
+    </script>
+  </head>
 
   <body>
     <Navbar items={navItems} />
     <slot />
-
     <Footer />
-
     <Social />
     <slot name="dynamic-components" />
   </body>

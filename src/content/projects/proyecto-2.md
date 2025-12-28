@@ -2,62 +2,92 @@
 title: 'Contar menos, conectar más'
 date: 2023-08-01
 cover: '/src/images/projects/proy-2-banner.jpg'
-coverAlt: 'Listado de productos recurrentes'
+coverAlt: 'Landing con propuesta de valor clara'
 company: 'Jüsto'
 role: 'Product Designer'
-summary: 'Hice que la recurrencia fuera realmente útil: menos clicks, más claridad y velocidad en la recompra.'
-tags: ['e-commerce', 'UX', 'recurrencia']
+summary: 'Rediseñé la landing para comunicar menos y conectar más: claridad inmediata, confianza y beneficios visibles desde el primer scroll.'
+tags: ['e-commerce', 'UX', 'content design', 'growth']
 ---
 
-<!-- GRID PRIMARIA: Misión / Cliente / Servicios -->
-<section class="grid-2">
-  <article class="card">
-    <h3>Misión</h3>
-    <p>
-      Cuando llegué a este proyecto, lo primero que encontré fue una landing sobrecargada de texto y con una propuesta de valor poco clara. El mensaje estaba centrado en hablar de nosotros mismos —procesos internos, frescura, logística— en lugar de hablarle al usuario. La consecuencia: confusión, percepción limitada de lo que ofrecíamos y baja motivación para registrarse o comprar.
-    </p>
-    <br>
-    <p>
-     El reto era claro: comunicar menos, pero conectar más. Mi meta fue rediseñar la experiencia para que cualquier persona que llegara a la landing entendiera, en segundos, quiénes somos, qué ofrecemos y por qué elegirnos.
-    </p>
-  </article>
+<section class="summary" aria-labelledby="resumen">
+  <h2 id="resumen" class="summary__title">Resumen</h2>
 
-  <div class="stack" role="complementary">
-    <article class="card">
-      <h3>Cliente</h3>
-      <p><strong>Jüsto.mx</strong><br/>Supermercado 100% digital en México y Brasil.</p>
+  <div class="summary__grid">
+    <!-- Columna izquierda -->
+    <div class="summary__main">
+      <article class="summary-card">
+        <p class="summary-card__eyebrow">Contexto</p>
+        <p>
+          Cuando llegué a este proyecto, la landing estaba sobrecargada de texto y con una propuesta de valor poco clara.
+          El mensaje hablaba más de procesos internos (logística, frescura, operación) que del beneficio real para quien llegaba por primera vez.
+        </p>
+        <p>
+          La consecuencia era directa: confusión sobre lo que ofrecíamos, percepción limitada del surtido
+          y baja motivación para registrarse o comprar.
+        </p>
+        <p>
+          El reto fue comunicar menos, pero conectar más: que en segundos quedara claro quiénes somos,
+          qué ofrecemos y por qué elegirnos.
+        </p>
+      </article>
+
+  <article class="summary-card">
+        <p class="summary-card__eyebrow">Mi contribución</p>
+        <ul class="bulleted">
+          <li>Lideré investigación con usuarios en México y Brasil, transformando hallazgos en hipótesis accionables.</li>
+          <li>Redefiní la narrativa y la jerarquía de la landing con foco en claridad, confianza y beneficios inmediatos.</li>
+          <li>Diseñé y probé prototipos para validar comprensión de la propuesta de valor.</li>
+          <li>Coordiné con Producto y Growth para mantener consistencia entre negocio, comunicación y diseño.</li>
+        </ul>
+      </article>
+    </div>
+
+  <!-- Columna derecha -->
+  <aside class="summary__side" aria-label="Detalles del proyecto">
+      <article class="summary-card">
+        <p class="summary-card__eyebrow">Cliente</p>
+        <p>
+          <strong>Jüsto.mx</strong><br />
+          Supermercado 100% digital en México y Brasil.
+        </p>
+      </article>
+
+  <article class="summary-card">
+        <p class="summary-card__eyebrow">Mi puesto</p>
+        <p>Product Designer</p>
+      </article>
+
+  <article class="summary-card">
+        <p class="summary-card__eyebrow">Duración</p>
+        <p>2023</p>
+      </article>
+    </aside>
+
+  <!-- Impacto FULL WIDTH -->
+  <article class="summary-card summary-card--full">
+      <p class="summary-card__eyebrow">Impacto</p>
+      <p>
+        Confirmé que una comunicación clara y humana puede impactar directamente en negocio y percepción de marca,
+        alineando la landing como punto de entrada estratégico al ecosistema digital de Jüsto.
+      </p>
+
+  <div class="kpi-grid" aria-label="Resultados clave">
+        <div class="kpi">
+          <div class="kpi__value">+15%</div>
+          <div class="kpi__label">en conversión de visitas a registro/compra.</div>
+        </div>
+
+  <div class="kpi">
+          <div class="kpi__value">+30%</div>
+          <div class="kpi__label">en descargas de la app.</div>
+        </div>
+
+  <div class="kpi">
+          <div class="kpi__value">12s → ~5s</div>
+          <div class="kpi__label">reducción del tiempo para entender la propuesta de valor.</div>
+        </div>
+      </div>
     </article>
-
-  <article class="card">
-    <h3>Servicios</h3>
-    <ul class="bulleted">
-      <li>UX: workshops con equipos de Producto y Growth, benchmark competitivo, pruebas de subrayado y entrevistas con usuarios en MX y BR.</li>
-      <li>Content design: definición de hipótesis y mensajes clave, exploración de tono y microcopy.</li>
-      <li>UX/UI design: wireframes, rediseño visual y pruebas de comprensión.</li>
-  </div>
-  </article>
-</section>
-
-<!-- MI CONTRIBUCIÓN -->
-<section class="card">
-  <h3>Mi contribución</h3>
-  <ul class="bulleted">
-    <li>Lideré la investigación con usuarios en México y Brasil, transformando aprendizajes en hipótesis accionables.</li>
-    <li>Redefiní la narrativa y estructura de la landing con foco en claridad, confianza y beneficios inmediatos </li>
-    <li>Diseñé y testeé prototipos que validaron la propuesta de valor con usuarios reales.</li>
-    <li>DCoordiné la implementación con Producto y Growth para asegurar consistencia entre negocio, comunicación y diseño.</li>
-  </ul>
-</section>
-
-<!-- IMPACTO (KPI CARDS) -->
-<section class="card">
-  <h3>Impacto</h3>
-  <p>Con este proyecto confirmé que una comunicación clara y humana puede tener un impacto directo en negocio y en percepción de marca, alineando la landing como un punto de entrada estratégico al ecosistema digital de Jüsto.</p>
-  <br>
-  <div class="kpi-grid">
-    <div class="kpi"><div class="kpi__value">+15%</div><div class="kpi__label">en conversión de visitas a registro/compra.</div></div>
-    <div class="kpi"><div class="kpi__value">+30%</div><div class="kpi__label">en descargas del app</div></div>
-    <div class="kpi"><div class="kpi__value">12 seg. a ~5 seg</div><div class="kpi__label">Reducción del tiempo de comprensión de la propuesta de valor</div></div>
   </div>
 </section>
 
@@ -117,7 +147,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
     <li><strong>Marca propia:</strong> la frase “Conoce Marca Jüsto” generaba confusión; no quedaba claro que se trataba de una línea propia.</li>
     <li><strong>Beneficio inmediato:</strong> aunque el cupón era visible, pocos entendían cómo se aplicaba.</li>
     <li><strong>Sobrecarga de texto:</strong> la lectura resultaba repetitiva y poco escaneable.</li>
-    <li><strong>Imágenes poco reales (BR):</strong>5/5 comentarion que no transmitían cercanía ni frescura</li>
+    <li><strong>Imágenes poco reales (BR):</strong>5/5 comentario que no transmitían cercanía ni frescura</li>
     <li><strong>Confianza: </strong>comunicar cobertura y mostrar vans generaba seguridad.</li>
   </ul>
   </p>
