@@ -29,6 +29,7 @@
 
 /* Eyebrow más pequeño (para que no “jale” el ritmo) */
 .summary-card__eyebrow {
+  margin: 0 0 10px;
   font-size: var(--text-sm);
   font-weight: var(--w-medium);
   letter-spacing: 0.02em;
@@ -196,16 +197,6 @@
   margin-bottom: var(--space-5);
 }
 
-/* ===== Anclas ===== */
-[id] {
-  scroll-margin-top: 96px;
-}
-@media (width >= 768px) {
-  [id] {
-    scroll-margin-top: 120px;
-  }
-}
-
 /* =========================================================
    FIX 2: Línea después del título de sección (h2.section-title)
    ========================================================= */
@@ -286,20 +277,6 @@
   border-radius: var(--radius-summary-card);
   padding: 18px;
   box-shadow: var(--shadow-card);
-}
-
-.project-content .summary-card__eyebrow {
-  margin: 0 0 10px;
-  font-size: 0.9rem;
-  font-weight: var(--w-semibold);
-  color: var(--text-description-color);
-}
-
-.project-content .summary-card p {
-  margin: 0;
-  color: var(--text-color);
-  line-height: 1.65;
-  font-size: var(--text-md);
 }
 
 .project-content .summary-card p + p {
