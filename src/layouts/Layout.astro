@@ -26,7 +26,7 @@ const { title, description, metaRobots, navItems } = options
 ---
 
 <!doctype html>
-<html class="dark" {...getHtmlAttrs()}>
+<html class="light" {...getHtmlAttrs()}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -69,16 +69,16 @@ const { title, description, metaRobots, navItems } = options
         }
       }
 
-      html.dark body::-webkit-scrollbar {
+      html.light body::-webkit-scrollbar {
         background: var(--scrollbar-dark);
       }
 
-      html.dark body::-webkit-scrollbar-thumb {
+      html.light body::-webkit-scrollbar-thumb {
         background: var(--scrollbar-thumb-dark);
       }
 
       @media (any-hover: hover) {
-        html.dark body::-webkit-scrollbar-thumb:hover {
+        html.light body::-webkit-scrollbar-thumb:hover {
           background: var(--scrollbar-thumb-hover-dark);
         }
       }
@@ -91,8 +91,8 @@ const { title, description, metaRobots, navItems } = options
           scrollbar-gutter: stable;
         }
 
-        html.dark,
-        html.dark body {
+        html.light,
+        html.light body {
           scrollbar-color: var(--scrollbar-dark) var(--scrollbar-thumb-dark);
         }
       }
@@ -110,9 +110,9 @@ const { title, description, metaRobots, navItems } = options
 
     <script is:inline>
       if (localStorage.getItem('dark-theme') === 'true') {
-        document.documentElement.classList.add('dark')
+        document.documentElement.classList.add('light')
       } else {
-        document.documentElement.classList.remove('dark')
+        document.documentElement.classList.remove('light')
       }
     </script>
 
@@ -140,17 +140,17 @@ const { title, description, metaRobots, navItems } = options
         if (!btn) return
 
         const apply = (isDark) => {
-          root.classList.toggle('dark', isDark)
+          root.classList.toggle('light', isDark)
           root.style.colorScheme = isDark ? 'dark' : 'light'
           localStorage.setItem('dark-theme', String(isDark))
           btn.setAttribute('aria-pressed', String(isDark))
         }
 
-        const initialIsDark = root.classList.contains('dark')
+        const initialIsDark = root.classList.contains('light')
         btn.setAttribute('aria-pressed', String(initialIsDark))
 
         btn.addEventListener('click', () => {
-          apply(!root.classList.contains('dark'))
+          apply(!root.classList.contains('light'))
         })
       })()
     </script>

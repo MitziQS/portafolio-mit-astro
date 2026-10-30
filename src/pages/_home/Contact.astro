@@ -29,10 +29,10 @@ const { title, subtitle } = t('contact', {
 <style>
   .contact {
     padding-block: 97px;
-    padding-inline: 1rem;
+    padding-inline: var(--space-3);
     text-align: center;
-    border: 1px solid rgba(128, 128, 128, 0.33);
-    border-radius: 4px;
+    border: 1px solid var(--border-subtle-color);
+    border-radius: var(--radius-sm);
     position: relative;
     overflow: hidden;
 
@@ -49,7 +49,7 @@ const { title, subtitle } = t('contact', {
       justify-content: center;
       flex-direction: column;
       gap: 13px;
-      margin-top: 24px;
+      margin-top: var(--space-4);
 
       @media (width >= 768px) {
         flex-direction: row;

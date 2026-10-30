@@ -14,9 +14,24 @@ html {
   --text-description-color: #cfcfcf;
 
   --border-color: #5a5a5a;
-  --border-card-contributions-color: #272727;
 
   --radius: 24px;
+  --radius-pill: 1000px;
+  --radius-summary-card: 18px;
+  --radius-card: 16px;
+  --radius-kpi: 14px;
+  --radius-media: 12px;
+  --radius-image: 8px;
+  --radius-sm: 4px;
+  --radius-line: 2px;
+
+  --border-subtle-color: rgba(128, 128, 128, 0.33);
+  --shadow-card: 0 1px 0 rgba(0, 0, 0, 0.06);
+  --overlay-color: hsl(0 0 0 / 50%);
+  --overlay-hidden-color: hsl(0 0 0 / 0);
+  --status-color: #22c55e;
+  --status-glow-color: rgba(34, 197, 94, 0.7);
+
   --mobile-inline-padding: 22px;
 
   --transition-bg: background-color 150ms ease;
@@ -40,9 +55,14 @@ html {
   --tracking: -0.01em;
 
   /* Scale */
+  --text-xs: 0.875rem; /* 14px */
   --text-sm: 0.9375rem; /* 15px */
+  --text-md: 1rem; /* 16px */
   --text-lg: 1.125rem; /* 18px */
   --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 2rem; /* 32px */
+  --text-headline: clamp(1.25rem, 2vw, 2rem);
 
   /* Headings */
   --h1: clamp(2.25rem, 4vw, 4rem);
@@ -66,7 +86,8 @@ html {
   --space-6: 3rem; /* 48 */
 }
 
-html.dark {
+/* Tema claro. La preferencia se sigue guardando como 'dark-theme' para no perder la elección de quien ya visitó el sitio */
+html.light {
   /* (tu tema invertido lo respeto tal cual) */
   --bg-color: #efeeed;
   --bg-secondary-color: color-mix(in srgb, #1e1e1e, #fff 95%);
@@ -77,7 +98,6 @@ html.dark {
   --text-color: #000;
   --text-description-color: color-mix(in srgb, #a6a6a6, #000 40%);
   --border-color: #cbcbcb;
-  --border-card-contributions-color: #e6e6e6;
 }
 
 /* =========================
@@ -165,11 +185,6 @@ a {
   margin-top: var(--space-4);
 }
 
-/* Lectura: párrafos y listas en gris */
-.prose :where(p, li) {
-  color: var(--text-description-color);
-}
-
 /* =========================
    LISTAS CONSISTENTES
    ========================= */
@@ -213,76 +228,16 @@ a {
 }
 
 .headline-2 {
-  font-size: clamp(1.25rem, 2vw, 2rem);
+  font-size: var(--text-headline);
   font-weight: var(--w-semibold);
 }
 
 .headline-3 {
-  font-size: 1.25rem;
+  font-size: var(--text-xl);
   font-weight: var(--w-medium);
 }
 
 .headline-4 {
-  font-size: 1.0625rem;
+  font-size: var(--text-base);
   font-weight: var(--w-medium);
-}
-
-/* =========================
-   PROJECT / CASE STUDY NORMALIZATION
-   (esto es lo que te va a “igualar” home vs internas)
-   ========================= */
-
-/* 1) El texto principal dentro de páginas de proyecto
-      (sube size/aire como en la home) */
-:where(.project-content, .summary, .step) {
-  font-size: var(--text-base);
-  line-height: var(--leading-base);
-}
-
-/* 2) Cards (tu problema: “cards no”)
-      Fuerza que dentro de summary-card todo tenga el mismo “cuerpo” */
-:where(.summary-card, .card) {
-  font-size: var(--text-base);
-  line-height: var(--leading-base);
-}
-
-:where(.summary-card p, .card p, .summary-card li, .card li) {
-  font-size: inherit;
-  line-height: inherit;
-}
-
-/* Eyebrow más pequeño (para que no “jale” el ritmo) */
-.summary-card__eyebrow {
-  font-size: var(--text-sm);
-  font-weight: var(--w-medium);
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--text-description-color);
-}
-
-/* 3) KPI: value grande, label consistente */
-.project-content .kpi__value,
-.kpi__value {
-  font-weight: var(--w-extrabold);
-  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
-  line-height: 1.05;
-}
-
-/* 🔧 FIX: el label NO debe quedar más chico ni distinto que bullets */
-.kpi__label {
-  font-size: var(--text-base);
-  line-height: var(--leading-base);
-  color: var(--text-description-color);
-}
-
-/* 4) Evita que “h3/p raros en cards” vuelva a pasar */
-.project-content .card :where(h1, h2, h3, h4, p, ul, ol) {
-  margin: 0;
-}
-
-/* 5) Imágenes / media */
-.media img {
-  max-width: 100%;
-  height: auto;
-  display: block;
 }

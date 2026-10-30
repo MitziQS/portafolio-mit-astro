@@ -23,7 +23,7 @@ html {
   }
 }
 
-html.dark {
+html.light {
   .astro,
   .html {
     background-color: #ffbc96;

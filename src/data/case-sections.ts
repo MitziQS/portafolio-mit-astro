@@ -24,6 +24,11 @@ interface CaseSection {
   outside: string
 }
 
+interface CaseContent {
+  intro: string
+  sections: CaseSection[]
+}
+
 const SECTION_MARK = /<!--\s*seccion:\s*([\w-]+)\s*-->/
 const OUTSIDE_MARK = /<!--\s*fuera-de-seccion\s*-->/
 
@@ -40,7 +45,7 @@ export function buildCaseSections(
   html: string,
   config: Record<string, SectionConfig | undefined>,
   caseName: string
-): { intro: string, sections: CaseSection[] } {
+): CaseContent {
   const [intro, ...parts] = html.split(SECTION_MARK)
   const bodies = new Map<string, string>()
 
