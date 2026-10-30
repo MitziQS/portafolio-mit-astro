@@ -2,6 +2,8 @@
 // src/pages/proyectos/[slug].astro
 import { getCollection, type CollectionEntry } from 'astro:content'
 import Button from '../../components/Button.astro'
+import SummaryCard from '../../components/SummaryCard.astro'
+import { buildCaseSections } from '../../data/case-sections'
 import Layout from '../../layouts/Layout.astro'
 
 export async function getStaticPaths() {
@@ -14,35 +16,41 @@ export async function getStaticPaths() {
 
 type Props = { project: CollectionEntry<'projects'> }
 const { project } = Astro.props as Props
-const { Content } = await project.render()
 
-const perProjectNav: Record<string, { label: string; href: string }[]> = {
-  'proyecto-1': [
-    { label: 'Inicio', href: '#top' },
-    { label: 'Problema', href: '#problema' },
-    { label: 'Definición', href: '#definicion' },
-    { label: 'Diseño', href: '#diseno' },
-    { label: 'Validación', href: '#validacion' },
-    { label: 'Aprendizaje', href: '#aprendizaje' }
-  ],
-  'proyecto-2': [
-    { label: 'Inicio', href: '#top' },
-    { label: 'Investigación', href: '#investigacion' },
-    { label: 'Definición', href: '#definicion' },
-    { label: 'Ideación', href: '#ideacion' },
-    { label: 'Diseño', href: '#diseno' },
-    { label: 'Entrega', href: '#entrega' }
-  ],
-  'proyecto-3': [
-    { label: 'Inicio', href: '#top' },
-    { label: 'Investigación', href: '#investigacion' },
-    { label: 'Definición', href: '#definicion' },
-    { label: 'Diseño', href: '#diseno' },
-    { label: 'Entrega', href: '#entrega' }
-  ]
+const files = import.meta.glob<{ compiledContent: () => Promise<string> }>(
+  '/src/content/projects/*.md',
+  { eager: true }
+)
+const html =
+  await files[`/src/content/projects/${project.id}`].compiledContent()
+const { intro, sections } = buildCaseSections(
+  html,
+  project.data.sections,
+  project.id
+)
+
+const navItems = [
+  { label: 'Inicio', href: '#top' },
+  ...sections.map(({ label, id }) => ({ label, href: `#${id}` }))
+]
+
+const cards = project.data.cards.filter((card) => card.show)
+const sideCards = cards.filter((card) => card.place === 'side')
+const fullCards = cards.filter((card) => card.place === 'full')
+const mainCards = cards.filter((card) => !card.place)
+const hasSide = sideCards.length > 0
+
+// Las portadas viven en src/, así que se piden con ?url para que existan en el sitio publicado
+const covers = import.meta.glob<string>(
+  '/src/images/projects/**/*.{jpeg,jpg,png}',
+  { eager: true, query: '?url', import: 'default' }
+)
+const cover = covers[project.data.cover]
+if (!cover) {
+  throw new Error(
+    `${project.id}: la portada "${project.data.cover}" no existe.`
+  )
 }
-
-const navItems = perProjectNav[project.slug]
 
 const options = {
   title: project.data.title,
@@ -68,23 +76,72 @@ const options = {
         <h1 class="project-title">{project.data.title}</h1>
       </header>
 
-      {
-        project.data.cover && (
-          <figure class="project-media">
-            <img
-              src={project.data.cover}
-              alt={project.data.coverAlt ?? project.data.title}
-              loading="eager"
-            />
-          </figure>
-        )
-      }
+      <figure class="project-media">
+        <img
+          src={cover}
+          alt={project.data.coverAlt ?? project.data.title}
+          loading="eager"
+        />
+      </figure>
 
       {
         /* ✅ Importante: quitamos cualquier “max-width” de prose para que cards (Impacto) ocupen todo */
       }
       <article class="project-content prose flow">
-        <Content />
+        {
+          cards.length > 0 && (
+            <section class="summary" aria-labelledby="resumen">
+              <h2 id="resumen" class="summary__title">
+                Resumen
+              </h2>
+              <div
+                class:list={[
+                  'summary__grid',
+                  !hasSide && `summary__grid--${mainCards.length}`
+                ]}
+              >
+                {hasSide ? (
+                  <>
+                    <div class="summary__main">
+                      {mainCards.map((card) => (
+                        <SummaryCard {...card} />
+                      ))}
+                    </div>
+                    <aside
+                      class="summary__side"
+                      aria-label="Detalles del proyecto"
+                    >
+                      {sideCards.map((card) => (
+                        <SummaryCard {...card} />
+                      ))}
+                    </aside>
+                  </>
+                ) : (
+                  mainCards.map((card) => <SummaryCard {...card} />)
+                )}
+                {fullCards.map((card) => (
+                  <SummaryCard {...card} />
+                ))}
+              </div>
+            </section>
+          )
+        }
+
+        <Fragment set:html={intro} />
+
+        {
+          sections.map(({ id, title, inside, outside }) => (
+            <>
+              <section class="step" aria-labelledby={id}>
+                <h2 id={id} class="headline-2 section-title">
+                  {title}
+                </h2>
+                <Fragment set:html={inside} />
+              </section>
+              <Fragment set:html={outside} />
+            </>
+          ))
+        }
       </article>
     </div>
   </section>
@@ -305,6 +362,20 @@ const options = {
     @media (max-width: 900px) {
       .project-content .summary__grid {
         grid-template-columns: 1fr;
+      }
+    }
+
+    /* Sin columna lateral: 2 o 3 tarjetas en una fila, 4 en dos filas de 2 */
+    @media (min-width: 901px) {
+      .project-content .summary__grid--1 {
+        grid-template-columns: 1fr;
+      }
+      .project-content .summary__grid--2,
+      .project-content .summary__grid--4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .project-content .summary__grid--3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 

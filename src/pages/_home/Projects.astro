@@ -1,10 +1,15 @@
 ---
+import { getCollection } from 'astro:content'
 import { t } from 'i18n:astro'
 import CardProject from '@components/CardProject.astro'
 
-const { title, projects } = t('projects', {
+const { title, preview } = t('projects', {
   returnObjects: true
 })
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.card.order - b.data.card.order
+)
 ---
 
 <section id="proyectos" class="projects">
@@ -12,20 +17,17 @@ const { title, projects } = t('projects', {
     <span>{title}</span>
   </h2>
   {
-    projects.map(
-      ({ title, description, image, techs, code, preview, href }) => (
-        <CardProject
-          src={image}
-          alt={title}
-          title={title}
-          description={description}
-          techs={techs}
-          code={code}
-          preview={preview}
-          href={href}
-        />
-      )
-    )
+    projects.map(({ slug, data }) => (
+      <CardProject
+        src={data.card.image}
+        alt={data.title}
+        title={data.title}
+        description={data.card.summary}
+        techs={data.card.techs}
+        preview={preview}
+        href={`/projects/${slug}`}
+      />
+    ))
   }
 </section>
 

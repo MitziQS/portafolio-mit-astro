@@ -1,0 +1,24 @@
+---
+interface Props {
+  label: string
+  title?: string
+  text: string
+  place?: 'side' | 'full'
+}
+
+const { label, title, text, place } = Astro.props
+---
+
+<article
+  class:list={['summary-card', { 'summary-card--full': place === 'full' }]}
+>
+  <p class="summary-card__eyebrow">{label}</p>
+  {
+    title && (
+      <p>
+        <strong>{title}</strong>
+      </p>
+    )
+  }
+  <Fragment set:html={text} />
+</article>

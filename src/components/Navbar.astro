@@ -13,22 +13,15 @@ const defaultLinks = t('navbar', { returnObjects: true }) as {
   label: string
   href: string
 }[]
-const inProject = /^\/(projects|proyectos)\//.test(Astro.url.pathname) // soporta ambas
-const projectLinks = [
-  { label: 'Inicio', href: '#top' },
-  { label: 'Investigación', href: '#investigacion' },
-  { label: 'Definición', href: '#definicion' },
-  { label: 'Diseño', href: '#diseno' },
-  { label: 'Pruebas', href: '#pruebas' },
-  { label: 'Entrega', href: '#entrega' }
-]
 
-// 1º usa items del Layout; si no hay, usa heurística local; si tampoco aplica, usa default
-const links: { label: string; href: string }[] =
-  items ?? (inProject ? projectLinks : defaultLinks)
+// Usa items del Layout; si no hay, usa default
+const links: { label: string; href: string }[] = items ?? defaultLinks
+
+// Con más de 6 opciones el menú no cabe en tablet: ahí usa la hamburguesa
+const compact = links.length > 6
 ---
 
-<nav id="menu">
+<nav id="menu" class:list={{ compact }}>
   <ul>
     {
       links.map(({ label, href }, index) => (
@@ -189,6 +182,25 @@ const links: { label: string; href: string }[] =
 
       @media (width >= 768px) {
         display: none;
+      }
+    }
+  }
+
+  @media (768px <= width < 1040px) {
+    nav#menu.compact {
+      background-color: color-mix(in srgb, var(--bg-color), transparent 30%);
+      backdrop-filter: blur(12px);
+      padding-block: 1rem;
+      padding-inline: var(--mobile-inline-padding);
+      top: 0;
+      text-align: right;
+
+      & ul {
+        display: none;
+      }
+
+      & button {
+        display: inline-block;
       }
     }
   }
