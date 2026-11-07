@@ -7,7 +7,8 @@ const {
   subtitle,
   email_label: emailLabel,
   linkedin_label: linkedinLabel,
-  cv_label: cvLabel
+  cv_label: cvLabel,
+  cv_value: cvValue
 } = t('contact', { returnObjects: true })
 const links = t('links', { returnObjects: true }) as {
   linkedin: string
@@ -39,7 +40,7 @@ const links = t('links', { returnObjects: true }) as {
         <a href={links.cv} download>
           <Icon name="file" size={22} />
           <span>{cvLabel}</span>
-          <span class="value">{links.cv}</span>
+          <span class="value">{cvValue}</span>
         </a>
       </li>
     </ul>
