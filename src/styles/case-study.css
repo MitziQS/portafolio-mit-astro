@@ -264,6 +264,11 @@
   }
 }
 
+/* Tarjetas en fila (sin columna lateral): todas de la misma altura */
+.summary__grid:is(.summary__grid--2, .summary__grid--3, .summary__grid--4) {
+  align-items: stretch;
+}
+
 .summary__main,
 .summary__side {
   display: grid;
