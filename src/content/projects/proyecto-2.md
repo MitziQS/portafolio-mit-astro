@@ -120,7 +120,7 @@ sections:
   <p>
     Al analizar la primera interacción del usuario en la landing, partimos de una pregunta clave:
     <br>
-    <strong>“¿Qué tan clara es nuestra propuesta de valor para alguien que llega por primera vez?”</strong>
+    <strong class="case-question">“¿Qué tan clara es nuestra propuesta de valor para alguien que llega por primera vez?”</strong>
   </p>
   <br>
   <p>
@@ -155,7 +155,7 @@ sections:
     El principal insight fue contundente:
   </p>
     <br>
-  <p>
+  <p class="case-insight">
     <strong>Nuestro reto no era solo estético, sino estratégico: necesitábamos dejar de explicar cómo operamos para empezar a comunicar qué gana el usuario.</strong>
   </p>
 </section>

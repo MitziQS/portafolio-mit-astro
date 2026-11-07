@@ -1,11 +1,11 @@
 ---
 // src/pages/proyectos/[slug].astro
 import { getCollection, type CollectionEntry } from 'astro:content'
-import Button from '../../components/Button.astro'
 import SummaryCard from '../../components/SummaryCard.astro'
 import { buildCaseSections } from '../../data/case-sections'
 import Layout from '../../layouts/Layout.astro'
 import '../../styles/case-study.css'
+import { accentHtml } from '../../utils/accent'
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects')
@@ -35,6 +35,62 @@ const navItems = [
   ...sections.map(({ label, id }) => ({ label, href: `#${id}` }))
 ]
 
+// Orden de los casos, color y siguiente caso
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.card.order - b.data.card.order
+)
+const position = projects.findIndex((p) => p.id === project.id)
+const total = projects.length
+const pad = (n: number): string => String(n).padStart(2, '0')
+const caseColors = ['terracota', 'anil', 'verde'] as const
+const colorName = (p: CollectionEntry<'projects'>, i: number): string =>
+  p.data.color ?? caseColors[i % caseColors.length]
+const colorOf = (p: CollectionEntry<'projects'>, i: number): string =>
+  `var(--block-${colorName(p, i)})`
+// Tono para números, barras y degradado: en tema oscuro el añil y el verde usan su versión clara
+const inkOf = (p: CollectionEntry<'projects'>, i: number): string => {
+  const name = colorName(p, i)
+  return name === 'terracota' ? 'var(--block-terracota)' : `var(--${name})`
+}
+const caseColor = colorOf(project, position)
+const nextIndex = (position + 1) % total
+const next = projects[nextIndex]
+
+// Título: palabras de titleHighlight en serif itálica con degradado
+const escapeHtml = (text: string): string =>
+  text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+const titleHtml = (project.data.titleHighlight ?? []).reduce(
+  (html, word) =>
+    html.replace(escapeHtml(word), `<em>${escapeHtml(word)}</em>`),
+  escapeHtml(project.data.title)
+)
+
+// Metadatos: solo los que existen
+const meta = [
+  { label: 'Rol', value: project.data.role },
+  { label: 'Empresa', value: project.data.company },
+  { label: 'Año', value: String(project.data.date.getFullYear()) }
+].filter((item) => item.value)
+
+// Color del destello según la sección
+const glowBySection: Record<string, string> = {
+  investigacion: 'case',
+  diseno: 'case',
+  problema: 'case',
+  hallazgos: 'case',
+  solucion: 'case',
+  definicion: 'anil',
+  objetivos: 'anil',
+  liderazgo: 'anil',
+  ideacion: 'verde',
+  proceso: 'verde',
+  validacion: 'verde',
+  entrega: 'accent',
+  resultado: 'accent',
+  aprendizaje: 'accent',
+  reflexion: 'accent'
+}
+
 const cards = project.data.cards.filter((card) => card.show)
 const sideCards = cards.filter((card) => card.place === 'side')
 const fullCards = cards.filter((card) => card.place === 'full')
@@ -56,94 +112,159 @@ if (!cover) {
 const options = {
   title: `${project.data.title} – Caso de estudio | Mitzi Soria`,
   description: project.data.summary || '',
-  navItems
+  navItems,
+  caseNav: {
+    back: { label: '← Proyectos', href: '/#proyectos' },
+    index: `${pad(position + 1)} / ${pad(total)}`
+  }
 }
 ---
 
 <Layout options={options}>
-  <section class="projects section">
-    <div class="project-wrapper">
-      <div id="top"></div>
+  <div class="case-glow" aria-hidden="true"><span></span></div>
 
-      <Button
-        href={`${import.meta.env.BASE_URL}#proyectos`}
-        class="small back-link"
-        onclick="if (history.length > 1) { history.back(); return false; }"
-      >
-        ← Regresar
-      </Button>
+  <div
+    class="case-page"
+    style={`--case-color: ${caseColor}; --case-ink: ${inkOf(project, position)}`}
+  >
+    <div id="top"></div>
 
-      <header class="project-hero">
-        <h1 class="project-title">{project.data.title}</h1>
-      </header>
-
-      <figure class="project-media">
-        <img
-          src={cover}
-          alt={project.data.coverAlt ?? project.data.title}
-          loading="eager"
-        />
-      </figure>
-
-      {
-        /* ✅ Importante: quitamos cualquier “max-width” de prose para que cards (Impacto) ocupen todo */
-      }
-      <article class="project-content prose flow">
+    <header class="case-hero" data-sec="accent">
+      <p class="case-eyebrow">
+        <span>Caso {pad(position + 1)} / {pad(total)}</span>
         {
-          cards.length > 0 && (
-            <section class="summary" aria-labelledby="resumen">
-              <h2 id="resumen" class="summary__title">
-                Resumen
-              </h2>
-              <div
-                class:list={[
-                  'summary__grid',
-                  !hasSide && `summary__grid--${mainCards.length}`
-                ]}
-              >
-                {hasSide ? (
-                  <>
-                    <div class="summary__main">
-                      {mainCards.map((card) => (
-                        <SummaryCard {...card} />
-                      ))}
-                    </div>
-                    <aside
-                      class="summary__side"
-                      aria-label="Detalles del proyecto"
-                    >
-                      {sideCards.map((card) => (
-                        <SummaryCard {...card} />
-                      ))}
-                    </aside>
-                  </>
-                ) : (
-                  mainCards.map((card) => <SummaryCard {...card} />)
-                )}
-                {fullCards.map((card) => (
-                  <SummaryCard {...card} />
-                ))}
-              </div>
-            </section>
+          project.data.tags.length > 0 && (
+            <>
+              <span aria-hidden="true">·</span>
+              <span class="case-tags">{project.data.tags.join(' · ')}</span>
+            </>
           )
         }
+      </p>
+      <h1 class="case-title" set:html={titleHtml} />
+      {project.data.summary && <p class="case-intro">{project.data.summary}</p>}
+      <a
+        class="scroll-cue"
+        href={cards.length > 0 ? '#resumen' : `#${sections[0]?.id ?? 'top'}`}
+        aria-label="Ir al contenido del caso"
+      >
+        <span aria-hidden="true"></span>
+      </a>
+      {
+        meta.length > 0 && (
+          <dl class="case-meta">
+            {meta.map(({ label, value }) => (
+              <div>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))}
+          </dl>
+        )
+      }
+    </header>
 
-        <Fragment set:html={intro} />
+    <figure class="case-banner">
+      <img
+        src={cover}
+        alt={project.data.coverAlt ?? project.data.title}
+        loading="eager"
+      />
+    </figure>
 
-        {
-          sections.map(({ id, title, inside, outside }) => (
+    <article class="project-content prose">
+      {
+        cards.length > 0 && (
+          <section class="summary" aria-labelledby="resumen" data-sec="accent">
+            <h2 id="resumen" class="summary__title">
+              Resumen
+            </h2>
+            <div
+              class:list={[
+                'summary__grid',
+                !hasSide && `summary__grid--${mainCards.length}`
+              ]}
+            >
+              {hasSide ? (
+                <>
+                  <div class="summary__main">
+                    {mainCards.map((card) => (
+                      <SummaryCard {...card} />
+                    ))}
+                  </div>
+                  <aside
+                    class="summary__side"
+                    aria-label="Detalles del proyecto"
+                  >
+                    {sideCards.map((card) => (
+                      <SummaryCard {...card} />
+                    ))}
+                  </aside>
+                </>
+              ) : (
+                mainCards.map((card) => <SummaryCard {...card} />)
+              )}
+              {fullCards.map((card) => (
+                <SummaryCard {...card} />
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      {intro.trim() && <div class="case-note" set:html={intro} />}
+
+      {
+        sections.map(({ id, title, inside, outside }) => {
+          const sec = glowBySection[id] ?? 'case'
+          return (
             <>
-              <section class="step" aria-labelledby={id}>
-                <h2 id={id} class="headline-2 section-title">
-                  {title}
-                </h2>
-                <Fragment set:html={inside} />
+              <section
+                class="step step--main"
+                aria-labelledby={id}
+                data-sec={sec}
+              >
+                <div class="step__aside">
+                  <h2 id={id} class="headline-2 section-title">
+                    {title}
+                  </h2>
+                  <div class="step__progress" aria-hidden="true">
+                    <span />
+                  </div>
+                </div>
+                <div class="step__body">
+                  <Fragment set:html={inside} />
+                </div>
               </section>
-              <Fragment set:html={outside} />
+              {outside.trim() && (
+                <div class="step-continuation" data-sec={sec}>
+                  <div class="step__body">
+                    <Fragment set:html={outside} />
+                  </div>
+                </div>
+              )}
             </>
-          ))
-        }
-      </article>
-    </div>
-  </section>
+          )
+        })
+      }
+    </article>
+
+    <a
+      class="next-case"
+      href={`/projects/${next.slug}/`}
+      style={`--next-color: ${colorOf(next, nextIndex)}`}
+    >
+      <div>
+        <p class="next-case__eyebrow">
+          Siguiente caso · {pad(nextIndex + 1)} / {pad(total)}
+        </p>
+        <p class="next-case__title" set:html={accentHtml(next.data.title)} />
+      </div>
+      <span class="next-case__arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
 </Layout>
+
+<script>
+  import '@scripts/case-interactions'
+</script>

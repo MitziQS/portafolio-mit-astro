@@ -13,6 +13,10 @@ export const collections = {
     type: 'content',
     schema: z.object({
       title: z.string(),
+      // Palabras del título que van en serif itálica con degradado (opcional)
+      titleHighlight: z.array(z.string()).optional(),
+      // Color del caso; si no se indica, se asigna por orden (terracota, añil, verde)
+      color: z.enum(['terracota', 'anil', 'verde']).optional(),
       date: z.date(),
       cover: z.string(),
       coverAlt: z.string().optional(),

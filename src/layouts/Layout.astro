@@ -19,13 +19,14 @@ interface Options {
   description: string
   metaRobots?: string
   navItems?: { label: string; href: string }[]
+  caseNav?: { back: { label: string; href: string }; index: string }
 }
 interface Props {
   options: Options
 }
 
 const { options } = Astro.props as Props
-const { title, description, metaRobots, navItems } = options
+const { title, description, metaRobots, navItems, caseNav } = options
 ---
 
 <!doctype html>
@@ -109,7 +110,7 @@ const { title, description, metaRobots, navItems } = options
 
   <body>
     <Greca />
-    <Navbar items={navItems} />
+    <Navbar items={navItems} caseNav={caseNav} />
     <slot />
     <Footer />
     <Social />
