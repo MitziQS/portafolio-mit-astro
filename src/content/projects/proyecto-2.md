@@ -1,5 +1,6 @@
 ---
 title: 'Contar menos, conectar más'
+titleHighlight: ['menos', 'más']
 date: 2023-08-01
 cover: '/src/images/projects/proyecto-2/proy-2-banner.jpg'
 coverAlt: 'Landing con propuesta de valor clara'

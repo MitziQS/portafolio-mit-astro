@@ -30,7 +30,7 @@ const links: { label: string; href: string }[] = items ?? defaultLinks
 const compact = links.length > 6
 ---
 
-<header class:list={['topbar', { compact }]}>
+<header class:list={['topbar', { compact, 'topbar--case': caseNav }]}>
   {
     caseNav ? (
       <a class="pill brand glass" href={caseNav.back.href}>
@@ -183,8 +183,8 @@ const compact = links.length > 6
     & li {
       position: relative;
 
-      /* Separador de puntito entre elementos excepto al último hijo */
-      &:not(:last-child)::after {
+      /* Separador de puntito entre links; no va antes del switch */
+      &:not(:last-child, :nth-last-child(2))::after {
         --size: 3px;
 
         content: '';
@@ -267,6 +267,39 @@ const compact = links.length > 6
   @media (width >= 1440px) {
     .topbar.compact .meta {
       display: none;
+    }
+  }
+
+  /* Navbar de los casos: medidas del diseño de referencia */
+  .topbar--case {
+    letter-spacing: normal;
+    line-height: normal;
+
+    & .brand {
+      padding: 13px 20px;
+      font-size: 15px;
+      font-weight: var(--w-regular);
+      letter-spacing: normal;
+    }
+
+    & .meta {
+      padding: 13px 18px;
+      font-size: 13px;
+      color: var(--text-muted-color);
+    }
+
+    /* 20px a cada lado del puntito de 3px, como en la referencia */
+    & nav#menu ul {
+      --gap: 43px;
+
+      padding: 10px 12px 10px 26px;
+      font-size: 14px;
+      line-height: normal;
+    }
+
+    & nav#menu li:last-child {
+      display: flex;
+      margin-left: -23px;
     }
   }
 
@@ -469,6 +502,12 @@ const compact = links.length > 6
     document.documentElement.classList.toggle('light', state)
     toggleThumbs.forEach((thumb) => {
       thumb.classList.toggle('active', state)
+      thumb
+        .closest('label')
+        ?.setAttribute(
+          'aria-label',
+          state ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro'
+        )
     })
 
     // Establecemos el valor de la variable global

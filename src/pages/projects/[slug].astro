@@ -30,8 +30,11 @@ const { intro, sections } = buildCaseSections(
   project.id
 )
 
+const hasSummary = project.data.cards.some((card) => card.show)
 const navItems = [
-  { label: 'Inicio', href: '#top' },
+  hasSummary
+    ? { label: 'Resumen', href: '#resumen' }
+    : { label: 'Inicio', href: '#top' },
   ...sections.map(({ label, id }) => ({ label, href: `#${id}` }))
 ]
 
