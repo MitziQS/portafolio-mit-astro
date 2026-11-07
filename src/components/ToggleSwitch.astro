@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components'
 ---
 
-<label aria-label="Toggle">
+<label aria-label="Cambiar entre tema oscuro y claro">
   <input class="toggle" type="checkbox" />
   <span class="toggle-thumb">
     <Icon name="moon" size={16} />
@@ -22,9 +22,15 @@ import { Icon } from 'astro-icon/components'
     cursor: pointer;
 
     & input {
+      position: absolute;
       opacity: 0;
       width: 0;
       height: 0;
+    }
+
+    &:has(input:focus-visible) .toggle-thumb {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
     }
 
     & .toggle-thumb {
@@ -39,6 +45,7 @@ import { Icon } from 'astro-icon/components'
       background-color: var(--bg-toggle-thumb);
       border-radius: var(--radius);
       overflow: hidden;
+      color: var(--text-muted-color);
       transition: var(--transition-bg);
 
       &.active::before {
@@ -60,9 +67,9 @@ import { Icon } from 'astro-icon/components'
         width: var(--size);
         height: var(--size);
         border-radius: 50%;
-        background-color: var(--text-color);
+        background-color: var(--accent-color);
         transition:
-          translate 300ms ease,
+          translate var(--theme-duration) ease,
           var(--transition-bg);
       }
 

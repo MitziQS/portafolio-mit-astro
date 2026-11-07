@@ -7,12 +7,12 @@
       "href": "#top"
     },
     {
-      "label": "Sobre mí",
-      "href": "#sobre-mi"
-    },
-    {
       "label": "Proyectos",
       "href": "#proyectos"
+    },
+    {
+      "label": "Sobre mí",
+      "href": "#sobre-mi"
     },
     {
       "label": "Experiencia",
@@ -21,14 +21,18 @@
   ],
   "hero": {
     "job_availability": "¡Disponible para trabajar!",
-    "title": "¡Hola soy Mit!",
+    "title": "Diseño productos a partir de cómo <em>piensan</em> y <em>deciden</em> las personas.",
     "job_title": "<strong>Diseñadora de productos digitales</strong> en CDMX, México.",
     "description": "Con experiencia en transformar servicios públicos y privados en experiencias claras, inclusivas y escalables",
-    "cta": "Contactame"
+    "cta": "Contactame",
+    "cta_projects": "Ver proyectos",
+    "cta_cv": "Descargar CV",
+    "scroll_hint": "↓ Proyectos seleccionados"
   },
-
   "about": {
     "title": "Sobre mí",
+    "eyebrow": "Sobre mí · cómo trabajo",
+    "headline": "Diseño con <em>evidencia</em>, no con suposiciones.",
     "subtitle": "Me gusta trabajar donde diseño, estrategia y operación se cruzan.",
     "description": [
       "Mi camino no ha sido lineal: comencé a trabajar en agencias de publicidad, pero pronto entendí que ese ritmo no me llenaba el corazón. Así que me certifiqué en UX/UI. Desde entonces descubrí algo importante sobre mí: disfruto profundamente entender a las personas, comprender la complejidad del negocio y traducir ambas perspectivas en soluciones viables y claras. Trabajo justo en esa intersección donde el diseño tiene propósito, es técnicamente viable y genera impacto real y medible.",
@@ -36,28 +40,40 @@
       "Creo profundamente en el diseño con intención: claro, útil y humano. Por eso sigo formándome en Behavioral Design, para diseñar no solo interfaces, sino servicios completos que acompañen a las personas de principio a fin."
     ]
   },
-
   "projects": {
     "title": "Proyectos",
-    "preview": "Ver más"
+    "preview": "Ver caso de estudio →"
   },
-
   "experience": {
     "title": "Experiencia laboral",
     "jobs": {
-      "jobs_title": ["Product Designer", "Product Designer", "UX/UI Designer"],
+      "jobs_title": [
+        "Senior UX/UI Designer",
+        "Product Designer",
+        "Product Designer",
+        "UX/UI Designer"
+      ],
       "jobs_description": [
+        {
+          "title": "Senior UX/UI Designer",
+          "company": "Liverpool",
+          "organization": "Liverpool",
+          "time": ["Abr 2026"],
+          "description": "",
+          "list": ["[Logro 1]", "[Logro 2]", "[Logro 3]"]
+        },
         {
           "title": "Subdirección Diseño de Producto",
           "organization": "Agencia de Transformación Digital y Telecomunicaciones",
-          "time": ["Dic 2024"],
+          "time": ["Dic 2024", "[fin]"],
           "description": "",
           "list": [
             "Diseño experiencias digitales accesibles, intuitivas y centradas en la persona usuaria para proyectos gubernamentales, impactando servicios públicos clave.",
             "Lidero la creación y evolución del Design System institucional, asegurando consistencia, eficiencia y escalabilidad en productos compartidos con otras dependencias.",
             "Coordino la documentación y estandarización de componentes, promoviendo buenas prácticas de accesibilidad y optimizando tiempos de desarrollo.",
             "Trabajo de forma transversal con equipos de desarrollo, QA y áreas de negocio para garantizar entregas alineadas a objetivos estratégicos de la transformación digital."
-          ]
+          ],
+          "company": "ATDT"
         },
         {
           "title": "Product Designer",
@@ -69,7 +85,8 @@
             "Gestioné y evolucioné el UI Kit con +40 componentes, asegurando consistencia y escalabilidad en todo el producto.",
             "Conduje investigaciones continuas (entrevistas, encuestas, pruebas de usabilidad) con al menos 5 usuarios por iteración, generando insights que impulsaron un crecimiento del 15% en adquisición de nuevos clientes.",
             "Colaboré en la implementación de soluciones de diseño end to end, desde definición de visión hasta validación en producción, alineando objetivos de negocio con necesidades reales de los usuarios."
-          ]
+          ],
+          "company": "Justo.mx"
         },
         {
           "title": "Diseñadora UX/UI",
@@ -80,25 +97,41 @@
             "Proyecto Alsea: mejoré la navegación de la app Wow Plus, optimizando la experiencia del usuario en su programa de lealtad para incrementar la retención de clientes.",
             "Proyecto Sport City: diseñé una solución de suscripción digital que permitió a usuarios acceder a entrenamientos, dietas y coaching personalizado durante la pandemia, ampliando el alcance del servicio.",
             "Proyecto Palace Resorts: detecté y solucioné problemas de trazabilidad en procesos de adquisición y cierre de contratos para beneficios corporativos, implementando un nuevo flujo que involucró a 3 departamentos, reduciendo tiempos de cierre un 40% y mejorando la eficiencia operativa."
-          ]
+          ],
+          "company": "Shark Think"
         }
       ]
     }
   },
-
   "contact": {
-    "title": "¿Listo para dar vida a tus ideas?",
-    "subtitle": "Puedo impulsar tu proyecto o formar parte de tu equipo"
+    "title": "¿Diseñamos <em>algo juntas?</em>",
+    "subtitle": "Puedo impulsar tu proyecto o formar parte de tu equipo",
+    "email_label": "Correo",
+    "linkedin_label": "LinkedIn",
+    "cv_label": "CV"
   },
-
   "footer": {
-    "designed": {
-      "designed_with": "Diseñado con",
-      "designed_by": "por"
-    },
-    "developed": {
-      "developed_with": "Hecho con",
-      "developed_by": "por"
-    }
-  }
+    "owner": "Mitzi Soria",
+    "made_in": "Hecho en México"
+  },
+  "topbar": {
+    "first_name": "Mitzi",
+    "last_name": "Soria",
+    "city": "CDMX",
+    "time_zone": "America/Mexico_City",
+    "language": "ES"
+  },
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/soria-mitzi/",
+    "email": "[correo]",
+    "cv": "[CV]"
+  },
+  "marquee": [
+    "UX Research",
+    "Product Design",
+    "Ciencia del comportamiento",
+    "Design Systems",
+    "Identidad digital",
+    "Retail"
+  ]
 }

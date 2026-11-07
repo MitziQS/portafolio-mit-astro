@@ -8,126 +8,135 @@ const {
   title,
   job_title: jobTitle,
   description,
-  cta
+  cta_projects: ctaProjects,
+  cta_cv: ctaCv,
+  scroll_hint: scrollHint
 } = t('hero', {
   returnObjects: true
 })
+const links = t('links', { returnObjects: true }) as {
+  linkedin: string
+  cv: string
+}
 ---
 
 <section class="hero">
-  <div>
-    <div class="badge">
+  <div class="frame">
+    <div class="badge glass">
       <span class="dot"></span>
       <span>{jobAvailability}</span>
     </div>
-    <h1>{title}</h1>
-    <section>
-      <p set:html={jobTitle} />
+    <h1 set:html={title} />
+    <div class="intro">
+      <p class="job-title" set:html={jobTitle} />
       <p>{description}</p>
-    </section>
-    <section class="button-container">
-      <Button class="filled" href="#">{cta}</Button>
-      <Button href="https://www.linkedin.com/in/soria-mitzi/">
-        <Icon name="linkedin" size={24} />
+    </div>
+    <div class="button-container">
+      <Button class="filled" href="#proyectos">{ctaProjects}</Button>
+      <Button class="glass" href={links.cv} download>
+        <Icon name="file" size={20} />
+        <span>{ctaCv}</span>
+      </Button>
+      <Button class="glass" href={links.linkedin}>
+        <Icon name="linkedin" size={20} />
         <span>LinkedIn</span>
       </Button>
-    </section>
+    </div>
+    <a class="scroll-hint" href="#proyectos">{scrollHint}</a>
     <canvas id="stars"></canvas>
   </div>
 </section>
 
 <style>
   .hero {
-    padding-top: 113px;
-    padding-bottom: 56px;
+    padding-top: var(--space-5);
+    padding-bottom: var(--section-space);
 
-    @media (width >= 768px) {
-      padding-block: 129px;
-    }
-
-    & > div {
-      position: relative;
-      margin-inline: auto;
-      text-align: center;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 120px 29px;
-      overflow: hidden;
-
-      @media (width >= 992px) {
-        padding: 148px 125px;
-      }
-
-      & canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.6;
-        z-index: -1;
-        pointer-events: none;
-      }
-
-      /* Separador entre contenido */
-      & > * + *:not(canvas) {
-        margin-top: var(--space-4);
-      }
-
-      & .badge {
-        display: flex;
-        align-items: center;
-        gap: var(--space-1);
-        width: fit-content;
-        margin-inline: auto;
-        background-color: var(--bg-secondary-color);
-        font-size: var(--text-xs);
-        padding: 6px var(--space-2);
-        border: 1px solid var(--text-color);
-        border-radius: var(--radius-pill);
-        transition: var(--transition-bg), var(--transition-border);
-
-        & .dot {
-          --size: 6px;
-          --color: var(--status-color);
-
-          width: var(--size);
-          height: var(--size);
-          background-color: var(--color);
-          border-radius: 50%;
-          box-shadow: 0 0 0 0 var(--color);
-          transform: scale(1);
-          animation: pulse 2s infinite;
-        }
-      }
-
-      & p {
-        font-size: var(--text-xl);
-        color: var(--text-description-color);
-
-        @media (width >= 768px) {
-          font-size: var(--text-2xl);
-        }
-
-        > strong {
-          color: var(--text-color);
-        }
-      }
-
-      & .button-container {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        gap: 13px;
-
-        @media (width >= 768px) {
-          flex-direction: row;
-        }
-      }
+    @media (width >= 1024px) {
+      padding-top: var(--space-6);
     }
   }
 
-  /* Agregar variables de color en section para que el keyframes funcione */
+  .frame {
+    position: relative;
+    display: grid;
+    justify-items: start;
+    gap: var(--space-4);
+    padding: clamp(3rem, 8vw, 7rem) clamp(1.5rem, 6vw, 5rem);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+    isolation: isolate;
+    transition: var(--transition-border);
+
+    & canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+      z-index: -1;
+      pointer-events: none;
+    }
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 6px var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--text-description-color);
+    border-radius: var(--radius-pill);
+
+    & .dot {
+      --size: 8px;
+
+      width: var(--size);
+      height: var(--size);
+      background-color: var(--status-color);
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 var(--status-color);
+      animation: pulse 2s infinite;
+    }
+  }
+
+  h1 {
+    max-width: 15ch;
+  }
+
+  .intro {
+    display: grid;
+    gap: var(--space-2);
+    max-width: 58ch;
+    font-size: var(--text-lg);
+    color: var(--text-description-color);
+    transition: var(--transition-text);
+
+    & :global(strong) {
+      color: var(--text-color);
+    }
+  }
+
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+  }
+
+  .scroll-hint {
+    margin-top: var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--text-muted-color);
+    text-decoration: none;
+    transition: var(--transition-text);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--accent-color);
+    }
+  }
 
   @keyframes pulse {
     0% {

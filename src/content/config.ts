@@ -24,7 +24,9 @@ export const collections = {
         order: z.number(),
         image: z.string(),
         summary: z.string(),
-        techs: z.array(z.string()).default([])
+        techs: z.array(z.string()).default([]),
+        // Palabra o frase del título en serif itálica (por defecto, la última palabra)
+        accent: z.string().optional()
       }),
       cards: z
         .array(
