@@ -5,43 +5,50 @@ interface Props {
   [attr: string]: any
 }
 
-const { href, class: className } = Astro.props
+const { href, class: className, ...attrs } = Astro.props
 ---
 
-<a class={className} href={href}>
+<a class:list={['button', className]} href={href} {...attrs}>
   <slot />
 </a>
 
 <style>
-  a.small {
-    padding: var(--space-1) 18px;
-  }
-
-  a {
+  a.button {
     display: inline-flex;
+    align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: var(--space-2) 40px;
+    padding: var(--space-2) 28px;
     font-weight: var(--w-medium);
     color: var(--text-color);
     text-decoration: none;
-    border: 1px solid var(--text-color);
+    border: 1px solid var(--border-color);
     border-radius: var(--radius-pill);
-    transition: var(--transition-bg), var(--transition-text);
+    transition: var(--transition-bg), var(--transition-text),
+      var(--transition-border);
 
-    &:hover {
-      background-color: var(--bg-secondary-color);
+    &:hover,
+    &:focus-visible {
+      border-color: var(--accent-color);
     }
 
     &.filled {
-      background-color: var(--text-color);
-      color: var(--bg-color);
-      transition: var(--transition-bg), var(--transition-text);
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      color: var(--on-accent-color);
 
-      &:hover {
-        background-color: var(--bg-secondary-color);
-        color: var(--text-color);
+      &:hover,
+      &:focus-visible {
+        background-color: color-mix(
+          in srgb,
+          var(--accent-color) 82%,
+          var(--text-color)
+        );
       }
+    }
+
+    &.small {
+      padding: var(--space-1) 18px;
     }
   }
 </style>

@@ -3,17 +3,45 @@
    ========================= */
 
 html {
-  /* ===== COLORS / THEME (tuyo) ===== */
-  --bg-color: #000;
-  --bg-secondary-color: #1e1e1e;
-  --bg-toggle-thumb: #343434;
-  --bg-card-contributions: #4847474d;
-  --bg-separator: #5a5a5a;
+  /* ===== COLORES: tema oscuro (barro negro) ===== */
+  --bg-color: #15120f;
+  --bg-secondary-color: #1f1a15;
+  --bg-toggle-thumb: var(--border-color);
+  --bg-card-contributions: color-mix(
+    in srgb,
+    var(--text-color) 4%,
+    transparent
+  );
+  --bg-separator: var(--text-muted-color);
 
-  --text-color: #fff;
-  --text-description-color: #cfcfcf;
+  --text-color: #f4ecdf;
+  --text-description-color: #d6cbb9;
+  --text-muted-color: #a99d8b;
 
-  --border-color: #5a5a5a;
+  --border-color: #3a322a;
+  --accent-color: #e39b2d; /* cempasúchil */
+  --on-accent-color: var(--bg-color);
+  --glass-color: rgba(21, 18, 15, 0.55);
+  --dots-color: 244, 236, 223;
+
+  /* Colores de bloque de los proyectos (iguales en ambos temas) */
+  --block-terracota: #b4451f;
+  --block-anil: #23395b;
+  --block-verde: #4f6b47;
+  --case-1: var(--block-terracota);
+  --case-2: var(--block-anil);
+  --case-3: var(--block-verde);
+  --grana: #9e1b32;
+  --on-block-color: #f4ecdf;
+
+  /* Acentos secundarios, fondo alterno y track del switch */
+  --anil: #8fa6cf;
+  --verde: #9dbb8f;
+  --tint: #1d1915;
+  --track: #2b251f;
+  --glow-anil: #4a6aa8;
+  --glow-verde: #6f8f62;
+  --glow-opacity: 0.16;
 
   --radius: 24px;
   --radius-pill: 1000px;
@@ -25,18 +53,21 @@ html {
   --radius-sm: 4px;
   --radius-line: 2px;
 
-  --border-subtle-color: rgba(128, 128, 128, 0.33);
+  --border-subtle-color: var(--border-color);
   --shadow-card: 0 1px 0 rgba(0, 0, 0, 0.06);
   --overlay-color: hsl(0 0 0 / 50%);
   --overlay-hidden-color: hsl(0 0 0 / 0);
   --status-color: #22c55e;
   --status-glow-color: rgba(34, 197, 94, 0.7);
 
+  --content-width: 1280px;
   --mobile-inline-padding: 22px;
+  --section-space: clamp(4rem, 8vw, 6rem);
 
-  --transition-bg: background-color 150ms ease;
-  --transition-text: color 150ms ease;
-  --transition-border: border-color 150ms ease;
+  --theme-duration: 350ms;
+  --transition-bg: background-color var(--theme-duration) ease;
+  --transition-text: color var(--theme-duration) ease;
+  --transition-border: border-color var(--theme-duration) ease;
 
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
@@ -46,8 +77,9 @@ html {
   }
 
   /* ===== TYPOGRAPHY SYSTEM ===== */
-  --font: 'Manrope Variable', system-ui, -apple-system, Segoe UI, Roboto, Arial,
+  --font: 'Inter Variable', system-ui, -apple-system, Segoe UI, Roboto, Arial,
     sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
 
   /* Base (lo que buscas: como home = grande + aireado) */
   --text-base: 1.0625rem; /* 17px */
@@ -64,10 +96,12 @@ html {
   --text-headline: clamp(1.25rem, 2vw, 2rem);
 
   /* Headings */
-  --h1: clamp(2.25rem, 4vw, 4rem);
-  --h2: clamp(1.75rem, 2.5vw, 2.5rem);
+  --h1: clamp(2.75rem, 6.5vw, 5.25rem); /* hasta 84px */
+  --h2: clamp(2rem, 4vw, 3.5rem);
   --h3: 1.5rem;
   --h4: 1.25rem;
+  --tracking-display: -0.035em;
+  --tracking-heading: -0.02em;
 
   /* Weights */
   --w-regular: 400;
@@ -85,18 +119,27 @@ html {
   --space-6: 3rem; /* 48 */
 }
 
-/* Tema claro. La preferencia se sigue guardando como 'dark-theme' para no perder la elección de quien ya visitó el sitio */
+/* Tema claro (manta). La preferencia se sigue guardando como 'dark-theme' para no perder la elección de quien ya visitó el sitio */
 html.light {
-  /* (tu tema invertido lo respeto tal cual) */
-  --bg-color: #efeeed;
-  --bg-secondary-color: color-mix(in srgb, #1e1e1e, #fff 95%);
-  --bg-toggle-thumb: #d5d5d5;
-  --bg-card-contributions: #cbcbcb4d;
-  --bg-separator: #000;
+  --bg-color: #f4ecdf;
+  --bg-secondary-color: #ebe1d1;
 
-  --text-color: #000;
-  --text-description-color: color-mix(in srgb, #a6a6a6, #000 40%);
-  --border-color: #cbcbcb;
+  --text-color: #1e1b18;
+  --text-description-color: #3f3730;
+  --text-muted-color: #655a4e;
+
+  --border-color: #d6c8b2;
+  --accent-color: #9e1b32; /* grana */
+  --glass-color: rgba(244, 236, 223, 0.6);
+  --dots-color: 30, 27, 24;
+  --anil: #23395b;
+  --verde: #4f6b47;
+  --tint: #ebe0cf;
+  --track: #e2d5c1;
+  --glow-anil: #23395b;
+  --glow-verde: #4f6b47;
+  --glow-opacity: 0.12;
+  --overlay-color: hsl(30 20% 10% / 35%);
 }
 
 /* =========================
@@ -112,7 +155,6 @@ body {
   letter-spacing: var(--tracking);
   transition: var(--transition-bg), var(--transition-text);
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
   font-synthesis-weight: none;
 }
 
@@ -131,20 +173,22 @@ h2,
 h3,
 h4 {
   margin: 0;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-heading);
 }
 
 h1 {
   font-size: var(--h1);
-  font-weight: var(--w-bold);
-  line-height: 1.1;
+  font-weight: var(--w-semibold);
+  line-height: 1.02;
+  letter-spacing: var(--tracking-display);
   text-wrap: balance;
 }
 
 h2 {
   font-size: var(--h2);
   font-weight: var(--w-semibold);
-  line-height: 1.15;
+  line-height: 1.08;
+  letter-spacing: var(--tracking-display);
   text-wrap: balance;
 }
 
@@ -239,4 +283,50 @@ a {
 .headline-4 {
   font-size: var(--text-base);
   font-weight: var(--w-medium);
+}
+
+/* =========================
+   ACENTOS EDITORIALES
+   ========================= */
+
+/* Palabras clave en Instrument Serif itálica dentro de titulares */
+:where(h1, h2, h3, .serif-accent) em,
+.serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: var(--w-regular);
+  letter-spacing: -0.01em;
+  color: var(--accent-color);
+  transition: var(--transition-text);
+}
+
+/* Etiquetas pequeñas en mayúsculas */
+.eyebrow {
+  font-size: var(--text-xs);
+  font-weight: var(--w-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted-color);
+}
+
+/* Superficie de vidrio reutilizable */
+.glass {
+  background-color: var(--glass-color);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  transition: var(--transition-bg), var(--transition-border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

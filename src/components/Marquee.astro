@@ -1,0 +1,97 @@
+---
+import { t } from 'i18n:astro'
+
+const words = t('marquee', { returnObjects: true }) as string[]
+---
+
+<section class="marquee" aria-label={words.join(', ')}>
+  <div class="track" aria-hidden="true">
+    {
+      [0, 1].map(() => (
+        <ul>
+          {words.map((word) => (
+            <li>
+              <span class="word">{word}</span>
+              <span class="star">✦</span>
+            </li>
+          ))}
+        </ul>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .marquee {
+    overflow: hidden;
+    border-block: 1px solid var(--border-color);
+    padding-block: var(--space-4);
+    transition: var(--transition-border);
+    mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .track {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+  }
+
+  ul {
+    display: flex;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    padding-right: var(--space-5);
+    white-space: nowrap;
+  }
+
+  .word {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    line-height: 1.2;
+    color: var(--text-color);
+    transition: var(--transition-text);
+  }
+
+  .star {
+    font-size: var(--text-xl);
+    color: var(--accent-color);
+    transition: var(--transition-text);
+  }
+
+  @keyframes marquee {
+    to {
+      translate: -50% 0;
+    }
+  }
+
+  /* Sin animación: las palabras se muestran quietas y se acomodan en varias líneas */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee {
+      mask: none;
+    }
+
+    .track {
+      animation: none;
+      width: auto;
+      justify-content: center;
+    }
+
+    .track ul {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .track ul + ul {
+      display: none;
+    }
+  }
+</style>

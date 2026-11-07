@@ -2,79 +2,82 @@
 import { Icon } from 'astro-icon/components'
 ---
 
-<label aria-label="Toggle">
+<label class="theme-switch" aria-label="Cambiar a modo claro">
   <input class="toggle" type="checkbox" />
-  <span class="toggle-thumb">
-    <Icon name="moon" size={16} />
-    <Icon name="sun" size={16} />
+  <span class="toggle-track">
+    <span class="toggle-thumb">
+      <Icon name="moon" size={14} class="icon-moon" />
+      <Icon name="sun" size={14} class="icon-sun" />
+    </span>
   </span>
 </label>
 
 <style>
+  /* Zona táctil de 64×44 con el track de 56×30 centrado */
   label {
-    --padding: 4px;
-
-    display: inline-block;
-    position: relative;
-    width: 50px;
-    height: 24px;
-    padding: var(--padding);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 44px;
     cursor: pointer;
+    vertical-align: middle;
 
     & input {
+      position: absolute;
       opacity: 0;
       width: 0;
       height: 0;
     }
 
-    & .toggle-thumb {
-      --toggle-gap: 8px;
+    &:has(input:focus-visible) .toggle-track {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+    }
+  }
 
-      position: absolute;
-      inset: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: var(--toggle-gap);
-      background-color: var(--bg-toggle-thumb);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: var(--transition-bg);
+  .toggle-track {
+    display: flex;
+    align-items: center;
+    width: 56px;
+    height: 30px;
+    padding: 3px;
+    box-sizing: border-box;
+    background-color: var(--track);
+    border-radius: 99px;
+    transition: var(--transition-bg);
+  }
 
-      &.active::before {
-        /* Calcula el offset para que el .toggle-thumb se ajuste correctamente */
-        --offset: calc(var(--padding) / 2);
+  /* El thumb se desliza 26px; .active = tema claro */
+  .toggle-thumb {
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    transition:
+      transform 0.3s ease,
+      var(--transition-bg);
 
-        /* --size: 16px + --toggle-gap: 8px + --offset: 2px = 26px */
-        translate: calc(var(--size) + var(--toggle-gap) + var(--offset));
+    & :global(svg) {
+      grid-area: 1 / 1;
+    }
+
+    & :global(.icon-sun) {
+      display: none;
+    }
+
+    &.active {
+      transform: translateX(26px);
+
+      & :global(.icon-sun) {
+        display: block;
       }
 
-      /* Crea el elemento de toggle-thumb */
-      &::before {
-        --size: 16px;
-
-        content: '';
-        position: absolute;
-        top: calc(var(--toggle-gap) / 2);
-        left: calc(var(--toggle-gap) / 2);
-        width: var(--size);
-        height: var(--size);
-        border-radius: 50%;
-        background-color: var(--text-color);
-        transition:
-          translate 300ms ease,
-          var(--transition-bg);
-      }
-
-      & svg {
-        /* Ajusta la posición del icono svg del lado izquierdo (luna) */
-        &:nth-child(odd) {
-          translate: calc(var(--toggle-gap) / 2);
-        }
-        /* Ajusta la posición del icono svg del lado derecho (sol) */
-        &:nth-child(even) {
-          translate: calc((var(--toggle-gap) / 2) * -1);
-        }
+      & :global(.icon-moon) {
+        display: none;
       }
     }
   }

@@ -1,69 +1,116 @@
 ---
 import { Icon } from 'astro-icon/components'
 import { t } from 'i18n:astro'
-import Button from '@components/Button.astro'
 
-const { cta } = t('hero', {
-  returnObjects: true
-})
-const { title, subtitle } = t('contact', {
-  returnObjects: true
-})
+const {
+  title,
+  subtitle,
+  email_label: emailLabel,
+  linkedin_label: linkedinLabel,
+  cv_label: cvLabel,
+  cv_value: cvValue
+} = t('contact', { returnObjects: true })
+const links = t('links', { returnObjects: true }) as {
+  linkedin: string
+  email: string
+  cv: string
+}
 ---
 
 <section class="contact">
-  <h2 class="headline-1">{title}</h2>
-  <h3 class="headline-2">{subtitle}</h3>
-  <div class="buttons-container">
-    <Button class="filled" href="https://www.linkedin.com/in/soria-mitzi/"
-      >{cta}</Button
-    >
-    <Button href="https://www.linkedin.com/in/soria-mitzi/">
-      <Icon name="linkedin" size={24} />
-      <span>LinkedIn</span>
-    </Button>
+  <div class="box">
+    <h2 set:html={title} />
+    <p class="subtitle">{subtitle}</p>
+    <ul class="links">
+      <li>
+        <a href={`mailto:${links.email}`}>
+          <Icon name="mail" size={22} />
+          <span>{emailLabel}</span>
+          <span class="value">{links.email}</span>
+        </a>
+      </li>
+      <li>
+        <a href={links.linkedin} target="_blank" rel="noopener noreferrer">
+          <Icon name="linkedin" size={22} />
+          <span>{linkedinLabel}</span>
+          <span class="value">/in/soria-mitzi</span>
+        </a>
+      </li>
+      <li>
+        <a href={links.cv} download>
+          <Icon name="file" size={22} />
+          <span>{cvLabel}</span>
+          <span class="value">{cvValue}</span>
+        </a>
+      </li>
+    </ul>
+    <canvas id="grid"></canvas>
   </div>
-  <canvas id="grid"></canvas>
 </section>
 
 <style>
-  .contact {
-    padding-block: 97px;
-    padding-inline: var(--space-3);
-    text-align: center;
-    border: 1px solid var(--border-subtle-color);
-    border-radius: var(--radius-sm);
+  .box {
     position: relative;
+    display: grid;
+    gap: var(--space-4);
+    padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 6vw, 5rem);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
     overflow: hidden;
-
-    @media (width >= 768px) {
-      padding-inline: 0;
-    }
-
-    & h3 {
-      font-weight: initial;
-    }
-
-    & .buttons-container {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      gap: 13px;
-      margin-top: var(--space-4);
-
-      @media (width >= 768px) {
-        flex-direction: row;
-      }
-    }
+    isolation: isolate;
+    transition: var(--transition-border);
 
     & canvas {
       position: absolute;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       z-index: -1;
+      opacity: 0.45;
       pointer-events: none;
+    }
+  }
+
+  h2 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    max-width: 14ch;
+  }
+
+  .subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-description-color);
+    transition: var(--transition-text);
+  }
+
+  .links {
+    display: grid;
+    margin: var(--space-4) 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--border-color);
+
+    & a {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding-block: var(--space-3);
+      color: var(--text-color);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-color);
+      transition: var(--transition-text), var(--transition-border);
+
+      &:hover,
+      &:focus-visible {
+        color: var(--accent-color);
+      }
+    }
+
+    & .value {
+      margin-left: auto;
+      font-size: var(--text-sm);
+      color: var(--text-muted-color);
+      overflow-wrap: anywhere;
+      text-align: right;
     }
   }
 </style>

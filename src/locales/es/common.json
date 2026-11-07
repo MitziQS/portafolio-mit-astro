@@ -7,12 +7,12 @@
       "href": "#top"
     },
     {
-      "label": "Sobre mí",
-      "href": "#sobre-mi"
-    },
-    {
       "label": "Proyectos",
       "href": "#proyectos"
+    },
+    {
+      "label": "Sobre mí",
+      "href": "#sobre-mi"
     },
     {
       "label": "Experiencia",
@@ -21,14 +21,18 @@
   ],
   "hero": {
     "job_availability": "¡Disponible para trabajar!",
-    "title": "¡Hola soy Mit!",
+    "title": "Diseño productos a partir de cómo <em>piensan</em> y <em>deciden</em> las personas.",
     "job_title": "<strong>Diseñadora de productos digitales</strong> en CDMX, México.",
     "description": "Con experiencia en transformar servicios públicos y privados en experiencias claras, inclusivas y escalables",
-    "cta": "Contactame"
+    "cta": "Contactame",
+    "cta_projects": "Ver proyectos",
+    "cta_cv": "Descargar CV",
+    "scroll_hint": "↓ Proyectos seleccionados"
   },
-
   "about": {
     "title": "Sobre mí",
+    "eyebrow": "Sobre mí · cómo trabajo",
+    "headline": "Diseño con <em>evidencia</em>, no con suposiciones.",
     "subtitle": "Me gusta trabajar donde diseño, estrategia y operación se cruzan.",
     "description": [
       "Mi camino no ha sido lineal: comencé a trabajar en agencias de publicidad, pero pronto entendí que ese ritmo no me llenaba el corazón. Así que me certifiqué en UX/UI. Desde entonces descubrí algo importante sobre mí: disfruto profundamente entender a las personas, comprender la complejidad del negocio y traducir ambas perspectivas en soluciones viables y claras. Trabajo justo en esa intersección donde el diseño tiene propósito, es técnicamente viable y genera impacto real y medible.",
@@ -36,69 +40,87 @@
       "Creo profundamente en el diseño con intención: claro, útil y humano. Por eso sigo formándome en Behavioral Design, para diseñar no solo interfaces, sino servicios completos que acompañen a las personas de principio a fin."
     ]
   },
-
   "projects": {
     "title": "Proyectos",
-    "preview": "Ver más"
+    "preview": "Ver caso de estudio →"
   },
-
   "experience": {
     "title": "Experiencia laboral",
     "jobs": {
-      "jobs_title": ["Product Designer", "Product Designer", "UX/UI Designer"],
+      "jobs_title": ["Product Designer", "UX/UI Designer", "UX/UI Designer"],
       "jobs_description": [
         {
           "title": "Subdirección Diseño de Producto",
           "organization": "Agencia de Transformación Digital y Telecomunicaciones",
-          "time": ["Dic 2024"],
+          "time": ["Abr 2025", "Mar 2026"],
           "description": "",
           "list": [
-            "Diseño experiencias digitales accesibles, intuitivas y centradas en la persona usuaria para proyectos gubernamentales, impactando servicios públicos clave.",
-            "Lidero la creación y evolución del Design System institucional, asegurando consistencia, eficiencia y escalabilidad en productos compartidos con otras dependencias.",
-            "Coordino la documentación y estandarización de componentes, promoviendo buenas prácticas de accesibilidad y optimizando tiempos de desarrollo.",
-            "Trabajo de forma transversal con equipos de desarrollo, QA y áreas de negocio para garantizar entregas alineadas a objetivos estratégicos de la transformación digital."
-          ]
+            "Lideré end-to-end el diseño del sistema nacional de identidad digital del Gobierno de México: credencial física, credencial digital en App MX y arquitectura de servicio que integra 8 dependencias federales entre identidad y salud (RENAPO, INE, IMSS, ISSSTE, PEMEX, ISSFAM, IMSS Bienestar, Bienestar), diseñado para escala nacional (~129M de mexicanos).",
+            "Definí el flujo de credencialización digital en App MX: captura de CURP, prueba de vida 1:1 contra Motor Biométrico, deduplicación, vinculación con Llave MX y emisión de credencial de identidad y salud, incluyendo reglas de seguridad por número de intentos y bloqueo de CURP por actividad de riesgo.",
+            "Diseñé el flujo presencial de enrolamiento en módulos del Bienestar (mayores y menores de edad) con captura biométrica multimodal en 4 modalidades (rostro, huellas, iris, firma), validación OTP y reglas de excepción para tutores legales.",
+            "Mapeé +8 flujos críticos en BPMN y especifiqué la arquitectura de +10 sistemas internos (Motor Biométrico, SICRED, Bitácora Nacional, RENAPO/SID, App MX, entre otros), traduciendo decisiones de diseño en +30 reglas de negocio, criterios de aceptación y contratos de microservicios para deduplicación, validación de identidad y prevención de suplantación.",
+            "Construí desde cero el Design System con responsive desktop y mobile, estándares WCAG 2.1 AA y librería de componentes adoptada por múltiples productos del ecosistema digital gubernamental."
+          ],
+          "company": "ATDT"
         },
         {
-          "title": "Product Designer",
+          "title": "UX/UI Designer",
           "organization": "Justo.mx",
-          "time": ["Enero 2021", "Dic 2024"],
+          "time": ["Mar 2022", "Dic 2024"],
           "description": "",
           "list": [
             "Diseñé y optimicé experiencias digitales para un supermercado 100% online con presencia internacional, colaborando estrechamente con equipos multifuncionales (PMs, desarrollo, marketing y CX).",
             "Gestioné y evolucioné el UI Kit con +40 componentes, asegurando consistencia y escalabilidad en todo el producto.",
             "Conduje investigaciones continuas (entrevistas, encuestas, pruebas de usabilidad) con al menos 5 usuarios por iteración, generando insights que impulsaron un crecimiento del 15% en adquisición de nuevos clientes.",
             "Colaboré en la implementación de soluciones de diseño end to end, desde definición de visión hasta validación en producción, alineando objetivos de negocio con necesidades reales de los usuarios."
-          ]
+          ],
+          "company": "Justo.mx"
         },
         {
           "title": "Diseñadora UX/UI",
           "organization": "Shark Think",
-          "time": ["Diciembre 2020", "Marzo 2022"],
+          "time": ["Feb 2021", "Mar 2022"],
           "description": "",
           "list": [
             "Proyecto Alsea: mejoré la navegación de la app Wow Plus, optimizando la experiencia del usuario en su programa de lealtad para incrementar la retención de clientes.",
             "Proyecto Sport City: diseñé una solución de suscripción digital que permitió a usuarios acceder a entrenamientos, dietas y coaching personalizado durante la pandemia, ampliando el alcance del servicio.",
             "Proyecto Palace Resorts: detecté y solucioné problemas de trazabilidad en procesos de adquisición y cierre de contratos para beneficios corporativos, implementando un nuevo flujo que involucró a 3 departamentos, reduciendo tiempos de cierre un 40% y mejorando la eficiencia operativa."
-          ]
+          ],
+          "company": "Shark Think"
         }
       ]
     }
   },
-
   "contact": {
-    "title": "¿Listo para dar vida a tus ideas?",
-    "subtitle": "Puedo impulsar tu proyecto o formar parte de tu equipo"
+    "title": "¿Diseñamos <em>algo juntas?</em>",
+    "subtitle": "Puedo impulsar tu proyecto o formar parte de tu equipo",
+    "email_label": "Correo",
+    "linkedin_label": "LinkedIn",
+    "cv_label": "CV",
+    "cv_value": "Descargar PDF ↓"
   },
-
   "footer": {
-    "designed": {
-      "designed_with": "Diseñado con",
-      "designed_by": "por"
-    },
-    "developed": {
-      "developed_with": "Hecho con",
-      "developed_by": "por"
-    }
-  }
+    "owner": "Mitzi Soria",
+    "made_in": "Hecho en México"
+  },
+  "topbar": {
+    "first_name": "Mitzi",
+    "last_name": "Soria",
+    "city": "CDMX",
+    "time_zone": "America/Mexico_City",
+    "language": "ES"
+  },
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/soria-mitzi/",
+    "email": "mitzi.unam2015@gmail.com",
+    "cv": "/Mitzi_Soria_CV.pdf"
+  },
+  "marquee": [
+    "UX Research",
+    "Product Design",
+    "Ciencia del comportamiento",
+    "Design Systems",
+    "Identidad digital",
+    "Retail"
+  ]
 }

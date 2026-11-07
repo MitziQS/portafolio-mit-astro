@@ -1,284 +1,1035 @@
 /* =========================
    CASOS DE ESTUDIO
-   Estilos que solo usan las páginas de proyecto
+   Estilos que solo usan las páginas de proyecto.
+   Estilizan las clases que ya traen los .md sin reescribirlos.
    ========================= */
 
-/* Lectura: párrafos y listas en gris */
-.prose :where(p, li) {
-  color: var(--text-description-color);
-}
-
-/* 1) El texto principal dentro de páginas de proyecto
-      (sube size/aire como en la home) */
-:where(.project-content, .summary, .step) {
-  font-size: var(--text-base);
-  line-height: var(--leading-base);
-}
-
-/* 2) Cards (tu problema: “cards no”)
-      Fuerza que dentro de summary-card todo tenga el mismo “cuerpo” */
-:where(.summary-card, .card) {
-  font-size: var(--text-base);
-  line-height: var(--leading-base);
-}
-
-:where(.summary-card p, .card p, .summary-card li, .card li) {
-  font-size: inherit;
-  line-height: inherit;
-}
-
-/* Eyebrow más pequeño (para que no “jale” el ritmo) */
-.summary-card__eyebrow {
-  margin: 0 0 10px;
-  font-size: var(--text-sm);
-  font-weight: var(--w-medium);
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--text-description-color);
-}
-
-/* 3) KPI: el label NO debe quedar más chico ni distinto que bullets */
-.kpi__label {
-  font-size: var(--text-base);
-  line-height: var(--leading-base);
-  color: var(--text-description-color);
-}
-
-/* 4) Evita que “h3/p raros en cards” vuelva a pasar */
-.project-content .card :where(h1, h2, h3, h4, p, ul, ol) {
-  margin: 0;
-}
-
-/* 5) Imágenes / media */
-.media img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ===== WRAPPER ===== */
-.project-wrapper {
-  max-width: 1054px;
+/* ===== Contenedor y capas ===== */
+.case-page {
+  position: relative;
+  z-index: 1;
+  max-width: calc(var(--content-width) + 2 * 40px);
   margin-inline: auto;
   padding-inline: var(--mobile-inline-padding);
-  padding-block: var(--space-6);
+  padding-bottom: 160px;
+  letter-spacing: normal;
+
+  @media (width >= 768px) {
+    padding-inline: 40px;
+  }
 }
 
-.project-hero {
-  margin: 0.25rem 0 var(--space-4);
+/* Destello de color que acompaña el scroll */
+.case-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  & span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background-color: var(--glow-color, var(--accent-color));
+    opacity: var(--glow-opacity);
+    filter: blur(60px);
+    translate: var(--glow-x, 5vw) var(--glow-y, 0);
+    transition: background-color 1.2s ease;
+    will-change: translate;
+  }
 }
 
-.project-title {
-  margin: 0 0 var(--space-4);
+/* ===== Hero del caso ===== */
+.case-hero {
+  display: grid;
+  justify-items: start;
+  gap: 28px;
+  padding-top: clamp(3rem, 8vw, 6rem);
 }
 
-.project-media {
-  margin: 0 0 var(--space-6);
+.case-eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 13px;
+  font-weight: var(--w-regular);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted-color);
+
+  & .case-tags {
+    color: var(--accent-color);
+  }
 }
 
-.project-media img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-media);
-  display: block;
+.case-title {
+  font-size: clamp(2.5rem, 5.6vw, 4.75rem);
+  font-weight: var(--w-regular);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+
+  /* 88px sobre 76px */
+  & em {
+    padding-right: 0.08em;
+    letter-spacing: inherit;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.158em;
+    background-image: linear-gradient(
+      100deg,
+      var(--accent-color),
+      var(--case-ink)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* La segunda palabra invierte el degradado */
+  & em:nth-of-type(even) {
+    background-image: linear-gradient(
+      100deg,
+      var(--case-ink),
+      var(--accent-color)
+    );
+  }
 }
 
-/* =========================================================
-   FIX 1: Prose no debe limitar el ancho de cards como Impacto
-   (La card debe llenar el wrapper, respetando márgenes)
-   ========================================================= */
-.project-content {
-  width: 100%;
-}
-.project-content.prose {
-  max-width: none;
-}
-
-/* ===== Headings consistentes ===== */
-.project-content :is(h2, h3, h4) {
-  margin-top: var(--space-6);
-  margin-bottom: var(--space-2);
-}
-
-/* ===== Texto ===== */
-.project-content :where(p, li) {
+.case-intro {
+  max-width: 780px;
+  font-size: var(--text-xl);
+  line-height: 1.6;
   color: var(--text-description-color);
   text-wrap: pretty;
+
+  & em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.15em;
+    color: var(--text-color);
+  }
 }
 
-/* ===== Cards (incluye Impacto) ===== */
-.project-content .card {
+.scroll-cue {
+  justify-self: center;
+  margin-top: 4px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  transition: var(--transition-border);
+
+  & span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    animation: bob 2.2s ease-in-out infinite;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--accent-color);
+  }
+}
+
+.case-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
   width: 100%;
-  max-width: none; /* ✅ Impacto full width */
-  background: var(--bg-secondary-color);
-  border: 1px solid color-mix(in oklab, var(--text-color) 15%, transparent);
-  border-radius: var(--radius-card);
-  padding: 20px;
-  box-shadow: var(--shadow-card);
-}
-.project-content .card > * + * {
-  margin-top: var(--space-3);
-}
+  margin: 0;
+  padding-block: 28px;
+  border-block: 1px solid var(--border-color);
+  transition: var(--transition-border);
 
-/* ===== Grids ===== */
-.project-content .grid-3 {
-  display: grid;
-  gap: var(--space-4);
-  grid-template-columns: repeat(3, 1fr);
-}
-@media (width <= 900px) {
-  .project-content .grid-3 {
-    grid-template-columns: 1fr;
+  & div {
+    display: grid;
+    align-content: start;
+    gap: 10px;
+  }
+
+  & dt {
+    font-size: 12px;
+    line-height: normal;
+    font-weight: var(--w-regular);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted-color);
+  }
+
+  & dd {
+    margin: 0;
+    font-size: 19px;
+    line-height: normal;
+    color: var(--text-color);
+  }
+
+  /* Dato secundario opcional: <em> en serif itálica */
+  & dd em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--text-muted-color);
   }
 }
 
-/* ===== KPI (resaltar porcentajes) ===== */
-.project-content .kpi-grid {
-  display: grid;
-  gap: var(--space-4);
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: var(--space-3);
-}
-@media (width <= 900px) {
-  .project-content .kpi-grid {
-    grid-template-columns: 1fr;
+.case-banner {
+  margin: 64px 0 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: var(--case-color);
+
+  & img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 }
 
-.project-content .kpi {
-  background: transparent;
-  border-radius: var(--radius-kpi);
-  padding: var(--space-3);
-  border: 1px dashed color-mix(in oklab, var(--text-color) 18%, transparent);
+/* ===== Texto base dentro del caso ===== */
+.project-content {
+  font-size: var(--text-lg);
+  line-height: 1.7;
+
+  & :where(p, li) {
+    color: var(--text-description-color);
+    text-wrap: pretty;
+    transition: var(--transition-text);
+  }
+
+  & :where(strong, b) {
+    color: var(--text-color);
+    font-weight: var(--w-semibold);
+  }
+
+  /* Los <br> sueltos entre párrafos ya no hacen falta: el espaciado lo da la grilla */
+  & :is(.step__body, .content-block, .step) > br {
+    display: none;
+  }
 }
 
-.project-content .kpi__value {
-  font-weight: var(--w-extrabold);
-  font-size: var(--text-3xl);
-  line-height: 1.05;
-  color: var(--text-color);
+/* Nota que va antes de las secciones (p. ej. confidencialidad) */
+.case-note {
+  margin-top: var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--text-muted-color);
+
+  & p {
+    color: inherit;
+  }
+}
+
+/* ===== Resumen ===== */
+.summary {
+  margin-top: 160px;
+}
+
+.summary__title {
+  margin: 0 0 var(--space-5);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--w-regular);
+  line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
-.project-content .kpi__label {
-  margin-top: 10px;
-  opacity: 0.9;
-  color: var(--text-description-color);
-}
-
-/* ===== Step ===== */
-.project-content .step {
-  margin: var(--space-5) 0;
-}
-
-/* ✅ Medida de lectura SOLO en pasos del proceso (no afecta Impacto) */
-.project-content .step :where(p, ul, ol, blockquote, .card) {
-  max-width: 92ch;
-  margin-right: auto;
-}
-@media (width <= 768px) {
-  .project-content .step :where(p, ul, ol, blockquote, .card, .bulleted) {
-    max-width: 100%;
-  }
-}
-
-/* ===== Imágenes ===== */
-.project-content .media {
-  margin: var(--space-4) 0;
-}
-.project-content .media img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-media);
-}
-
-/* ===== Back link ===== */
-.project-wrapper .back-link {
-  margin-bottom: var(--space-5);
-}
-
-/* =========================================================
-   FIX 2: Línea después del título de sección (h2.section-title)
-   ========================================================= */
-.project-content h2.section-title {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  margin: var(--space-6) 0 var(--space-4);
-  white-space: nowrap;
-}
-.project-content h2.section-title::after {
-  content: '';
-  flex: 1 1 auto;
-  height: 2px;
-  background: color-mix(in oklab, var(--text-color) 35%, transparent);
-  border-radius: var(--radius-line);
-  translate: 0 0.2em;
-}
-@media (width <= 768px) {
-  .project-content h2.section-title::after {
-    height: 1.5px;
-  }
-}
-
-/* =========================
-   RESUMEN
-   ========================= */
-.project-content .summary-card--full {
-  grid-column: 1 / -1;
-}
-
-.project-content .summary {
-  margin-top: var(--space-4);
-}
-
-.project-content .summary__title {
-  margin: 0 0 20px;
-  font-size: var(--text-3xl);
-  font-weight: var(--w-bold);
-}
-
-.project-content .summary__grid {
+.summary__grid {
   display: grid;
-  gap: var(--space-4);
+  gap: 20px;
   grid-template-columns: 1.6fr 1fr;
   align-items: start;
-}
 
-@media (width <= 900px) {
-  .project-content .summary__grid {
+  @media (width <= 900px) {
     grid-template-columns: 1fr;
   }
 }
 
 /* Sin columna lateral: 2 o 3 tarjetas en una fila, 4 en dos filas de 2 */
 @media (width > 900px) {
-  .project-content .summary__grid--1 {
+  .summary__grid--1 {
     grid-template-columns: 1fr;
   }
-  .project-content .summary__grid--2,
-  .project-content .summary__grid--4 {
+  .summary__grid--2,
+  .summary__grid--4 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .project-content .summary__grid--3 {
+  .summary__grid--3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-.project-content .summary__main,
-.project-content .summary__side {
+/* Tarjetas en fila (sin columna lateral): todas de la misma altura */
+.summary__grid:is(.summary__grid--2, .summary__grid--3, .summary__grid--4) {
+  align-items: stretch;
+}
+
+.summary__main,
+.summary__side {
+  display: grid;
+  gap: 20px;
+}
+
+.summary-card {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  padding: 32px;
+  background-color: var(--glass-color);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  transition:
+    translate 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    var(--transition-border),
+    var(--transition-bg);
+
+  &:hover {
+    translate: 0 -4px;
+    border-color: var(--accent-color);
+  }
+
+  & p,
+  & ul {
+    margin: 0;
+  }
+
+  & p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  & ul {
+    display: grid;
+    gap: 8px;
+    padding-left: 18px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  & li {
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+
+.summary-card--full {
+  grid-column: 1 / -1;
+}
+
+.summary-card .summary-card__eyebrow {
+  font-size: 12px;
+  line-height: normal;
+  font-weight: var(--w-regular);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted-color);
+}
+
+/* Tarjetas de una sola frase corta: en serif */
+.summary-card--short p:not(.summary-card__eyebrow) {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--text-color);
+}
+
+/* ===== KPIs ===== */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: var(--space-4);
+  border-block: 1px solid var(--border-color);
+
+  @media (width <= 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kpi {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 40px 32px 40px 0;
+
+  &:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+
+  &:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+}
+
+.kpi__value {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 7vw, 88px);
+  font-weight: var(--w-regular);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.kpi__label {
+  max-width: 260px;
+  font-size: 16px;
+  line-height: normal;
+  color: var(--text-description-color);
+}
+
+/* ===== Secciones de proceso: número flotante ===== */
+.project-content {
+  counter-reset: step;
+}
+
+.step--main,
+.step-continuation {
+  display: grid;
+  gap: 40px 56px;
+
+  @media (width >= 900px) {
+    grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  }
+}
+
+.step--main {
+  margin-top: 160px;
+  counter-increment: step;
+}
+
+.step-continuation {
+  margin-top: var(--space-6);
+
+  & > .step__body {
+    @media (width >= 900px) {
+      grid-column: 2;
+    }
+  }
+}
+
+.step__aside {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+
+  @media (width >= 900px) {
+    position: sticky;
+    top: 120px;
+    align-self: start;
+  }
+
+  &::before {
+    content: counter(step, decimal-leading-zero);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--case-ink);
+  }
+
+  & .section-title {
+    margin: 0;
+    font-size: 13px;
+    font-weight: var(--w-regular);
+    line-height: normal;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted-color);
+  }
+}
+
+/* Barra de progreso vertical; --p la calcula el script */
+.step__progress {
+  position: relative;
+  width: 2px;
+  height: 140px;
+  margin-top: 8px;
+  background-color: var(--border-color);
+  border-radius: 2px;
+  overflow: hidden;
+
+  @media (width < 900px) {
+    display: none;
+  }
+
+  & span {
+    position: absolute;
+    inset: 0 0 auto;
+    height: calc(var(--p, 0) * 100%);
+    background-color: var(--case-ink);
+  }
+}
+
+.step__body {
+  display: grid;
+  gap: 40px;
+  min-width: 0;
+
+  & > :where(p, ul, ol, .content-block),
+  & .content-block > :where(p, ul, ol) {
+    max-width: 760px;
+  }
+}
+
+/* Contenido dentro de un bloque: mismo ritmo vertical */
+.content-block {
+  display: grid;
+  gap: 32px;
+}
+
+/* Subsecciones con h3 (continúan sin número nuevo) */
+.step:not(.step--main) {
   display: grid;
   gap: var(--space-4);
+  margin-top: var(--space-6);
+
+  & > h3.section-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: var(--w-medium);
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--text-color);
+  }
 }
 
-.project-content .summary-card {
-  background: var(--bg-secondary-color);
-  border: 1px solid color-mix(in oklab, var(--text-color) 12%, transparent);
-  border-radius: var(--radius-summary-card);
-  padding: 18px;
-  box-shadow: var(--shadow-card);
+.step__body :is(h3, h4):not(.section-title) {
+  margin: 0;
+  font-size: 18px;
+  font-weight: var(--w-semibold);
+  line-height: normal;
+  color: var(--text-color);
 }
 
-.project-content .summary-card p + p {
+/* ===== Listas ===== */
+.project-content .bulleted {
+  display: grid;
+  gap: 8px;
+}
+
+/* ===== Tarjetas en grid ===== */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 16px;
+}
+
+.project-content .card {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 28px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  transition:
+    translate 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    var(--transition-border),
+    var(--transition-bg);
+
+  &:last-child {
+    background-color: var(--glass-color);
+  }
+
+  &:hover {
+    translate: 0 -4px;
+    border-color: var(--accent-color);
+  }
+
+  & :where(h1, h2, h3, h4, p, ul, ol) {
+    margin: 0;
+  }
+
+  & h4 {
+    font-size: 12px;
+    font-weight: var(--w-regular);
+    line-height: normal;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted-color);
+  }
+
+  & :where(p, li) {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  & :where(ul, ol) {
+    display: grid;
+    gap: 6px;
+    padding-left: 18px;
+  }
+}
+
+/* ===== Imágenes ===== */
+.project-content .media {
+  margin: var(--space-3) 0;
+
+  & img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  & figcaption {
+    margin-top: var(--space-2);
+    font-size: 14px;
+    color: var(--text-muted-color);
+  }
+}
+
+/* Imagen pendiente: recuadro punteado en lugar del ícono de imagen rota */
+.project-content .media:has(img[src='---'], img[src='----']) {
+  min-height: 240px;
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius);
+
+  & img {
+    display: none;
+  }
+}
+
+/* ===== Citas ===== */
+.project-content blockquote {
+  margin: var(--space-5) 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(2.5rem, 6vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--accent-color);
+
+  & cite {
+    display: block;
+    margin-top: var(--space-3);
+    font-family: var(--font);
+    font-style: normal;
+    font-size: 14px;
+    letter-spacing: normal;
+    color: var(--text-muted-color);
+  }
+}
+
+/* ===== Clases opcionales para los .md (solo marcan, no cambian texto) ===== */
+
+/* Pregunta o idea destacada como titular */
+.project-content .case-question {
+  display: block;
   margin-top: var(--space-2);
+  font-size: clamp(1.75rem, 3.5vw, 48px);
+  font-weight: var(--w-regular);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-color);
+
+  /* Palabras clave opcionales: 56px sobre 48px */
+  & em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.167em;
+    letter-spacing: normal;
+    color: var(--accent-color);
+  }
+}
+
+/* Bloque de insight con el color del caso */
+.project-content .case-insight {
+  max-width: none;
+  padding: 40px;
+  background-color: var(--case-color);
+  border-radius: var(--radius);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.5rem, 3vw, 34px);
+  line-height: 1.2;
+
+  &,
+  & strong {
+    color: var(--on-block-color);
+    font-weight: var(--w-regular);
+  }
+}
+
+/* Aprendizaje o llamado */
+.project-content .case-callout {
+  padding-left: 28px;
+  border-left: 3px solid var(--accent-color);
+  font-size: 24px;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
+/* ===== Bloques del caso (clases opcionales en los .md) ===== */
+
+/* Etiqueta pequeña en mayúsculas sobre un bloque */
+.project-content .case-label {
+  margin: 0;
+  font-family: var(--font);
+  font-style: normal;
+  font-size: 12px;
+  font-weight: var(--w-regular);
+  line-height: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted-color);
+}
+
+/* Frase destacada con etiqueta y párrafo opcional */
+.case-quote-block {
+  display: grid;
+  gap: 16px;
+
+  & .case-question {
+    margin: 0;
+  }
+}
+
+/* Franja de datos */
+.case-data {
+  display: grid;
+  gap: 10px;
+  padding: 24px 28px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  transition: var(--transition-border);
+
+  & p {
+    margin: 0;
+  }
+}
+
+/* Citas de usuarios */
+.case-voices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 16px;
+}
+
+.case-voice {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  margin: 0;
+  padding: 28px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  transition: var(--transition-border);
+
+  & p {
+    margin: 0;
+  }
+
+  & figcaption {
+    font-size: 14px;
+    color: var(--text-muted-color);
+  }
+}
+
+.project-content .case-voice__quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--text-color);
+}
+
+/* Dos columnas */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 16px;
+}
+
+/* Título dentro de una tarjeta */
+.project-content .card h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: var(--w-medium);
+  line-height: 1.25;
+  color: var(--text-color);
+}
+
+/* Insight en bloque: etiqueta legible sobre el color */
+.project-content div.case-insight {
+  display: grid;
+  gap: 12px;
+
+  & p {
+    margin: 0;
+    color: inherit;
+  }
+
+  & .case-label {
+    color: var(--on-block-color);
+    opacity: 0.85;
+  }
+}
+
+/* Antes y después */
+.case-compare {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 20px;
+
+  & figure {
+    display: grid;
+    align-content: start;
+    gap: 12px;
+    margin: 0;
+  }
+
+  & img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  & figcaption {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-description-color);
+
+    & strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+      font-weight: var(--w-regular);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted-color);
+    }
+  }
+}
+
+/* Lista numerada con números en serif */
+.project-content .case-steps {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  & li {
+    display: flex;
+    gap: 28px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  & h4 {
+    margin: 0 0 4px;
+    font-size: 18px;
+    font-weight: var(--w-semibold);
+  }
+
+  & p {
+    margin: 0;
+  }
+}
+
+.case-steps__n {
+  min-width: 36px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--accent-color);
+}
+
+/* KPI con etiqueta arriba y valores de texto */
+.kpi > .kpi__label:first-child {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted-color);
+}
+
+.kpi__value--text {
+  font-size: clamp(2.25rem, 4vw, 56px);
+  line-height: 1.05;
+}
+
+.kpi-grid--single {
+  grid-template-columns: 1fr;
+}
+
+/* Callout con etiqueta */
+.project-content .case-callout {
+  display: grid;
+  gap: 8px;
+  padding-block: 8px;
+
+  & p {
+    margin: 0;
+  }
+
+  & p:not(.case-label) {
+    color: var(--text-color);
+  }
+}
+
+/* Cita final */
+.project-content blockquote p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* ===== Siguiente caso ===== */
+.next-case {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: 160px;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  color: var(--on-block-color);
+  text-decoration: none;
+  background-color: var(--next-color);
+  border-radius: var(--radius);
+  transition: translate 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  &:hover {
+    translate: 0 -4px;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+  }
+}
+
+.next-case__eyebrow {
+  font-size: 13px;
+  font-weight: var(--w-regular);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.next-case__title {
+  margin-top: 10px;
+  font-size: clamp(2rem, 4.5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+
+  /* 64px sobre 56px */
+  & em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.143em;
+    letter-spacing: normal;
+  }
+}
+
+.next-case__arrow {
+  font-size: 48px;
+  line-height: 1;
+  transition: translate 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  .next-case:hover & {
+    translate: 8px 0;
+  }
+}
+
+/* ===== Aparición al hacer scroll (la activa el script) ===== */
+.js-reveal .rv {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.js-reveal .rv.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ===== Cursor propio ===== */
+.has-custom-cursor,
+.has-custom-cursor :where(a, button, label) {
+  cursor: none;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  background-color: var(--text-color);
+}
+
+.cursor-ring {
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+  border: 1px solid var(--text-color);
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    margin 0.3s ease,
+    background-color 0.3s ease;
+
+  &.is-hover {
+    width: 72px;
+    height: 72px;
+    margin: -36px 0 0 -36px;
+    background-color: rgba(227, 155, 45, 0.08);
+  }
+}
+
+/* ===== Anclas ===== */
+.case-page [id] {
+  scroll-margin-top: 96px;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    translate: 0 -6px;
+  }
+  50% {
+    translate: 0 6px;
+  }
+}
+
+/* ===== Movimiento reducido: sin desplazamientos, solo cambios de color ===== */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue span {
+    animation: none;
+  }
+
+  .summary-card:hover,
+  .project-content .card:hover,
+  .next-case:hover,
+  .next-case:hover .next-case__arrow {
+    translate: none;
+  }
+}
+
+/* Subtítulo suelto dentro de una sección */
+.project-content .step__body > h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: var(--w-medium);
+  line-height: normal;
 }

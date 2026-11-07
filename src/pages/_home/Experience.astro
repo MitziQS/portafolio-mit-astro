@@ -1,5 +1,16 @@
 ---
+import { accentHtml } from '@utils/accent'
 import { t } from 'i18n:astro'
+
+interface Job {
+  title: string
+  company: string
+  organization?: string
+  location?: string
+  time: string[]
+  description?: string
+  list: string[]
+}
 
 const experienceData = t('experience', {
   returnObjects: true
@@ -7,141 +18,109 @@ const experienceData = t('experience', {
   title: string
   jobs: {
     jobs_title: string[]
-    jobs_description: {
-      title: string
-      organization?: string
-      location?: string
-      time: string[]
-      description?: string
-      list: string[]
-    }[]
+    jobs_description: Job[]
   }
 }
 const title = experienceData.title
-type JobsType = {
-  jobs_title: string[]
-  jobs_description: {
-    title: string
-    organization?: string
-    location?: string
-    time: string[]
-    description?: string
-    list: string[]
-  }[]
-}
-
-const jobs: JobsType =
-  typeof experienceData === 'object' && 'jobs' in experienceData
-    ? (experienceData.jobs as JobsType)
-    : { jobs_title: [], jobs_description: [] }
-
-const { jobs_title: jobsTitle, jobs_description: jobsDescription } = jobs
+const { jobs_title: jobsTitle, jobs_description: jobsDescription } =
+  experienceData.jobs
 
 const normalizeTitle = title
   .toLowerCase()
   .replaceAll(' ', '-')
   .normalize('NFD')
-  .replace(/[\u0300-\u036f]/g, '')
+  .replace(/[̀-ͯ]/g, '')
 ---
 
 <section id={normalizeTitle} class="experience">
-  <h2>{title}</h2>
-  <section class="jobs">
-    <div class="job-title">
+  <h2 set:html={accentHtml(title)} />
+  <div class="jobs">
+    <div
+      class="job-title"
+      role="tablist"
+      aria-label={title}
+      aria-orientation="vertical"
+    >
       {
-        jobsTitle.map((title: string, index: number) => (
+        jobsDescription.map((job, index) => (
           <button
-            class:list={[
-              'headline-3 tabbutton',
-              {
-                active: index === 0
-              }
-            ]}
+            id={`job-tab-${index}`}
+            class:list={['tabbutton', { active: index === 0 }]}
+            role="tab"
+            aria-selected={index === 0 ? 'true' : 'false'}
+            aria-controls={`job-panel-${index}`}
+            tabindex={index === 0 ? 0 : -1}
           >
-            {title}
+            <span class="company">{job.company}</span>
+            <span class="role">{jobsTitle[index]}</span>
           </button>
         ))
       }
     </div>
     <div class="jobs-descriptions">
       {
-        jobsDescription.map(
-          (
-            job: {
-              title: string
-              organization?: string
-              location?: string
-              time: string[]
-              description?: string
-              list: string[]
-            },
-            index: number
-          ) => {
-            const { title, organization, location, time, description, list } =
-              job
-            return (
-              <div
-                class:list={['description tabcontent', { active: index === 0 }]}
-              >
-                <h3>{title}</h3>
+        jobsDescription.map((job, index) => {
+          const { title, organization, location, time, description, list } = job
+          return (
+            <div
+              id={`job-panel-${index}`}
+              class:list={[
+                'description tabcontent glass',
+                { active: index === 0 }
+              ]}
+              role="tabpanel"
+              aria-labelledby={`job-tab-${index}`}
+              tabindex="0"
+              hidden={index !== 0}
+            >
+              <h3>{title}</h3>
 
-                {(organization || location) && (
-                  <p class="job-organization headline-4">
-                    {organization}
-                    {organization && location ? ' · ' : ''}
-                    {location}
-                  </p>
-                )}
+              {(organization || location) && (
+                <p class="job-organization">
+                  {organization}
+                  {organization && location ? ' · ' : ''}
+                  {location}
+                </p>
+              )}
 
-                <div class="job-time">
-                  {time.map((time, index) => (
-                    <>
-                      <time class="headline-4" datetime={time}>
-                        {time}
-                      </time>
-                      {index % 2 === 0 && <span>—</span>}
-                    </>
-                  ))}
-                  {time.length <= 1 && <span class="badge">Actual</span>}
-                </div>
-
-                <p>{description}</p>
-                <ul>
-                  {list.map((item) => (
-                    <li>{item}</li>
-                  ))}
-                </ul>
+              <div class="job-time">
+                {time.map((time, index) => (
+                  <>
+                    <time datetime={time}>{time}</time>
+                    {index === 0 && <span aria-hidden="true">—</span>}
+                  </>
+                ))}
+                {time.length <= 1 && <span class="badge">Actual</span>}
               </div>
-            )
-          }
-        )
+
+              {description && <p>{description}</p>}
+              <ul>
+                {list.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )
+        })
       }
     </div>
-  </section>
+  </div>
 </section>
 
 <style>
-  .experience {
-    padding-bottom: 120px;
+  h2 {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    white-space: nowrap;
 
-    & h2 {
-      display: flex;
-      gap: var(--space-4);
-      justify-content: center;
-      align-items: center;
-      white-space: nowrap;
-
-      @media (width >= 768px) {
-        justify-content: start;
-
-        &::after {
-          content: '';
-          display: block;
-          width: 100%;
-          height: 1px;
-          background-color: var(--border-color);
-        }
-      }
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: var(--border-color);
+      transition: var(--transition-bg);
     }
   }
 
@@ -151,124 +130,134 @@ const normalizeTitle = title
     gap: var(--space-5);
     margin-top: var(--space-6);
 
-    @media (width >= 768px) {
+    @media (width >= 900px) {
       flex-direction: row;
+      align-items: start;
+      gap: var(--space-6);
+    }
+  }
+
+  .job-title {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+
+    @media (width >= 900px) {
+      flex-direction: column;
+      flex: 0 0 280px;
     }
 
-    & .job-title {
-      display: flex;
-      flex-direction: row;
-      overflow-x: auto;
-      mask: linear-gradient(
-        90deg,
-        transparent,
-        white 0%,
-        white 70%,
-        transparent
-      );
+    & button {
+      display: grid;
+      gap: 2px;
+      flex-shrink: 0;
+      padding: var(--space-3) var(--space-4);
+      background: transparent;
+      color: var(--text-description-color);
+      text-align: left;
+      white-space: nowrap;
+      cursor: pointer;
+      border: none;
+      border-bottom: 2px solid var(--border-color);
+      transition: var(--transition-text), var(--transition-border);
 
-      @media (width >= 768px) {
-        flex-direction: column;
-        mask: none;
+      @media (width >= 900px) {
+        border-bottom: none;
+        border-left: 2px solid var(--border-color);
+        white-space: normal;
       }
 
-      & button {
-        background: transparent;
-        color: var(--text-description-color);
-        position: relative;
-        border: none;
-        padding: var(--space-3) var(--space-4);
-        cursor: pointer;
-        text-align: left;
-        white-space: nowrap;
+      &.active {
+        color: var(--text-color);
+        border-bottom: 3px solid var(--accent-color);
 
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border-bottom: 2px solid var(--border-color);
-          transition:
-            var(--transition-bg),
-            border-color 150ms ease;
+        @media (width >= 900px) {
+          border-bottom: none;
+          border-left: 3px solid var(--accent-color);
+          padding-left: calc(var(--space-4) - 1px);
         }
+      }
 
-        @media (width >= 768px) {
-          &::before {
-            border-left: 2px solid var(--border-color);
-            border-bottom: none;
-          }
-        }
+      &:focus-visible {
+        outline: 2px solid var(--accent-color);
+        outline-offset: -2px;
+      }
 
-        &.active {
+      @media (any-hover: hover) {
+        &:hover {
           color: var(--text-color);
-
-          &::before {
-            border-bottom: 3px solid var(--text-color);
-            translate: 0 0.8px;
-          }
-
-          @media (width >= 768px) {
-            &::before {
-              border-left: 3px solid var(--text-color);
-              border-bottom: none;
-              translate: -0.5px;
-            }
-          }
-        }
-
-        @media (any-hover: hover) {
-          &:hover {
-            color: var(--text-color);
-            transition: var(--transition-text);
-          }
         }
       }
     }
 
-    & .jobs-descriptions {
-      flex: 1;
+    & .company {
+      font-size: var(--text-xl);
+      font-weight: var(--w-semibold);
+      letter-spacing: var(--tracking-heading);
+    }
 
-      & .description {
-        display: none;
-        animation: fade 1200ms ease;
+    & .role {
+      font-size: var(--text-sm);
+      color: var(--text-muted-color);
+      transition: var(--transition-text);
+    }
+  }
 
-        &.active {
-          display: block;
-        }
+  .jobs-descriptions {
+    flex: 1;
+    min-width: 0;
+  }
 
-        & > * + *,
-        & ul li {
-          margin-top: var(--space-3);
-        }
+  .description {
+    display: none;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border-radius: var(--radius);
+    animation: fade 1200ms ease;
 
-        & .job-time {
-          display: flex;
-          align-items: center;
-          gap: var(--space-3);
+    &.active {
+      display: block;
+    }
 
-          & .badge {
-            background-color: var(--bg-secondary-color);
-            border-radius: var(--radius-pill);
-            padding: 2px var(--space-2);
-            border: 1px solid var(--text-color);
-            font-size: var(--text-xs);
-            transition: var(--transition-bg);
-          }
-        }
+    &:focus-visible {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+    }
 
-        p {
-          text-wrap: pretty;
-        }
+    & > * + *,
+    & ul li {
+      margin-top: var(--space-3);
+    }
 
-        & .headline-4,
-        & p,
-        & ul {
-          color: var(--text-description-color);
-        }
+    & h3 {
+      font-size: var(--text-2xl);
+    }
+
+    & .job-organization,
+    & p,
+    & ul {
+      color: var(--text-description-color);
+      transition: var(--transition-text);
+    }
+
+    & .job-time {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-3);
+      color: var(--text-muted-color);
+
+      & .badge {
+        padding: 2px var(--space-2);
+        font-size: var(--text-xs);
+        color: var(--accent-color);
+        border: 1px solid var(--accent-color);
+        border-radius: var(--radius-pill);
+        transition: var(--transition-text), var(--transition-border);
       }
+    }
+
+    & p {
+      text-wrap: pretty;
     }
   }
 
@@ -283,26 +272,48 @@ const normalizeTitle = title
 </style>
 
 <script>
-  const tabButtons = document.querySelectorAll('.tabbutton')
-  const tabContents = document.querySelectorAll(
-    '.tabcontent'
-  ) as NodeListOf<HTMLDivElement>
+  const tabButtons = Array.from(
+    document.querySelectorAll<HTMLButtonElement>('.tabbutton')
+  )
+  const tabContents = Array.from(
+    document.querySelectorAll<HTMLDivElement>('.tabcontent')
+  )
 
-  tabButtons.forEach((button) => {
-    button.addEventListener('click', (event) => {
-      const target = event.target as HTMLButtonElement
-      const index = Array.from(tabButtons).indexOf(target)
+  const selectTab = (index: number, focus = false): void => {
+    tabButtons.forEach((button, i) => {
+      const selected = i === index
+      button.classList.toggle('active', selected)
+      button.setAttribute('aria-selected', String(selected))
+      button.tabIndex = selected ? 0 : -1
+    })
+    tabContents.forEach((content, i) => {
+      const selected = i === index
+      content.classList.toggle('active', selected)
+      content.hidden = !selected
+    })
+    if (focus) tabButtons[index].focus()
+  }
 
-      tabButtons.forEach((button) => {
-        button.classList.remove('active')
-      })
+  tabButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      selectTab(index)
+    })
 
-      tabContents.forEach((content) => {
-        content.classList.remove('active')
-      })
-
-      tabButtons[index].classList.add('active')
-      tabContents[index].classList.add('active')
+    // Flechas, Inicio y Fin mueven entre pestañas
+    button.addEventListener('keydown', (event) => {
+      const last = tabButtons.length - 1
+      const keys: Record<string, number> = {
+        ArrowDown: index === last ? 0 : index + 1,
+        ArrowRight: index === last ? 0 : index + 1,
+        ArrowUp: index === 0 ? last : index - 1,
+        ArrowLeft: index === 0 ? last : index - 1,
+        Home: 0,
+        End: last
+      }
+      if (event.key in keys) {
+        event.preventDefault()
+        selectTab(keys[event.key], true)
+      }
     })
   })
 </script>

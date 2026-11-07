@@ -1,13 +1,19 @@
 ---
 import { Icon } from 'astro-icon/components'
+import { t } from 'i18n:astro'
+
+const links = t('links', { returnObjects: true }) as {
+  linkedin: string
+  email: string
+}
 ---
 
 <aside class="socials">
   <nav>
-    <a href="https://www.linkedin.com/in/soria-mitzi/" aria-label="LinkedIn">
+    <a href={links.linkedin} aria-label="LinkedIn">
       <Icon name="linkedin" size={28} />
     </a>
-    <a href="mailto:hello@example.com" aria-label="Mail">
+    <a href={`mailto:${links.email}`} aria-label="Correo">
       <Icon name="mail" size={28} />
     </a>
   </nav>
@@ -17,7 +23,8 @@ import { Icon } from 'astro-icon/components'
   .socials {
     display: none;
 
-    @media (width >= 1200px) {
+    /* Solo cuando hay espacio a los lados del contenido de 1280px */
+    @media (width >= 1440px) {
       display: initial;
       position: fixed;
       bottom: 0;
@@ -31,19 +38,19 @@ import { Icon } from 'astro-icon/components'
 
         &::after {
           content: '';
-          background-color: var(--text-color);
+          background-color: var(--border-color);
           width: 1px;
           height: 127px;
           margin-inline: auto;
         }
 
         & a {
-          color: var(--text-color);
+          color: var(--text-muted-color);
           text-decoration: none;
           transition: var(--transition-text);
 
           &:hover {
-            color: var(--text-description-color);
+            color: var(--accent-color);
           }
         }
       }

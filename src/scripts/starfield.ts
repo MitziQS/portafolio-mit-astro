@@ -34,8 +34,13 @@ export class StarField {
   private canvasWidth: number
   private canvasHeight: number
 
-  // Color de las estrellas (blanco por defecto)
-  private starColor = '255, 255, 255'
+  // Color de las estrellas: sale del token --dots-color del tema activo
+  private starColor = '244, 236, 223'
+
+  // Con movimiento reducido se dibuja una sola vez, sin parpadeo ni repelencia
+  private readonly reducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches
 
   constructor(canvas: HTMLCanvasElement) {
     this.canvas = canvas
@@ -49,9 +54,9 @@ export class StarField {
     if (this.context !== null) {
       this.initStars() // Inicializar estrellas
       this.resizeCanvas() // Ajustar el tamaño del canvas
+      this.observeThemeChanges() // Leer el color del tema y observar sus cambios
       this.drawStars() // Dibujar las estrellas
-      this.addEventListeners() // Añadir eventos de mouse
-      this.observeThemeChanges() // Observar cambios en el tema (clase 'light' en la etiqueta <html>)
+      if (!this.reducedMotion) this.addEventListeners() // Añadir eventos de mouse
     } else {
       console.error('El contexto 2D no se pudo obtener.')
     }
@@ -120,9 +125,11 @@ export class StarField {
       }
 
       // Actualizar la opacidad (alpha) de las estrellas con su velocidad
-      star.alpha += star.speed
-      if (star.alpha > 1 || star.alpha < 0) {
-        star.speed = -star.speed // Invertir la dirección del cambio de opacidad
+      if (!this.reducedMotion) {
+        star.alpha += star.speed
+        if (star.alpha > 1 || star.alpha < 0) {
+          star.speed = -star.speed // Invertir la dirección del cambio de opacidad
+        }
       }
 
       // Dibujar cada estrella con su color (dependiendo del tema) y opacidad
@@ -135,7 +142,7 @@ export class StarField {
     })
 
     // Continuar animación en el siguiente frame
-    requestAnimationFrame(this.drawStars.bind(this))
+    if (!this.reducedMotion) requestAnimationFrame(this.drawStars.bind(this))
   }
 
   // Añadir eventos de mouse: mover y salir del área del canvas
@@ -169,6 +176,7 @@ export class StarField {
     this.canvasHeight = this.getCanvasHeight()
     this.resizeCanvas()
     this.initStars()
+    if (this.reducedMotion) this.drawStars()
   }
 
   // Método para observar cambios en la clase 'light' del <html>
@@ -181,6 +189,7 @@ export class StarField {
     // Crear un MutationObserver para detectar cambios en la clase del <html>
     const observer = new MutationObserver(() => {
       this.updateStarColor() // Actualizar el color de las estrellas cuando cambie la clase
+      if (this.reducedMotion) this.drawStars()
     })
 
     // Iniciar la observación de cambios en los atributos del <html>
@@ -190,14 +199,12 @@ export class StarField {
     })
   }
 
-  // Cambia el color de las estrellas basado en la clase 'light'
+  // Toma el color de las estrellas del token --dots-color del tema activo
   private updateStarColor(): void {
-    const htmlElement = document.documentElement
+    const color = getComputedStyle(document.documentElement)
+      .getPropertyValue('--dots-color')
+      .trim()
 
-    if (htmlElement.classList.contains('light')) {
-      this.starColor = '0, 0, 0' // Negro si la clase 'light' está presente
-    } else {
-      this.starColor = '255, 255, 255' // Blanco si no está presente
-    }
+    if (color !== '') this.starColor = color
   }
 }
