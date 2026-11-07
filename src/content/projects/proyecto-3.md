@@ -1,77 +1,74 @@
 ---
 title: 'Pagos y Comisiones'
 date: 2021-06-11
-cover: '/src/images/projects/proy-3-banner.jpg'
+cover: '/src/images/projects/proyecto-3/proy-3-banner.jpg'
 coverAlt: 'Administrador de pagos y comisiones – Hotel resort Cancún'
 company: 'Hotel resort (Cancún)'
 role: 'UX/UI Designer'
 summary: 'Diseñé un sistema interno para hacer trazable el enrolamiento de membresías y sostener la colaboración multi-rol con estados y requisitos mínimos claros.'
 tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
----
 
-<section class="summary" aria-labelledby="resumen">
-  <h2 id="resumen" class="summary__title">Resumen</h2>
+# Tarjeta de la home
+card:
+  order: 3
+  image: '/src/images/projects/proyecto-3/proyecto-3.jpg'
+  summary: 'Rediseño de un sistema interno para hacer visible el proceso de enrolamiento a una membresía y la asignación de participantes para el reparto de comisiones en un resort.'
+  techs: ['Figma', 'Maze']
 
-  <div class="summary__grid">
-    <!-- Columna izquierda -->
-    <div class="summary__main">
-      <article class="summary-card">
-        <p class="summary-card__eyebrow">Contexto</p>
-        <p>
-          Este proyecto se desarrolló para una cadena hotelera internacional con modelo de membresías,
-          donde el cierre de una afiliación ocurre durante la estancia del huésped y depende de múltiples áreas operando en paralelo.
-        </p>
-        <p>
-          El reto principal no era la venta en sí, sino cerrar correctamente la afiliación antes del checkout,
-          con documentación, validaciones y datos completos para que el contrato fuera válido y el proceso continuara sin fricciones posteriores.
-        </p>
-        <p>
-          Abordé el problema como un proceso crítico que necesitaba visibilidad de estado y requisitos mínimos claros para avanzar.
-        </p>
-      </article>
-
-  <article class="summary-card">
-        <p class="summary-card__eyebrow">Mi contribución</p>
-        <p>
-          Formé parte del equipo responsable del rediseño del sistema interno de enrolamiento de membresías,
-          con un enfoque en entender el proceso operativo real, más allá del flujo ideal documentado.
-        </p>
-        <p>
-          Mi contribución se centró en identificar puntos críticos de pérdida de información y fricción entre roles,
-          y traducir esa complejidad en una estructura clara, compartida y trazable. Concretamente, trabajé en:
-        </p>
-        <ul class="bulleted">
-          <li>Analicé cómo se cerraban contratos en operación diaria, detectando quiebres entre áreas, validaciones tardías y duplicidad.</li>
-          <li>Definí estados del proceso y requisitos mínimos por etapa para avanzar.</li>
-          <li>Diseñé una estructura que hiciera visible qué está completo, qué falta y quién intervino.</li>
-          <li>Alineé diseño, operación y reglas de negocio con el equipo para sostener un flujo compartido.</li>
-        </ul>
-      </article>
-    </div>
-
-  <!-- Columna derecha -->
-  <aside class="summary__side" aria-label="Detalles del proyecto">
-      <article class="summary-card">
-        <p class="summary-card__eyebrow">Cliente</p>
-        <p>
-          Cadena hotelera internacional con operación en múltiples países y modelo basado en membresías y programas de beneficios.
-        </p>
-      </article>
-
-  <article class="summary-card">
-        <p class="summary-card__eyebrow">Mi puesto</p>
-        <p>UX/UI Designer</p>
-      </article>
-
-  <article class="summary-card">
-        <p class="summary-card__eyebrow">Duración</p>
-        <p>2021</p>
-      </article>
-    </aside>
-
-  <!-- Impacto FULL WIDTH -->
-  <article class="summary-card summary-card--full">
-      <p class="summary-card__eyebrow">Impacto</p>
+# Tarjetas de arriba: show prende o apaga; place es opcional (side o full)
+cards:
+  - show: true
+    label: 'Contexto'
+    text: |
+      <p>
+        Este proyecto se desarrolló para una cadena hotelera internacional con modelo de membresías,
+        donde el cierre de una afiliación ocurre durante la estancia del huésped y depende de múltiples áreas operando en paralelo.
+      </p>
+      <p>
+        El reto principal no era la venta en sí, sino cerrar correctamente la afiliación antes del checkout,
+        con documentación, validaciones y datos completos para que el contrato fuera válido y el proceso continuara sin fricciones posteriores.
+      </p>
+      <p>
+        Abordé el problema como un proceso crítico que necesitaba visibilidad de estado y requisitos mínimos claros para avanzar.
+      </p>
+  - show: true
+    label: 'Mi contribución'
+    text: |
+      <p>
+        Formé parte del equipo responsable del rediseño del sistema interno de enrolamiento de membresías,
+        con un enfoque en entender el proceso operativo real, más allá del flujo ideal documentado.
+      </p>
+      <p>
+        Mi contribución se centró en identificar puntos críticos de pérdida de información y fricción entre roles,
+        y traducir esa complejidad en una estructura clara, compartida y trazable. Concretamente, trabajé en:
+      </p>
+      <ul class="bulleted">
+        <li>Analicé cómo se cerraban contratos en operación diaria, detectando quiebres entre áreas, validaciones tardías y duplicidad.</li>
+        <li>Definí estados del proceso y requisitos mínimos por etapa para avanzar.</li>
+        <li>Diseñé una estructura que hiciera visible qué está completo, qué falta y quién intervino.</li>
+        <li>Alineé diseño, operación y reglas de negocio con el equipo para sostener un flujo compartido.</li>
+      </ul>
+  - show: true
+    label: 'Cliente'
+    place: side
+    text: |
+      <p>
+        Cadena hotelera internacional con operación en múltiples países y modelo basado en membresías y programas de beneficios.
+      </p>
+  - show: true
+    label: 'Mi puesto'
+    place: side
+    text: |
+      <p>UX/UI Designer</p>
+  - show: true
+    label: 'Duración'
+    place: side
+    text: |
+      <p>2021</p>
+  - show: true
+    label: 'Impacto'
+    place: full
+    text: |
       <ul class="bulleted">
         <li>Reduje pérdida de información crítica durante enrolamiento, disminuyendo reprocesos y validaciones tardías (~20–30%).</li>
         <li>Mejoré visibilidad del estado de cada afiliación, facilitando colaboración y reduciendo dependencias manuales.</li>
@@ -82,17 +79,41 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
         Más allá del impacto operativo, el proyecto fortaleció la confianza interna al convertir un proceso opaco
         en uno entendible y compartido.
       </p>
-    </article>
-  </div>
-</section>
+
+# Secciones de la plantilla: show prende o apaga; title y label son opcionales
+sections:
+  problema:
+    show: false
+  objetivos:
+    show: false
+  hallazgos:
+    show: true
+    title: 'Investigación y descubrimiento'
+    label: 'Investigación'
+  proceso:
+    show: true
+    title: 'Definición'
+    label: 'Definición'
+  liderazgo:
+    show: false
+  solucion:
+    show: true
+    title: 'Diseño'
+    label: 'Diseño'
+  resultado:
+    show: true
+    title: 'Entrega'
+    label: 'Entrega'
+  reflexion:
+    show: false
+---
 
 <p>
   Por acuerdos de confidencialidad, el nombre del cliente y algunos detalles visuales han sido omitidos.
 </p>
 
-<!-- PROCESO PASO 1 INVESTIGACIÓN -->
-<section class="step">
-  <h2 id="investigacion" class="headline-2 section-title">Investigación y descubrimiento</h2>
+<!-- seccion: hallazgos -->
+
   <p>
     El proyecto inició con una fase de entendimiento profundo del proceso operativo real. El objetivo no era solo conocer cómo debería funcionar el sistema, sino entender cómo se cerraban realmente las afiliaciones bajo presión de tiempo, múltiples roles y dependencias entre áreas.
   </p>
@@ -117,11 +138,8 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
 <br>
   <img src="/imagenes/project3/investigacion.png" alt="Investigación"/>
 
-</section>
+<!-- seccion: proceso -->
 
-<!-- PROCESO PASO 2 DEFINICIÓN-->
-<section class="step">
-  <h2 id="definicion" class="headline-2 section-title">Definición</h2>
   <p>
     <strong>
       ¿Cómo diseñar un sistema que permita a distintos roles colaborar sobre una misma afiliación,
@@ -170,11 +188,7 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
   <br>
   <img src="/imagenes/project3/definicion.png" alt="definición"/>
 
-  </section>
-
-<!-- PROCESO PASO 3 DISEÑO -->
-<section class="step">
-  <h2 id="diseno" class="headline-2 section-title">Diseño</h2>
+<!-- seccion: solucion -->
 
   <p>
     El diseño de la solución se centró en traducir los criterios definidos en una estructura operativa clara, capaz de sostener la colaboración entre múltiples roles y reducir errores críticos antes del cierre de la afiliación.
@@ -198,33 +212,30 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
   <br>
   <img src="/imagenes/project3/diseno.png" alt="diseño"/>
 
-</section>
+<!-- seccion: resultado -->
 
-  <!-- PROCESO PASO 5 ENTREGA -->
-  <section class="step">
-    <h2 id="entrega" class="headline-2 section-title">Entrega</h2>
-    <p>
-      Una vez definida la estructura del sistema, el siguiente paso fue validar que el modelo de estados y la reorganización de la información funcionaran en la operación real, no solo en teoría.
-    </p>
-    <br>
-    <p>
-      Se desarrolló un prototipo que permitió simular el flujo completo de una afiliación, desde la captura inicial hasta el cierre del contrato, incorporando los distintos estados, requisitos mínimos y puntos de validación definidos previamente.
-    </p>
-    <h4>Pruebas con usuarios operativos</h4>
-    <p>
-      Las pruebas se realizaron con usuarios que interactúan diariamente con el sistema, priorizando perfiles administrativos y de operación que suelen detectar errores bajo presión de tiempo.
-    </p>
-    <ul class="bulleted">
-      <li>¿Es claro en qué estado se encuentra una afiliación?
-      <li>¿Se entiende qué falta para poder cerrar el contrato?
-      <li>¿El sistema reduce la necesidad de validaciones posteriores?
-    </ul>
-    <p>
-      Durante las pruebas, los usuarios pudieron identificar con mayor facilidad: cuándo un contrato aún no estaba listo para cierre, qué información faltaba completar, y en qué punto debían intervenir ellos u otro rol.
-    </p>
-    </section>
+  <p>
+    Una vez definida la estructura del sistema, el siguiente paso fue validar que el modelo de estados y la reorganización de la información funcionaran en la operación real, no solo en teoría.
+  </p>
+  <br>
+  <p>
+    Se desarrolló un prototipo que permitió simular el flujo completo de una afiliación, desde la captura inicial hasta el cierre del contrato, incorporando los distintos estados, requisitos mínimos y puntos de validación definidos previamente.
+  </p>
+  <h4>Pruebas con usuarios operativos</h4>
+  <p>
+    Las pruebas se realizaron con usuarios que interactúan diariamente con el sistema, priorizando perfiles administrativos y de operación que suelen detectar errores bajo presión de tiempo.
+  </p>
+  <ul class="bulleted">
+    <li>¿Es claro en qué estado se encuentra una afiliación?
+    <li>¿Se entiende qué falta para poder cerrar el contrato?
+    <li>¿El sistema reduce la necesidad de validaciones posteriores?
+  </ul>
+  <p>
+    Durante las pruebas, los usuarios pudieron identificar con mayor facilidad: cuándo un contrato aún no estaba listo para cierre, qué información faltaba completar, y en qué punto debían intervenir ellos u otro rol.
+  </p>
 
-  <!-- PROCESO PASO 6 CONCLUSIÓN -->
+<!-- fuera-de-seccion -->
+
   <section class="step">
     <h2 class="headline-2 section-title">Reflexión</h2>
     <p>
@@ -240,4 +251,3 @@ tags: ['hotelería', 'UX/UI', 'design system', 'procesos internos']
     </p>
     <br>
   </section>
-</section>

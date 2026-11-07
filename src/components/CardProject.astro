@@ -27,11 +27,11 @@ const {
 } = Astro.props
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/images/projects/*.{jpeg,jpg,png}'
+  '/src/images/projects/**/*.{jpeg,jpg,png}'
 )
 if (!images[src]) {
   throw new Error(
-    `"${src}" no existe en: "/src/images/projects/*.{jpeg,jpg,png}"`
+    `"${src}" no existe en: "/src/images/projects/**/*.{jpeg,jpg,png}"`
   )
 }
 ---
@@ -117,7 +117,7 @@ if (!images[src]) {
   }
 
   .card-project img {
-    border-radius: 8px;
+    border-radius: var(--radius-image);
   }
 
   .description {
@@ -129,7 +129,7 @@ if (!images[src]) {
   .card-title {
     font-size: var(--h3);
     font-weight: var(--w-semibold);
-    line-height: var(--heading-line-height);
+    line-height: var(--leading-base);
   }
 
   .card-title a {
@@ -145,15 +145,15 @@ if (!images[src]) {
   .badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px 8px;
+    gap: var(--space-2) var(--space-1);
   }
 
   .badge-tech {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 4px 12px;
-    border-radius: 1000px;
+    gap: var(--space-1);
+    padding: 4px var(--space-2);
+    border-radius: var(--radius-pill);
     font-size: var(--text-sm);
     line-height: 1.2;
   }
@@ -168,7 +168,7 @@ if (!images[src]) {
   .links {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: var(--space-3);
     flex-wrap: wrap;
   }
 
@@ -180,7 +180,7 @@ if (!images[src]) {
     text-decoration: none;
     font-weight: var(--w-medium);
     padding: 10px 22px;
-    border-radius: 1000px;
+    border-radius: var(--radius-pill);
     border: 1px solid var(--text-color);
     transition: var(--transition-bg), var(--transition-text);
   }

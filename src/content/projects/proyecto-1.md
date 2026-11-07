@@ -1,70 +1,95 @@
 ---
 title: '¿Lo de siempre?'
 date: 2023-08-01
-cover: '/src/images/projects/proy-1-banner.jpg'
+cover: '/src/images/projects/proyecto-1/proy-1-banner.jpg'
 coverAlt: 'Listado de productos recurrentes'
 company: 'Jüsto'
 role: 'Product Designer'
 summary: 'Hice que la recurrencia fuera realmente útil: menos clicks, más claridad y velocidad en la recompra.'
 tags: ['e-commerce', 'UX', 'recurrencia']
----
 
-<section class="summary" aria-labelledby="resumen">
-  <h2 id="resumen" class="summary__title">Resumen</h2>
-  <div class="summary__grid">
-    <!-- Columna izquierda (fija) -->
-    <div class="summary__main">
-      <article class="summary-card">
-        <p class="summary-card__eyebrow">Contexto</p>
-        <p>
-          “Lo de siempre” es la funcionalidad que permite a usuarios recurrentes completar su compra semanal de manera más rápida. A pesar de ser una pieza clave para mejorar ATC Recurrentes y Home A2C, existía una brecha clara entre comportamiento y uso: <strong>el 70% de los usuarios recurrentes repetían compras similares, pero solo el 20% utilizaba esta funcionalidad.</strong>
-        </p>
-        <p>
-          El desafío consistía en <strong>replantear su valor estratégico,</strong> transformándola en una herramienta que realmente representara el hábito natural de recompra, <strong>redujera el esfuerzo cognitivo y acelerara la toma de decisión</strong> dentro de la experiencia.
-        </p>
-      </article>
-      <article class="summary-card">
-        <p class="summary-card__eyebrow">Mi contribución</p>
-        <p>
-          Lideré el replanteamiento de la funcionalidad desde una perspectiva de producto, definiendo hipótesis claras, priorizando un MVP y tomando decisiones informadas sobre qué optimizar y qué postergar para iteraciones posteriores. <strong> Mi enfoque estuvo en traducir un patrón de comportamiento existente en una experiencia clara y accionable,</strong> alineando objetivos de negocio, necesidades del usuario y viabilidad técnica.
-        </p>
-      </article>
-  </div>
+# Tarjeta de la home
+card:
+  order: 1
+  image: '/src/images/projects/proyecto-1/proyecto-1.jpg'
+  summary: 'Rediseño estratégico de la experiencia de recompra en e-commerce, logrando un incremento del +20% en uso entre usuarios recurrentes. El objetivo fue convertirla en una herramienta que realmente acompañara el habito natural de recompra, optimizando claridad, disponibilidad y consistencia cross-platform para potenciar la recurrencia y el crecimiento del negocio.'
+  techs: ['Figma', 'illustrator']
 
-  <!-- Columna derecha (variable: cards opcionales) -->
-  <aside class="summary__side" aria-label="Detalles del proyecto">
-    <article class="summary-card">
-      <p class="summary-card__eyebrow">Cliente</p>
-        <p>
-          <strong>Jüsto.mx</strong><br />
-          Supermercado 100% digital en México, Perú y Brasil.
-       </p>
-    </article>
-
-  <article class="summary-card">
-    <p class="summary-card__eyebrow">Mi puesto</p>
-    <p>Product Designer</p>
-  </article>
-    <article class="summary-card">
-    <p class="summary-card__eyebrow">Plataforma</p>
-    <p>App y Web</p>
-  </article>
-
-  </aside>
-
-  <!-- ✅ Impacto ahora es “full width” debajo de las 2 columnas -->
-  <article class="summary-card summary-card--full">
-      <p class="summary-card__eyebrow">Impacto</p>
+# Tarjetas de arriba: show prende o apaga; place es opcional (side o full)
+cards:
+  - show: true
+    label: 'Contexto'
+    text: |
+      <p>
+        “Lo de siempre” es la funcionalidad que permite a usuarios recurrentes completar su compra semanal de manera más rápida. A pesar de ser una pieza clave para mejorar ATC Recurrentes y Home A2C, existía una brecha clara entre comportamiento y uso: <strong>el 70% de los usuarios recurrentes repetían compras similares, pero solo el 20% utilizaba esta funcionalidad.</strong>
+      </p>
+      <p>
+        El desafío consistía en <strong>replantear su valor estratégico,</strong> transformándola en una herramienta que realmente representara el hábito natural de recompra, <strong>redujera el esfuerzo cognitivo y acelerara la toma de decisión</strong> dentro de la experiencia.
+      </p>
+  - show: true
+    label: 'Mi contribución'
+    text: |
+      <p>
+        Lideré el replanteamiento de la funcionalidad desde una perspectiva de producto, definiendo hipótesis claras, priorizando un MVP y tomando decisiones informadas sobre qué optimizar y qué postergar para iteraciones posteriores. <strong> Mi enfoque estuvo en traducir un patrón de comportamiento existente en una experiencia clara y accionable,</strong> alineando objetivos de negocio, necesidades del usuario y viabilidad técnica.
+      </p>
+  - show: true
+    label: 'Cliente'
+    place: side
+    text: |
+      <p>
+        <strong>Jüsto.mx</strong><br />
+        Supermercado 100% digital en México, Perú y Brasil.
+      </p>
+  - show: true
+    label: 'Mi puesto'
+    place: side
+    text: |
+      <p>Product Designer</p>
+  - show: true
+    label: 'Plataforma'
+    place: side
+    text: |
+      <p>App y Web</p>
+  - show: true
+    label: 'Impacto'
+    place: full
+    text: |
       <p>
         El rediseño <strong>incrementó el uso de “Lo de siempre” entre usuarios recurrentes en +30%,</strong> validando la hipótesis de que una experiencia alineada al hábito natural de recompra mejora su adopción. La funcionalidad pasó a integrarse de forma más clara dentro del flujo de compra, reduciendo fricción y facilitando decisiones recurrentes sin depender de búsqueda manual.
       </p>
-    </article>
-  </div>
-</section>
 
-<!-- PROCESO PASO 1 -->
-<section class="step">
-  <h2 id="problema" class="headline-2 section-title">El problema y la oportunidad</h2>
+# Secciones de la plantilla: show prende o apaga; title y label son opcionales
+sections:
+  problema:
+    show: true
+    title: 'El problema y la oportunidad'
+    label: 'Problema'
+  objetivos:
+    show: true
+    title: 'Cómo definimos el rumbo'
+    label: 'Definición'
+  hallazgos:
+    show: false
+  proceso:
+    show: false
+  liderazgo:
+    show: false
+  solucion:
+    show: true
+    title: 'Diseñar un sistema, no una feature'
+    label: 'Diseño'
+  resultado:
+    show: true
+    title: 'Qué validamos y qué cambió'
+    label: 'Validación'
+  reflexion:
+    show: true
+    title: 'Qué se lanzó y qué aprendí'
+    label: 'Aprendizaje'
+---
+
+<!-- seccion: problema -->
+
   <p>
     Los usuarios recurrentes de Jüsto muestran un comportamiento claro: tienden a repetir los mismos productos en cada compra. Sin embargo, aunque este patrón estaba presente en los datos (70% de los usuarios recurrentes repetían compras similares), la funcionalidad diseñada para facilitar ese hábito —“Lo de siempre”— era utilizada solo por el 20%.
   </p>
@@ -79,11 +104,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
     Esto reveló una oportunidad de producto clara: reducir la fricción entre el hábito mental del usuario y la forma en que la experiencia lo representaba. Más que incentivar nuevas acciones, el reto era alinear la experiencia con un comportamiento existente, facilitando que los usuarios completaran su compra de manera más rápida y con menor esfuerzo cognitivo.
   </p>
 
-<!-- PROCESO · PASO 2 -->
-<section class="step" aria-labelledby="definicion">
-  <h2 id="definicion" class="headline-2 section-title">
-    Cómo definimos el rumbo
-  </h2>
+<!-- seccion: objetivos -->
 
   <p>
     Con el problema claro, el siguiente paso fue definir una dirección de producto, no solo una mejora incremental. Partimos de una hipótesis central: si la experiencia de recompra se alineaba mejor con el hábito real del usuario, su adopción aumentaría sin necesidad de incentivos adicionales.
@@ -120,11 +141,9 @@ tags: ['e-commerce', 'UX', 'recurrencia']
   <figure class="media">
     <img src="/imagenes/project1/Definicion.png" alt="Mapa de momentos clave"/>
   </figure>
-</section>
 
-<!-- PROCESO PASO 3 -->
-<section class="step">
-  <h2 id="diseno" class="headline-2 section-title">Diseñar un sistema, no una feature</h2>
+<!-- seccion: solucion -->
+
   <p>
     Desde el diseño, el objetivo no fue <em>“mejorar una sección”</em>, sino construir un sistema capaz de representar el hábito de recompra de forma consistente y escalable. Esto implicó dejar de pensar en <strong>“Lo de siempre”</strong> como un listado histórico y empezar a tratarlo como una capa de apoyo al flujo principal de compra.
   </p>
@@ -153,11 +172,8 @@ tags: ['e-commerce', 'UX', 'recurrencia']
   <p>
     El resultado fue una solución que no dependía de un solo punto de entrada ni de una pantalla específica, sino que podía integrarse de forma natural al recorrido del usuario, sentando las bases para futuras iteraciones basadas en frecuencia, relación entre productos y señales de uso real.
   </p>
-</section>
 
-<!-- PROCESO PASO 4 -->
-<section class="step">
-  <h2 id="validacion" class="headline-2 section-title">Qué validamos y qué cambió</h2>
+<!-- seccion: resultado -->
 
   <section class="content-block">
     <p>
@@ -191,9 +207,7 @@ tags: ['e-commerce', 'UX', 'recurrencia']
     </p>
 </section>
 
-<!-- PROCESO PASO 5 -->
-<section class="step">
-  <h2 id="aprendizaje" class="headline-2 section-title">Qué se lanzó y qué aprendí</h2>
+<!-- seccion: reflexion -->
 
 <section class="content-block">
   <p>

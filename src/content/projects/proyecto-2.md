@@ -1,99 +1,122 @@
 ---
 title: 'Contar menos, conectar más'
 date: 2023-08-01
-cover: '/src/images/projects/proy-2-banner.jpg'
+cover: '/src/images/projects/proyecto-2/proy-2-banner.jpg'
 coverAlt: 'Landing con propuesta de valor clara'
 company: 'Jüsto'
 role: 'Product Designer'
 summary: 'Rediseñé la landing para comunicar menos y conectar más: claridad inmediata, confianza y beneficios visibles desde el primer scroll.'
 tags: ['e-commerce', 'UX', 'content design', 'growth']
----
 
-<section class="summary" aria-labelledby="resumen">
-  <h2 id="resumen" class="summary__title">Resumen</h2>
+# Tarjeta de la home
+card:
+  order: 2
+  image: '/src/images/projects/proyecto-2/proyecto-2.jpg'
+  summary: 'El reto era claro: comunicar menos, pero conectar más. Mi meta fue rediseñar la experiencia para que cualquier persona que llegara a la landing entendiera, en segundos, quiénes somos, qué ofrecemos y por qué elegirnos.'
+  techs: ['Maze', 'Figma', 'illustrator']
 
-  <div class="summary__grid">
-    <!-- Columna izquierda -->
-    <div class="summary__main">
-      <article class="summary-card">
-        <p class="summary-card__eyebrow">Contexto</p>
-        <p>
-          Cuando llegué a este proyecto, la landing estaba sobrecargada de texto y con una propuesta de valor poco clara.
-          El mensaje hablaba más de procesos internos (logística, frescura, operación) que del beneficio real para quien llegaba por primera vez.
-        </p>
-        <p>
-          La consecuencia era directa: confusión sobre lo que ofrecíamos, percepción limitada del surtido
-          y baja motivación para registrarse o comprar.
-        </p>
-        <p>
-          El reto fue comunicar menos, pero conectar más: que en segundos quedara claro quiénes somos,
-          qué ofrecemos y por qué elegirnos.
-        </p>
-      </article>
-
-  <article class="summary-card">
-        <p class="summary-card__eyebrow">Mi contribución</p>
-        <ul class="bulleted">
-          <li>Lideré investigación con usuarios en México y Brasil, transformando hallazgos en hipótesis accionables.</li>
-          <li>Redefiní la narrativa y la jerarquía de la landing con foco en claridad, confianza y beneficios inmediatos.</li>
-          <li>Diseñé y probé prototipos para validar comprensión de la propuesta de valor.</li>
-          <li>Coordiné con Producto y Growth para mantener consistencia entre negocio, comunicación y diseño.</li>
-        </ul>
-      </article>
-    </div>
-
-  <!-- Columna derecha -->
-  <aside class="summary__side" aria-label="Detalles del proyecto">
-      <article class="summary-card">
-        <p class="summary-card__eyebrow">Cliente</p>
-        <p>
-          <strong>Jüsto.mx</strong><br />
-          Supermercado 100% digital en México y Brasil.
-        </p>
-      </article>
-
-  <article class="summary-card">
-        <p class="summary-card__eyebrow">Mi puesto</p>
-        <p>Product Designer</p>
-      </article>
-
-  <article class="summary-card">
-        <p class="summary-card__eyebrow">Duración</p>
-        <p>2023</p>
-      </article>
-    </aside>
-
-  <!-- Impacto FULL WIDTH -->
-  <article class="summary-card summary-card--full">
-      <p class="summary-card__eyebrow">Impacto</p>
+# Tarjetas de arriba: show prende o apaga; place es opcional (side o full)
+cards:
+  - show: true
+    label: 'Contexto'
+    text: |
+      <p>
+        Cuando llegué a este proyecto, la landing estaba sobrecargada de texto y con una propuesta de valor poco clara.
+        El mensaje hablaba más de procesos internos (logística, frescura, operación) que del beneficio real para quien llegaba por primera vez.
+      </p>
+      <p>
+        La consecuencia era directa: confusión sobre lo que ofrecíamos, percepción limitada del surtido
+        y baja motivación para registrarse o comprar.
+      </p>
+      <p>
+        El reto fue comunicar menos, pero conectar más: que en segundos quedara claro quiénes somos,
+        qué ofrecemos y por qué elegirnos.
+      </p>
+  - show: true
+    label: 'Mi contribución'
+    text: |
+      <ul class="bulleted">
+        <li>Lideré investigación con usuarios en México y Brasil, transformando hallazgos en hipótesis accionables.</li>
+        <li>Redefiní la narrativa y la jerarquía de la landing con foco en claridad, confianza y beneficios inmediatos.</li>
+        <li>Diseñé y probé prototipos para validar comprensión de la propuesta de valor.</li>
+        <li>Coordiné con Producto y Growth para mantener consistencia entre negocio, comunicación y diseño.</li>
+      </ul>
+  - show: true
+    label: 'Cliente'
+    place: side
+    text: |
+      <p>
+        <strong>Jüsto.mx</strong><br />
+        Supermercado 100% digital en México y Brasil.
+      </p>
+  - show: true
+    label: 'Mi puesto'
+    place: side
+    text: |
+      <p>Product Designer</p>
+  - show: true
+    label: 'Duración'
+    place: side
+    text: |
+      <p>2023</p>
+  - show: true
+    label: 'Impacto'
+    place: full
+    text: |
       <p>
         Confirmé que una comunicación clara y humana puede impactar directamente en negocio y percepción de marca,
         alineando la landing como punto de entrada estratégico al ecosistema digital de Jüsto.
       </p>
 
-  <div class="kpi-grid" aria-label="Resultados clave">
+      <div class="kpi-grid" aria-label="Resultados clave">
         <div class="kpi">
           <div class="kpi__value">+15%</div>
           <div class="kpi__label">en conversión de visitas a registro/compra.</div>
         </div>
 
-  <div class="kpi">
+      <div class="kpi">
           <div class="kpi__value">+30%</div>
           <div class="kpi__label">en descargas de la app.</div>
         </div>
 
-  <div class="kpi">
+      <div class="kpi">
           <div class="kpi__value">12s → ~5s</div>
           <div class="kpi__label">reducción del tiempo para entender la propuesta de valor.</div>
         </div>
       </div>
-    </article>
-  </div>
-</section>
 
-<!-- PROCESO PASO 1 -->
-<section class="step">
-  <h2 id="investigacion" class="headline-2 section-title">Investigación y descubrimiento</h2>
+# Secciones de la plantilla: show prende o apaga; title y label son opcionales
+sections:
+  problema:
+    show: true
+    title: 'Investigación y descubrimiento'
+    label: 'Investigación'
+  objetivos:
+    show: false
+  hallazgos:
+    show: true
+    title: 'Definición del problema'
+    label: 'Definición'
+  proceso:
+    show: true
+    title: 'Ideación'
+    label: 'Ideación'
+  liderazgo:
+    show: false
+  solucion:
+    show: true
+    title: 'Diseño'
+    label: 'Diseño'
+  resultado:
+    show: true
+    title: 'Entrega'
+    label: 'Entrega'
+  reflexion:
+    show: false
+---
+
+<!-- seccion: problema -->
+
   <p>
     Al analizar la primera interacción del usuario en la landing, partimos de una pregunta clave:
     <br>
@@ -120,7 +143,8 @@ tags: ['e-commerce', 'UX', 'content design', 'growth']
     <p>
       A través de encuestas a usuarios recurrentes, identifiqué que preferían buscar sus productos manualmente porque la sección no era visible ni fácil de navegar, buscaban comparar precios, encontraban productos agotados sin alternativas sugeridas y se perdían en largas listas al no estar organizada por categorías.
   </p>
-</section>
+
+<!-- fuera-de-seccion -->
 
 <section class="step">
   <h3 class="headline-3 section-title">Benchmarking de comunicación en e-commerce</h3>
@@ -156,9 +180,8 @@ tags: ['e-commerce', 'UX', 'content design', 'growth']
   </p>
 </section>
 
-<!-- PROCESO PASO 2 -->
-<section class="step">
-  <h2 id="definicion" class="headline-2 section-title">Definición del problema</h2>
+<!-- seccion: hallazgos -->
+
   <p>
     La landing actual no estaba comunicando efectivamente nuestra propuesta de valor.
     Aunque existía un alto potencial para atraer nuevos usuarios mediante beneficios claros (cupón + envío) y variedad de surtido, estos elementos no eran percibidos de inmediato.
@@ -183,7 +206,8 @@ tags: ['e-commerce', 'UX', 'content design', 'growth']
     La comunicación no estaba siendo suficientemente clara ni relevante desde el primer contacto.
     Había un gap entre lo que queríamos decir y lo que las personas realmente necesitaban escuchar.
   </p>
-</section>
+
+<!-- fuera-de-seccion -->
 
   <div class="grid-3">
     <article class="card"><h4>Conclución del análisis</h4>
@@ -207,9 +231,8 @@ tags: ['e-commerce', 'UX', 'content design', 'growth']
     </article>
   </div>
 
-<!-- PROCESO PASO 3 -->
-<section class="step">
-  <h2 id="ideacion" class="headline-2 section-title"> Ideación</h2>
+<!-- seccion: proceso -->
+
   <p>
     Con el norte claro —contar menos, conectar más— llegó el momento de imaginar nuevas formas de darle la bienvenida a quienes visitaban Jüsto por primera vez.
   </p>
@@ -233,11 +256,9 @@ tags: ['e-commerce', 'UX', 'content design', 'growth']
   <figure class="media">
     <img src="---" alt="Mapa de momentos clave"/>
   </figure>
-</section>
 
-<!-- PROCESO PASO 4 -->
-<section class="step">
-  <h2 id="diseno" class="headline-2 section-title">Diseño</h2>
+<!-- seccion: solucion -->
+
   <p>
     Una vez definidas las oportunidades y las ideas clave, pasamos del pensamiento al trazo.
     El objetivo era mantener la esencia de Jüsto —cercana, fresca, confiable— mientras removíamos el ruido que impedía a las personas entender por qué estábamos ahí para ellas.
@@ -300,11 +321,9 @@ tags: ['e-commerce', 'UX', 'content design', 'growth']
   <figure class="media">
     <img src="---" alt="Prototipo y pruebas"/>
   </figure>
-</section>
 
-<!-- PROCESO PASO 5 -->
-<section class="step">
-  <h2 id="entrega" class="headline-2 section-title">Entrega</h2>
+<!-- seccion: resultado -->
+
   <p>
     Apenas la nueva landing salió en producción, algo empezó a sentirse diferente.
   </p>
@@ -372,4 +391,3 @@ tags: ['e-commerce', 'UX', 'content design', 'growth']
   <figure class="media">
     <img src="----" alt="Vistas del prototipo"/>
   </figure>
-</section>

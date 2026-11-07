@@ -2,7 +2,10 @@
 // src/pages/proyectos/[slug].astro
 import { getCollection, type CollectionEntry } from 'astro:content'
 import Button from '../../components/Button.astro'
+import SummaryCard from '../../components/SummaryCard.astro'
+import { buildCaseSections } from '../../data/case-sections'
 import Layout from '../../layouts/Layout.astro'
+import '../../styles/case-study.css'
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects')
@@ -14,38 +17,44 @@ export async function getStaticPaths() {
 
 type Props = { project: CollectionEntry<'projects'> }
 const { project } = Astro.props as Props
-const { Content } = await project.render()
 
-const perProjectNav: Record<string, { label: string; href: string }[]> = {
-  'proyecto-1': [
-    { label: 'Inicio', href: '#top' },
-    { label: 'Problema', href: '#problema' },
-    { label: 'Definición', href: '#definicion' },
-    { label: 'Diseño', href: '#diseno' },
-    { label: 'Validación', href: '#validacion' },
-    { label: 'Aprendizaje', href: '#aprendizaje' }
-  ],
-  'proyecto-2': [
-    { label: 'Inicio', href: '#top' },
-    { label: 'Investigación', href: '#investigacion' },
-    { label: 'Definición', href: '#definicion' },
-    { label: 'Ideación', href: '#ideacion' },
-    { label: 'Diseño', href: '#diseno' },
-    { label: 'Entrega', href: '#entrega' }
-  ],
-  'proyecto-3': [
-    { label: 'Inicio', href: '#top' },
-    { label: 'Investigación', href: '#investigacion' },
-    { label: 'Definición', href: '#definicion' },
-    { label: 'Diseño', href: '#diseno' },
-    { label: 'Entrega', href: '#entrega' }
-  ]
+const files = import.meta.glob<{ compiledContent: () => Promise<string> }>(
+  '/src/content/projects/*.md',
+  { eager: true }
+)
+const html =
+  await files[`/src/content/projects/${project.id}`].compiledContent()
+const { intro, sections } = buildCaseSections(
+  html,
+  project.data.sections,
+  project.id
+)
+
+const navItems = [
+  { label: 'Inicio', href: '#top' },
+  ...sections.map(({ label, id }) => ({ label, href: `#${id}` }))
+]
+
+const cards = project.data.cards.filter((card) => card.show)
+const sideCards = cards.filter((card) => card.place === 'side')
+const fullCards = cards.filter((card) => card.place === 'full')
+const mainCards = cards.filter((card) => !card.place)
+const hasSide = sideCards.length > 0
+
+// Las portadas viven en src/, así que se piden con ?url para que existan en el sitio publicado
+const covers = import.meta.glob<string>(
+  '/src/images/projects/**/*.{jpeg,jpg,png}',
+  { eager: true, query: '?url', import: 'default' }
+)
+const cover = covers[project.data.cover]
+if (!cover) {
+  throw new Error(
+    `${project.id}: la portada "${project.data.cover}" no existe.`
+  )
 }
 
-const navItems = perProjectNav[project.slug]
-
 const options = {
-  title: project.data.title,
+  title: `${project.data.title} – Caso de estudio | Mitzi Soria`,
   description: project.data.summary || '',
   navItems
 }
@@ -68,281 +77,73 @@ const options = {
         <h1 class="project-title">{project.data.title}</h1>
       </header>
 
-      {
-        project.data.cover && (
-          <figure class="project-media">
-            <img
-              src={project.data.cover}
-              alt={project.data.coverAlt ?? project.data.title}
-              loading="eager"
-            />
-          </figure>
-        )
-      }
+      <figure class="project-media">
+        <img
+          src={cover}
+          alt={project.data.coverAlt ?? project.data.title}
+          loading="eager"
+        />
+      </figure>
 
       {
         /* ✅ Importante: quitamos cualquier “max-width” de prose para que cards (Impacto) ocupen todo */
       }
       <article class="project-content prose flow">
-        <Content />
+        {
+          cards.length > 0 && (
+            <section class="summary" aria-labelledby="resumen">
+              <h2 id="resumen" class="summary__title">
+                Resumen
+              </h2>
+              <div
+                class:list={[
+                  'summary__grid',
+                  !hasSide && `summary__grid--${mainCards.length}`
+                ]}
+              >
+                {hasSide ? (
+                  <>
+                    <div class="summary__main">
+                      {mainCards.map((card) => (
+                        <SummaryCard {...card} />
+                      ))}
+                    </div>
+                    <aside
+                      class="summary__side"
+                      aria-label="Detalles del proyecto"
+                    >
+                      {sideCards.map((card) => (
+                        <SummaryCard {...card} />
+                      ))}
+                    </aside>
+                  </>
+                ) : (
+                  mainCards.map((card) => <SummaryCard {...card} />)
+                )}
+                {fullCards.map((card) => (
+                  <SummaryCard {...card} />
+                ))}
+              </div>
+            </section>
+          )
+        }
+
+        <Fragment set:html={intro} />
+
+        {
+          sections.map(({ id, title, inside, outside }) => (
+            <>
+              <section class="step" aria-labelledby={id}>
+                <h2 id={id} class="headline-2 section-title">
+                  {title}
+                </h2>
+                <Fragment set:html={inside} />
+              </section>
+              <Fragment set:html={outside} />
+            </>
+          ))
+        }
       </article>
     </div>
   </section>
-
-  <style is:global>
-    /* ===== WRAPPER ===== */
-    .project-wrapper {
-      max-width: 1054px;
-      margin-inline: auto;
-      padding-inline: var(--mobile-inline-padding);
-      padding-block: var(--space-6);
-    }
-
-    .project-hero {
-      margin: 0.25rem 0 var(--space-4);
-    }
-
-    .project-title {
-      margin: 0 0 var(--space-4);
-    }
-
-    .project-media {
-      margin: 0 0 var(--space-6);
-    }
-
-    .project-media img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      display: block;
-    }
-
-    /* =========================================================
-       FIX 1: Prose no debe limitar el ancho de cards como Impacto
-       (La card debe llenar el wrapper, respetando márgenes)
-       ========================================================= */
-    .project-content {
-      width: 100%;
-    }
-    .project-content.prose {
-      max-width: none;
-    }
-
-    /* ===== Headings consistentes ===== */
-    .project-content :is(h2, h3, h4) {
-      margin-top: var(--space-6);
-      margin-bottom: var(--space-2);
-    }
-
-    /* ===== Texto ===== */
-    .project-content :where(p, li) {
-      color: var(--text-description-color);
-      text-wrap: pretty;
-    }
-
-    /* ===== Cards (incluye Impacto) ===== */
-    .project-content .card {
-      width: 100%;
-      max-width: none; /* ✅ Impacto full width */
-      background: var(--bg-secondary-color);
-      border: 1px solid color-mix(in oklab, var(--text-color) 15%, transparent);
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
-    }
-    .project-content .card > * + * {
-      margin-top: var(--space-3);
-    }
-
-    /* ===== Grids ===== */
-    .project-content .stack {
-      display: grid;
-      gap: 24px;
-    }
-    .project-content .grid-2 {
-      display: grid;
-      gap: 24px;
-      grid-template-columns: 1.6fr 1fr;
-    }
-    .project-content .grid-3 {
-      display: grid;
-      gap: 24px;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    @media (max-width: 900px) {
-      .project-content .grid-2,
-      .project-content .grid-3 {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ===== KPI (resaltar porcentajes) ===== */
-    .project-content .kpi-grid {
-      display: grid;
-      gap: 24px;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      margin-top: var(--space-3);
-    }
-    @media (max-width: 900px) {
-      .project-content .kpi-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .project-content .kpi {
-      background: transparent;
-      border-radius: 14px;
-      padding: 16px;
-      border: 1px dashed color-mix(in oklab, var(--text-color) 18%, transparent);
-    }
-
-    .project-content .kpi__value {
-      font-weight: 800;
-      font-size: 2rem; /* ✅ grande */
-      line-height: 1.05;
-      color: var(--text-color);
-      letter-spacing: -0.02em;
-    }
-
-    .project-content .kpi__label {
-      margin-top: 10px;
-      opacity: 0.9;
-      color: var(--text-description-color);
-    }
-
-    /* ===== Step ===== */
-    .project-content .step {
-      margin: var(--space-5) 0;
-    }
-
-    /* ✅ Medida de lectura SOLO en pasos del proceso (no afecta Impacto) */
-    .project-content .step :where(p, ul, ol, blockquote, .card) {
-      max-width: 92ch;
-      margin-right: auto;
-    }
-    @media (max-width: 768px) {
-      .project-content .step :where(p, ul, ol, blockquote, .card, .bulleted) {
-        max-width: 100%;
-      }
-    }
-
-    /* ===== Imágenes ===== */
-    .project-content .media {
-      margin: var(--space-4) 0;
-    }
-    .project-content .media img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-    }
-
-    /* ===== Back link ===== */
-    .project-wrapper .back-link {
-      margin-bottom: var(--space-5);
-    }
-
-    /* ===== Anclas ===== */
-    html {
-      scroll-behavior: smooth;
-    }
-    [id] {
-      scroll-margin-top: 96px;
-    }
-    @media (width >= 768px) {
-      [id] {
-        scroll-margin-top: 120px;
-      }
-    }
-
-    /* =========================================================
-       FIX 2: Línea después del título de sección (h2.section-title)
-       ========================================================= */
-    .project-content h2.section-title {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      margin: var(--space-6) 0 var(--space-4);
-      white-space: nowrap;
-    }
-    .project-content h2.section-title::after {
-      content: '';
-      flex: 1 1 auto;
-      height: 2px;
-      background: color-mix(in oklab, var(--text-color) 35%, transparent);
-      border-radius: 2px;
-      translate: 0 0.2em;
-    }
-    @media (max-width: 768px) {
-      .project-content h2.section-title::after {
-        height: 1.5px;
-      }
-    }
-
-    /* =========================
-       RESUMEN
-       ========================= */
-    .project-content .summary-card--full {
-      grid-column: 1 / -1;
-    }
-
-    .project-content .summary {
-      margin-top: 24px;
-    }
-
-    .project-content .summary__title {
-      margin: 0 0 20px;
-      font-size: 2rem;
-      font-weight: 700;
-    }
-
-    .project-content .summary__grid {
-      display: grid;
-      gap: 24px;
-      grid-template-columns: 1.6fr 1fr;
-      align-items: start;
-    }
-
-    @media (max-width: 900px) {
-      .project-content .summary__grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .project-content .summary__main,
-    .project-content .summary__side {
-      display: grid;
-      gap: 24px;
-    }
-
-    .project-content .summary-card {
-      background: var(--bg-secondary-color);
-      border: 1px solid color-mix(in oklab, var(--text-color) 12%, transparent);
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
-    }
-
-    .project-content .summary-card__eyebrow {
-      margin: 0 0 10px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-description-color);
-    }
-
-    .project-content .summary-card p {
-      margin: 0;
-      color: var(--text-color);
-      line-height: 1.65;
-      font-size: 1rem;
-    }
-
-    .project-content .summary-card p + p {
-      margin-top: 12px;
-    }
-
-    /* Impacto full width dentro del grid */
-    .project-content .summary-card--full {
-      grid-column: 1 / -1;
-    }
-  </style>
 </Layout>

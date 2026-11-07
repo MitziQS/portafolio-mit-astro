@@ -51,7 +51,7 @@ export class StarField {
       this.resizeCanvas() // Ajustar el tamaño del canvas
       this.drawStars() // Dibujar las estrellas
       this.addEventListeners() // Añadir eventos de mouse
-      this.observeThemeChanges() // Observar cambios en el tema (clase 'dark' en la etiqueta <html>)
+      this.observeThemeChanges() // Observar cambios en el tema (clase 'light' en la etiqueta <html>)
     } else {
       console.error('El contexto 2D no se pudo obtener.')
     }
@@ -171,11 +171,11 @@ export class StarField {
     this.initStars()
   }
 
-  // Método para observar cambios en la clase 'dark' del <html>
+  // Método para observar cambios en la clase 'light' del <html>
   private observeThemeChanges(): void {
     const htmlElement = document.documentElement
 
-    // Inicialmente revisamos si la clase 'dark' está presente
+    // Inicialmente revisamos si la clase 'light' está presente
     this.updateStarColor()
 
     // Crear un MutationObserver para detectar cambios en la clase del <html>
@@ -190,12 +190,12 @@ export class StarField {
     })
   }
 
-  // Cambia el color de las estrellas basado en la clase 'dark'
+  // Cambia el color de las estrellas basado en la clase 'light'
   private updateStarColor(): void {
     const htmlElement = document.documentElement
 
-    if (htmlElement.classList.contains('dark')) {
-      this.starColor = '0, 0, 0' // Negro si la clase 'dark' está presente
+    if (htmlElement.classList.contains('light')) {
+      this.starColor = '0, 0, 0' // Negro si la clase 'light' está presente
     } else {
       this.starColor = '255, 255, 255' // Blanco si no está presente
     }
