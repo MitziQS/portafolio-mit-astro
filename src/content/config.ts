@@ -15,6 +15,8 @@ export const collections = {
       title: z.string(),
       // Palabras del título que van en serif itálica con degradado (opcional)
       titleHighlight: z.array(z.string()).optional(),
+      // Frases de la intro (summary) que van en serif itálica (opcional)
+      summaryHighlight: z.array(z.string()).optional(),
       // Color del caso; si no se indica, se asigna por orden (terracota, añil, verde)
       color: z.enum(['terracota', 'anil', 'verde']).optional(),
       date: z.date(),
@@ -22,6 +24,10 @@ export const collections = {
       coverAlt: z.string().optional(),
       company: z.string().optional(),
       role: z.string().optional(),
+      // Estado del proyecto junto al año (p. ej. «En producción») (opcional)
+      status: z.string().optional(),
+      // Proceso en una línea, se muestra en la fila de datos (opcional)
+      process: z.string().optional(),
       summary: z.string(),
       tags: z.array(z.string()).default([]),
       card: z.object({

@@ -662,6 +662,223 @@
   color: var(--text-color);
 }
 
+/* ===== Bloques del caso (clases opcionales en los .md) ===== */
+
+/* Etiqueta pequeña en mayúsculas sobre un bloque */
+.project-content .case-label {
+  margin: 0;
+  font-family: var(--font);
+  font-style: normal;
+  font-size: 12px;
+  font-weight: var(--w-regular);
+  line-height: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted-color);
+}
+
+/* Frase destacada con etiqueta y párrafo opcional */
+.case-quote-block {
+  display: grid;
+  gap: 16px;
+
+  & .case-question {
+    margin: 0;
+  }
+}
+
+/* Franja de datos */
+.case-data {
+  display: grid;
+  gap: 10px;
+  padding: 24px 28px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  transition: var(--transition-border);
+
+  & p {
+    margin: 0;
+  }
+}
+
+/* Citas de usuarios */
+.case-voices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 16px;
+}
+
+.case-voice {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  margin: 0;
+  padding: 28px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  transition: var(--transition-border);
+
+  & p {
+    margin: 0;
+  }
+
+  & figcaption {
+    font-size: 14px;
+    color: var(--text-muted-color);
+  }
+}
+
+.project-content .case-voice__quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--text-color);
+}
+
+/* Dos columnas */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 16px;
+}
+
+/* Título dentro de una tarjeta */
+.project-content .card h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: var(--w-medium);
+  line-height: 1.25;
+  color: var(--text-color);
+}
+
+/* Insight en bloque: etiqueta legible sobre el color */
+.project-content div.case-insight {
+  display: grid;
+  gap: 12px;
+
+  & p {
+    margin: 0;
+    color: inherit;
+  }
+
+  & .case-label {
+    color: var(--on-block-color);
+    opacity: 0.85;
+  }
+}
+
+/* Antes y después */
+.case-compare {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 20px;
+
+  & figure {
+    display: grid;
+    align-content: start;
+    gap: 12px;
+    margin: 0;
+  }
+
+  & img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  & figcaption {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-description-color);
+
+    & strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+      font-weight: var(--w-regular);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted-color);
+    }
+  }
+}
+
+/* Lista numerada con números en serif */
+.project-content .case-steps {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  & li {
+    display: flex;
+    gap: 28px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  & h4 {
+    margin: 0 0 4px;
+    font-size: 18px;
+    font-weight: var(--w-semibold);
+  }
+
+  & p {
+    margin: 0;
+  }
+}
+
+.case-steps__n {
+  min-width: 36px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--accent-color);
+}
+
+/* KPI con etiqueta arriba y valores de texto */
+.kpi > .kpi__label:first-child {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted-color);
+}
+
+.kpi__value--text {
+  font-size: clamp(2.25rem, 4vw, 56px);
+  line-height: 1.05;
+}
+
+.kpi-grid--single {
+  grid-template-columns: 1fr;
+}
+
+/* Callout con etiqueta */
+.project-content .case-callout {
+  display: grid;
+  gap: 8px;
+  padding-block: 8px;
+
+  & p {
+    margin: 0;
+  }
+
+  & p:not(.case-label) {
+    color: var(--text-color);
+  }
+}
+
+/* Cita final */
+.project-content blockquote p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 /* ===== Siguiente caso ===== */
 .next-case {
   display: flex;
@@ -802,4 +1019,12 @@
   .next-case:hover .next-case__arrow {
     translate: none;
   }
+}
+
+/* Subtítulo suelto dentro de una sección */
+.project-content .step__body > h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: var(--w-medium);
+  line-height: normal;
 }

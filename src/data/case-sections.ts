@@ -7,6 +7,7 @@ export const CASE_SECTIONS = [
   { key: 'liderazgo', title: 'Liderazgo e influencia', label: 'Liderazgo' },
   { key: 'solucion', title: 'Solución', label: 'Solución' },
   { key: 'resultado', title: 'Resultado', label: 'Resultado' },
+  { key: 'impacto', title: 'Impacto', label: 'Impacto' },
   { key: 'reflexion', title: 'Reflexión', label: 'Reflexión' }
 ] as const
 
