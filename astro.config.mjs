@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config'
 import { URL } from './src/data/constants'
 import icon from 'astro-icon'
-import { astroImageTools } from 'astro-imagetools'
 import i18n from '@astrolicious/i18n'
 import sitemap from 'astro-sitemap'
 import playformCompress from '@playform/compress'
@@ -20,7 +19,6 @@ export default defineConfig({
   compressHTML: false,
   integrations: [
     icon(),
-    astroImageTools,
     i18n({
       defaultLocale: 'es',
       locales: ['es']
