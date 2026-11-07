@@ -155,7 +155,6 @@ body {
   letter-spacing: var(--tracking);
   transition: var(--transition-bg), var(--transition-text);
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
   font-synthesis-weight: none;
 }
 

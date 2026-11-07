@@ -26,11 +26,13 @@ const topbar = t('topbar', { returnObjects: true }) as {
 // Usa items del Layout; si no hay, usa default
 const links: { label: string; href: string }[] = items ?? defaultLinks
 
-// Con más de 6 opciones el menú necesita más ancho antes de mostrarse completo
-const compact = links.length > 6
+// Con más de 6 opciones el menú necesita más ancho antes de mostrarse completo.
+// En los casos el menú siempre se ve completo en escritorio (si no cabe, baja a otra línea).
+const compact = caseNav === undefined && links.length > 6
+const crowded = caseNav !== undefined && links.length > 6
 ---
 
-<header class:list={['topbar', { compact, 'topbar--case': caseNav }]}>
+<header class:list={['topbar', { compact, crowded, 'topbar--case': caseNav }]}>
   {
     caseNav ? (
       <a class="pill brand glass" href={caseNav.back.href}>
@@ -275,6 +277,15 @@ const compact = links.length > 6
     letter-spacing: normal;
     line-height: normal;
 
+    /* Como en la referencia: tres piezas repartidas con space-between */
+    @media (width >= 1024px) {
+      display: flex;
+    }
+
+    & nav#menu {
+      min-width: 0;
+    }
+
     & .brand {
       padding: 13px 20px;
       font-size: 15px;
@@ -292,9 +303,17 @@ const compact = links.length > 6
     & nav#menu ul {
       --gap: 43px;
 
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 6px;
       padding: 10px 12px 10px 26px;
       font-size: 14px;
       line-height: normal;
+    }
+
+    /* Con muchas secciones no cabe el índice: se oculta para que el menú quepa en una línea */
+    &.crowded .meta {
+      display: none;
     }
 
     & nav#menu li:last-child {
